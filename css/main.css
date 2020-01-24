@@ -1912,7 +1912,7 @@ pre .javascript .function {
 .my_post_copyright span {
   display: inline-block;
   width: 5.2em;
-  color: #b5b5b5;
+  color: #333;
   font-weight: bold;
 }
 .my_post_copyright .raw {
@@ -1924,7 +1924,7 @@ pre .javascript .function {
   border-bottom: 0;
 }
 .my_post_copyright a:hover {
-  color: #a3d2a3;
+  color: #0593d3;
   text-decoration: underline;
 }
 .my_post_copyright:hover .fa-clipboard {
@@ -2126,7 +2126,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a8a732;
+  background: #9d329a;
 }
 .links-of-blogroll {
   font-size: 13px;
