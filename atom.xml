@@ -6,7 +6,7 @@
   <link href="/ChaASuc.github.io/atom.xml" rel="self"/>
   
   <link href="http://deschen.com/"/>
-  <updated>2020-01-13T08:09:14.457Z</updated>
+  <updated>2020-01-28T09:03:41.957Z</updated>
   <id>http://deschen.com/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>深入了解JVM--内存模型</title>
+    <link href="http://deschen.com/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://deschen.com/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</id>
+    <published>2019-06-28T09:00:33.000Z</published>
+    <updated>2020-01-28T09:03:41.957Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://deschen.com/categories/Java/"/>
+    
+    
+      <category term="JVM" scheme="http://deschen.com/tags/JVM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
-    <link href="http://deschen.com/2019/12/30/hello-world/"/>
-    <id>http://deschen.com/2019/12/30/hello-world/</id>
-    <published>2019-12-30T10:21:31.785Z</published>
-    <updated>2020-01-13T08:09:14.457Z</updated>
+    <link href="http://deschen.com/2019/01/26/hello-world/"/>
+    <id>http://deschen.com/2019/01/26/hello-world/</id>
+    <published>2019-01-26T13:46:30.000Z</published>
+    <updated>2019-01-26T13:46:30.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
@@ -35,6 +54,10 @@
     </summary>
     
     
+      <category term="hexo" scheme="http://deschen.com/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://deschen.com/tags/hexo/"/>
     
   </entry>
   
