@@ -3,7 +3,7 @@
   <title>陈汉槟的博客</title>
   
   <subtitle>以Java开发为主的个人博客，记录自己在学习、工作和成长的笔记和心得</subtitle>
-  <link href="/deschen.coding.me/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
   <link href="http://deschen.com/"/>
   <updated>2020-01-31T06:44:01.786Z</updated>
