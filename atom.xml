@@ -204,6 +204,56 @@
   </entry>
   
   <entry>
+    <title>Linux常见命令</title>
+    <link href="http://deschen.com/2019/05/28/Linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/"/>
+    <id>http://deschen.com/2019/05/28/Linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/</id>
+    <published>2019-05-28T06:25:33.000Z</published>
+    <updated>2019-05-30T06:38:37.804Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Linux常见命令"><a href="#Linux常见命令" class="headerlink" title="Linux常见命令"></a>Linux常见命令</h1><h2 id="一、-bash-XX-command-not-found解决"><a href="#一、-bash-XX-command-not-found解决" class="headerlink" title="一、-bash: XX: command not found解决"></a>一、-bash: XX: command not found解决</h2><ul><li>yum -y install XX</li></ul><h2 id="二、文件及其文件夹命令"><a href="#二、文件及其文件夹命令" class="headerlink" title="二、文件及其文件夹命令"></a>二、文件及其文件夹命令</h2><ul><li><p>创建目录  mkdir [选项] 目录</p><ul><li><p>无 建立单个目录</p></li><li><p>-m, –mode=MODE    建立目录时同时设置目录的权限。 </p></li><li><p>-p, –parents      建立多级目录 </p></li><li><p>-v, –verbose     显示执行命令的信息</p></li></ul></li><li><p>删除目录、文件 rm [选项] 目录</p><ul><li>-f, –force     强制删除文件或目录 </li><li>-r, -R, –recursive  删除目录及其子目录</li><li>-d, –dir    删除空文件夹</li><li>-v, –verbose     显示执行命令的信息</li></ul></li><li><p>例子</p><ul><li><p>创建<strong>t01文件</strong>  mkdir t01</p></li><li><p>创建<strong>多级目录</strong> mkdir -p t02/t03</p></li><li><p><strong>创建并显示</strong>执行信息  mkdir -pv t04/t05</p></li><li><p>删除<strong>多级目录</strong> rm -rf t02/t03</p></li></ul></li></ul><h2 id="三、解压文件命令"><a href="#三、解压文件命令" class="headerlink" title="三、解压文件命令"></a>三、解压文件命令</h2><ul><li><p>解压、压缩文件 tar[选项1] 文件  [选项2] [目录]</p><ul><li><p>选项1（必选）</p><ul><li>-A 新增压缩文件到已存在的压缩</li><li>-B 设置区块大小</li><li>-c 建立新的压缩文件</li><li>-d 记录文件的差别</li><li>-r 添加文件到已经压缩的文件</li><li>-u 添加改变了和现有的文件到已经存在的压缩文件</li><li>-x 从压缩的文件中提取文件</li><li>-t 显示压缩文件的内容</li><li>-z 支持gzip解压文件</li><li>-j 支持bzip2解压文件</li><li>-Z 支持compress解压文件</li><li>-v 显示操作过程</li><li>-l 文件系统边界设置</li><li>-k 保留原有文件不覆盖</li><li>-m 保留文件不被覆盖</li><li>-W 确认压缩文件的正确性</li></ul></li><li><p>选项2 （可选）</p><ul><li>-b 设置区块数目</li><li>-C 切换到指定目录</li><li>-f 指定压缩文件</li><li>–help 显示帮助信息</li><li>–version 显示版本信息</li></ul></li></ul></li><li><p>例子</p><ul><li>解压<strong>nginx压缩包</strong>到<strong>/usr/local/application</strong>    tar -zxvf nginx-1.9.15.tar.gz -C /usr/local/application</li><li>把文件压缩<strong>t01.tar.gz</strong>   tar -zcvf  t01.tar.gz t.jpg</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Linux常见命令&quot;&gt;&lt;a href=&quot;#Linux常见命令&quot; class=&quot;headerlink&quot; title=&quot;Linux常见命令&quot;&gt;&lt;/a&gt;Linux常见命令&lt;/h1&gt;&lt;h2 id=&quot;一、-bash-XX-command-not-found解决&quot;&gt;&lt;a hr
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://deschen.com/categories/Linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解Redis--解决Redis缓存穿透、雪崩、击穿问题</title>
+    <link href="http://deschen.com/2019/05/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/"/>
+    <id>http://deschen.com/2019/05/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/</id>
+    <published>2019-05-28T06:25:33.000Z</published>
+    <updated>2020-02-12T06:37:06.148Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、-bash-XX-command-not-found解决"><a href="#一、-bash-XX-command-not-found解决" class="headerlink" title="一、-bash: XX: command not found解决"></a>一、-bash: XX: command not found解决</h2><ul><li>yum -y install XX</li></ul><h2 id="二、文件及其文件夹命令"><a href="#二、文件及其文件夹命令" class="headerlink" title="二、文件及其文件夹命令"></a>二、文件及其文件夹命令</h2><ul><li><p>创建目录  mkdir [选项] 目录</p><ul><li><p>无 建立单个目录</p></li><li><p>-m, –mode=MODE    建立目录时同时设置目录的权限。 </p></li><li><p>-p, –parents      建立多级目录 </p></li><li><p>-v, –verbose     显示执行命令的信息</p></li></ul></li><li><p>删除目录、文件 rm [选项] 目录</p><ul><li>-f, –force     强制删除文件或目录 </li><li>-r, -R, –recursive  删除目录及其子目录</li><li>-d, –dir    删除空文件夹</li><li>-v, –verbose     显示执行命令的信息</li></ul></li><li><p>例子</p><ul><li><p>创建<strong>t01文件</strong>  mkdir t01</p></li><li><p>创建<strong>多级目录</strong> mkdir -p t02/t03</p></li><li><p><strong>创建并显示</strong>执行信息  mkdir -pv t04/t05</p></li><li><p>删除<strong>多级目录</strong> rm -rf t02/t03</p></li></ul></li></ul><h2 id="三、解压文件命令"><a href="#三、解压文件命令" class="headerlink" title="三、解压文件命令"></a>三、解压文件命令</h2><ul><li><p>解压、压缩文件 tar[选项1] 文件  [选项2] [目录]</p><ul><li><p>选项1（必选）</p><ul><li>-A 新增压缩文件到已存在的压缩</li><li>-B 设置区块大小</li><li>-c 建立新的压缩文件</li><li>-d 记录文件的差别</li><li>-r 添加文件到已经压缩的文件</li><li>-u 添加改变了和现有的文件到已经存在的压缩文件</li><li>-x 从压缩的文件中提取文件</li><li>-t 显示压缩文件的内容</li><li>-z 支持gzip解压文件</li><li>-j 支持bzip2解压文件</li><li>-Z 支持compress解压文件</li><li>-v 显示操作过程</li><li>-l 文件系统边界设置</li><li>-k 保留原有文件不覆盖</li><li>-m 保留文件不被覆盖</li><li>-W 确认压缩文件的正确性</li></ul></li><li><p>选项2 （可选）</p><ul><li>-b 设置区块数目</li><li>-C 切换到指定目录</li><li>-f 指定压缩文件</li><li>–help 显示帮助信息</li><li>–version 显示版本信息</li></ul></li></ul></li><li><p>例子</p><ul><li>解压<strong>nginx压缩包</strong>到<strong>/usr/local/application</strong>    tar -zxvf nginx-1.9.15.tar.gz -C /usr/local/application</li><li>把文件压缩<strong>t01.tar.gz</strong>   tar -zcvf  t01.tar.gz t.jpg</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;一、-bash-XX-command-not-found解决&quot;&gt;&lt;a href=&quot;#一、-bash-XX-command-not-found解决&quot; class=&quot;headerlink&quot; title=&quot;一、-bash: XX: command not found解决
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://deschen.com/categories/Java/"/>
+    
+    
+      <category term="JVM" scheme="http://deschen.com/tags/JVM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Security笔记---基本原理及认证流程</title>
     <link href="http://deschen.com/2019/05/23/Security%E7%AC%94%E8%AE%B0-%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%8F%8A%E8%AE%A4%E8%AF%81%E6%B5%81%E7%A8%8B/"/>
     <id>http://deschen.com/2019/05/23/Security%E7%AC%94%E8%AE%B0-%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%8F%8A%E8%AE%A4%E8%AF%81%E6%B5%81%E7%A8%8B/</id>
