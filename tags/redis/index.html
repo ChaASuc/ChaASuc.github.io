@@ -118,7 +118,7 @@
   <meta name="description" content="机遇只会给有准备的人">
 <meta property="og:type" content="website">
 <meta property="og:title" content="陈汉槟的博客">
-<meta property="og:url" content="http://deschen.com/tags/Redis/index.html">
+<meta property="og:url" content="http://deschen.com/tags/redis/index.html">
 <meta property="og:site_name" content="陈汉槟的博客">
 <meta property="og:description" content="机遇只会给有准备的人">
 <meta property="og:locale" content="zh_CN">
@@ -134,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="http://deschen.com/tags/Redis/"/>
+  <link rel="canonical" href="http://deschen.com/tags/redis/"/>
 
 
 
@@ -144,7 +144,7 @@
   };
 </script>
 
-  <title>标签: Redis | 陈汉槟的博客</title>
+  <title>标签: redis | 陈汉槟的博客</title>
   
 
 
@@ -268,7 +268,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">9</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">10</span></a>
   </li>
 
       
@@ -374,7 +374,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Redis<small>标签</small>
+        <h1>redis<small>标签</small>
         </h1>
       </div>
 
@@ -386,37 +386,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2019/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E8%AE%B2%E8%A7%A3/" itemprop="url">
+            <a class="post-title-link" href="/2019/06/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redi--Redis%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" itemprop="url">
               
-                <span itemprop="name">深入理解Redis--集群讲解</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-07-20T08:41:38+08:00"
-              content="2019-07-20" >
-          07-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/12/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3Redis-Redis%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86/" itemprop="url">
-              
-                <span itemprop="name">深入了解Redis--Redis核心原理</span>
+                <span itemprop="name">深入理解Redis--Redis基本介绍</span>
               
             </a>
         
@@ -424,9 +396,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2019-06-12T14:24:12+08:00"
-              content="2019-06-12" >
-          06-12
+              datetime="2019-06-10T21:48:47+08:00"
+              content="2019-06-10" >
+          06-10
         </time>
       </div>
 
@@ -489,7 +461,7 @@
                 
                   <a href="/archives/%20%7C%7C%20archive">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1162,6 +1134,27 @@
         document.body.removeChild(ta)
         
           if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+  
+   <script async src="/js/src/click-fireworks.js"></script>
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
+
           else $(this).text('复制失败')
         
         $(this).blur()

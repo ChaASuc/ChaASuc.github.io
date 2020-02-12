@@ -115,20 +115,17 @@
 
 
 
-  <meta name="description" content="深入了解Redis–Redis核心原理一、Redis的单线程和高性能1、Redis 单线程为什么还能这么快？因为它所有的数据都在内存中，所有的运算都是内存级别的运算( 一个常规的命令，set&#x2F;get操作，时间是纳秒级别的，redis理想情况下QPS为10W&#x2F;s)，而且单线程避免了多线程的切换性能损耗问题。正因为 Redis 是单线程，所以要小心使用 Redis 指令，对于那些耗时的指令(比如key">
-<meta property="og:type" content="article">
-<meta property="og:title" content="深入了解Redis--Redis核心原理">
-<meta property="og:url" content="http://deschen.com/2019/06/12/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3Redis-Redis%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86/index.html">
+  <meta name="description" content="机遇只会给有准备的人">
+<meta property="og:type" content="website">
+<meta property="og:title" content="陈汉槟的博客">
+<meta property="og:url" content="http://deschen.com/archives/2020/02/index.html">
 <meta property="og:site_name" content="陈汉槟的博客">
-<meta property="og:description" content="深入了解Redis–Redis核心原理一、Redis的单线程和高性能1、Redis 单线程为什么还能这么快？因为它所有的数据都在内存中，所有的运算都是内存级别的运算( 一个常规的命令，set&#x2F;get操作，时间是纳秒级别的，redis理想情况下QPS为10W&#x2F;s)，而且单线程避免了多线程的切换性能损耗问题。正因为 Redis 是单线程，所以要小心使用 Redis 指令，对于那些耗时的指令(比如key">
+<meta property="og:description" content="机遇只会给有准备的人">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1581431818149.png">
-<meta property="article:published_time" content="2019-06-12T06:24:12.000Z">
-<meta property="article:modified_time" content="2019-06-14T00:58:21.836Z">
 <meta property="article:author" content="陈汉槟">
-<meta property="article:tag" content="Redis">
+<meta property="article:tag" content="Java开发">
+<meta property="article:tag" content="个人博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1581431818149.png">
 
 
 
@@ -137,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="http://deschen.com/2019/06/12/深入了解Redis-Redis核心原理/"/>
+  <link rel="canonical" href="http://deschen.com/archives/2020/02/"/>
 
 
 
@@ -147,7 +144,7 @@
   };
 </script>
 
-  <title>深入了解Redis--Redis核心原理 | 陈汉槟的博客</title>
+  <title>归档 | 陈汉槟的博客</title>
   
 
 
@@ -196,7 +193,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-archive">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -269,7 +266,7 @@
         
         
           
-          <li class="menu-item menu-item-archives">
+          <li class="menu-item menu-item-archives menu-item-active">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">10</span></a>
   </li>
@@ -344,309 +341,106 @@
           
             
 
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
           
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
 
-  
+      
+      <span class="archive-page-counter">
+        
+        
+        
+          
+        
+        嗯..! 目前共计 10 篇日志。 继续努力。
+      </span>
+      
 
-  
-  
-  
+      
 
-  
+        
+        
+        
+
+        
+          
+          <div class="collection-title">
+            <h1 class="archive-year" id="archive-year-2020">2020</h1>
+          </div>
+        
+        
+
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://deschen.com/2019/06/12/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3Redis-Redis%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈汉槟">
-      <meta itemprop="description" content="机遇只会给有准备的人">
-      <meta itemprop="image" content="/images/wolf_128.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈汉槟的博客">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
+            <a class="post-title-link" href="/2020/02/12/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/" itemprop="url">
+              
+                <span itemprop="name">深入理解Redis--集群部署</span>
+              
+            </a>
         
-          <h1 class="post-title" itemprop="name headline">深入了解Redis--Redis核心原理
-              
-            
-          </h1>
-        
+      </h2>
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-06-12 14:24:12" itemprop="dateCreated datePublished" datetime="2019-06-12T14:24:12+08:00">2019-06-12</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-14 08:58:21" itemprop="dateModified" datetime="2019-06-14T08:58:21+08:00">2019-06-14</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">中间件</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon"
-            >
-            <i class="fa fa-eye"></i>
-             阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h1 id="深入了解Redis–Redis核心原理"><a href="#深入了解Redis–Redis核心原理" class="headerlink" title="深入了解Redis–Redis核心原理"></a>深入了解Redis–Redis核心原理</h1><h2 id="一、Redis的单线程和高性能"><a href="#一、Redis的单线程和高性能" class="headerlink" title="一、Redis的单线程和高性能"></a>一、Redis的单线程和高性能</h2><h3 id="1、Redis-单线程为什么还能这么快？"><a href="#1、Redis-单线程为什么还能这么快？" class="headerlink" title="1、Redis 单线程为什么还能这么快？"></a>1、Redis 单线程为什么还能这么快？</h3><p>因为它所有的数据都在内存中，所有的运算都是<strong>内存级别的运算</strong>( 一个常规的命令，set/get操作，时间是<strong>纳秒</strong>级别的，redis理想情况下<strong>QPS为10W/s</strong>)，而且单线程<strong>避免了多线程的切换性能损耗</strong>问题。正因为 Redis 是单线程，所以要小心使用 Redis 指令，对于那些耗时的指令(比如keys)，一定要谨慎使用，一不小心就可能会导致 Redis 卡顿。 </p>
-<h3 id="2、Redis单线程如何处理那么多的并发客户端连接？"><a href="#2、Redis单线程如何处理那么多的并发客户端连接？" class="headerlink" title="2、Redis单线程如何处理那么多的并发客户端连接？"></a>2、Redis单线程如何处理那么多的并发客户端连接？</h3><p>Redis的<strong>IO多路复用</strong>：redis利用epoll来实现IO多路复用，将连接信息和事件放到队列中，依次放到文件事件分派器，事件分派器将事件分发给事件处理器。</p>
-<p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1581431818149.png" alt="1581431818149"></p>
-<h2 id="二、Redis持久化"><a href="#二、Redis持久化" class="headerlink" title="二、Redis持久化"></a>二、Redis持久化</h2><h3 id="1、RDB快照（snapshot）"><a href="#1、RDB快照（snapshot）" class="headerlink" title="1、RDB快照（snapshot）"></a>1、RDB快照（snapshot）</h3><p>在默认情况下， Redis 将内存数据库快照保存在名字为 dump.rdb 的二进制文件中。</p>
-<p>你可以对 Redis  进行设置， 让它在“ N 秒内数据集至少有 M 个改动”这一条件被满足时， 自动保存一次数据集。</p>
-<p>比如说， 以下设置会让 Redis 在满足“ 60 秒内有至少有 1000 个键被改动”这一条件时， 自动保存一次数据集：</p>
-<figure class="highlight plain"><figcaption><span>60 1000````</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">默认设置</span><br><span class="line"></span><br><span class="line"> ![1581432750276](https:&#x2F;&#x2F;root-1258715043.cos.ap-guangzhou.myqcloud.com&#x2F;blog&#x2F;1581432750276.png)</span><br><span class="line"></span><br><span class="line">### 2、AOF（append-only file）</span><br><span class="line"></span><br><span class="line">快照功能并不是非常耐久（durable）： 如果 Redis 因为某些原因而造成故障停机， 那么服务器将丢失最近写入、且仍未保存到快照中的那些数据。从 1.1 版本开始， Redis 增加了一种完全耐久的持久化方式： AOF 持久化，将修改的每一条指令记录进文件</span><br><span class="line"></span><br><span class="line">你可以通过修改配置文件来打开 AOF 功能：</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;&#96; appendonly yes</span><br></pre></td></tr></table></figure>
-
-<p>从现在开始， 每当 Redis 执行一个改变数据集的命令时（比如 <a href="http://redisdoc.com/string/set.html#set" target="_blank" rel="noopener">SET</a>）， 这个命令就会被追加到 AOF 文件的末尾。这样的话， 当 Redis 重新启时， 程序就可以通过重新执行 AOF 文件中的命令来达到重建数据集的目的。</p>
-<p>你可以配置 Redis 多久才将数据 fsync (<strong>持久化</strong>)到磁盘一次。</p>
-<p>有三个选项：</p>
-<ol>
-<li>`````appendfsync always````每次有新命令追加到 AOF 文件时就执行一次 fsync ：非常慢，也非常安全。</li>
-<li><code>appendfsync everysec</code>每秒 fsync 一次：足够快（和使用 RDB 持久化差不多），并且在故障时只会丢失 1 秒钟的数据。</li>
-<li><code>appendfsync no</code> 从不 fsync ：将数据交给操作系统来处理。更快，也更不安全的选择。</li>
-</ol>
-<p>推荐（并且也是默认）的措施为每秒 fsync 一次， 这种 fsync 策略可以兼顾速度和安全性。</p>
-<figure class="highlight plain"><figcaption><span>appendonly.aof````查看aof文件内容，文件内容存储使用[Redis协议规范(RESP)](https://www.cnblogs.com/tommy-huang/p/6051577.html)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 3、RDB 和 AOF ，我应该用哪一个？</span><br><span class="line"></span><br><span class="line"> 如果你非常关心你的数据， 但仍然可以承受数分钟以内的数据丢失， 那么你可以只使用 RDB 持久化。</span><br><span class="line"></span><br><span class="line">&gt; 你们可能有这么一个疑问？可以把RDB的快照时间设为每秒，可是实际上，每次快照，就要把整个内存数据快照，一般企业的Redis都是GB级别，这样花时间就，效率低下</span><br><span class="line"></span><br><span class="line">有很多用户都只使用 AOF 持久化， 但并不推荐这种方式，因为如果aof文件非常大，如果有几个GB的话，Redis重启的话，Redis执行aof文件里面的命令，启动慢，效率低</span><br><span class="line"></span><br><span class="line">那么如何选择呢？就是接下来要讲的</span><br><span class="line"></span><br><span class="line">### 4、Redis 4.0 混合持久化</span><br><span class="line"></span><br><span class="line">重启 Redis 时，我们很少使用 rdb 来恢复内存状态，因为会丢失大量数据。我们通常使用 AOF 日志重放，但是重放 AOF 日志性能相对 rdb 来说要慢很多，这样在 Redis 实例很大的情况下，启动需要花费很长的时间。 Redis 4.0 为了解决这个问题，带来了一个新的持久化选项——混合持久化。</span><br><span class="line"></span><br><span class="line">**AOF在重写**(aof文件里可能有太多没用指令，所以aof会定期根据内存的最新数据生成aof文件)**时将重写这一刻把内存进行rdb快照和增加修改内存数据的命令追加aof文件( aof文件是新的aof文件 )末尾，新的文件一开始不叫appendonly.aof，等到重写完新的AOF文件才会进行改名，原子的覆盖原有的AOF文件，完成新旧两个AOF文件的替换；**</span><br><span class="line"></span><br><span class="line">AOF根据配置规则在后台自动重写，也可以人为执行命令**bgrewriteaof**重写AOF。 于是在 Redis 重启的时候，可以**先加载 rdb 的内容**，然后再**重放增量 AOF 日志**就可以完全**替代**之前的 **AOF 全量文件重放**，重启效率因此大幅得到提升。</span><br><span class="line"></span><br><span class="line">开启混合持久化：</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;&#96;aof-use-rdb-preamble yes&#96;&#96;&#96;&#96;  </span><br><span class="line"></span><br><span class="line">配置：</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;&#96;auto-aof-rewrite-percentage 100&#96;&#96;&#96;&#96;：当容量一翻倍，aof就会重写</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;&#96;auto-aof-rewrite-min-size 64mb&#96;&#96;&#96;&#96;：当容量超过64M时，才会执行上一条指令翻倍重写</span><br><span class="line"></span><br><span class="line">混合持久化aof文件结构</span><br><span class="line"></span><br><span class="line">![1581434824790](https:&#x2F;&#x2F;root-1258715043.cos.ap-guangzhou.myqcloud.com&#x2F;blog&#x2F;1581434824790.png)</span><br><span class="line"></span><br><span class="line">​                                </span><br><span class="line"></span><br><span class="line">### 三、缓存淘汰策略</span><br><span class="line"></span><br><span class="line">当 Redis 内存超出物理内存限制时，内存的数据会开始和磁盘产生频繁的交换 (swap)。交换会让 Redis 的性能急剧下降，对于访问量比较频繁的 Redis 来说，这样龟速的存取效率基本上等于不可用。</span><br><span class="line"></span><br><span class="line">在生产环境中我们是不允许 Redis 出现交换行为的，为了限制最大使用内存，Redis 提供了配置参数 maxmemory 来限制内存超出期望大小。 </span><br><span class="line"></span><br><span class="line">当实际内存超出 maxmemory 时，Redis 提供了几种可选策略 (maxmemory-policy) 来让用户自己决定该如何腾出新的空间以继续提供读写服务。</span><br><span class="line"></span><br><span class="line">  选择策略 &#96;&#96;&#96;&#96;maxmemory-policy XXXX</span><br></pre></td></tr></table></figure>
-
-<p><strong>noeviction</strong> 不会继续服务写请求 (DEL 请求可以继续服务)，读请求可以继续进行。这样可以保证不会丢失数据，但是会让线上的业务不能持续进行。这是默认的淘汰策略。</p>
-<p><strong>volatile-lru</strong>  在设置了过期时间的所有键中，选取最近最少使用的数据抛弃。 </p>
-<p><strong>volatile-ttl</strong>  在设置了过期时间的所有键，抛弃存活时间最短的数据。 </p>
-<p><strong>volatile-random</strong>   在设置了过期时间的所有键，随机抛弃。 </p>
-<p><strong>allkeys-lru</strong>  在所有键中，选取最近最少使用的数据抛弃。 </p>
-<p><strong>allkeys-random</strong>  在所有键中，随机抛弃。 </p>
-<p>volatile-xxx 策略只会针对带过期时间的 key 进行淘汰，allkeys-xxx 策略会对所有的 key 进行淘汰。如果你只是拿 Redis 做缓存，那应该使用 allkeys-xxx，客户端写缓存时不必携带过期时间。如果你还想同时使用 Redis 的持久化功能，那就使用 volatile-xxx 策略，这样可以保留没有设置过期时间的 key，它们是永久的 key 不会被 LRU 算法淘汰。 </p>
-
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-        
-            
-<div class="my_post_copyright">
-  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-  
-  <!-- JS库 sweetalert 可修改路径 -->
-  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
-  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-
-  <p><span>本文标题:</span>深入了解Redis--Redis核心原理</a></p>
-  <p><span>文章作者:</span>陈汉槟</a></p>
-  <p><span>发布时间:</span>2019年06月12日 - 14:24:12</p>
-  <p><span>最后更新:</span>2019年06月14日 - 08:58:21</p>
-  <p><span>原始链接:</span><a href="/2019/06/12/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3Redis-Redis%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86/" title="深入了解Redis--Redis核心原理">http://deschen.com/2019/06/12/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3Redis-Redis%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://deschen.com/2019/06/12/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3Redis-Redis%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86/"  aria-label="复制成功！"></i></span>
-  </p>
-  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
-</div>
-<script> 
-    var clipboard = new Clipboard('.fa-clipboard');
-    clipboard.on('success', $(function(){
-      $(".fa-clipboard").click(function(){
-        swal({   
-          title: "",   
-          text: '复制成功',   
-          html: false,
-          timer: 500,   
-          showConfirmButton: false
-        });
-      });
-    }));  
-</script>
-
-
-        
-    </div>
-
-    
-
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>如果文章能帮助到你，希望继续支持我</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="陈汉槟 微信支付"/>
-        <p>微信支付</p>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2020-02-12T10:25:06+08:00"
+              content="2020-02-12" >
+          02-12
+        </time>
       </div>
-    
 
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="陈汉槟 支付宝"/>
-        <p>支付宝</p>
-      </div>
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Redis/" rel="tag"># Redis</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/06/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redi--Redis%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" rel="next" title="深入理解Redis--Redis基本介绍">
-                <i class="fa fa-chevron-left"></i> 深入理解Redis--Redis基本介绍
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" rel="prev" title="深入了解JVM--内存模型">
-                深入了解JVM--内存模型 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
+
+      
+
+    </div>
   </div>
-
-
-          </div>
-          
+  
+  
+  
 
   
 
 
+
+          </div>
+          
 
         </div>
         
@@ -669,17 +463,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -801,22 +586,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深入了解Redis–Redis核心原理"><span class="nav-number">1.</span> <span class="nav-text">深入了解Redis–Redis核心原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Redis的单线程和高性能"><span class="nav-number">1.1.</span> <span class="nav-text">一、Redis的单线程和高性能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、Redis-单线程为什么还能这么快？"><span class="nav-number">1.1.1.</span> <span class="nav-text">1、Redis 单线程为什么还能这么快？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、Redis单线程如何处理那么多的并发客户端连接？"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、Redis单线程如何处理那么多的并发客户端连接？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Redis持久化"><span class="nav-number">1.2.</span> <span class="nav-text">二、Redis持久化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、RDB快照（snapshot）"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、RDB快照（snapshot）</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -959,10 +728,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
-
-
 
   
 
