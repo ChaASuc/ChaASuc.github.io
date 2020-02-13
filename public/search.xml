@@ -80,6 +80,25 @@
     
     
     <entry>
+      <title>MySQL索引深入理解</title>
+      <link href="/2019/07/13/MySQL%E7%B4%A2%E5%BC%95%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3/"/>
+      <url>/2019/07/13/MySQL%E7%B4%A2%E5%BC%95%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<h1 id="MySQL索引"><a href="#MySQL索引" class="headerlink" title="MySQL索引"></a>MySQL索引</h1><p>[toc]</p><h2 id="一、什么是索引？"><a href="#一、什么是索引？" class="headerlink" title="一、什么是索引？"></a>一、什么是索引？</h2><p>索引是帮助MySQL高效获取数据的<strong>排好序</strong>的<strong>数据结构</strong></p><h2 id="二、底层知识铺垫-–-计算机组成原理"><a href="#二、底层知识铺垫-–-计算机组成原理" class="headerlink" title="二、底层知识铺垫 – 计算机组成原理"></a>二、底层知识铺垫 – 计算机组成原理</h2><blockquote><p>有没想过1、索引的数据结构为什么不是二叉排序树、红黑树、Hash、B树？而是B+树？2、为什么索引能是排好序的？</p><p>这些需要计算机组成原理的知识才能解决！希望大伙认真看，踊跃发言，互相学习</p></blockquote><h3 id="1、磁盘的读取原理"><a href="#1、磁盘的读取原理" class="headerlink" title="1、磁盘的读取原理"></a>1、磁盘的读取原理</h3><ul><li><p>索引存储在文件中，也就是说，查询索引就需要磁盘I/O操作，而磁盘I/O存在机械运动耗费，因此磁盘I/O的时间消耗是巨大的。 </p></li><li><p>磁盘的机械运动是怎么样子的？时间消耗多大？</p><ul><li><p>磁盘结构图：</p><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWctbXkuY3Nkbi5uZXQvdXBsb2Fkcy8yMDEyMTAvMTgvMTM1MDU0NjY2N184NjI4LmpwZw?x-oss-process=image/format,png" alt="img"> <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWctbXkuY3Nkbi5uZXQvdXBsb2Fkcy8yMDEyMTAvMTgvMTM1MDU0NjY3MF84ODI5LmpwZw?x-oss-process=image/format,png" alt="img"></p></li><li><p>概念：</p><ul><li><strong>磁道</strong>：以盘片中心为圆心，用不同的半径，划分出不同的很窄的圆环形区域，称为磁道</li><li><strong>扇区</strong>：磁盘上的每个磁道被等分为若干个弧段，这些弧段便是磁盘的扇区.扇区是磁盘最小的物理存储单元</li><li><strong>柱面</strong>：上下一串盘片中，相同半径的磁道所组成的一个圆柱型的环壁，就称为柱面</li></ul></li><li><p>磁盘读取时间计算：</p><ul><li><strong>寻道时间</strong>：磁头从开始移动到数据所在磁道所需要的时间，寻道时间越短，I/O操作越快。主流磁盘一般在5ms以下；</li><li><strong>旋转延迟</strong>：盘片旋转将请求数据所在扇区移至读写磁头下方所需要的时间，旋转延迟取决于磁盘转速。比如： 一个 7200（转 / 每分钟）的硬盘，平均旋转延迟时间为 1 ÷ ( 7200 ÷ 60 ) ÷ 2＝4.17ms（最多旋转１圈，最少不用旋转，平均情况下，需要旋转半圈）。 </li><li><strong>数据传输时间</strong>：完成传输所请求的数据所需要的时间。一般在零点几毫秒，相对于前两个时间可以忽略不计。</li><li>可见，磁盘I/O时间取决于寻道时间和旋转延迟</li></ul></li></ul></li></ul><h3 id="2、内存的读取原理"><a href="#2、内存的读取原理" class="headerlink" title="2、内存的读取原理"></a>2、内存的读取原理</h3><ul><li><p>内存的地址：计算机使用的主存基本都是随机读写存储器（RAM），内存可以抽象概括为一系列的存储单元组成的矩阵，每个存储单元存储固定大小的数据。每个存储单元由行和列构成唯一的地址。 </p></li><li><p>内存读取原理：当系统需要读取主存时，则将地址信号放到地址总线上传给主存，主存读到地址信号后，解析信号并定位到指定存储单元，然后将此存储单元数据放到数据总线上，供其它部件读取。由图可见，内存的读取时间仅与读取的次数呈线性关系，无机械操作，查询时间短、效率高</p><p><img src="http://blog.codinglabs.org/uploads/pictures/theory-of-mysql-index/5.png" alt="img"> </p></li></ul><h3 id="3、-从内存读取到磁盘预读"><a href="#3、-从内存读取到磁盘预读" class="headerlink" title="3、 从内存读取到磁盘预读"></a>3、 <strong>从内存读取到磁盘预读</strong></h3><ul><li>由于存储介质的特性，磁盘本身存取就比主存慢很多，再加上机械运动耗费，磁盘的存取速度往往是主存的几百分分之一，因此为了提高效率，要尽量减少磁盘I/O。为了达到这个目的，磁盘往往不是严格按需读取，而是每次都会预读，即使只需要一个字节，磁盘也会从这个位置开始，顺序向后读取一定长度的数据放入内存。这样做的理论依据是计算机科学中著名的局部性原理：  *<em>当一个数据被用到时，其附近的数据也通常会马上被使用。程序运行期间所需要的数据通常比较集中。 *</em>  </li><li>另一个原因： 由于磁盘顺序读取的效率很高（<strong>不需要寻道时间</strong>，只需很少的旋转时间），因此对于具有局部性的程序来说，预读可以提高I/O效率。 </li><li>预读的长度一般为<strong>页（page）的整倍数</strong>。页是计算机管理存储器的逻辑块，硬件及操作系统往往将主存和磁盘存储区分割为连续的大小相等的块，每个存储块称为一页（在许多操作系统中，页得大小通常为4k），<strong>主存和磁盘以页为单位交换数据</strong>。当程序要读取的数据不在主存中时，会触发一个缺页异常，此时系统会向磁盘发出读盘信号，磁盘会找到数据的起始位置并向后连续读取一页或几页载入内存中，然后异常返回，程序继续运行。</li></ul><h2 id="三、索引的数据结构"><a href="#三、索引的数据结构" class="headerlink" title="三、索引的数据结构"></a>三、索引的数据结构</h2><blockquote><p>第二部分主要用于B+树上,页的概念和预读十分重要,方便下面理解</p></blockquote><h3 id="1、不用二叉排序树、Hash、B树的分析"><a href="#1、不用二叉排序树、Hash、B树的分析" class="headerlink" title="1、不用二叉排序树、Hash、B树的分析"></a>1、不用二叉排序树、Hash、B树的分析</h3><ul><li><p>二叉排序树</p><ul><li>劣势：二叉排序树在极端情况下会有斜树，造成O(n)的时间复杂度</li></ul></li><li><p>Hash</p><ul><li>劣势：Hash是把索引数据进行Hash算法对应一个地址，我们会发现这个好像性能很好啊，直接找到，但是我们想想，它能满足我们日常开发大部分情况吗？比如通过大于或者小于去筛选数据，所以说也不合适，当然mysql还是提供了Hash索引，毕竟有些场合还是用起来也不错</li></ul></li><li><p>B树( 多路查找树 )</p><ul><li><p>概念:</p><ul><li>度(Degree)-节点的数据存储个数</li><li>叶节点具有相同的深度</li><li>叶节点的指针为空</li><li>节点中的数据key从左到右递增排列</li></ul></li><li><p>优势：二叉树存储的数据(海量数据可能来自文件，来自数据库)，不仅<strong>高度很高</strong>，而且每次查询，<strong>一个节点只有一个元素</strong>加载进内存，这样需要<strong>多次I/O</strong>操作，效率低下；而B树可以一次查询就有一个节点(数据库的话有一<strong>页</strong>节点)加载进内存，高度极大缩小，内存处理效率高又能减少I/O操作，查询效率高（为什么内存处理效率高？为什么要减少I/O操作？为什么是一页的数据？第二部分有讲解）</p><p>PS：一棵B 树的阶为1001 (即1 个结点包含1 000 个关键字) ，高度为2 ，它可以储存超过10 亿个关键字，我们只要让根结点持久地保留在内存中，那么在这棵树上，寻找某一个关键字至多需要两次I/O操作即可</p></li><li><p>不足：为什么不使用B树？因为一次I/O存入内存的<strong>节点数据</strong>会影响<strong>节点里面元素个数</strong>（存的容量有限，一页大小），而B+树解决这一问题</p></li><li><p>图解：</p><p> <img src="https://img2018.cnblogs.com/blog/1422817/201906/1422817-20190618113351277-845341592.png" alt="img"> </p></li><li><p>为什么不一开始节点是全部数据</p><p>因为内存与硬盘数据交互的单位是页，而一页是4K或8K，如果全部数据超过一页单位，就会有多次I/O操作，减低性能</p></li></ul></li></ul><h3 id="2、使用B-树的原因"><a href="#2、使用B-树的原因" class="headerlink" title="2、使用B+树的原因"></a>2、使用B+树的原因</h3><ul><li><p>概念：是B树的变形树</p><ul><li>非叶子节点不存储data，只存储key(索引值)，可以增大度</li><li>各个叶子节点的头和尾有指针连接，可以顺序访问，提高区间访问的性能</li></ul></li><li><p>优势：B+树非叶子节点存储的是索引值，这样一页的数据存储的个数比B树多，这样降低高度，从而查询次数也会减低、I/O操作次数减少，效率更高</p></li><li><p>图解：</p><p> <img src="https://img2018.cnblogs.com/blog/1422817/201906/1422817-20190618113402246-1099834253.png" alt="img"></p></li><li><p>B+Tree索引的性能分析</p><ul><li>一般使用磁盘I/O次数评价索引结构的优劣</li><li>预读：磁盘一般会顺序向后读取一定长度的数据(页的整数倍)放入内存</li><li>局部性原理：当一个数据被用到时，其附近的数据也通常会马上被使用</li><li>B+Tree节点的大小设为等于一个页，每次新建节点直接申请一个页的空间，这样就保证一个节点物理上也存储在一个页里，就实现了一个节点的载入只需一次I/O</li><li>B+Tree的度d一般会超过100，因此h非常小(一般为3到5之间)</li></ul><h3 id="四、聚簇索引和非聚簇索引"><a href="#四、聚簇索引和非聚簇索引" class="headerlink" title="四、聚簇索引和非聚簇索引"></a>四、聚簇索引和非聚簇索引</h3></li></ul><ul><li><p>聚簇索引：将数据存储与索引放到了一块，找到索引也就找到了数据</p></li><li><p>非聚簇索引：将数据存储与索引分开放置，找到索引就能找到数据的存储地址</p></li><li><p>MyISAM:</p><ul><li>主键索引数据结构</li></ul><p><img src="C:%5CUsers%5C20423%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1581586662878.png" alt="1581586662878"></p><ul><li><p>铺助索引数据结构</p><p><img src="C:%5CUsers%5C20423%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1581586736313.png" alt="1581586736313"></p></li></ul></li><li><p>InnoDB</p><ul><li><p>主键索引数据结构</p><p><img src="C:%5CUsers%5C20423%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1581586774007.png" alt="1581586774007"></p></li></ul><ul><li><p>铺助索引数据结构</p><p><img src="C:%5CUsers%5C20423%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1581586792540.png" alt="1581586792540"></p></li><li><p>问题？</p><ul><li><p>为什么非主键索引结构叶子节点存储的是主键值？</p><p>如果辅助索引叶子节点存数据的话，就会造成插入、修改、删除数据时，主键和辅助索引要维护两份数据，会造成<strong>数据一致性</strong>问题，同时也<strong>增大存储空间</strong></p></li><li><p>为什么InnoDB表必须有主键？</p><p>InnoDB的数据文件本身就是按B+Tree组织的一个索引结构文件。（没有创建主键，数据表也会找其中一列做数据，数据不重复，如果没有不重复，后台会默认创建主键，而且时整形的。）</p></li><li><p>为什么不用UUID而用自增的整形id？</p><ul><li>UUID比较使用ASCII比较字符，一个一个比较肯定比整数比较慢</li><li>UUID存储的空间比整形存储空间大</li><li>整形自增id，数据会插入到最后面的叶子节点的后面，而UUID数据插入的话，无法保证插入的位置，可能在数据的中间，因为节点度满了，节点就会分裂，可能会造成上面很多的节点分裂</li></ul></li><li><p>联合索引的底层存储结构长什么样？</p><p>联合索引和单个索引差不多，索引有多个字段。在查找时，先比较第一个字段，比不了就比较下一个，一次类推。这样就是最左前缀原理由来。</p><p><img src="C:%5CUsers%5C20423%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1581588401436.png" alt="1581588401436"></p></li></ul></li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>详解五种单例模式</title>
       <link href="/2019/07/04/%E8%AF%A6%E8%A7%A3%E4%BA%94%E7%A7%8D%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
       <url>/2019/07/04/%E8%AF%A6%E8%A7%A3%E4%BA%94%E7%A7%8D%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</url>
@@ -110,6 +129,31 @@
       <url>/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</url>
       
         <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JVM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>深入理解Redis--解决Redis缓存穿透、雪崩、击穿问题</title>
+      <link href="/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/"/>
+      <url>/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h1 id="深入理解Redis–解决Redis缓存穿透、雪崩、击穿问题"><a href="#深入理解Redis–解决Redis缓存穿透、雪崩、击穿问题" class="headerlink" title="深入理解Redis–解决Redis缓存穿透、雪崩、击穿问题"></a>深入理解Redis–解决Redis缓存穿透、雪崩、击穿问题</h1><h2 id="一、缓存穿透"><a href="#一、缓存穿透" class="headerlink" title="一、缓存穿透"></a>一、缓存穿透</h2><h3 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h3><p>缓存穿透就是访问一个不存在的数据时，缓存没有命中，而访问数据库，在高并发情况下，数据库又因为压力而宕机</p><h3 id="2、解决方案"><a href="#2、解决方案" class="headerlink" title="2、解决方案"></a>2、解决方案</h3><p>布隆过滤器</p><ul><li>简介：布隆过滤器实际上是一个很长的二进制向量和一系列随机映射函数。布隆过滤器可以用于检索一个元素是否在一个集合中。它的优点是空间效率和查询时间都远远超过一般的算法，缺点是有一定的误识别率和删除困难。</li><li>原理：当一个元素被加入集合时，通过K个散列函数将这个元素映射成一个位数组中的K个点，把它们置为1。检索时，我们只要看看这些点是不是都是1就（大约）知道集合中有没有它了：如果这些点有任何一个0，则被检元素一定不在；如果都是1，则被检元素很可能在。</li><li>优点：相比于其它的数据结构，布隆过滤器在空间和时间方面都有巨大的优势。布隆过滤器存储空间和插入/查询时间都是常数（O(k)）。而且它不存储元素本身，在某些对保密要求非常严格的场合有优势。</li><li>缺点：一定的误识别率和删除困难。<br>结合以上几点及去重需求（容忍误判，会误判在，在则丢，无妨），决定使用BlomFilter。</li></ul><h2 id="二、缓存雪崩"><a href="#二、缓存雪崩" class="headerlink" title="二、缓存雪崩"></a>二、缓存雪崩</h2><h3 id="1、介绍-1"><a href="#1、介绍-1" class="headerlink" title="1、介绍"></a>1、介绍</h3><p> 在缓存时设置相同的过期时间，导致缓存在某一时刻同时失效，请求全部转发到DB，数据库瞬时压力过重雪崩。 </p><h3 id="2、解决方案-1"><a href="#2、解决方案-1" class="headerlink" title="2、解决方案"></a>2、解决方案</h3><p>缓存失效时间分散开，比如我们可以在原有的失效时间基础上增加一个随机值，比如1-5分钟随机，这样每一个缓存的过期时间的重复率就会降低，就很难引发集体失效的事件。</p><h2 id="三、缓存击穿"><a href="#三、缓存击穿" class="headerlink" title="三、缓存击穿"></a>三、缓存击穿</h2><h3 id="1、介绍-2"><a href="#1、介绍-2" class="headerlink" title="1、介绍"></a>1、介绍</h3><p>某个数据设置过期时间，而该数据是被高并发访问的热点数据，一旦过期，可能就会造成缓存被击穿的可能</p><h3 id="2、解决方案-2"><a href="#2、解决方案-2" class="headerlink" title="2、解决方案"></a>2、解决方案</h3><ul><li><p>使用互斥锁解决</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">get</span><span class="params">(key)</span> </span>&#123;  </span><br><span class="line">      String value = redis.get(key);  </span><br><span class="line">      <span class="keyword">if</span> (value == <span class="keyword">null</span>) &#123; <span class="comment">//代表缓存值过期  </span></span><br><span class="line">          <span class="comment">//设置3min的超时，防止del操作失败的时候，下次缓存过期一直不能load db  </span></span><br><span class="line">          <span class="keyword">if</span> (redis.setnx(key_mutex, <span class="number">1</span>, <span class="number">3</span> * <span class="number">60</span>) == <span class="number">1</span>) &#123;  <span class="comment">//代表设置成功  </span></span><br><span class="line">               value = db.get(key);  </span><br><span class="line">               redis.set(key, value, expire_secs);  </span><br><span class="line">               redis.del(key_mutex);  </span><br><span class="line">              &#125; <span class="keyword">else</span> &#123;  <span class="comment">//这个时候代表同时候的其他线程已经load db并回设到缓存了，这时候重试获取缓存值即可  </span></span><br><span class="line">                      sleep(<span class="number">50</span>);  </span><br><span class="line">                      get(key);  <span class="comment">//重试  </span></span><br><span class="line">              &#125;  </span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">              <span class="keyword">return</span> value;        </span><br><span class="line">          &#125;  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li><li><p>将该数据不设置过期时间，就不会造成缓存击穿问题</p></li></ul>]]></content>
       
       
       <categories>
@@ -193,31 +237,6 @@
           
       </categories>
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>深入理解Redis--解决Redis缓存穿透、雪崩、击穿问题</title>
-      <link href="/2019/05/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/"/>
-      <url>/2019/05/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/</url>
-      
-        <content type="html"><![CDATA[<h2 id="一、-bash-XX-command-not-found解决"><a href="#一、-bash-XX-command-not-found解决" class="headerlink" title="一、-bash: XX: command not found解决"></a>一、-bash: XX: command not found解决</h2><ul><li>yum -y install XX</li></ul><h2 id="二、文件及其文件夹命令"><a href="#二、文件及其文件夹命令" class="headerlink" title="二、文件及其文件夹命令"></a>二、文件及其文件夹命令</h2><ul><li><p>创建目录  mkdir [选项] 目录</p><ul><li><p>无 建立单个目录</p></li><li><p>-m, –mode=MODE    建立目录时同时设置目录的权限。 </p></li><li><p>-p, –parents      建立多级目录 </p></li><li><p>-v, –verbose     显示执行命令的信息</p></li></ul></li><li><p>删除目录、文件 rm [选项] 目录</p><ul><li>-f, –force     强制删除文件或目录 </li><li>-r, -R, –recursive  删除目录及其子目录</li><li>-d, –dir    删除空文件夹</li><li>-v, –verbose     显示执行命令的信息</li></ul></li><li><p>例子</p><ul><li><p>创建<strong>t01文件</strong>  mkdir t01</p></li><li><p>创建<strong>多级目录</strong> mkdir -p t02/t03</p></li><li><p><strong>创建并显示</strong>执行信息  mkdir -pv t04/t05</p></li><li><p>删除<strong>多级目录</strong> rm -rf t02/t03</p></li></ul></li></ul><h2 id="三、解压文件命令"><a href="#三、解压文件命令" class="headerlink" title="三、解压文件命令"></a>三、解压文件命令</h2><ul><li><p>解压、压缩文件 tar[选项1] 文件  [选项2] [目录]</p><ul><li><p>选项1（必选）</p><ul><li>-A 新增压缩文件到已存在的压缩</li><li>-B 设置区块大小</li><li>-c 建立新的压缩文件</li><li>-d 记录文件的差别</li><li>-r 添加文件到已经压缩的文件</li><li>-u 添加改变了和现有的文件到已经存在的压缩文件</li><li>-x 从压缩的文件中提取文件</li><li>-t 显示压缩文件的内容</li><li>-z 支持gzip解压文件</li><li>-j 支持bzip2解压文件</li><li>-Z 支持compress解压文件</li><li>-v 显示操作过程</li><li>-l 文件系统边界设置</li><li>-k 保留原有文件不覆盖</li><li>-m 保留文件不被覆盖</li><li>-W 确认压缩文件的正确性</li></ul></li><li><p>选项2 （可选）</p><ul><li>-b 设置区块数目</li><li>-C 切换到指定目录</li><li>-f 指定压缩文件</li><li>–help 显示帮助信息</li><li>–version 显示版本信息</li></ul></li></ul></li><li><p>例子</p><ul><li>解压<strong>nginx压缩包</strong>到<strong>/usr/local/application</strong>    tar -zxvf nginx-1.9.15.tar.gz -C /usr/local/application</li><li>把文件压缩<strong>t01.tar.gz</strong>   tar -zcvf  t01.tar.gz t.jpg</li></ul></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> JVM </tag>
-            
-        </tags>
       
     </entry>
     
