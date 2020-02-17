@@ -4,32 +4,6 @@
   
     
     <entry>
-      <title>并发编程--java内存模型</title>
-      <link href="/2020/01/31/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B-java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
-      <url>/2020/01/31/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B-java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>并发编程--线程和线程池</title>
-      <link href="/2020/01/29/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B-%E7%BA%BF%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0/"/>
-      <url>/2020/01/29/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B-%E7%BA%BF%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0/</url>
-      
-        <content type="html"><![CDATA[<h1 id="并发编程–线程池和多线程"><a href="#并发编程–线程池和多线程" class="headerlink" title="并发编程–线程池和多线程"></a>并发编程–线程池和多线程</h1><p>[toc]</p><h2 id="一、什么是线程和进程"><a href="#一、什么是线程和进程" class="headerlink" title="一、什么是线程和进程"></a>一、什么是线程和进程</h2><h4 id="什么是进程？什么是线程？"><a href="#什么是进程？什么是线程？" class="headerlink" title="什么是进程？什么是线程？"></a>什么是进程？什么是线程？</h4><p>进程是系统中正在运行的一个程序，程序一旦运行就是进程。</p><p>进程可以看成程序执行的一个实例。进程是系统资源分配的独立实体，每个进程都拥有独立的地址空间。一个进程无法访问另一个进程的变量和数据结构，如果想让一个进程访问另一个进程的资源，需要使用进程间通信，比如管道，文件，套接字等。</p><p>一个进程可以拥有多个线程，每个线程使用其所属进程的栈空间。线程与进程的一个主要区别是，统一进程内的一个主要区别是，同一进程内的多个线程会共享部分状态，多个线程可以读写同一块内存（一个进程无法直接访问另一进程的内存）。同时，每个线程还拥有自己的寄存器和栈，其他线程可以读写这些栈内存。</p><p>线程是进程的一个实体，是进程的一条执行路径。</p><p>线程是进程的一个特定执行路径。当一个线程修改了进程的资源，它的兄弟线程可以立即看到这种变化。</p><h4 id="进程和线程的区别体现在以下几个方面："><a href="#进程和线程的区别体现在以下几个方面：" class="headerlink" title="进程和线程的区别体现在以下几个方面："></a>进程和线程的区别体现在以下几个方面：</h4><p>1.地址空间和其他资源（如打开文件）：进程间相互独立，同一进程的各线程间共享。某进程内的线程在其他进程内不可见。</p><p>2.通信：进程间通信IPC（管道，信号量，共享内存，消息队列），线程间可以直接独写进程数据段（如全局变量）来进程通信——需要进程同步和互斥手段的辅助，以保证数据的一致性。</p><p>3.调度和切换：线程上下文切换比进程上下文切换快得多。</p><p>4.在多线程OS中，进程不是一个可执行的实体。</p><h4 id="进程和线程的选择取决以下几点："><a href="#进程和线程的选择取决以下几点：" class="headerlink" title="进程和线程的选择取决以下几点："></a>进程和线程的选择取决以下几点：</h4><p>1.需要频繁创建销毁的优先使用线程；因为对进程来说创建和销毁一个进程的代价是很大的。</p><p>2.线程的切换速度快，所以在需要大量计算，切换频繁时使用线程，还有耗时的操作时用使用线程可提高应用程序的响应。</p><p>3.因为对CPU系统的效率使用上线程更占优势，所以可能要发展到多机分布的用进程，多核分布用线程。</p><p>4.并行操作时用线程，如C/S架构的服务器端并发线程响应用户的请求。</p><p>5.需要更稳定安全时，适合选择进程；需要速度时，选择线程更好。</p><h2 id="二、多线程排查死锁命令和操作"><a href="#二、多线程排查死锁命令和操作" class="headerlink" title="二、多线程排查死锁命令和操作"></a>二、多线程排查死锁命令和操作</h2><p> <a href="https://blog.csdn.net/u014039577/article/details/52351626" target="_blank" rel="noopener">https://blog.csdn.net/u014039577/article/details/52351626</a> </p><p>​        </p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>深入理解Redis--集群部署</title>
       <link href="/2019/08/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/"/>
       <url>/2019/08/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/</url>
@@ -74,6 +48,25 @@
             <tag> Redis </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>分库分表理论篇——以MySQL为例</title>
+      <link href="/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/"/>
+      <url>/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="分库分表理论篇——-以MySQL为例"><a href="#分库分表理论篇——-以MySQL为例" class="headerlink" title="分库分表理论篇—— 以MySQL为例"></a>分库分表理论篇—— 以MySQL为例</h1><h2 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h2><p>当今互联网大爆炸的时代，<strong>业务</strong>越来越多和大，<strong>单库单表</strong>数据超出数据库支持<strong>容量</strong>，数据库<strong>I/O操作</strong>次数会越来越多和慢，数据库的整体<strong>性能</strong>就会急剧下降。</p><h2 id="二、如何优化"><a href="#二、如何优化" class="headerlink" title="二、如何优化"></a>二、如何优化</h2><p>这里我想到几种优化的方法</p><ul><li>减少数据库访问压力<ul><li>使用<strong>缓存</strong>技术，对数据库的信息进行缓存，减少数据库访问压力</li><li>使用<strong>Nginx</strong>进行静态资源的获取，对一些高访问的<strong>网页</strong>，一次访问时可以先生成<strong>静态页面</strong>存到<strong>本地</strong>中，用户再次访问就会直接返回，这样减少与数据库的交互和渲染页面的操作，提高效率</li><li>读写分离<ul><li>互联网业务一般<strong>读多写少</strong>，<strong>读写</strong>比例基本是<strong>10:1</strong>。比如订单业务，顾客购买商品生成<strong>一次</strong>订单后，就会<strong>多次</strong>查看订单情况。这时可以采用<strong>主从架构</strong>，<strong>主库</strong>负责<strong>DML</strong>(增删改)操作，<strong>从库</strong>负责<strong>DQL</strong>(查看操作)，<strong>一</strong>个主库可以有<strong>多</strong>个从库，极大减轻读写压力</li></ul></li></ul></li><li>提升数据库性能<ul><li>可以从机器性能入手，内存不够加内存条，外存( 如硬盘 )不够加外存，这样即使数据量在大，也不会影响I/O读写速率，<strong>但是</strong>，数据量大会增加<strong>I/O的次数</strong>，数据库性能依旧会下降，不推荐，成本太高，没钱花，/(ㄒoㄒ)/~~</li><li>优化数据库<strong>索引</strong>，数据库<strong>语句</strong>，这个我将会写篇博客，具体介绍</li><li>分库分表<ul><li>分库分表要<strong>按业务进行拆分</strong>，具体后面会说。主要是打破<strong>单库单表</strong>的情况，数据存在<strong>多库多表</strong>中。打个比方，100W条数据存在10个库中，10个库有10张相同的表，那么一张表存的数据就会1W条左右，这样减低数据库的容量，提升I/O操作速率，提高数据库的性能</li></ul></li></ul></li></ul><h2 id="三、什么是分库分表"><a href="#三、什么是分库分表" class="headerlink" title="三、什么是分库分表"></a>三、什么是分库分表</h2><blockquote><p> 分库分表，顾名思义就是拆分数据库和拆分数据表。问题就来了，要怎么拆分数据库和数据表呢？</p></blockquote><p>这里用一张电商的数据库的ER图拆分<br><img src="https://img-blog.csdnimg.cn/20200119164837128.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><ul><li><p>垂直拆分( 以电商ER图拆分 )</p><ul><li><p>垂直拆库：按照业务拆分，<strong>业务耦合性低的数据表</strong>拆分到<strong>不同数据库</strong>中。比如电商数据库拆分成用户库、商品库、订单库…<strong>但是</strong>，不是什么表都可以分库的，例如：订单库有<strong>订单表和订单明细表</strong>，这两张表<strong>耦合性高</strong>，必须放在一起</p></li><li><p>垂直拆表：按照数据表的<strong>字段热点</strong>(就是使用<strong>频率高</strong>)和字段<strong>存储类型</strong>进行拆分。比如电商中商品不是有<strong>文字描述</strong>吗？可是我们一般看商品的<strong>标题，价格，图片</strong>，对于<strong>文字描述</strong>字段一般点进去才看(查看<strong>频率不如前者高</strong>)，那么我们可以把商品表除文字描述这些大字段拆分出另一张表使用，提高查询性能</p><p>PS：拆分大字段还有另一个原因，因为大字段读取时间长，数据量大的话，影响I/O的读取效率<br><img src="https://img-blog.csdnimg.cn/20200119164926806.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li><li><p>特点：</p><ul><li>每个库（表）的结构都不一样</li><li>每个库（表）的数据都（至少有一列）一样  </li><li>每个库（表）的并集是全量数据</li></ul></li></ul></li><li><p>水平拆分( 以电商ER图拆分)</p><ul><li><p>水平拆库：把<strong>单个数据库</strong>的数据拆分成<strong>多个相同结构数据库</strong>存储</p></li><li><p>水平拆表：把<strong>单表</strong>的数据量拆分成<strong>多个相同结构表</strong>存储</p></li></ul><p><img src="https://img-blog.csdnimg.cn/20200119164947411.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ennDrFQt-1579422434154)(C:\Users\20423\AppData\Roaming\Typora\typora-user-images\1579421448(1)\].jpg)"></p><ul><li><p>以上两者合并达到分库分表<br><img src="https://img-blog.csdnimg.cn/20200119165023617.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li><li><p>特点：</p><ul><li>每个库（表）的结构都不一样</li><li>每个库（表）的数据都（至少有一列）一样  </li><li>每个库（表）的并集是全量数据</li></ul></li></ul></li></ul><h2 id="三、优势和弊端"><a href="#三、优势和弊端" class="headerlink" title="三、优势和弊端"></a>三、优势和弊端</h2><ul><li>优点：<ul><li>减少数据库的访问压力和单个存储容量</li></ul></li><li>弊端：<ul><li>增加了我们维护成本，毕竟多个数据库和数据表维护</li><li>分布式事务（跨库事务），比如：处理一个业务需要执行多条插入语句，每条在不同机器的不同数据库中，出现问题，如何回滚</li><li>跨库join，因为在不同数据库中，就无法使用join命令获取信息</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
       
     </entry>
     
@@ -287,6 +280,25 @@
             <tag> 接口设计 </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SpringBoot自动化配置原理</title>
+      <link href="/2019/03/17/springboot%E8%87%AA%E5%8A%A8%E5%8C%96%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86/"/>
+      <url>/2019/03/17/springboot%E8%87%AA%E5%8A%A8%E5%8C%96%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h1 id="SpringBoot自动化配置原理"><a href="#SpringBoot自动化配置原理" class="headerlink" title="SpringBoot自动化配置原理"></a>SpringBoot自动化配置原理</h1><blockquote><p>初识Spring Boot时我们就知道，Spring Boot有一个全局配置文件：application.properties或application.yml。</p><p>我们的各种属性都可以在这个文件中进行配置，最常配置的比如：server.port、logging.level.* 等等，然而我们实际用到的往往只是很少的一部分，那么这些属性是否有据可依呢？答案当然是肯定的，这些属性都可以在官方文档中查找到：</p><p><a href="https://docs.spring.io/spring-boot/docs/2.1.0.RELEASE/reference/htmlsingle/#common-application-properties" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/2.1.0.RELEASE/reference/htmlsingle/#common-application-properties</a></p><p>那么问题来了：这些配置是如何在Spring Boot项目中生效的呢？那么接下来，就需要聚焦本篇博客的主题：自动配置工作原理或者叫实现方式。</p></blockquote><p> @SpringBootApplication是一个复合注解或派生注解，在@SpringBootApplication中有一个注解@EnableAutoConfiguration，翻译成人话就是开启自动配置，其定义如下：</p><p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/typora-user-images/1581905687023.png" alt="1581905687023"></p><p> 而这个注解也是一个派生注解，其中的关键功能由@Import提供，其导入的AutoConfigurationImportSelector的selectImports()方法通过SpringFactoriesLoader.loadFactoryNames()扫描所有具有META-INF/spring.factories的jar包。spring-boot-autoconfigure-x.x.x.x.jar里就有一个这样的spring.factories文件。</p><p>这个spring.factories文件也是一组一组的key=value的形式，其中一个key是EnableAutoConfiguration类的全类名，而它的value是一个xxxxAutoConfiguration的类名的列表，这些类名以逗号分隔，如下图所示：</p><p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/typora-user-images/1581905809350.png" alt="1581905809350"></p><p>这个@EnableAutoConfiguration注解通过@SpringBootApplication被间接的标记在了Spring Boot的启动类上。在SpringApplication.run(…)的内部就会执行selectImports()方法，找到所有JavaConfig自动配置类的全限定名对应的class，然后将所有自动配置类加载到Spring容器中。</p><p>在面试的时候，其实远远不需要回答的这么具体，你只需要这样回答：</p><p>​       Spring Boot启动的时候会通过@EnableAutoConfiguration注解找到META-INF/spring.factories配置文件中的所有自动配置类，并对其进行加载，而这些自动配置类都是以AutoConfiguration结尾来命名的，它实际上就是一个JavaConfig形式的Spring容器配置类，它能通过以Properties结尾命名的类中取得在全局配置文件中配置的属性如：server.port，而XxxxProperties类是通过@ConfigurationProperties注解与全局配置文件中对应的属性进行绑定的。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> SpringBoot </category>
+          
+      </categories>
+      
       
     </entry>
     
