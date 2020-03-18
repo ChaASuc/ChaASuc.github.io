@@ -261,7 +261,7 @@
           
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">10</span></a>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">9</span></a>
   </li>
         
         
@@ -269,7 +269,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">21</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">22</span></a>
   </li>
 
       
@@ -660,6 +660,193 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://deschen.com/2020/03/05/HashMap%E4%B8%8EConcurrentHashMap%E5%8E%9F%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈汉槟">
+      <meta itemprop="description" content="机遇只会给有准备的人">
+      <meta itemprop="image" content="/images/wolf_128.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈汉槟的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/05/HashMap%E4%B8%8EConcurrentHashMap%E5%8E%9F%E7%90%86/" itemprop="url">
+                  HashMap与ConcurrentHashMap原理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-03-05 16:02:06" itemprop="dateCreated datePublished" datetime="2020-03-05T16:02:06+08:00">2020-03-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-03-18 16:57:02" itemprop="dateModified" datetime="2020-03-18T16:57:02+08:00">2020-03-18</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          HashMap与ConcurrentHashMap原理一、HashMap的数据结构HashMap有数组+链表+红黑树组成
+
+通过hash函数得到存储地址，进而保存到数组中
+
+当出现hash冲突时， hashmap采用的就是链地址法 ，在冲突的地址上生成一个链表，将冲突的元素的key，通过equals
+          ...
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/03/05/HashMap%E4%B8%8EConcurrentHashMap%E5%8E%9F%E7%90%86/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+        
+    </div>
+
+    
+
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://deschen.com/2020/02/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -723,11 +910,29 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-07 22:25:31" itemprop="dateModified" datetime="2020-03-07T22:25:31+08:00">2020-03-07</time>
+                <time title="修改时间：2020-03-18 21:12:42" itemprop="dateModified" datetime="2020-03-18T21:12:42+08:00">2020-03-18</time>
               
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1066,7 +1271,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-18 16:55:13" itemprop="dateModified" datetime="2020-03-18T16:55:13+08:00">2020-03-18</time>
+                <time title="修改时间：2020-03-18 19:48:23" itemprop="dateModified" datetime="2020-03-18T19:48:23+08:00">2020-03-18</time>
               
             
           </span>
@@ -1083,7 +1288,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">-JVM</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a></span>
 
                 
                 
@@ -1262,7 +1467,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-18 15:17:28" itemprop="dateModified" datetime="2020-03-18T15:17:28+08:00">2020-03-18</time>
+                <time title="修改时间：2020-03-18 19:37:07" itemprop="dateModified" datetime="2020-03-18T19:37:07+08:00">2020-03-18</time>
               
             
           </span>
@@ -1279,7 +1484,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">-JVM</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a></span>
 
                 
                 
@@ -1315,10 +1520,10 @@
       
         
           
-          深入理解JVM–四种垃圾收集算法
-一、标记-清除算法算法分为“标记”和“清除”阶段：首先标记所有存活的对象，在标记完成后统一回收所有未标记的对象。它是最基础的收集算法，效率也很高，但是会带来明显的问题：标记清除后会产生大量不连续的碎片
+          深入理解JVM–四种垃圾收集算法一、标记-清除算法算法分为“标记”和“清除”阶段：首先标记所有存活的对象，在标记完成后统一回收所有未标记的对象。它是最基础的收集算法，效率也很高。
 
-二、复制算法为了解决标记-清除算法问题，“复制”收集算法出现了
+优点：执行效率高
+缺点：1、标记清除后会产生大量不连续的碎片；2、分配速度慢，因为存在大量不连续碎片，每次分配都需要遍
           ...
           <!--noindex-->
           
@@ -1448,7 +1653,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-18 14:55:48" itemprop="dateModified" datetime="2020-03-18T14:55:48+08:00">2020-03-18</time>
+                <time title="修改时间：2020-03-18 18:42:10" itemprop="dateModified" datetime="2020-03-18T18:42:10+08:00">2020-03-18</time>
               
             
           </span>
@@ -1465,7 +1670,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">-JVM</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a></span>
 
                 
                 
@@ -1618,12 +1823,24 @@
                 
               
 
-              <time title="创建时间：2019-10-01 15:00:21 / 修改时间：15:28:47" itemprop="dateCreated datePublished" datetime="2019-10-01T15:00:21+08:00">2019-10-01</time>
+              <time title="创建时间：2019-10-01 15:00:21" itemprop="dateCreated datePublished" datetime="2019-10-01T15:00:21+08:00">2019-10-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-03-18 21:39:14" itemprop="dateModified" datetime="2020-03-18T21:39:14+08:00">2020-03-18</time>
               
             
           </span>
@@ -1913,195 +2130,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://deschen.com/2019/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E8%AE%B2%E8%A7%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈汉槟">
-      <meta itemprop="description" content="机遇只会给有准备的人">
-      <meta itemprop="image" content="/images/wolf_128.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈汉槟的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E8%AE%B2%E8%A7%A3/" itemprop="url">
-                  深入理解Redis--集群讲解
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-20 08:41:38" itemprop="dateCreated datePublished" datetime="2019-07-20T08:41:38+08:00">2019-07-20</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-23 10:51:22" itemprop="dateModified" datetime="2019-07-23T10:51:22+08:00">2019-07-23</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">中间件</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Redis集群详解一、Redis有三种集群模式
-主从模式
-Sentinel模式( 哨兵模式 )
-Cluster模式( 集群模式 )
-
-PS ：集群查看命令： info replication 
-二、主从模式1、介绍主从模式是三种模式中最简单的，在主从复制中，数据库分为两类：主数据库(master)和
-          ...
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E8%AE%B2%E8%A7%A3/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-        
-    </div>
-
-    
-
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2154,7 +2182,7 @@ PS ：集群查看命令： info replication
                 
                   <a href="/archives/%20%7C%7C%20archive">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2185,9 +2213,7 @@ PS ：集群查看命令： info replication
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
