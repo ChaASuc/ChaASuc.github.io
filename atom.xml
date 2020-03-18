@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://deschen.com/"/>
-  <updated>2019-10-01T07:28:47.922Z</updated>
+  <updated>2020-03-18T07:18:05.797Z</updated>
   <id>http://deschen.com/</id>
   
   <author>
@@ -15,6 +15,146 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深入理解JVM--七种垃圾收集器</title>
+    <link href="http://deschen.com/2020/03/18/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/"/>
+    <id>http://deschen.com/2020/03/18/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/</id>
+    <published>2020-03-18T07:18:05.000Z</published>
+    <updated>2020-03-18T07:18:05.797Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>RabbitMQ最终一致性</title>
+    <link href="http://deschen.com/2020/03/18/RabbitMQ%E6%9C%80%E7%BB%88%E4%B8%80%E8%87%B4%E6%80%A7/"/>
+    <id>http://deschen.com/2020/03/18/RabbitMQ%E6%9C%80%E7%BB%88%E4%B8%80%E8%87%B4%E6%80%A7/</id>
+    <published>2020-03-18T05:47:18.000Z</published>
+    <updated>2020-03-18T05:47:18.556Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>并发编程--Excutor线程池</title>
+    <link href="http://deschen.com/2020/03/11/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B-Excutor%E7%BA%BF%E7%A8%8B%E6%B1%A0/"/>
+    <id>http://deschen.com/2020/03/11/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B-Excutor%E7%BA%BF%E7%A8%8B%E6%B1%A0/</id>
+    <published>2020-03-11T07:57:11.000Z</published>
+    <updated>2020-03-11T07:57:11.457Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解JVM--类加载器</title>
+    <link href="http://deschen.com/2020/02/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/"/>
+    <id>http://deschen.com/2020/02/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/</id>
+    <published>2020-02-29T09:37:09.000Z</published>
+    <updated>2020-03-07T14:25:31.677Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="深入理解JVM–类加载器"><a href="#深入理解JVM–类加载器" class="headerlink" title="深入理解JVM–类加载器"></a>深入理解JVM–类加载器</h1><h2 id="一、类与类加载器的关系"><a href="#一、类与类加载器的关系" class="headerlink" title="一、类与类加载器的关系"></a>一、类与类加载器的关系</h2><ul><li><p>任意一个类,都需要由加载它的类加载器和这个类本身一同确立其在Java虚拟机中的唯一性</p></li><li><p>每个类加载器都有各自的命名空间，命名空间由该加载器及所有父加载器所加载的类组成。 </p></li></ul><h2 id="二、类加载器种类"><a href="#二、类加载器种类" class="headerlink" title="二、类加载器种类"></a>二、类加载器种类</h2><p>启动类加载器： 由C++编写，无法通过程序得到。主要负责加载JAVA中的 一些核心类库，主要是位于<JAVA_HOME>/lib/rt.jar中 </p><p>扩展类加载器： 要加载JAVA中的一些拓展类，主要位于<JAVA_HOME>/lib/ext </p><p>系统类加载器： 主要用于加载CLASSPATH路径下的类 </p><h2 id="三、类加载机制"><a href="#三、类加载机制" class="headerlink" title="三、类加载机制"></a>三、类加载机制</h2><p>全盘委托： 指当一个类加载器加载一个类时，除非显示地使用另一个类加载器，否则该类所依赖与引用的类也由这个类加载器加载。 </p><p>双亲委派： 一个类加载器要加载一个类时，先判断是否已被加载，如果没有，它会先委托自己的父类加载器来加载， 以此类推，直到启动类加载器无法加载，向下委托子类加载器加载 </p><h2 id="四、双亲委派模型源码分析"><a href="#四、双亲委派模型源码分析" class="headerlink" title="四、双亲委派模型源码分析"></a>四、双亲委派模型源码分析</h2><p><img src="C:%5CUsers%5C20423%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1583074859678.png" alt="1583074859678"></p><p><img src="C:%5CUsers%5C20423%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1583075146217.png" alt="1583075146217">)<img src="C:%5CUsers%5C20423%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1583075296256.png" alt="1583075296256"></p><p><img src="C:%5CUsers%5C20423%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1583075400741.png" alt="1583075400741"></p><h2 id="五、自定义类加载器"><a href="#五、自定义类加载器" class="headerlink" title="五、自定义类加载器"></a>五、自定义类加载器</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.deschen.jvm.gc;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomClassLoaderDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException </span>&#123;</span><br><span class="line">        CustomClassLoader loader01 = <span class="keyword">new</span> CustomClassLoader(<span class="string">"F:\\java-note\\jvm-note\\classes\\"</span>, <span class="string">".class"</span>, <span class="string">"loader01"</span>);</span><br><span class="line">        CustomClassLoader loader02 = <span class="keyword">new</span> CustomClassLoader(<span class="string">"F:\\java-note\\jvm-note\\classes\\"</span>, <span class="string">".class"</span>, <span class="string">"loader02"</span>);</span><br><span class="line">        Class&lt;?&gt; class01 = loader01.loadClass(<span class="string">"cn.deschen.jvm.gc.C"</span>);</span><br><span class="line">        System.out.println(<span class="string">"class01 类加载器："</span> + class01.getClassLoader());</span><br><span class="line">        Class&lt;?&gt; class02 = loader02.loadClass(<span class="string">"cn.deschen.jvm.gc.C"</span>);</span><br><span class="line">        System.out.println(<span class="string">"class02 类加载器："</span> + class02.getClassLoader());</span><br><span class="line">        <span class="comment">// 结果是false</span></span><br><span class="line">        <span class="comment">// 为什么都是C类，结果是false呢？ =》因为loader01与loader02不是同一个类加载器，因此类的命令空间不同，因此两个类是不一样的</span></span><br><span class="line">        System.out.println(<span class="string">"class01 == class02："</span> + (class01 == class02));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@program</span>: java-note</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: deschen</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 自定义类加载器</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomClassLoader</span> <span class="keyword">extends</span> <span class="title">ClassLoader</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String loadPath;   <span class="comment">// 文件路径</span></span><br><span class="line">    <span class="keyword">private</span> String filePrefix;   <span class="comment">// 文件后缀</span></span><br><span class="line">    <span class="keyword">private</span> String loaderName;   <span class="comment">// 类加载器名</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 默认应用类加载器作为自定义类加载器的父类加载器</span></span><br><span class="line"><span class="comment">     * 调用父类构造方法</span></span><br><span class="line"><span class="comment">     * java.lang.ClassLoader.ClassLoader()&#123;</span></span><br><span class="line"><span class="comment">     *     this(checkCreateClassLoader(), getSystemClassLoader());</span></span><br><span class="line"><span class="comment">     * &#125;</span></span><br><span class="line"><span class="comment">     * getSystemClassLoader()就是应用程序类加载器</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CustomClassLoader</span><span class="params">(String loadPath, String filePrefix, String loaderName)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.loadPath = loadPath;</span><br><span class="line">        <span class="keyword">this</span>.filePrefix = filePrefix;</span><br><span class="line">        <span class="keyword">this</span>.loaderName = loaderName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CustomClassLoader</span><span class="params">(ClassLoader parent, String loadPath, String filePrefix, String loaderName)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 设置应用类加载器的父类加载器</span></span><br><span class="line">        <span class="keyword">super</span>(parent);</span><br><span class="line">        <span class="keyword">this</span>.loadPath = loadPath;</span><br><span class="line">        <span class="keyword">this</span>.filePrefix = filePrefix;</span><br><span class="line">        <span class="keyword">this</span>.loaderName = loaderName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getLoadPath</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> loadPath;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLoadPath</span><span class="params">(String loadPath)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.loadPath = loadPath;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getFilePrefix</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> filePrefix;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFilePrefix</span><span class="params">(String filePrefix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.filePrefix = filePrefix;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getLoaderName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> loaderName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLoaderName</span><span class="params">(String loaderName)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.loaderName = loaderName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * class文件转换为字节数组</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> name  类的二进制名称</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">byte</span>[] loadClassData(String name) &#123;</span><br><span class="line">        FileInputStream fis = <span class="keyword">null</span>;</span><br><span class="line">        ByteArrayOutputStream bao = <span class="keyword">null</span>;</span><br><span class="line">        name = name.replace(<span class="string">"."</span>, <span class="string">"//"</span>);</span><br><span class="line">        File file = <span class="keyword">new</span> File(loadPath + name + filePrefix);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            fis = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line">            bao = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">            <span class="keyword">int</span> ch;</span><br><span class="line">            <span class="keyword">while</span> (-<span class="number">1</span> != (ch = fis.read())) &#123;</span><br><span class="line">               bao.write(ch);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="comment">// 关闭流</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">null</span> != bao) &#123;</span><br><span class="line">                    bao.close();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">null</span> != fis) &#123;</span><br><span class="line">                    fis.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> bao.toByteArray();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> Class&lt;?&gt; findClass(String name) <span class="keyword">throws</span> ClassNotFoundException &#123;</span><br><span class="line">        <span class="keyword">byte</span>[] b = loadClassData(name);</span><br><span class="line">        <span class="keyword">return</span> defineClass(name, b, <span class="number">0</span>, b.length);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="六、类加载器命名空间"><a href="#六、类加载器命名空间" class="headerlink" title="六、类加载器命名空间"></a>六、类加载器命名空间</h2><h2 id="七、打破双亲委派机制"><a href="#七、打破双亲委派机制" class="headerlink" title="七、打破双亲委派机制"></a>七、打破双亲委派机制</h2><p><img src="C:%5CUsers%5C20423%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1583134629850.png" alt="1583134629850"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;深入理解JVM–类加载器&quot;&gt;&lt;a href=&quot;#深入理解JVM–类加载器&quot; class=&quot;headerlink&quot; title=&quot;深入理解JVM–类加载器&quot;&gt;&lt;/a&gt;深入理解JVM–类加载器&lt;/h1&gt;&lt;h2 id=&quot;一、类与类加载器的关系&quot;&gt;&lt;a href=&quot;#一、
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>什么是中台？</title>
+    <link href="http://deschen.com/2019/12/20/%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%AD%E5%8F%B0%EF%BC%9F/"/>
+    <id>http://deschen.com/2019/12/20/%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%AD%E5%8F%B0%EF%BC%9F/</id>
+    <published>2019-12-20T12:53:20.000Z</published>
+    <updated>2019-12-20T13:06:52.090Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="什么是中台？"><a href="#什么是中台？" class="headerlink" title="什么是中台？"></a>什么是中台？</h1><h2 id="一、中台的介绍"><a href="#一、中台的介绍" class="headerlink" title="一、中台的介绍"></a>一、中台的介绍</h2><p>中台就是把企业各个业务线共用的、复用性高的功能独立开来，整合分析，变成为企业内部服务的功能</p><h2 id="二、举个栗子"><a href="#二、举个栗子" class="headerlink" title="二、举个栗子"></a>二、举个栗子</h2><p>我们都知道阿里上有淘宝、饿了么等各个不同体系的系统，对用户的分析就需要结合数据。如果没有中台概念，那么每个系统都回查询自己的用户中心，还要考虑同步数据的问题（即注册了淘宝账号，就要同步到其他系统的用户中心），这样开发成本高，维护难。</p><p>而中台就是把各个系统公共的功能独立开来，例如：把用户中心、订单中心、商品中心等独立开来，这些功能与各个系统对接，这样成本低，效率高。程序员可以更加专注业务方面</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;什么是中台？&quot;&gt;&lt;a href=&quot;#什么是中台？&quot; class=&quot;headerlink&quot; title=&quot;什么是中台？&quot;&gt;&lt;/a&gt;什么是中台？&lt;/h1&gt;&lt;h2 id=&quot;一、中台的介绍&quot;&gt;&lt;a href=&quot;#一、中台的介绍&quot; class=&quot;headerlink&quot; ti
+      
+    
+    </summary>
+    
+    
+      <category term="中台" scheme="http://deschen.com/categories/%E4%B8%AD%E5%8F%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解JVM--四种垃圾收集算法</title>
+    <link href="http://deschen.com/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E5%9B%9B%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95/"/>
+    <id>http://deschen.com/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E5%9B%9B%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95/</id>
+    <published>2019-10-11T07:56:36.000Z</published>
+    <updated>2020-03-18T07:17:28.008Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="深入理解JVM–四种垃圾收集算法"><a href="#深入理解JVM–四种垃圾收集算法" class="headerlink" title="深入理解JVM–四种垃圾收集算法"></a>深入理解JVM–四种垃圾收集算法</h1><p><img src="file:///C:/Users/20423/AppData/Local/Temp/msohtmlclip1/01/clip_image002.gif" alt="clipboard.png"></p><h2 id="一、标记-清除算法"><a href="#一、标记-清除算法" class="headerlink" title="一、标记-清除算法"></a>一、标记-清除算法</h2><p>算法分为“标记”和“清除”阶段：首先<strong>标记所有存活</strong>的对象，在标记完成后<strong>统一回收所有未标记</strong>的对象。它是最基础的收集算法，效率也很高，但是会带来明显的问题：标记清除后会产生大量不连续的碎片</p><p><img src="file:///C:/Users/20423/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg" alt="9EA2822391964677B532FA20BA6C1CFE.jpeg"></p><h2 id="二、复制算法"><a href="#二、复制算法" class="headerlink" title="二、复制算法"></a>二、复制算法</h2><p>为了解决标记-清除算法问题，“复制”收集算法出现了。它可以将<strong>内存分为大小相同的两块</strong>，<strong>每次使用其中的一块</strong>。当这一块的内存<strong>使用完后</strong>，就将<strong>还存活的对象有序复制到另一块</strong>去，然后再<strong>把使用的空间一次清理</strong>掉。这样就使每次的内存回收都是对内存区间的一半进行回收。</p><p><img src="file:///C:/Users/20423/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg" alt="96D6C205961C401FA08A222DD296F101.jpeg"></p><h2 id="三、标记-整理算法"><a href="#三、标记-整理算法" class="headerlink" title="三、标记-整理算法"></a>三、标记-整理算法</h2><p>根据老年代的特点特出的一种标记算法，<strong>标记</strong>过程仍然与<strong>“标记-清除”算法一样</strong>，清除的过程不同，让<strong>所有存活的对象向一端移动</strong>，然后<strong>直接清理掉端边界以外的内存</strong>。</p><p><img src="file:///C:/Users/20423/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg" alt="96BA7C6A2FE44EECBE32B64ADA05E03F.jpeg"></p><p><strong>3.4</strong> <strong>分代收集算法</strong></p><p>当前<strong>虚拟机的垃圾收集都采用分代收集算法</strong>，这种算法没有什么新的思想，只是<strong>根据对象存活周期的不同将内存分为几块</strong>。一般将java堆分为新生代和老年代，这样我们就可以根据<strong>各个年代的特点选择合适的垃圾收集算法</strong>。</p><p>比如在<strong>新生代</strong>中，每次收集都会有<strong>大量对象死去</strong>，所以可以选择<strong>复制算法</strong>，只需要付出少量对象的复制成本就可以完成每次垃圾收集。而<strong>老年代</strong>的对象存活几率是比较高的，而且没<strong>有额外的空间对它进行分配担保</strong>，所以我们必须选择<strong>“标记-清除”或“标记-整理”</strong>算法进行垃圾收集。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;深入理解JVM–四种垃圾收集算法&quot;&gt;&lt;a href=&quot;#深入理解JVM–四种垃圾收集算法&quot; class=&quot;headerlink&quot; title=&quot;深入理解JVM–四种垃圾收集算法&quot;&gt;&lt;/a&gt;深入理解JVM–四种垃圾收集算法&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;file
+      
+    
+    </summary>
+    
+    
+      <category term="-JVM" scheme="http://deschen.com/categories/JVM/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解JVM--对象存活分析算法</title>
+    <link href="http://deschen.com/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%A4%E7%A7%8D%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95/"/>
+    <id>http://deschen.com/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%A4%E7%A7%8D%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95/</id>
+    <published>2019-10-11T06:24:15.000Z</published>
+    <updated>2020-03-18T06:55:48.098Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="深入理解JVM–对象存活分析算法"><a href="#深入理解JVM–对象存活分析算法" class="headerlink" title="深入理解JVM–对象存活分析算法"></a>深入理解JVM–对象存活分析算法</h1><blockquote><p> 堆中几乎放着所有的对象实例，对堆垃圾回收前的第一步就是要判断那些对象已经死亡（即不能再被任何途径使用的对象）。</p></blockquote><h2 id="一、引用计数法"><a href="#一、引用计数法" class="headerlink" title="一、引用计数法"></a>一、引用计数法</h2><ul><li><p>概念：给对象中添加一个<strong>引用计数器</strong>，每当有一个地方<strong>引用</strong>它，计数器就<strong>加1</strong>；当<strong>引用失效</strong>，计数器就减1；任何时候计数器<strong>为0</strong>的对象就是<strong>不可能再被使用</strong>的。</p></li><li><p>分析：这个方法实现<strong>简单，效率高</strong>，但是目前<strong>主流的虚拟机</strong>中并<strong>没有选择这个算法</strong>来管理内存，其最主要的<strong>原因是</strong>它很难解决<strong>对象之间相互循环引用</strong>的问题。 所谓对象之间的相互引用问题，如下面代码所示：除了对象<strong>testA</strong> 和 <strong>testB</strong> <strong>相互引用</strong>着对方之外，这两个对象之间再无任何引用。但是他们因为互相引用对方，导致它们的<strong>引用计数器都不为0</strong>，于是引用计数算法无法通知 GC 回收器回收他们。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Object obj;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setObj</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.obj = obj;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Test testA = <span class="keyword">new</span> Test();</span><br><span class="line">        Test testA = <span class="keyword">new</span> Test();</span><br><span class="line">        testA.setObj(testB);</span><br><span class="line">        testB.setObj(testA);</span><br><span class="line">        testA = <span class="keyword">null</span>;</span><br><span class="line">        testB = <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h2 id="二、可达性分析算法"><a href="#二、可达性分析算法" class="headerlink" title="二、可达性分析算法"></a>二、可达性分析算法</h2><ul><li>概念：这个算法的基本思想就是通过一系列的称为 <strong>“GC Roots”</strong> 的对象作为起点，从这些节点开始向下搜索，节点所走过的路径称为引用链，当一个对象到 GC Roots 没有任何引用链相连的话，则证明此对象是不可用的。</li><li><strong>GC Roots</strong>根节点：<strong>类加载器</strong>、<strong>Thread</strong>、虚拟机栈的本地变量表、<strong>static成员</strong>、<strong>常量引用</strong>、本地方法栈的变量等等</li></ul><p><img src="file:///C:/Users/20423/AppData/Local/Temp/msohtmlclip1/01/clip_image003.jpg" alt="6E72848C54E84BB7A76F0FF89ED5010D.jpeg"></p><ul><li><strong>finalize()</strong>方法最终判定对象<strong>是否存活</strong><ul><li>即使在可达性分析算法中<strong>不可达的对象</strong>，也<strong>并非是一定会被回收</strong>的。要真正宣告一个对象死亡，至少要经历<strong>再次标记</strong>过程。</li><li>标记的前提是对象在进行可达性分析后发现没有与GC Roots相连接的引用链。</li><li>标记过程：<ul><li>第一次标记。筛选的条件是此对象是否<strong>有必要执行finalize()</strong>方法。当对象<strong>没有覆盖finalize方法</strong>，或者<strong>finalize方法已经被虚拟机调用过</strong>，虚拟机将这两种情况都视为“没有必要执行”，对象被回收。</li><li>第二次标记。如果这个对象被判定为有必要执行finalize()方法，那么这个对象将会被<strong>放置在一个名为：F-Queue的队列</strong>之中，并在稍后由一条<strong>虚拟机自动建立的、低优先级的Finalizer线程</strong>去执行。这里所谓的“执行”是指虚拟机会<strong>触发这个方法，但并不承诺会等待它运行结束</strong>。这样做的原因是，如果一个对象f<strong>inalize()方法中执行缓慢，或者发生死循环（更极端的情况）</strong>，将很可能会导致F-Queue<strong>队列中的其他对象永久处于等待状态，甚至导致整个内存回收系统崩溃</strong>。</li><li>finalize()–只要<strong>重新与引用链上的任何的一个对象建立关联</strong>即可，譬如把自己赋值给某个类变量或对象的成员变量，那在第二次标记时它将移除出“即将回收”的集合。如果对象这时候还没逃脱，那基本上它就真的被回收了。</li></ul></li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;深入理解JVM–对象存活分析算法&quot;&gt;&lt;a href=&quot;#深入理解JVM–对象存活分析算法&quot; class=&quot;headerlink&quot; title=&quot;深入理解JVM–对象存活分析算法&quot;&gt;&lt;/a&gt;深入理解JVM–对象存活分析算法&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt; 
+      
+    
+    </summary>
+    
+    
+      <category term="-JVM" scheme="http://deschen.com/categories/JVM/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>深入理解JVM--类加载过程详解</title>
@@ -338,31 +478,6 @@
     
     
       <category term="接口设计" scheme="http://deschen.com/tags/%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot自动化配置原理</title>
-    <link href="http://deschen.com/2019/03/17/springboot%E8%87%AA%E5%8A%A8%E5%8C%96%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86/"/>
-    <id>http://deschen.com/2019/03/17/springboot%E8%87%AA%E5%8A%A8%E5%8C%96%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86/</id>
-    <published>2019-03-17T02:07:04.000Z</published>
-    <updated>2020-02-17T02:29:02.992Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="SpringBoot自动化配置原理"><a href="#SpringBoot自动化配置原理" class="headerlink" title="SpringBoot自动化配置原理"></a>SpringBoot自动化配置原理</h1><blockquote><p>初识Spring Boot时我们就知道，Spring Boot有一个全局配置文件：application.properties或application.yml。</p><p>我们的各种属性都可以在这个文件中进行配置，最常配置的比如：server.port、logging.level.* 等等，然而我们实际用到的往往只是很少的一部分，那么这些属性是否有据可依呢？答案当然是肯定的，这些属性都可以在官方文档中查找到：</p><p><a href="https://docs.spring.io/spring-boot/docs/2.1.0.RELEASE/reference/htmlsingle/#common-application-properties" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/2.1.0.RELEASE/reference/htmlsingle/#common-application-properties</a></p><p>那么问题来了：这些配置是如何在Spring Boot项目中生效的呢？那么接下来，就需要聚焦本篇博客的主题：自动配置工作原理或者叫实现方式。</p></blockquote><p> @SpringBootApplication是一个复合注解或派生注解，在@SpringBootApplication中有一个注解@EnableAutoConfiguration，翻译成人话就是开启自动配置，其定义如下：</p><p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/typora-user-images/1581905687023.png" alt="1581905687023"></p><p> 而这个注解也是一个派生注解，其中的关键功能由@Import提供，其导入的AutoConfigurationImportSelector的selectImports()方法通过SpringFactoriesLoader.loadFactoryNames()扫描所有具有META-INF/spring.factories的jar包。spring-boot-autoconfigure-x.x.x.x.jar里就有一个这样的spring.factories文件。</p><p>这个spring.factories文件也是一组一组的key=value的形式，其中一个key是EnableAutoConfiguration类的全类名，而它的value是一个xxxxAutoConfiguration的类名的列表，这些类名以逗号分隔，如下图所示：</p><p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/typora-user-images/1581905809350.png" alt="1581905809350"></p><p>这个@EnableAutoConfiguration注解通过@SpringBootApplication被间接的标记在了Spring Boot的启动类上。在SpringApplication.run(…)的内部就会执行selectImports()方法，找到所有JavaConfig自动配置类的全限定名对应的class，然后将所有自动配置类加载到Spring容器中。</p><p>在面试的时候，其实远远不需要回答的这么具体，你只需要这样回答：</p><p>​       Spring Boot启动的时候会通过@EnableAutoConfiguration注解找到META-INF/spring.factories配置文件中的所有自动配置类，并对其进行加载，而这些自动配置类都是以AutoConfiguration结尾来命名的，它实际上就是一个JavaConfig形式的Spring容器配置类，它能通过以Properties结尾命名的类中取得在全局配置文件中配置的属性如：server.port，而XxxxProperties类是通过@ConfigurationProperties注解与全局配置文件中对应的属性进行绑定的。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;SpringBoot自动化配置原理&quot;&gt;&lt;a href=&quot;#SpringBoot自动化配置原理&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot自动化配置原理&quot;&gt;&lt;/a&gt;SpringBoot自动化配置原理&lt;/h1&gt;&lt;blockquote&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="SpringBoot" scheme="http://deschen.com/categories/SpringBoot/"/>
-    
     
   </entry>
   
