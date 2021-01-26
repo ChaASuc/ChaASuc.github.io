@@ -2036,7 +2036,7 @@ PS ：集群查看命令： info replication
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://deschen.com/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/">
+    <link itemprop="mainEntityOfPage" href="http://deschen.com/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈汉槟">
@@ -2055,7 +2055,7 @@ PS ：集群查看命令： info replication
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/" itemprop="url">
+                <a class="post-title-link" href="/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/" itemprop="url">
                   分库分表理论篇——以MySQL为例
                 </a>
               
@@ -2082,24 +2082,12 @@ PS ：集群查看命令： info replication
                 
               
 
-              <time title="创建时间：2019-07-17 10:34:14" itemprop="dateCreated datePublished" datetime="2019-07-17T10:34:14+08:00">2019-07-17</time>
+              <time title="创建时间：2019-07-17 10:34:14 / 修改时间：10:36:35" itemprop="dateCreated datePublished" datetime="2019-07-17T10:34:14+08:00">2019-07-17</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-11-11 11:50:57" itemprop="dateModified" datetime="2020-11-11T11:50:57+08:00">2020-11-11</time>
               
             
           </span>
@@ -2152,12 +2140,16 @@ PS ：集群查看命令： info replication
       
         
           
-          分库分表—— 以MySQL为例一、为什么要分库分表？单库单表虽然容易对数据进行操作，但是其容量是有限的。对于日益扩充的数据来说，会造成数据查询速度慢以及加大服务器的压力。据了解，医疗行业的业务数据很多都是不能删除的，数据久而久之堆积会影响应用程序的执行效率，就会影响用户的体验等。因此我觉得有必要了解
+          分库分表理论篇—— 以MySQL为例一、背景当今互联网大爆炸的时代，业务越来越多和大，单库单表数据超出数据库支持容量，数据库I/O操作次数会越来越多和慢，数据库的整体性能就会急剧下降。
+二、如何优化这里我想到几种优化的方法
+
+减少数据库访问压力
+使用缓存技术，对数据库的信息进行缓存，减少数据库访问压
           ...
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/#more" rel="contents">
+              <a class="btn" href="/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2395,6 +2387,24 @@ PS ：集群查看命令： info replication
   <span class="author" itemprop="copyrightHolder">陈汉槟</span>
   
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
 
 
 
