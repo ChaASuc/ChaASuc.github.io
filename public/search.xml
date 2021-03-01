@@ -525,6 +525,25 @@
     </entry>
     
     
+    
+    <entry>
+      <title>Centos 7.X 修改YUM镜像源</title>
+      <link href="/2019/02/01/7-X%E4%BF%AE%E6%94%B9YUM%E9%95%9C%E5%83%8F%E6%BA%90/"/>
+      <url>/2019/02/01/7-X%E4%BF%AE%E6%94%B9YUM%E9%95%9C%E5%83%8F%E6%BA%90/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Centos-7-X-修改YUM镜像源"><a href="#Centos-7-X-修改YUM镜像源" class="headerlink" title="Centos 7.X 修改YUM镜像源"></a>Centos 7.X 修改YUM镜像源</h1><blockquote><p>因为我们在服务器下载东西时，有时会遇到下载地址连接失败或下载慢等问题，这时就需要我们改其镜像源地址</p></blockquote><h2 id="一、安装wget"><a href="#一、安装wget" class="headerlink" title="一、安装wget"></a>一、安装wget</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> -y wget</span><br></pre></td></tr></table></figure><h2 id="二、进入源目录"><a href="#二、进入源目录" class="headerlink" title="二、进入源目录"></a>二、进入源目录</h2><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> <span class="string">/etc/yum.repos.d/</span></span><br></pre></td></tr></table></figure><h2 id="三、创建备份文件夹，用于把默认源备份"><a href="#三、创建备份文件夹，用于把默认源备份" class="headerlink" title="三、创建备份文件夹，用于把默认源备份"></a>三、创建备份文件夹，用于把默认源备份</h2><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mkdir</span> <span class="string">backup</span></span><br><span class="line"><span class="attr">mv</span> <span class="string">C* backup/</span></span><br></pre></td></tr></table></figure><h2 id="四、下载阿里云yum源"><a href="#四、下载阿里云yum源" class="headerlink" title="四、下载阿里云yum源"></a>四、下载阿里云yum源</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O <span class="regexp">/etc/yum</span>.repos.d<span class="regexp">/CenOS-Base.repo https:/</span><span class="regexp">/mirrors.aliyun.com/</span>repo<span class="regexp">/Centos-7.repo</span></span><br></pre></td></tr></table></figure><h2 id="五、清除旧缓存"><a href="#五、清除旧缓存" class="headerlink" title="五、清除旧缓存"></a>五、清除旧缓存</h2><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum clean <span class="keyword">all</span></span><br></pre></td></tr></table></figure><h2 id="六、创建新缓存"><a href="#六、创建新缓存" class="headerlink" title="六、创建新缓存"></a>六、创建新缓存</h2><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">yum makecache</span></span><br></pre></td></tr></table></figure><h2 id="七、更新yum"><a href="#七、更新yum" class="headerlink" title="七、更新yum"></a>七、更新yum</h2><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">yum update -y</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
   
   
 </search>
