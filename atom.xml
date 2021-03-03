@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://deschen.com/"/>
-  <updated>2021-02-26T10:00:22.248Z</updated>
+  <updated>2021-03-03T06:35:13.866Z</updated>
   <id>http://deschen.com/</id>
   
   <author>
@@ -17,20 +17,20 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>MySQL注意事项</title>
-    <link href="http://deschen.com/2021/02/26/MySQL%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
-    <id>http://deschen.com/2021/02/26/MySQL%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</id>
-    <published>2021-02-26T10:00:22.247Z</published>
-    <updated>2021-02-26T10:00:22.248Z</updated>
+    <title>mysql事务</title>
+    <link href="http://deschen.com/2021/03/03/mysql%E4%BA%8B%E5%8A%A1/"/>
+    <id>http://deschen.com/2021/03/03/mysql%E4%BA%8B%E5%8A%A1/</id>
+    <published>2021-03-03T06:35:13.866Z</published>
+    <updated>2021-03-03T06:35:13.866Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="MySQL注意事项"><a href="#MySQL注意事项" class="headerlink" title="MySQL注意事项"></a>MySQL注意事项</h1><p>[toc]</p><h2 id="为什么MySQL不推荐使用子查询和join"><a href="#为什么MySQL不推荐使用子查询和join" class="headerlink" title="为什么MySQL不推荐使用子查询和join"></a>为什么MySQL不推荐使用子查询和join</h2><h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><p><a href="https://mp.weixin.qq.com/s/BMQC2oJlhLoeBDtveXgHpw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/BMQC2oJlhLoeBDtveXgHpw</a></p>]]></content>
+    <content type="html"><![CDATA[<p>mysql事务</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;MySQL注意事项&quot;&gt;&lt;a href=&quot;#MySQL注意事项&quot; class=&quot;headerlink&quot; title=&quot;MySQL注意事项&quot;&gt;&lt;/a&gt;MySQL注意事项&lt;/h1&gt;&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h2 id=&quot;为什么MySQL不推荐使用子查询和join&quot;&gt;&lt;
+        &lt;p&gt;mysql事务&lt;/p&gt;
+
       
     
     </summary>
@@ -311,30 +311,6 @@
   
   <entry>
     <title>分库分表理论篇——以MySQL为例</title>
-    <link href="http://deschen.com/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/"/>
-    <id>http://deschen.com/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/</id>
-    <published>2019-07-17T02:34:14.000Z</published>
-    <updated>2019-07-17T02:36:35.243Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="分库分表理论篇——-以MySQL为例"><a href="#分库分表理论篇——-以MySQL为例" class="headerlink" title="分库分表理论篇—— 以MySQL为例"></a>分库分表理论篇—— 以MySQL为例</h1><h2 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h2><p>当今互联网大爆炸的时代，<strong>业务</strong>越来越多和大，<strong>单库单表</strong>数据超出数据库支持<strong>容量</strong>，数据库<strong>I/O操作</strong>次数会越来越多和慢，数据库的整体<strong>性能</strong>就会急剧下降。</p><h2 id="二、如何优化"><a href="#二、如何优化" class="headerlink" title="二、如何优化"></a>二、如何优化</h2><p>这里我想到几种优化的方法</p><ul><li>减少数据库访问压力<ul><li>使用<strong>缓存</strong>技术，对数据库的信息进行缓存，减少数据库访问压力</li><li>使用<strong>Nginx</strong>进行静态资源的获取，对一些高访问的<strong>网页</strong>，一次访问时可以先生成<strong>静态页面</strong>存到<strong>本地</strong>中，用户再次访问就会直接返回，这样减少与数据库的交互和渲染页面的操作，提高效率</li><li>读写分离<ul><li>互联网业务一般<strong>读多写少</strong>，<strong>读写</strong>比例基本是<strong>10:1</strong>。比如订单业务，顾客购买商品生成<strong>一次</strong>订单后，就会<strong>多次</strong>查看订单情况。这时可以采用<strong>主从架构</strong>，<strong>主库</strong>负责<strong>DML</strong>(增删改)操作，<strong>从库</strong>负责<strong>DQL</strong>(查看操作)，<strong>一</strong>个主库可以有<strong>多</strong>个从库，极大减轻读写压力</li></ul></li></ul></li><li>提升数据库性能<ul><li>可以从机器性能入手，内存不够加内存条，外存( 如硬盘 )不够加外存，这样即使数据量在大，也不会影响I/O读写速率，<strong>但是</strong>，数据量大会增加<strong>I/O的次数</strong>，数据库性能依旧会下降，不推荐，成本太高，没钱花，/(ㄒoㄒ)/~~</li><li>优化数据库<strong>索引</strong>，数据库<strong>语句</strong>，这个我将会写篇博客，具体介绍</li><li>分库分表<ul><li>分库分表要<strong>按业务进行拆分</strong>，具体后面会说。主要是打破<strong>单库单表</strong>的情况，数据存在<strong>多库多表</strong>中。打个比方，100W条数据存在10个库中，10个库有10张相同的表，那么一张表存的数据就会1W条左右，这样减低数据库的容量，提升I/O操作速率，提高数据库的性能</li></ul></li></ul></li></ul><h2 id="三、什么是分库分表"><a href="#三、什么是分库分表" class="headerlink" title="三、什么是分库分表"></a>三、什么是分库分表</h2><blockquote><p> 分库分表，顾名思义就是拆分数据库和拆分数据表。问题就来了，要怎么拆分数据库和数据表呢？</p></blockquote><p>这里用一张电商的数据库的ER图拆分<br><img src="https://img-blog.csdnimg.cn/20200119164837128.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><ul><li><p>垂直拆分( 以电商ER图拆分 )</p><ul><li><p>垂直拆库：按照业务拆分，<strong>业务耦合性低的数据表</strong>拆分到<strong>不同数据库</strong>中。比如电商数据库拆分成用户库、商品库、订单库…<strong>但是</strong>，不是什么表都可以分库的，例如：订单库有<strong>订单表和订单明细表</strong>，这两张表<strong>耦合性高</strong>，必须放在一起</p></li><li><p>垂直拆表：按照数据表的<strong>字段热点</strong>(就是使用<strong>频率高</strong>)和字段<strong>存储类型</strong>进行拆分。比如电商中商品不是有<strong>文字描述</strong>吗？可是我们一般看商品的<strong>标题，价格，图片</strong>，对于<strong>文字描述</strong>字段一般点进去才看(查看<strong>频率不如前者高</strong>)，那么我们可以把商品表除文字描述这些大字段拆分出另一张表使用，提高查询性能</p><p>PS：拆分大字段还有另一个原因，因为大字段读取时间长，数据量大的话，影响I/O的读取效率<br><img src="https://img-blog.csdnimg.cn/20200119164926806.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li><li><p>特点：</p><ul><li>每个库（表）的结构都不一样</li><li>每个库（表）的数据都（至少有一列）一样  </li><li>每个库（表）的并集是全量数据</li></ul></li></ul></li><li><p>水平拆分( 以电商ER图拆分)</p><ul><li><p>水平拆库：把<strong>单个数据库</strong>的数据拆分成<strong>多个相同结构数据库</strong>存储</p></li><li><p>水平拆表：把<strong>单表</strong>的数据量拆分成<strong>多个相同结构表</strong>存储</p></li></ul><p><img src="https://img-blog.csdnimg.cn/20200119164947411.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ennDrFQt-1579422434154)(C:\Users\20423\AppData\Roaming\Typora\typora-user-images\1579421448(1)\].jpg)"></p><ul><li><p>以上两者合并达到分库分表<br><img src="https://img-blog.csdnimg.cn/20200119165023617.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li><li><p>特点：</p><ul><li>每个库（表）的结构都不一样</li><li>每个库（表）的数据都（至少有一列）一样  </li><li>每个库（表）的并集是全量数据</li></ul></li></ul></li></ul><h2 id="三、优势和弊端"><a href="#三、优势和弊端" class="headerlink" title="三、优势和弊端"></a>三、优势和弊端</h2><ul><li>优点：<ul><li>减少数据库的访问压力和单个存储容量</li></ul></li><li>弊端：<ul><li>增加了我们维护成本，毕竟多个数据库和数据表维护</li><li>分布式事务（跨库事务），比如：处理一个业务需要执行多条插入语句，每条在不同机器的不同数据库中，出现问题，如何回滚</li><li>跨库join，因为在不同数据库中，就无法使用join命令获取信息</li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;分库分表理论篇——-以MySQL为例&quot;&gt;&lt;a href=&quot;#分库分表理论篇——-以MySQL为例&quot; class=&quot;headerlink&quot; title=&quot;分库分表理论篇—— 以MySQL为例&quot;&gt;&lt;/a&gt;分库分表理论篇—— 以MySQL为例&lt;/h1&gt;&lt;h2 id=&quot;一
-      
-    
-    </summary>
-    
-    
-      <category term="MySQL" scheme="http://deschen.com/categories/MySQL/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>分库分表理论篇——以MySQL为例</title>
     <link href="http://deschen.com/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/"/>
     <id>http://deschen.com/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/</id>
     <published>2019-07-17T02:34:14.000Z</published>
@@ -347,6 +323,30 @@
       
       
         &lt;h1 id=&quot;分库分表——-以MySQL为例&quot;&gt;&lt;a href=&quot;#分库分表——-以MySQL为例&quot; class=&quot;headerlink&quot; title=&quot;分库分表—— 以MySQL为例&quot;&gt;&lt;/a&gt;分库分表—— 以MySQL为例&lt;/h1&gt;&lt;h2 id=&quot;一、为什么要分库分表？&quot;&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://deschen.com/categories/MySQL/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>分库分表理论篇——以MySQL为例</title>
+    <link href="http://deschen.com/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/"/>
+    <id>http://deschen.com/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/</id>
+    <published>2019-07-17T02:34:14.000Z</published>
+    <updated>2019-07-17T02:36:35.243Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="分库分表理论篇——-以MySQL为例"><a href="#分库分表理论篇——-以MySQL为例" class="headerlink" title="分库分表理论篇—— 以MySQL为例"></a>分库分表理论篇—— 以MySQL为例</h1><h2 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h2><p>当今互联网大爆炸的时代，<strong>业务</strong>越来越多和大，<strong>单库单表</strong>数据超出数据库支持<strong>容量</strong>，数据库<strong>I/O操作</strong>次数会越来越多和慢，数据库的整体<strong>性能</strong>就会急剧下降。</p><h2 id="二、如何优化"><a href="#二、如何优化" class="headerlink" title="二、如何优化"></a>二、如何优化</h2><p>这里我想到几种优化的方法</p><ul><li>减少数据库访问压力<ul><li>使用<strong>缓存</strong>技术，对数据库的信息进行缓存，减少数据库访问压力</li><li>使用<strong>Nginx</strong>进行静态资源的获取，对一些高访问的<strong>网页</strong>，一次访问时可以先生成<strong>静态页面</strong>存到<strong>本地</strong>中，用户再次访问就会直接返回，这样减少与数据库的交互和渲染页面的操作，提高效率</li><li>读写分离<ul><li>互联网业务一般<strong>读多写少</strong>，<strong>读写</strong>比例基本是<strong>10:1</strong>。比如订单业务，顾客购买商品生成<strong>一次</strong>订单后，就会<strong>多次</strong>查看订单情况。这时可以采用<strong>主从架构</strong>，<strong>主库</strong>负责<strong>DML</strong>(增删改)操作，<strong>从库</strong>负责<strong>DQL</strong>(查看操作)，<strong>一</strong>个主库可以有<strong>多</strong>个从库，极大减轻读写压力</li></ul></li></ul></li><li>提升数据库性能<ul><li>可以从机器性能入手，内存不够加内存条，外存( 如硬盘 )不够加外存，这样即使数据量在大，也不会影响I/O读写速率，<strong>但是</strong>，数据量大会增加<strong>I/O的次数</strong>，数据库性能依旧会下降，不推荐，成本太高，没钱花，/(ㄒoㄒ)/~~</li><li>优化数据库<strong>索引</strong>，数据库<strong>语句</strong>，这个我将会写篇博客，具体介绍</li><li>分库分表<ul><li>分库分表要<strong>按业务进行拆分</strong>，具体后面会说。主要是打破<strong>单库单表</strong>的情况，数据存在<strong>多库多表</strong>中。打个比方，100W条数据存在10个库中，10个库有10张相同的表，那么一张表存的数据就会1W条左右，这样减低数据库的容量，提升I/O操作速率，提高数据库的性能</li></ul></li></ul></li></ul><h2 id="三、什么是分库分表"><a href="#三、什么是分库分表" class="headerlink" title="三、什么是分库分表"></a>三、什么是分库分表</h2><blockquote><p> 分库分表，顾名思义就是拆分数据库和拆分数据表。问题就来了，要怎么拆分数据库和数据表呢？</p></blockquote><p>这里用一张电商的数据库的ER图拆分<br><img src="https://img-blog.csdnimg.cn/20200119164837128.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><ul><li><p>垂直拆分( 以电商ER图拆分 )</p><ul><li><p>垂直拆库：按照业务拆分，<strong>业务耦合性低的数据表</strong>拆分到<strong>不同数据库</strong>中。比如电商数据库拆分成用户库、商品库、订单库…<strong>但是</strong>，不是什么表都可以分库的，例如：订单库有<strong>订单表和订单明细表</strong>，这两张表<strong>耦合性高</strong>，必须放在一起</p></li><li><p>垂直拆表：按照数据表的<strong>字段热点</strong>(就是使用<strong>频率高</strong>)和字段<strong>存储类型</strong>进行拆分。比如电商中商品不是有<strong>文字描述</strong>吗？可是我们一般看商品的<strong>标题，价格，图片</strong>，对于<strong>文字描述</strong>字段一般点进去才看(查看<strong>频率不如前者高</strong>)，那么我们可以把商品表除文字描述这些大字段拆分出另一张表使用，提高查询性能</p><p>PS：拆分大字段还有另一个原因，因为大字段读取时间长，数据量大的话，影响I/O的读取效率<br><img src="https://img-blog.csdnimg.cn/20200119164926806.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li><li><p>特点：</p><ul><li>每个库（表）的结构都不一样</li><li>每个库（表）的数据都（至少有一列）一样  </li><li>每个库（表）的并集是全量数据</li></ul></li></ul></li><li><p>水平拆分( 以电商ER图拆分)</p><ul><li><p>水平拆库：把<strong>单个数据库</strong>的数据拆分成<strong>多个相同结构数据库</strong>存储</p></li><li><p>水平拆表：把<strong>单表</strong>的数据量拆分成<strong>多个相同结构表</strong>存储</p></li></ul><p><img src="https://img-blog.csdnimg.cn/20200119164947411.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ennDrFQt-1579422434154)(C:\Users\20423\AppData\Roaming\Typora\typora-user-images\1579421448(1)\].jpg)"></p><ul><li><p>以上两者合并达到分库分表<br><img src="https://img-blog.csdnimg.cn/20200119165023617.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li><li><p>特点：</p><ul><li>每个库（表）的结构都不一样</li><li>每个库（表）的数据都（至少有一列）一样  </li><li>每个库（表）的并集是全量数据</li></ul></li></ul></li></ul><h2 id="三、优势和弊端"><a href="#三、优势和弊端" class="headerlink" title="三、优势和弊端"></a>三、优势和弊端</h2><ul><li>优点：<ul><li>减少数据库的访问压力和单个存储容量</li></ul></li><li>弊端：<ul><li>增加了我们维护成本，毕竟多个数据库和数据表维护</li><li>分布式事务（跨库事务），比如：处理一个业务需要执行多条插入语句，每条在不同机器的不同数据库中，出现问题，如何回滚</li><li>跨库join，因为在不同数据库中，就无法使用join命令获取信息</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;分库分表理论篇——-以MySQL为例&quot;&gt;&lt;a href=&quot;#分库分表理论篇——-以MySQL为例&quot; class=&quot;headerlink&quot; title=&quot;分库分表理论篇—— 以MySQL为例&quot;&gt;&lt;/a&gt;分库分表理论篇—— 以MySQL为例&lt;/h1&gt;&lt;h2 id=&quot;一
       
     
     </summary>
@@ -454,6 +454,30 @@
   </entry>
   
   <entry>
+    <title>MySQL语法基础</title>
+    <link href="http://deschen.com/2019/06/13/MySQL%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/"/>
+    <id>http://deschen.com/2019/06/13/MySQL%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/</id>
+    <published>2019-06-13T10:21:45.000Z</published>
+    <updated>2021-03-03T06:38:57.344Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="MySQL语法基础"><a href="#MySQL语法基础" class="headerlink" title="MySQL语法基础"></a>MySQL语法基础</h1><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/Sql%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80.png" alt="Sql语言基础" style="zoom: 25%;" /><blockquote><p>思维导图 </p><p>链接：<a href="https://pan.baidu.com/s/1whN2oiWZrklR8MCCFUCMSg" target="_blank" rel="noopener">https://pan.baidu.com/s/1whN2oiWZrklR8MCCFUCMSg</a><br>提取码：6666 </p></blockquote><h1 id="MySQL知识图谱"><a href="#MySQL知识图谱" class="headerlink" title="MySQL知识图谱"></a>MySQL知识图谱</h1><h2 id="Sql语言基础"><a href="#Sql语言基础" class="headerlink" title="Sql语言基础"></a>Sql语言基础</h2><h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><p>CREATE TABLE mytable (<br> id INT NOT NULL AUTO_INCREMENT,<br> col1 INT NOT NULL DEFAULT 1,<br> col2 VARCHAR(45) NULL,<br> col3 DATE NULL,<br> PRIMARY KEY (<code>id</code>));</p><h3 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h3><ul><li><p>添加列</p><p>ALTER TABLE mytable<br>ADD col CHAR(20);</p></li><li><p>删除列</p><p>ALTER TABLE mytable<br>DROP COLUMN col;</p></li><li><p>删除表</p><p>DROP TABLE mytable;</p></li></ul><h3 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h3><ul><li><p>普通插入</p><p>INSERT INTO mytable(col1, col2)<br>VALUES(val1, val2);</p></li><li><p>查询内容插入</p><p>INSERT INTO mytable1(col1, col2)<br>SELECT col1, col2<br>FROM mytable2;</p></li><li><p>表内容插入</p><p>CREATE TABLE newtable AS<br>SELECT * FROM mytable;</p></li></ul><h3 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h3><p>UPDATE mytable<br>SET col = val<br>WHERE id = 1;</p><h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3><ul><li><p>DELETE</p><p>DELETE FROM mytable<br>WHERE id = 1;</p></li><li><p>TRUNCATE</p><p>TRUNCATE TABLE mytable;</p></li><li><p>DELETE与TRUNCATE区别</p><p>表和索引所占空间。当表被truncate 后，这个表和索引所占用的空间会恢复到初始bai大小，delete操作不会减少表或索引所占用的空间。<br>delete要通过事务提交生效，而truncate立即生效，不会回滚，在没有备份情况下，谨慎用truncate<br>delete 语句每次删除一行，并在事务日志中为所删除的每行记录一项。truncate table 通过释放存储表数据所用的数据页来删除数据，并且只在事务日志中记录页的释放。</p></li></ul><h3 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h3><ul><li><p>DISTINCT</p><p>标识所选列的唯一性<br>SELECT DISTINCT col1, col2<br>FROM mytable;</p></li><li><p>LIMIT</p><p>限制返回的行数，有两个参数，第一个参数表示起始行，可选填，默认从0开始；第二个表示返回的总行数<br>SELECT *<br>FROM mytable<br>LIMIT 5;<br>等同于<br>SELECT *<br>FROM mytable<br>LIMIT 0, 5;</p></li><li><p>ASC / DESC</p><p>ASC : 升序(默认)<br>DESC : 降序<br>可选择多个列排序，且不同排序方式<br>SELECT *<br>FROM mytable<br>ORDER BY col1 DESC, col2 ASC;</p></li><li><p>通配符</p><p>用于过滤语句中，只能用于文本字段<br>% 匹配 &gt;=0 个任意字符<br>_ 匹配 ==1 个任意字符；<br>SELECT *<br>FROM mytable<br>WHERE col1 = “col1%”;<br>注意点：通用符尽量用在后面。因为写在前面，就会全表扫描，影响查询效率</p></li><li><p>计算字段</p><ul><li><p>简单计算</p><p>在数据库服务器上完成数据的转换和格式化的工作往往比客户端上快得多，并且转换和格式化后的数据量更少的话可以减少网络通信量<br>计算字段通常需要使用 AS 来取别名，否则输出的时候字段名为计算表达式。</p><pre><code>SELECT col1 * col2 AS aliasFROM mytable;</code></pre><p>CONCAT() 用于连接两个字段，许多数据库会使用空格把一个值填充为列宽，因此连接的结果会出现一些不必要的空格，使用 TRIM() 可以去除首尾空格。</p><pre><code>SELECT CONCAT(TRIM(col1), &apos;(&apos;, TRIM(col2), &apos;)&apos;) AS         concat_colFROM mytable;</code></pre></li><li><p>函数</p><ul><li><p>汇总</p><p>函数说明：<br>AVG() 返回某列的平均值<br>COUNT() 返回某列的行数<br>MAX() 返回某列的最大值<br>MIN() 返回某列的最小值<br>SUM() 返回某列值之和<br>注意点：<br>AVG() 会忽略 NULL 行。<br>使用DISTINCT，先根据DISTINCT的列找到对应数据，在计算平均值</p><pre><code>SELECT AVG(DISTINCT col1) AS avg_colFROM mytable;</code></pre></li><li><p>日期和时间处理</p><p>日期格式: YYYY-MM-DD<br>时间格式: HH:MM:SS<br>函 数 说 明<br>AddDate() 增加一个日期(天、周等)<br>AddTime() 增加一个时间(时、分等)<br>CurDate() 返回当前日期<br>CurTime() 返回当前时间<br>Date() 返回日期时间的日期部分<br>DateDiff() 计算两个日期之差<br>Date_Add() 高度灵活的日期运算函数<br>Date_Format() 返回一个格式化的日期或时间串<br>Day() 返回一个日期的天数部分<br>DayOfWeek() 对于一个日期，返回对应的星期几<br>Hour() 返回一个时间的小时部分<br>Minute() 返回一个时间的分钟部分<br>Month() 返回一个日期的月份部分<br>Now() 返回当前日期和时间<br>Second() 返回一个时间的秒部分<br>Time() 返回一个日期时间的时间部分<br>Year() 返回一个日期的年份部分</p><pre><code>SELECT NOW();</code></pre></li><li><p>文本处理</p><p>函数说明：<br>SIN()  正弦<br>COS()  余弦<br>TAN()  正切<br>ABS()  绝对值<br>SQRT()  平方根<br>MOD()  余数<br>EXP()  指数<br>PI()  圆周率<br>’RAND()  随机数</p></li></ul></li></ul></li><li><p>WHERE</p><p>条件查询<br>操作符说明：<br>= 等于<br>&lt; 小于</p><p>大于<br>!= 不等于<br>&lt;= 小于等于<br>= 大于等于<br>BETWEEN在两个值之间<br>IS NULL为 NULL 值<br>注意点：<br>AND 和 OR 用于连接多个过滤条件。优先处理 AND，当一个过滤表达式涉及到多个 AND 和 OR 时，可以使用 () 来决定优先级，使得优先级关系更清晰。<br>IN 操作符用于匹配一组值，其后也可以接一个 SELECT 子句，从而匹配子查询得到的一组值。<br>NOT 操作符用于否定一个条件</p><pre><code>SELECT *FROM mytableWHERE col1 = &quot;col1&quot;;</code></pre></li><li><p>分组</p><p>具有相同数据值的行划为一组<br>常与汇总函数处理使用，如求分组数据的平均值等</p><pre><code>SELECT col, COUNT(*) AS numFROM mytableGROUP BY col;</code></pre><p>结合ORDER BY排序</p><pre><code>SELECT col, COUNT(*) AS numFROM mytableGROUP BY colORDER BY num;</code></pre><p>WHERE 过滤行，HAVING 过滤分组，行过滤应当先于分组过滤。</p><pre><code> SELECT col, COUNT(*) AS numFROM mytableWHERE col &gt; 2GROUP BY colHAVING num &gt;= 2;</code></pre><p>注意点：<br>GROUP BY 子句出现在 WHERE 子句之后，ORDER BY 子句之前；<br>除了汇总字段外，SELECT 语句中的每一字段都必须在 GROUP BY 子句中给出；<br>NULL 的行会单独分为一组；</p></li><li><p>子查询</p><p>子查询中只能返回一个字段的数据。<br>可以将子查询的结果作为 WHRER 语句的过滤条件:</p><pre><code>SELECT *FROM mytable1WHERE col1 IN (SELECT col2    FROM mytable2);</code></pre><p>下面的语句可以检索出客户的订单数量，子查询语句会对第一个查询检索出的每个客户执行一次:</p><pre><code>SELECT cust_name, (SELECT COUNT(*)     FROM Orders      WHERE Orders.cust_id = Customers.cust_id)      AS orders_numFROM CustomersORDER BY cust_name;</code></pre></li><li><p>JOIN</p><ul><li>左链接</li><li>内链接</li><li>右链接</li><li>左独有</li><li>全连接</li><li>右独有</li><li>并集去交集</li></ul></li><li><p>UNION</p><p>使用 UNION 来组合两个查询，每个查询必须包含相同的列、表达式和聚集函数<br>默认会去除相同行，如果需要保留相同行，使用 UNION ALL。<br>只能包含一个 ORDER BY 子句，并且必须位于语句的最后</p><pre><code>SELECT colFROM mytableWHERE col = 1UNIONSELECT colFROM mytableWHERE col =2ORDER BY col;</code></pre></li><li><p>视图</p><p>视图（view）是一种虚拟存在的表，是一个逻辑表，本身并不包含数据。作为一个select语句保存在数据字典中的</p><pre><code>CREATE VIEW myview ASSELECT Concat(col1, col2) AS concat_col, col3*col4 AS compute_colFROM mytableWHERE col5 = val;</code></pre></li><li><p>存储过程</p><p>存储过程可以看成是对一系列 SQL 操作的批处理。<br>使用存储过程的好处:<br>代码封装，保证了一定的安全性；<br>代码复用；<br>由于是预先编译，因此具有很高的性能。</p></li><li><p>事务管理</p><p>事务(transaction)指一组 SQL 语句；<br>回退(rollback)指撤销指定 SQL 语句的过程；<br>提交(commit)指将未存储的 SQL 语句结果写入数据库表；<br>MySQL 的事务提交默认是隐式提交，每执行一条语句就把这条语句当成一个事务然后进行提交。当出现 START TRANSACTION 语句时，会关闭隐式提交；当 COMMIT 或 ROLLBACK 语句执行后，事务会自动关闭，重新恢复隐式提交。<br>START TRANSACTION<br>// …<br>SAVEPOINT delete1<br>// …<br>ROLLBACK TO delete1<br>// …<br>COMMIT</p></li><li><p>事务管理</p><p>事务(transaction)指一组 SQL 语句；<br>回退(rollback)指撤销指定 SQL 语句的过程；<br>提交(commit)指将未存储的 SQL 语句结果写入数据库表；<br>MySQL 的事务提交默认是隐式提交，每执行一条语句就把这条语句当成一个事务然后进行提交。当出现 START TRANSACTION 语句时，会关闭隐式提交；当 COMMIT 或 ROLLBACK 语句执行后，事务会自动关闭，重新恢复隐式提交。<br>START TRANSACTION<br>// …<br>SAVEPOINT delete1<br>// …<br>ROLLBACK TO delete1<br>// …<br>COMMIT</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;MySQL语法基础&quot;&gt;&lt;a href=&quot;#MySQL语法基础&quot; class=&quot;headerlink&quot; title=&quot;MySQL语法基础&quot;&gt;&lt;/a&gt;MySQL语法基础&lt;/h1&gt;&lt;img src=&quot;https://deschen-storage.oss-cn-guan
+      
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://deschen.com/categories/MySQL/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>深入了解Redis--Redis核心原理</title>
     <link href="http://deschen.com/2019/06/12/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3Redis-Redis%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86/"/>
     <id>http://deschen.com/2019/06/12/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3Redis-Redis%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86/</id>
@@ -467,32 +491,6 @@
       
       
         &lt;h1 id=&quot;深入了解Redis–Redis核心原理&quot;&gt;&lt;a href=&quot;#深入了解Redis–Redis核心原理&quot; class=&quot;headerlink&quot; title=&quot;深入了解Redis–Redis核心原理&quot;&gt;&lt;/a&gt;深入了解Redis–Redis核心原理&lt;/h1&gt;&lt;h2 i
-      
-    
-    </summary>
-    
-    
-      <category term="中间件" scheme="http://deschen.com/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
-    
-    
-      <category term="redis" scheme="http://deschen.com/tags/redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深入理解Redis--Redis基本介绍</title>
-    <link href="http://deschen.com/2019/06/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redi--Redis%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/"/>
-    <id>http://deschen.com/2019/06/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redi--Redis%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/</id>
-    <published>2019-06-10T13:48:47.000Z</published>
-    <updated>2021-02-24T09:32:01.378Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="深入理解Redis–Redis基本介绍"><a href="#深入理解Redis–Redis基本介绍" class="headerlink" title="深入理解Redis–Redis基本介绍"></a>深入理解Redis–Redis基本介绍</h1><h2 id="一、Redis简介"><a href="#一、Redis简介" class="headerlink" title="一、Redis简介"></a>一、Redis简介</h2><p>redis 简介<br> <strong>Redis</strong>是一个基于<strong>内存</strong>的高性能<strong>key-value</strong>数据库，所以读写速度非常快，因此 redis 被广泛应用于缓存方向。另外，redis 也经常用来做分布式锁。redis 提供了多种数据类型来支持不同的业务场景。除此之外，redis 支持事务 、持久化、LUA脚本、LRU驱动事件、多种集群方案。</p><h2 id="二、Redis与Mecache区别"><a href="#二、Redis与Mecache区别" class="headerlink" title="二、Redis与Mecache区别"></a>二、Redis与Mecache区别</h2><ol><li>持久性<ul><li>Redis可以将内存中的数据保持在<strong>磁盘</strong>中，<strong>重启</strong>的时候可以<strong>再次加载</strong>进行使用，保证数据的持久性</li><li>Memecache把数据全部存在<strong>内存</strong>之中，<strong>断电后会挂掉</strong>，数据不能超过内存大小。</li></ul></li><li>数据类型<ul><li>Redis支持的数据类型要丰富得多,Redis不仅仅支持简单的<strong>k/v</strong>类型的数据，同时还提供<strong>String，List,Set,Hash,Sorted Set</strong>数据结构的存储。</li><li>memcache支持<strong>简单数据类型</strong>，需要客户端自己处理复杂对象 </li></ul></li><li>存储键值大小<ul><li>Redis单个value的最大限制是<strong>1GB</strong></li><li>memcached只能保存<strong>1MB</strong>的数据 </li></ul></li></ol><h2 id="三、Redis基本数据类型"><a href="#三、Redis基本数据类型" class="headerlink" title="三、Redis基本数据类型"></a>三、Redis基本数据类型</h2><ol><li><p>String</p><p>字符串 string 是 Redis 最简单的数据结构。Redis 所有的数据结构都是以唯一的 key 字符串作为名称，然后通过这个唯一 key 值来获取相应的 value 数据。不同类型的数据结构的差异就在于 value 的结构不一样。字符串结构使用非常广泛，一个常见的用途就是<strong>缓存用户信息</strong>。我们将用户信息结构体使用 JSON 序列化成字符串，然后将序列化后的字符串塞进 Redis 来缓存。同样，取用户信息会经过一次反序列化的过程    </p></li><li><p>list</p><p>Redis 的列表相当于 Java 语言里面的 LinkedList，注意它是链表而不是数组。这意味着 list 的插入和删除操作非常快，时间复杂度为 O(1)，但是索引定位很慢，时间复杂度为 O(n)，这点让人非常意外。 当列表弹出了最后一个元素之后，该数据结构自动被删除，内存被回收。</p><p>Redis 的列表结构常用来做异步队列使用。将需要延后处理的任务结构体序列化成字符串塞进 Redis 的列表，另一个线程从这个列表中轮询数据进行处理。</p></li><li><p>hash</p><p>Redis 的字典相当于 Java 语言里面的 HashMap，它是无序字典。内部实现结构上同 Java 的 HashMap 也是一致的，同样的<strong>数组 + 链表</strong>二维结构。第一维 hash 的数组位置碰撞时，就会将碰撞的元素使用链表串接起来。</p><p>hash 结构也可以用来存储用户信息，不同于字符串一次性需要全部序列化整个对象，hash 可以对 用户结构中的每个字段单独存储。这样当我们需要获取用户信息时可以进行部分获取。而以整个字符串的形式去保存用户信息的话就只能一次性全部读取，这样就会比较浪费网络流量。 hash 也有缺点，hash 结构的存储消耗要高于单个字符串，到底该使用 hash 还是字符串，需要根据实际情况再三权衡。</p></li><li><p>set</p><p>Redis 的集合相当于 Java 语言里面的 HashSet，它内部的键值对是无序的唯一的。它的内部实现相当于一个特殊的字典，字典中所有的 value 都是一个值NULL。 当集合中最后一个元素移除之后，数据结构自动删除，内存被回收。 </p></li><li><p>zset</p><p>zset 似于 Java 的 SortedSet 和 HashMap 的结合体，一方面它是一个 set，保证了内部 value 的唯一性，另一方面它可以给每个 value 赋予一个 score，代表这个 value 的排序权重。</p><p>zset 可以用来存粉丝列表，value 值是粉丝的用户 ID，score 是关注时间。我们可以对粉丝列表按关注时间进行排序。 </p><p>zset 还可以用来存储学生的成绩，value 值是学生的 ID，score 是他的考试成绩。我们可以对成绩按分数进行排序就可以得到他的名次。</p></li></ol><h2 id="四、Redis命令注意点"><a href="#四、Redis命令注意点" class="headerlink" title="四、Redis命令注意点"></a>四、Redis命令注意点</h2><p>尽量不要使用<strong>keys</strong>作为模糊查询redis中的键，而是使用<strong>scan</strong>。</p><p>理由：</p><ol><li>因为Redis是单线程，如果Redis的key有1000W的话，使用keys模糊查询查询的时间<strong>很高</strong>，线程<strong>阻塞</strong>，其他线程命令就无法执行，降低性能。</li><li>使用scan<strong>，通过<code>scan 0 match &lt;关键字&gt; count &lt;数量&gt;</code>，能够</strong>根据关键字<strong>获取</strong>规定数量<strong>的</strong>键值**。可以多次使用该命令迭代获取全部数据，每次命令执行时间短，不会过多的阻塞其他线程</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;深入理解Redis–Redis基本介绍&quot;&gt;&lt;a href=&quot;#深入理解Redis–Redis基本介绍&quot; class=&quot;headerlink&quot; title=&quot;深入理解Redis–Redis基本介绍&quot;&gt;&lt;/a&gt;深入理解Redis–Redis基本介绍&lt;/h1&gt;&lt;h2 i
       
     
     </summary>
