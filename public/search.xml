@@ -473,7 +473,7 @@
       
       <categories>
           
-          <category> 安全框架 </category>
+          <category> Spring </category>
           
       </categories>
       
@@ -514,6 +514,31 @@
     
     
     <entry>
+      <title>Spring 事务传播行为</title>
+      <link href="/2019/04/23/Spring%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/"/>
+      <url>/2019/04/23/Spring%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Spring-事务传播行为"><a href="#Spring-事务传播行为" class="headerlink" title="Spring 事务传播行为"></a>Spring 事务传播行为</h1><h2 id="七种事务传播行为"><a href="#七种事务传播行为" class="headerlink" title="七种事务传播行为"></a>七种事务传播行为</h2><ul><li>PROPAGATION_REQUIRED: 默认事务类型，如果没有，就新建一个事务；如果有，就加入当前事务，<strong>适用于绝大多情况</strong></li><li>PROPEGATION_REQUIRED_NEW: 如果没有事务，就新建一个；如果有，就将但钱事务挂起</li><li>PROPAGATION_NESTED: 如果没有事务，就新建一个；如果有，就在当前事务嵌套其他事务</li><li>PROPAGATION_SUPPORTS: 如果没有，就以非事务方式执行；如果有，就使用当前事务</li><li>PROPAGATION_NOT_SUPPORTS: 如果没有，就以非事务执行；如果有，就当前事务挂起</li><li>PROPAGATION_NEVER: 如果没有，就非事务执行；如果有，就抛异常</li><li>PROPAGATION_MANATORY: 如果没有，就抛出异常；如果有，就使用当前事务</li></ul><p>示例：批量发送红包</p><p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210303174210649.png" alt="image-20210303174210649"></p><p>​    因为@Transactional默认传播方式是：PROPAGATION_REQUIRED，因此<code>CouponFacade.sendCpByQuene</code>（记录红包日志功能）与<code>couponService.checkRepertoryAndSend（发送红包功能）</code>共用一个事务，而当<code>couponService.checkRepertoryAndSend</code>发生异常时（比如库存不足）整体回滚，导致日志无法记录下一个发送红包的日志。因此要两个功能在不同事务，所以要把事务传播行为转为<code>PROPAGATION_NESTED</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Spring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SpringBoot自动化配置原理</title>
       <link href="/2019/03/17/springboot%E8%87%AA%E5%8A%A8%E5%8C%96%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86/"/>
       <url>/2019/03/17/springboot%E8%87%AA%E5%8A%A8%E5%8C%96%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86/</url>
@@ -523,10 +548,16 @@
       
       <categories>
           
-          <category> SpringBoot </category>
+          <category> Spring </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> SpringBoot </tag>
+            
+        </tags>
       
     </entry>
     
@@ -561,10 +592,16 @@
       
       <categories>
           
-          <category> SpringBoot </category>
+          <category> Spring </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> SpringBoot </tag>
+            
+        </tags>
       
     </entry>
     
