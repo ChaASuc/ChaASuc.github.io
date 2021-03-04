@@ -117,19 +117,21 @@
 
 
 
-  <meta name="description" content="MySQL事务一、事务的四大特性（ACID） 原子性(Atomicity)：事务执行操作，要么全部成功，要么全部失败。事务失败会回滚事务开始前的状态 一致性（Consistency）: 事务前后数据的完整性必须保持一致。比如A转账B，那么A减少金额，B一定增加对应的金额 隔离性（Isolation）: 同一时间，只允许一个事务请求同一数据，不同的事务之间彼此没有任何干扰。比如A转账给B，那么A转钱">
+  <meta name="description" content="Jvm内存模型[toc] 一、Jvm内存模型图  线程私有 程序计数器：记录虚拟机字节码的指令地址 虚拟机栈：每个方法执行时，都会创建一个栈帧，存储局部变量、操作数、动态链接、方法返回地址。方法从调用到执行完毕，对应栈帧在虚拟机栈入栈和出栈 本地方法栈：跟虚拟机栈类似，执行native方法   线程共享 堆：内存最大的区域，存储java对象 方法区：存储已被虚拟机加载的类信息、常量、静态变量等">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL索引深入理解">
-<meta property="og:url" content="http://deschen.com/2019/05/13/MySQL%E4%BA%8B%E5%8A%A1/index.html">
+<meta property="og:title" content="jdk1.8部署">
+<meta property="og:url" content="http://deschen.com/2019/04/01/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="陈汉槟的博客">
-<meta property="og:description" content="MySQL事务一、事务的四大特性（ACID） 原子性(Atomicity)：事务执行操作，要么全部成功，要么全部失败。事务失败会回滚事务开始前的状态 一致性（Consistency）: 事务前后数据的完整性必须保持一致。比如A转账B，那么A减少金额，B一定增加对应的金额 隔离性（Isolation）: 同一时间，只允许一个事务请求同一数据，不同的事务之间彼此没有任何干扰。比如A转账给B，那么A转钱">
+<meta property="og:description" content="Jvm内存模型[toc] 一、Jvm内存模型图  线程私有 程序计数器：记录虚拟机字节码的指令地址 虚拟机栈：每个方法执行时，都会创建一个栈帧，存储局部变量、操作数、动态链接、方法返回地址。方法从调用到执行完毕，对应栈帧在虚拟机栈入栈和出栈 本地方法栈：跟虚拟机栈类似，执行native方法   线程共享 堆：内存最大的区域，存储java对象 方法区：存储已被虚拟机加载的类信息、常量、静态变量等">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-05-13T10:21:45.000Z">
-<meta property="article:modified_time" content="2021-03-03T14:38:02.583Z">
+<meta property="og:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210304212806496.png">
+<meta property="article:published_time" content="2019-04-01T09:57:34.000Z">
+<meta property="article:modified_time" content="2021-03-04T13:50:48.090Z">
 <meta property="article:author" content="陈汉槟">
 <meta property="article:tag" content="Java开发">
 <meta property="article:tag" content="个人博客">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210304212806496.png">
 
 
 
@@ -138,7 +140,7 @@
 
 
 
-  <link rel="canonical" href="http://deschen.com/2019/05/13/MySQL事务/"/>
+  <link rel="canonical" href="http://deschen.com/2019/04/01/JVM内存模型/"/>
 
 
 
@@ -148,7 +150,7 @@
   };
 </script>
 
-  <title>MySQL索引深入理解 | 陈汉槟的博客</title>
+  <title>jdk1.8部署 | 陈汉槟的博客</title>
   
 
 
@@ -365,7 +367,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://deschen.com/2019/05/13/MySQL%E4%BA%8B%E5%8A%A1/">
+    <link itemprop="mainEntityOfPage" href="http://deschen.com/2019/04/01/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈汉槟">
@@ -382,7 +384,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL索引深入理解
+          <h1 class="post-title" itemprop="name headline">jdk1.8部署
               
             
           </h1>
@@ -407,7 +409,7 @@
                 
               
 
-              <time title="创建时间：2019-05-13 18:21:45" itemprop="dateCreated datePublished" datetime="2019-05-13T18:21:45+08:00">2019-05-13</time>
+              <time title="创建时间：2019-04-01 17:57:34" itemprop="dateCreated datePublished" datetime="2019-04-01T17:57:34+08:00">2019-04-01</time>
             
 
             
@@ -424,7 +426,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-03-03 22:38:02" itemprop="dateModified" datetime="2021-03-03T22:38:02+08:00">2021-03-03</time>
+                <time title="修改时间：2021-03-04 21:50:48" itemprop="dateModified" datetime="2021-03-04T21:50:48+08:00">2021-03-04</time>
               
             
           </span>
@@ -441,7 +443,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MyS-QL/" itemprop="url" rel="index"><span itemprop="name">MyS QL</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a></span>
 
                 
                 
@@ -482,7 +484,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -502,61 +504,33 @@
       
 
       
-        <h1 id="MySQL事务"><a href="#MySQL事务" class="headerlink" title="MySQL事务"></a>MySQL事务</h1><h2 id="一、事务的四大特性（ACID）"><a href="#一、事务的四大特性（ACID）" class="headerlink" title="一、事务的四大特性（ACID）"></a>一、事务的四大特性（ACID）</h2><ol>
-<li>原子性(Atomicity)：事务执行操作，要么全部成功，要么全部失败。事务失败会回滚事务开始前的状态</li>
-<li>一致性（Consistency）: 事务前后数据的完整性必须保持一致。比如A转账B，那么A减少金额，B一定增加对应的金额</li>
-<li>隔离性（Isolation）: 同一时间，只允许一个事务请求同一数据，不同的事务之间彼此没有任何干扰。比如A转账给B，那么A转钱过程中，C无法转钱给A</li>
-<li>持久性1（Durability）：事务一旦提交，数据库的数据改变时永久的</li>
-</ol>
-<h2 id="二、事务的四个隔离级别"><a href="#二、事务的四个隔离级别" class="headerlink" title="二、事务的四个隔离级别"></a>二、事务的四个隔离级别</h2><p>√: 可能出现  ×: 不会出现</p>
-<table>
-<thead>
-<tr>
-<th align="left">事务隔离级别（从低到高）</th>
-<th align="center">脏读</th>
-<th align="center">不可重复读</th>
-<th align="center">幻读</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">读未提交（read-uncommitted）</td>
-<td align="center">√</td>
-<td align="center">√</td>
-<td align="center">√</td>
-</tr>
-<tr>
-<td align="left">读已提交（read-committed）</td>
-<td align="center">×</td>
-<td align="center">√</td>
-<td align="center">√</td>
-</tr>
-<tr>
-<td align="left">可重复读（repeatable-read）</td>
-<td align="center">×</td>
-<td align="center">×</td>
-<td align="center">√</td>
-</tr>
-<tr>
-<td align="left">串行化（serializable）</td>
-<td align="center">×</td>
-<td align="center">×</td>
-<td align="center">×</td>
-</tr>
-</tbody></table>
+        <h1 id="Jvm内存模型"><a href="#Jvm内存模型" class="headerlink" title="Jvm内存模型"></a>Jvm内存模型</h1><p>[toc]</p>
+<h2 id="一、Jvm内存模型图"><a href="#一、Jvm内存模型图" class="headerlink" title="一、Jvm内存模型图"></a>一、Jvm内存模型图</h2><p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210304212806496.png" alt="image-20210304212806496"></p>
 <ul>
-<li>读未提交：事务A操作数据时，其他事务只允许对该行数据读取，虽然解决<strong>更新丢失</strong>问题。但是会照成<strong>脏读</strong>。<ul>
-<li>什么是脏读：脏读就是事务A读取到事务B未提交的数据</li>
+<li>线程私有<ul>
+<li>程序计数器：记录虚拟机字节码的指令地址</li>
+<li>虚拟机栈：每个方法执行时，都会创建一个栈帧，存储局部变量、操作数、动态链接、方法返回地址。方法从调用到执行完毕，对应栈帧在虚拟机栈入栈和出栈</li>
+<li>本地方法栈：跟虚拟机栈类似，执行native方法</li>
 </ul>
 </li>
-<li>读已提交：事务A操作数据时，其他事务不允许对该行读写操作。这样能就解决<strong>脏读</strong>问题。但是会照成<strong>不可重复读</strong><ul>
-<li>什么是不可重复读：事务A读取事务B操作前的数据和提交后的数据不一致</li>
+<li>线程共享<ul>
+<li>堆：内存最大的区域，存储java对象</li>
+<li>方法区：存储已被虚拟机加载的类信息、常量、静态变量等</li>
 </ul>
 </li>
-<li>可重复读：一个事务内，A读取数据，其他事务不允许对该行操作，这样多次读取的数据是一致的，解决了不可重复读的问题。但是会照成<strong>幻读</strong><ul>
-<li>什么是幻读：事务A读取到事务B新增或者删除数据，导致数据个数不一致</li>
+</ul>
+<h2 id="二、Java堆的划分"><a href="#二、Java堆的划分" class="headerlink" title="二、Java堆的划分"></a>二、Java堆的划分</h2><ul>
+<li>新生代（1:3）:存放新生的对象<ul>
+<li>Eden(8:10)</li>
+<li>From Survivor(1:10)</li>
+<li>To Survivor(1:10)</li>
+<li>过程：eden区存放新建对象。而当eden区内存不够时，就会触发垃圾回收，将其与from survivor区的存活对象，复制to survivor区，然后to survivor区变成from survivor区。每经过一次垃圾回收，对象年龄+1，当超过默认15次时，会复制到老年代</li>
 </ul>
 </li>
-<li>串行化：事务只能一个接着一个地执行，但不能并发执行。虽然能解决幻读问题。但是这种性能低，很少使用</li>
+<li>老年代(2:3)<ul>
+<li>过程：老年代存放生命周期长的对象。而当老年代内存不够时，会触发full gc，比gc慢10倍左右。当时在装不下时，报出out of memory异常</li>
+</ul>
+</li>
 </ul>
 
       
@@ -579,12 +553,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>MySQL索引深入理解</a></p>
+  <p><span>本文标题:</span>jdk1.8部署</a></p>
   <p><span>文章作者:</span>陈汉槟</a></p>
-  <p><span>发布时间:</span>2019年05月13日 - 18:21:45</p>
-  <p><span>最后更新:</span>2021年03月03日 - 22:38:02</p>
-  <p><span>原始链接:</span><a href="/2019/05/13/MySQL%E4%BA%8B%E5%8A%A1/" title="MySQL索引深入理解">http://deschen.com/2019/05/13/MySQL%E4%BA%8B%E5%8A%A1/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://deschen.com/2019/05/13/MySQL%E4%BA%8B%E5%8A%A1/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年04月01日 - 17:57:34</p>
+  <p><span>最后更新:</span>2021年03月04日 - 21:50:48</p>
+  <p><span>原始链接:</span><a href="/2019/04/01/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" title="jdk1.8部署">http://deschen.com/2019/04/01/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://deschen.com/2019/04/01/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -662,8 +636,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/12/Restful%E9%A3%8E%E6%A0%BC%E8%AE%BE%E8%AE%A1/" rel="next" title="Restful风格设计">
-                <i class="fa fa-chevron-left"></i> Restful风格设计
+              <a href="/2019/03/17/springboot%E8%87%AA%E5%8A%A8%E5%8C%96%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86/" rel="next" title="SpringBoot自动化配置原理">
+                <i class="fa fa-chevron-left"></i> SpringBoot自动化配置原理
               </a>
             
           </div>
@@ -672,8 +646,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/23/Security%E7%AC%94%E8%AE%B0-%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%8F%8A%E8%AE%A4%E8%AF%81%E6%B5%81%E7%A8%8B/" rel="prev" title="Security笔记---基本原理及认证流程">
-                Security笔记---基本原理及认证流程 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/23/Spring%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/" rel="prev" title="Spring 事务传播行为">
+                Spring 事务传播行为 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -894,7 +868,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL事务"><span class="nav-number">1.</span> <span class="nav-text">MySQL事务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、事务的四大特性（ACID）"><span class="nav-number">1.1.</span> <span class="nav-text">一、事务的四大特性（ACID）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、事务的四个隔离级别"><span class="nav-number">1.2.</span> <span class="nav-text">二、事务的四个隔离级别</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Jvm内存模型"><span class="nav-number">1.</span> <span class="nav-text">Jvm内存模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Jvm内存模型图"><span class="nav-number">1.1.</span> <span class="nav-text">一、Jvm内存模型图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Java堆的划分"><span class="nav-number">1.2.</span> <span class="nav-text">二、Java堆的划分</span></a></li></ol></li></ol></div>
             
 
           </div>
