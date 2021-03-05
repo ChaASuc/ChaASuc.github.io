@@ -117,16 +117,16 @@
 
 
 
-  <meta name="description" content="面试题 mysql与redis如何数据同步  rabbitmq消息持久化，一致性  多线程  nginx  类加载过程  过程：就是把.class文件加载进内存，解析生成对应的class对象。  注意点：JVM不是一开始把所有类都加载进内存的，而是需要时在加载，并且有且只有一次  五个阶段  加载：将class文件通过类加载器存到内存 通过类的全限定名获取类的二进制流，将这个字节流所代表的静态存储">
+  <meta name="description" content="面试题 mysql与redis如何数据同步  并发不高的情况下，读操作优先读取redis，不存在的话就去访问MySQL，并把读到的数据写回Redis中；写操作的话，直接写MySQL，成功后再写入Redis https:&#x2F;&#x2F;blog.csdn.net&#x2F;ssspk_&#x2F;article&#x2F;details&#x2F;90924226   rabbitmq消息持久化，一致性  RabbitMQ是一款消息中间件，解耦、异步">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试">
 <meta property="og:url" content="http://deschen.com/2020/06/10/%E9%9A%BE%E9%A2%98/index.html">
 <meta property="og:site_name" content="陈汉槟的博客">
-<meta property="og:description" content="面试题 mysql与redis如何数据同步  rabbitmq消息持久化，一致性  多线程  nginx  类加载过程  过程：就是把.class文件加载进内存，解析生成对应的class对象。  注意点：JVM不是一开始把所有类都加载进内存的，而是需要时在加载，并且有且只有一次  五个阶段  加载：将class文件通过类加载器存到内存 通过类的全限定名获取类的二进制流，将这个字节流所代表的静态存储">
+<meta property="og:description" content="面试题 mysql与redis如何数据同步  并发不高的情况下，读操作优先读取redis，不存在的话就去访问MySQL，并把读到的数据写回Redis中；写操作的话，直接写MySQL，成功后再写入Redis https:&#x2F;&#x2F;blog.csdn.net&#x2F;ssspk_&#x2F;article&#x2F;details&#x2F;90924226   rabbitmq消息持久化，一致性  RabbitMQ是一款消息中间件，解耦、异步">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210304212806496.png">
 <meta property="article:published_time" content="2020-06-10T13:48:47.000Z">
-<meta property="article:modified_time" content="2021-03-04T14:58:21.420Z">
+<meta property="article:modified_time" content="2021-03-05T00:24:41.948Z">
 <meta property="article:author" content="陈汉槟">
 <meta property="article:tag" content="Java开发">
 <meta property="article:tag" content="个人博客">
@@ -426,7 +426,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-03-04 22:58:21" itemprop="dateModified" datetime="2021-03-04T22:58:21+08:00">2021-03-04</time>
+                <time title="修改时间：2021-03-05 08:24:41" itemprop="dateModified" datetime="2021-03-05T08:24:41+08:00">2021-03-05</time>
               
             
           </span>
@@ -484,7 +484,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">22 分钟</span>
+                <span title="阅读时长">36 分钟</span>
               
             </div>
           
@@ -506,8 +506,31 @@
       
         <h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1><ul>
 <li><p>mysql与redis如何数据同步</p>
+<ul>
+<li>并发不高的情况下，读操作优先读取redis，不存在的话就去访问MySQL，并把读到的数据写回Redis中；写操作的话，直接写MySQL，成功后再写入Redis</li>
+<li><a href="https://blog.csdn.net/ssspk_/article/details/90924226" target="_blank" rel="noopener">https://blog.csdn.net/ssspk_/article/details/90924226</a></li>
+</ul>
 </li>
 <li><p>rabbitmq消息持久化，一致性</p>
+<ul>
+<li>RabbitMQ是一款消息中间件，解耦、异步</li>
+<li>RabbitMQ工作模式<ul>
+<li>简单模式：一个生产者、一个消费者</li>
+<li>work工作模式：一个生产者，多个消费者</li>
+<li>发布订阅：消费者监听队列，生产者发送消息通过交换机发送绑定其的队列</li>
+<li>routing路由模式：生产者将消息发送给交换机按照路由判断,发送到匹配队列消费</li>
+<li>topic 主题模式：跟路由模式相同，不过key可以模糊匹配对应队列<ul>
+<li>星号代表多个单词,井号代表一个单词</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>RabbitMQ消息的可靠传输<ul>
+<li>发送方确认模式：信道设置成 confirm 模式，发布的消息都会被指派一个唯一的 ID，发送到队列后，信道会发送确认给生产者，如果rabbitmq异常，会发送nack给生产者    </li>
+<li>接收方确认机制：消费者接收每一条消息后都必须进行确认，只有消费者确认了消息，RabbitMQ 才能安全地把消息从队列中删除。</li>
+</ul>
+</li>
+</ul>
 </li>
 <li><p>多线程</p>
 </li>
@@ -699,6 +722,63 @@
 </ul>
 </li>
 <li><p>Spring面试题</p>
+<ul>
+<li>spring：Spring是一个轻量级的IoC和AOP容器框架，用于简化企业应用程序的开发，它使得开发者只需要关心业务需求。</li>
+<li>spring优点：<ul>
+<li>低侵入式设计，代码的污染极低</li>
+<li>DI机制将对象之间的依赖关系交由框架处理，减低组件的耦合性</li>
+<li>AOP技术，将一些通用业务进行集中式管理，如事务、日志</li>
+</ul>
+</li>
+<li>Spring的IoC理解：创建对象的控制权转移给Spring框架进行管理，创建对象的主动权由自己把控的，现在有spring进行管理，通过java反射，运行时动态创建对象及管理对象调用方法<ul>
+<li>IOC有三种注入方式 ：构造器注入、setter方法注入、根据注解注入</li>
+</ul>
+</li>
+<li>AOP理解：面向切面，将那些与业务无关的通用逻辑，抽取并封装为一个可重用的模块，减低代码耦合<ul>
+<li>AOP代理主要分为静态代理和动态代理<ul>
+<li>静态代理：在编译阶段生成AOP代理类，并将AspectJ(切面)织入到Java字节码中，运行的时候就是增强之后的AOP对象。</li>
+<li>动态代理：<ul>
+<li>JDK动态代理：只提供接口的代理，不支持类的代理，要求被代理类实现接口。Proxy类创建代理类，当调用目标类方法时，InvocationHandler 通过invoke()方法反射来调用</li>
+<li>GLIB动态代理：生成目标类的一个子类对象，并覆盖其中特定方法并添加增强代码</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>连接点：执行的方法</li>
+<li>切面（Aspect）：被抽取出来的公共模块</li>
+<li>切点（Pointcut）：定义哪些要被Join进行拦截</li>
+<li>通知（Advice）：指要在连接点上执行的动作，即增强的逻辑</li>
+<li>目标对象（Target）：包含连接点的对象，称作被通知（Advice）的对象</li>
+<li>织入（Weaving）：通过动态代理，在目标对象（Target）的方法（即连接点Join point）中执行增强逻辑（Advice）的过程</li>
+<li>引入（Introduction）：添加额外的方法或者字段到被通知的类</li>
+</ul>
+</li>
+<li>bean生命周期<ul>
+<li>实例化Bean、设置对象属性（依赖注入）、处理Aware接口、BeanPostProcessor前置处理、检查是否有InitializingBean处理，有的话调用afterPropertiesSet方法、检查是否有自定义的init-method、BeanPostProcessor后置处理器、注册必要的destruction回调接口、查看是否实现disposablebean接口、查看是否配置destory方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Mybaits</p>
+<ul>
+<li>Mybatis是一个半ORM（对象关系映射）框架</li>
+<li>#{}和${}的区别是什么<ul>
+<li>${}是字符串替换，会直接替换成变量的值</li>
+<li>#{}是预处理，会替换为?号，调用PreparedStatement的set方法来赋值；#{}可以有效的防止SQL注入，提高系统安全性。</li>
+</ul>
+</li>
+<li>优缺点<ul>
+<li>优点：基于SQL语句编程，相当灵活</li>
+<li>缺点：对于多表关联，对编写SQL语句要有一定要求</li>
+<li>Mybatis的一级、二级缓存<ul>
+<li>一级缓存: 基于PerpetualCache 的 HashMap本地缓存，其存储作用域为 Session，当 Session flush 或 close 之后，该Session中的所有 Cache 就将清空。</li>
+<li>二级缓存与一级缓存其机制相同，默认也是采用 PerpetualCache，HashMap存储，不同在于其存储作用域为 Mapper(Namespace)，并且可自定义存储源，</li>
+<li>一级缓存的sql session互补影响，二级缓存的mapper(namespace)时可以跨多个sql session的</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 <li><p>todo</p>
 </li>
@@ -716,17 +796,20 @@
 </li>
 <li><p>MySQL</p>
 <ul>
-<li>myisam与innodb区别<ul>
+<li><p>myisam与innodb区别</p>
+<ul>
 <li>myisam支持全文检索，但是不支持事务和行级锁，所以用于大量查询少量插入的场景</li>
 <li>innodb基于聚簇索引建立，与myisam相反，它支持事务、外键</li>
 </ul>
 </li>
-<li>mysql索引<ul>
+<li><p>mysql索引</p>
+<ul>
 <li>mysql索引是B+树索引，而B+树是左小右大的存储结构，节点只包含id索引列，叶子节点包含索引列和数据，而这种索引叫做聚簇索引</li>
 <li>什么是非聚簇索引：跟聚簇索引相同结构，但是其叶子节点包含数据的存储地址，而Myisam使用这种索引</li>
 </ul>
 </li>
-<li>锁类型<ul>
+<li><p>锁类型</p>
+<ul>
 <li>mysql锁分为共享锁和排他锁，也成为读锁和写锁</li>
 <li>读锁是共享的，但是这时候只读不写</li>
 <li>写锁是排他锁，它会阻塞其他写锁和读锁，而按粒度来看，又分为行锁和表锁</li>
@@ -734,7 +817,8 @@
 <li>行锁分为乐观锁和悲观锁，悲观锁用于for update，乐观锁通过版本号实现</li>
 </ul>
 </li>
-<li>mysql主从表<ul>
+<li><p>mysql主从表</p>
+<ul>
 <li>mysql主从同步原理<ul>
 <li>master提交玩事务后，写入binlog</li>
 <li>slave连接master，获取binlog</li>
@@ -751,7 +835,70 @@
 </li>
 </ul>
 </li>
-<li>MySQL优化<ul>
+<li><p>MySQL优化</p>
+<ul>
+<li>事务的四大特性（ACID）</li>
+</ul>
+<ol>
+<li>原子性(Atomicity)：事务执行操作，要么全部成功，要么全部失败。事务失败会回滚事务开始前的状态</li>
+<li>一致性（Consistency）: 事务前后数据的完整性必须保持一致。比如A转账B，那么A减少金额，B一定增加对应的金额</li>
+<li>隔离性（Isolation）: 同一时间，只允许一个事务请求同一数据，不同的事务之间彼此没有任何干扰。比如A转账给B，那么A转钱过程中，C无法转钱给A</li>
+<li>持久性1（Durability）：事务一旦提交，数据库的数据改变时永久的</li>
+</ol>
+<ul>
+<li>事务的四个隔离级别</li>
+</ul>
+<p>√: 可能出现  ×: 不会出现</p>
+<table>
+<thead>
+<tr>
+<th align="left">事务隔离级别（从低到高）</th>
+<th align="center">脏读</th>
+<th align="center">不可重复读</th>
+<th align="center">幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">读未提交（read-uncommitted）</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">读已提交（read-committed）</td>
+<td align="center">×</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">可重复读（repeatable-read）</td>
+<td align="center">×</td>
+<td align="center">×</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">串行化（serializable）</td>
+<td align="center">×</td>
+<td align="center">×</td>
+<td align="center">×</td>
+</tr>
+</tbody></table>
+<ul>
+<li>读未提交：事务A操作数据时，其他事务只允许对该行数据读取，虽然解决<strong>更新丢失</strong>问题。但是会照成<strong>脏读</strong>。<ul>
+<li>什么是脏读：脏读就是事务A读取到事务B未提交的数据</li>
+</ul>
+</li>
+<li>读已提交：事务A操作数据时，其他事务不允许对该行读写操作。这样能就解决<strong>脏读</strong>问题。但是会照成<strong>不可重复读</strong><ul>
+<li>什么是不可重复读：事务A读取事务B操作前的数据和提交后的数据不一致</li>
+</ul>
+</li>
+<li>可重复读：一个事务内，A读取数据，其他事务不允许对该行操作，这样多次读取的数据是一致的，解决了不可重复读的问题。但是会照成<strong>幻读</strong><ul>
+<li>什么是幻读：事务A读取到事务B新增或者删除数据，导致数据个数不一致</li>
+</ul>
+</li>
+<li>串行化：事务只能一个接着一个地执行，但不能并发执行。虽然能解决幻读问题。但是这种性能低，很少使用</li>
+</ul>
+<ul>
 <li>数据库设计优化<ul>
 <li>选择合适的字段属性：比如性别有男、女，可以通过tinyint(1)来记录，不用varchar这样减少数据库不必要的内存同时整型处理效率比文本快，另外把所有的字段最好NOT ＮULL避免全表扫描</li>
 </ul>
@@ -809,11 +956,89 @@
 </li>
 </ul>
 </li>
-<li></li>
-<li><a href="https://blog.csdn.net/u013252072/article/details/52912385?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs&amp;dist_request_id=&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs" target="_blank" rel="noopener">https://blog.csdn.net/u013252072/article/details/52912385?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs&amp;dist_request_id=&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs</a></li>
-<li><a href="https://blog.csdn.net/qq_44590469/article/details/96473238?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs&amp;dist_request_id=&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs" target="_blank" rel="noopener">https://blog.csdn.net/qq_44590469/article/details/96473238?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs&amp;dist_request_id=&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs</a></li>
-<li><a href="https://my.oschina.net/ccwwlx/blog/4561663" target="_blank" rel="noopener">https://my.oschina.net/ccwwlx/blog/4561663</a></li>
-<li><a href="https://www.cnblogs.com/sharpest/p/10390035.html" target="_blank" rel="noopener">https://www.cnblogs.com/sharpest/p/10390035.html</a></li>
+<li><p>Redis</p>
+<ul>
+<li><p>五种数据类型</p>
+<ul>
+<li>String字符串，格式：set key value，一般用于对象缓存</li>
+<li>Hash（哈希），格式: hmset key value1 value2 value3，一般用于对象集合的缓存。比如商品中有一个需要修改，那么只要更新hash的缓存集合，不需要重新从数据库获取缓存</li>
+<li>List（列表）有序、可重复，底层是链表，格式：lpush name value。可以对两端进行插入、弹出操作。可用于博客的用户列表</li>
+<li>set是无序不可重复。可用于博客中用户之间的共同关注文章</li>
+<li>zset，有序不可重复，根据分数进行排序。可用于热门的标签排序</li>
+</ul>
+</li>
+<li><p>redis与mecache对比</p>
+<ul>
+<li>redis具有丰富的数据类型，mecache只支持key-value</li>
+<li>redis可以把数据持久化，而mecache把数据保存到内存中，当程序关闭时，数据就会消失</li>
+</ul>
+</li>
+<li><p>redis持久化</p>
+<ul>
+<li>什么是持久化？持久化就是将数据从内存保存到硬盘，防止redis宕机数据丢失</li>
+<li>RDB和AOF<ul>
+<li>RDB，将数据以快照的形式保存磁盘，是redis默认的方式。当redis重启时，会读取RDB文件。但是有个缺点，RDB不能实时备份数据，有部分时刻的数据会丢失</li>
+<li>AOF，将redis写命令写入磁盘，这样能保证实时备份数据。可是如果命令过多，就会照成redis重启时间过长</li>
+<li>redis 4.0后，出现混合持久化模式，结合两者优缺点。RDB的内容会写入AOF开头，这样既能提升加载速度，又能保证数据的实时性。但是因为两者结合AOF里面RDB内容可读性差</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>redis过期策略</p>
+<ul>
+<li>定时策略：就是每个设置过期时间的key设置定时器，到过期时间就会清除</li>
+<li>惰性策略：当访问一个key，才判断key是否已过期，过期清除</li>
+<li>定时过期：每个一定时间，扫描一定数量的key，清除已过期的key</li>
+</ul>
+</li>
+<li><p>redis淘汰策略</p>
+<ul>
+<li>noeviction：内存不足，写入新数据报错</li>
+<li>allkeys-lru：内存不足，写入新数据，移除最近最少用的key</li>
+<li>allkeys-random：内存不足，写入新数据，随机移除key</li>
+<li>volatile-lru：内存不足，写入新数据，在设置过期时间的key中，移除最近最少用的key</li>
+<li>volatile-random：内存不足，写入新数据，在设置过期时间的key中，移除最近最少用的key</li>
+<li>volatile-ttl：内存不足，写入新数据，在设置过期时间的key中，移除最早过期的key</li>
+</ul>
+</li>
+<li><p>缓存穿透</p>
+<h3 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h3><p>缓存穿透就是访问一个不存在的数据时，缓存没有命中，而访问数据库，在高并发情况下，数据库又因为压力而宕机</p>
+<h3 id="2、解决方案"><a href="#2、解决方案" class="headerlink" title="2、解决方案"></a>2、解决方案</h3><p>布隆过滤器</p>
+<ul>
+<li>简介：布隆过滤器实际上是一个很长的二进制向量和一系列随机映射函数。布隆过滤器可以用于检索一个元素是否在一个集合中。它的优点是空间效率和查询时间都远远超过一般的算法，缺点是有一定的误识别率和删除困难。</li>
+<li>原理：当一个元素被加入集合时，通过K个散列函数将这个元素映射成一个位数组中的K个点，把它们置为1。检索时，我们只要看看这些点是不是都是1就（大约）知道集合中有没有它了：如果这些点有任何一个0，则被检元素一定不在；如果都是1，则被检元素很可能在。</li>
+<li>优点：相比于其它的数据结构，布隆过滤器在空间和时间方面都有巨大的优势。布隆过滤器存储空间和插入/查询时间都是常数（O(k)）。而且它不存储元素本身，在某些对保密要求非常严格的场合有优势。</li>
+<li>缺点：一定的误识别率和删除困难。<br>结合以上几点及去重需求（容忍误判，会误判在，在则丢，无妨），决定使用BlomFilter。</li>
+</ul>
+</li>
+<li><p>缓存雪崩</p>
+<h3 id="1、介绍-1"><a href="#1、介绍-1" class="headerlink" title="1、介绍"></a>1、介绍</h3><p> 在缓存时设置相同的过期时间，导致缓存在某一时刻同时失效，请求全部转发到DB，数据库瞬时压力过重雪崩。 </p>
+<h3 id="2、解决方案-1"><a href="#2、解决方案-1" class="headerlink" title="2、解决方案"></a>2、解决方案</h3><p>缓存失效时间分散开，比如我们可以在原有的失效时间基础上增加一个随机值，比如1-5分钟随机，这样每一个缓存的过期时间的重复率就会降低，就很难引发集体失效的事件。</p>
+</li>
+<li><p>缓存击穿</p>
+<h3 id="1、介绍-2"><a href="#1、介绍-2" class="headerlink" title="1、介绍"></a>1、介绍</h3><p>某个数据设置过期时间，而该数据是被高并发访问的热点数据，一旦过期，可能就会造成缓存被击穿的可能</p>
+<h3 id="2、解决方案-2"><a href="#2、解决方案-2" class="headerlink" title="2、解决方案"></a>2、解决方案</h3><ul>
+<li><p>使用互斥锁解决</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">get</span><span class="params">(key)</span> </span>&#123;  </span><br><span class="line">      String value = redis.get(key);  </span><br><span class="line">      <span class="keyword">if</span> (value == <span class="keyword">null</span>) &#123; <span class="comment">//代表缓存值过期  </span></span><br><span class="line">          <span class="comment">//设置3min的超时，防止del操作失败的时候，下次缓存过期一直不能load db  </span></span><br><span class="line">          <span class="keyword">if</span> (redis.setnx(key_mutex, <span class="number">1</span>, <span class="number">3</span> * <span class="number">60</span>) == <span class="number">1</span>) &#123;  <span class="comment">//代表设置成功  </span></span><br><span class="line">               value = db.get(key);  </span><br><span class="line">               redis.set(key, value, expire_secs);  </span><br><span class="line">               redis.del(key_mutex);  </span><br><span class="line">              &#125; <span class="keyword">else</span> &#123;  <span class="comment">//这个时候代表同时候的其他线程已经load db并回设到缓存了，这时候重试获取缓存值即可  </span></span><br><span class="line">                      sleep(<span class="number">50</span>);  </span><br><span class="line">                      get(key);  <span class="comment">//重试  </span></span><br><span class="line">              &#125;  </span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">              <span class="keyword">return</span> value;        </span><br><span class="line">          &#125;  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将该数据不设置过期时间，就不会造成缓存击穿问题</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>​    Nginx</p>
+<ul>
+<li>Nginx是一个高性能的 HTTP 和 反向代理 服务器</li>
+<li>Nginx负载均衡<ul>
+<li>循环轮询</li>
+<li>最少连接，即每次都找连接数最少的服务器来转发请求</li>
+<li>IP地址来决定当前请求</li>
+<li>权重算法，会根据每个服务的权重来分发请求，权重大的请求相对会多分发一点，权重小的会少分发一点。</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -841,7 +1066,7 @@
   <p><span>本文标题:</span>面试</a></p>
   <p><span>文章作者:</span>陈汉槟</a></p>
   <p><span>发布时间:</span>2020年06月10日 - 21:48:47</p>
-  <p><span>最后更新:</span>2021年03月04日 - 22:58:21</p>
+  <p><span>最后更新:</span>2021年03月05日 - 08:24:41</p>
   <p><span>原始链接:</span><a href="/2020/06/10/%E9%9A%BE%E9%A2%98/" title="面试">http://deschen.com/2020/06/10/%E9%9A%BE%E9%A2%98/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://deschen.com/2020/06/10/%E9%9A%BE%E9%A2%98/"  aria-label="复制成功！"></i></span>
   </p>
@@ -1153,7 +1378,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面试题"><span class="nav-number">1.</span> <span class="nav-text">面试题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面试题"><span class="nav-number">1.</span> <span class="nav-text">面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、介绍"><span class="nav-number">1.0.1.</span> <span class="nav-text">1、介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、解决方案"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1、介绍-1"><span class="nav-number">1.0.3.</span> <span class="nav-text">1、介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、解决方案-1"><span class="nav-number">1.0.4.</span> <span class="nav-text">2、解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1、介绍-2"><span class="nav-number">1.0.5.</span> <span class="nav-text">1、介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、解决方案-2"><span class="nav-number">1.0.6.</span> <span class="nav-text">2、解决方案</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1201,7 +1426,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:13</span>
+    <span title="站点阅读时长">2:20</span>
   
 </div>
 
