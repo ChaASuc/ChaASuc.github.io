@@ -117,13 +117,15 @@
 
 
 
-  <meta name="description" content="机遇只会给有准备的人">
-<meta property="og:type" content="website">
-<meta property="og:title" content="陈汉槟的博客">
-<meta property="og:url" content="http://deschen.com/tags/security/index.html">
+  <meta name="description" content="Nginx部署-CentOS7.x[toc] 一、安装前准备 linux 内核2.6及以上版本:只有2.6之后才支持epool ，在此之前使用select或pool多路复用的IO模型，无法解决高并发压力的问题。通过命令uname -a 即可查看。 12#查看 linux 内核uname -a  依赖安装  GCC编译器GCC（GNU Compiler Collection）可用来编译C语言程序。N">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx部署-CentOS7.x">
+<meta property="og:url" content="http://deschen.com/2019/02/13/Nginx-CentOS7.x/index.html">
 <meta property="og:site_name" content="陈汉槟的博客">
-<meta property="og:description" content="机遇只会给有准备的人">
+<meta property="og:description" content="Nginx部署-CentOS7.x[toc] 一、安装前准备 linux 内核2.6及以上版本:只有2.6之后才支持epool ，在此之前使用select或pool多路复用的IO模型，无法解决高并发压力的问题。通过命令uname -a 即可查看。 12#查看 linux 内核uname -a  依赖安装  GCC编译器GCC（GNU Compiler Collection）可用来编译C语言程序。N">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-02-13T10:21:45.000Z">
+<meta property="article:modified_time" content="2021-03-09T10:03:53.839Z">
 <meta property="article:author" content="陈汉槟">
 <meta property="article:tag" content="Java开发">
 <meta property="article:tag" content="个人博客">
@@ -136,7 +138,7 @@
 
 
 
-  <link rel="canonical" href="http://deschen.com/tags/security/"/>
+  <link rel="canonical" href="http://deschen.com/2019/02/13/Nginx-CentOS7.x/"/>
 
 
 
@@ -146,7 +148,7 @@
   };
 </script>
 
-  <title>标签: security | 陈汉槟的博客</title>
+  <title>Nginx部署-CentOS7.x | 陈汉槟的博客</title>
   
 
 
@@ -195,7 +197,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -252,7 +254,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">10</span></a>
   </li>
@@ -343,84 +345,327 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>security<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://deschen.com/2019/02/13/Nginx-CentOS7.x/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈汉槟">
+      <meta itemprop="description" content="机遇只会给有准备的人">
+      <meta itemprop="image" content="/images/wolf_128.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈汉槟的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/05/23/Security%E7%AC%94%E8%AE%B0-%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%8F%8A%E8%AE%A4%E8%AF%81%E6%B5%81%E7%A8%8B/" itemprop="url">
-              
-                <span itemprop="name">Security笔记---基本原理及认证流程</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Nginx部署-CentOS7.x
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-05-23T08:29:18+08:00"
-              content="2019-05-23" >
-          05-23
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-13 18:21:45" itemprop="dateCreated datePublished" datetime="2019-02-13T18:21:45+08:00">2019-02-13</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-03-09 18:03:53" itemprop="dateModified" datetime="2021-03-09T18:03:53+08:00">2021-03-09</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Nginx/" itemprop="url" rel="index"><span itemprop="name">Nginx</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+
+
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">7 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Nginx部署-CentOS7-x"><a href="#Nginx部署-CentOS7-x" class="headerlink" title="Nginx部署-CentOS7.x"></a>Nginx部署-CentOS7.x</h1><p>[toc]</p>
+<h2 id="一、安装前准备"><a href="#一、安装前准备" class="headerlink" title="一、安装前准备"></a>一、安装前准备</h2><ol>
+<li><p>linux 内核2.6及以上版本:<br>只有2.6之后才支持epool ，在此之前使用select或pool多路复用的IO模型，无法解决高并发压力的问题。通过命令uname -a 即可查看。</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看 linux 内核</span></span><br><span class="line">uname -<span class="keyword">a</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>依赖安装</p>
+<ul>
+<li>GCC编译器<br>GCC（GNU Compiler Collection）可用来编译C语言程序。Nginx不会直接提供二进制可执行程序,只能下载源码进行编译。</li>
+<li>PCRE库<br>PCRE（Perl Compatible Regular Expressions，Perl兼容正则表达式）是由Philip Hazel开发的函数库，目前为很多软件所使用，该库支持正则表达式。</li>
+<li>zlib库<br>zlib库用于对HTTP包的内容做gzip格式的压缩，如果我们在nginx.conf里配置了gzip on，并指定对于某些类型（content-type）的HTTP响应使用gzip来进行压缩以减少网络传输量。</li>
+<li>OpenSSL开发库<br>如果我们的服务器不只是要支持HTTP，还需要在更安全的SSL协议上传输HTTP，那么就需要拥有OpenSSL了。另外，如果我们想使用MD5、SHA1等散列函数，那么也需要安装它。<br>上面几个库都是Nginx 基础功能所必需的，为简单起见我们可以通过yum 命令统一安装。</li>
+</ul>
+<figure class="highlight nsis"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install make <span class="literal">zlib</span> <span class="literal">zlib</span>-devel gcc-c++ libtool openssl openssl-devel pcre pcre-devel</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="二、下载和安装"><a href="#二、下载和安装" class="headerlink" title="二、下载和安装"></a>二、下载和安装</h2><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">下载：wget https:<span class="string">//nginx.org/download/nginx-1.8.1.tar.gz</span></span><br><span class="line">解压：tar -zxvf nginx-1.8.1.tar.gz -C <span class="string">/usr/local/</span></span><br><span class="line">创建nginx安装目录；mkdir <span class="string">/usr/local/nginx</span></span><br><span class="line">跳转到解压nginx目录：<span class="keyword">cd</span> <span class="string">/usr/local/nginx-1.8.1/</span></span><br><span class="line">配置nginx安装到那个目录：<span class="string">./configure</span> <span class="params">--user=nginx</span> <span class="params">--group=nginx</span> <span class="params">--prefix=/usr/local/nginx</span> <span class="params">--with-http_stub_status_module</span> <span class="params">--with-http_ssl_module</span></span><br><span class="line">安装：make&amp;make install</span><br><span class="line">注意点：</span><br><span class="line">为了安全，要配置nginx组及nginx用户，nginx只允许该用户启动。也可以掉 <span class="params">--user=nginx</span> <span class="params">--group=nginx</span>，改为root启动</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、nginx操作命令"><a href="#三、nginx操作命令" class="headerlink" title="三、nginx操作命令"></a>三、nginx操作命令</h2><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">跳转nginx安装目录：<span class="keyword">cd</span> <span class="string">/usr/local/nginx</span></span><br><span class="line">启动：<span class="string">./sbin/nginx</span>     <span class="comment"># 启动后，输入服务器ip，出现显示nginx字符串的网页就代表启动成功               </span></span><br><span class="line">重启：<span class="string">./sbin/nginx</span> -s <span class="keyword">reload</span></span><br><span class="line">停止：</span><br><span class="line">ps -ef|grep nginx</span><br><span class="line">kill -9 进程号</span><br><span class="line">验证配置文件：<span class="string">./sbin/nginx</span> -t</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p> nginx配置和运用就下一篇文章会讲</p>
+</blockquote>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    <div>
+        
+            
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>Nginx部署-CentOS7.x</a></p>
+  <p><span>文章作者:</span>陈汉槟</a></p>
+  <p><span>发布时间:</span>2019年02月13日 - 18:21:45</p>
+  <p><span>最后更新:</span>2021年03月09日 - 18:03:53</p>
+  <p><span>原始链接:</span><a href="/2019/02/13/Nginx-CentOS7.x/" title="Nginx部署-CentOS7.x">http://deschen.com/2019/02/13/Nginx-CentOS7.x/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://deschen.com/2019/02/13/Nginx-CentOS7.x/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+
+        
+    </div>
+
+    
+      <div>
+          <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/%E5%BE%AE%E4%BF%A1%E5%A4%B4%E5%83%8F.jpg" alt="陈汉槟 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>微信公众号还没弄好，先放上二维码吧！</div>
+</div>
+
+      </div>
+    
+
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果文章能帮助到你，希望继续支持我</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="陈汉槟 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="陈汉槟 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/03/rabbitmq%E2%80%94%E2%80%94CentOS7.x%E9%83%A8%E7%BD%B2/" rel="next" title="RabbitMq——CentOS7.X部署">
+                <i class="fa fa-chevron-left"></i> RabbitMq——CentOS7.X部署
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/28/SpringBoot%E9%83%A8%E7%BD%B2-Centos7-X/" rel="prev" title="SpringBoot部署-Centos7.X">
+                SpringBoot部署-Centos7.X <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -443,8 +688,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -605,6 +859,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Nginx部署-CentOS7-x"><span class="nav-number">1.</span> <span class="nav-text">Nginx部署-CentOS7.x</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、安装前准备"><span class="nav-number">1.1.</span> <span class="nav-text">一、安装前准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、下载和安装"><span class="nav-number">1.2.</span> <span class="nav-text">二、下载和安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、nginx操作命令"><span class="nav-number">1.3.</span> <span class="nav-text">三、nginx操作命令</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -776,6 +1046,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
 
   
 
