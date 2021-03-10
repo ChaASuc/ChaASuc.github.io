@@ -366,30 +366,6 @@
   
   <entry>
     <title>分库分表理论篇——以MySQL为例</title>
-    <link href="http://deschen.com/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/"/>
-    <id>http://deschen.com/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/</id>
-    <published>2019-07-17T02:34:14.000Z</published>
-    <updated>2019-07-17T02:36:35.243Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="分库分表理论篇——-以MySQL为例"><a href="#分库分表理论篇——-以MySQL为例" class="headerlink" title="分库分表理论篇—— 以MySQL为例"></a>分库分表理论篇—— 以MySQL为例</h1><h2 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h2><p>当今互联网大爆炸的时代，<strong>业务</strong>越来越多和大，<strong>单库单表</strong>数据超出数据库支持<strong>容量</strong>，数据库<strong>I/O操作</strong>次数会越来越多和慢，数据库的整体<strong>性能</strong>就会急剧下降。</p><h2 id="二、如何优化"><a href="#二、如何优化" class="headerlink" title="二、如何优化"></a>二、如何优化</h2><p>这里我想到几种优化的方法</p><ul><li>减少数据库访问压力<ul><li>使用<strong>缓存</strong>技术，对数据库的信息进行缓存，减少数据库访问压力</li><li>使用<strong>Nginx</strong>进行静态资源的获取，对一些高访问的<strong>网页</strong>，一次访问时可以先生成<strong>静态页面</strong>存到<strong>本地</strong>中，用户再次访问就会直接返回，这样减少与数据库的交互和渲染页面的操作，提高效率</li><li>读写分离<ul><li>互联网业务一般<strong>读多写少</strong>，<strong>读写</strong>比例基本是<strong>10:1</strong>。比如订单业务，顾客购买商品生成<strong>一次</strong>订单后，就会<strong>多次</strong>查看订单情况。这时可以采用<strong>主从架构</strong>，<strong>主库</strong>负责<strong>DML</strong>(增删改)操作，<strong>从库</strong>负责<strong>DQL</strong>(查看操作)，<strong>一</strong>个主库可以有<strong>多</strong>个从库，极大减轻读写压力</li></ul></li></ul></li><li>提升数据库性能<ul><li>可以从机器性能入手，内存不够加内存条，外存( 如硬盘 )不够加外存，这样即使数据量在大，也不会影响I/O读写速率，<strong>但是</strong>，数据量大会增加<strong>I/O的次数</strong>，数据库性能依旧会下降，不推荐，成本太高，没钱花，/(ㄒoㄒ)/~~</li><li>优化数据库<strong>索引</strong>，数据库<strong>语句</strong>，这个我将会写篇博客，具体介绍</li><li>分库分表<ul><li>分库分表要<strong>按业务进行拆分</strong>，具体后面会说。主要是打破<strong>单库单表</strong>的情况，数据存在<strong>多库多表</strong>中。打个比方，100W条数据存在10个库中，10个库有10张相同的表，那么一张表存的数据就会1W条左右，这样减低数据库的容量，提升I/O操作速率，提高数据库的性能</li></ul></li></ul></li></ul><h2 id="三、什么是分库分表"><a href="#三、什么是分库分表" class="headerlink" title="三、什么是分库分表"></a>三、什么是分库分表</h2><blockquote><p> 分库分表，顾名思义就是拆分数据库和拆分数据表。问题就来了，要怎么拆分数据库和数据表呢？</p></blockquote><p>这里用一张电商的数据库的ER图拆分<br><img src="https://img-blog.csdnimg.cn/20200119164837128.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><ul><li><p>垂直拆分( 以电商ER图拆分 )</p><ul><li><p>垂直拆库：按照业务拆分，<strong>业务耦合性低的数据表</strong>拆分到<strong>不同数据库</strong>中。比如电商数据库拆分成用户库、商品库、订单库…<strong>但是</strong>，不是什么表都可以分库的，例如：订单库有<strong>订单表和订单明细表</strong>，这两张表<strong>耦合性高</strong>，必须放在一起</p></li><li><p>垂直拆表：按照数据表的<strong>字段热点</strong>(就是使用<strong>频率高</strong>)和字段<strong>存储类型</strong>进行拆分。比如电商中商品不是有<strong>文字描述</strong>吗？可是我们一般看商品的<strong>标题，价格，图片</strong>，对于<strong>文字描述</strong>字段一般点进去才看(查看<strong>频率不如前者高</strong>)，那么我们可以把商品表除文字描述这些大字段拆分出另一张表使用，提高查询性能</p><p>PS：拆分大字段还有另一个原因，因为大字段读取时间长，数据量大的话，影响I/O的读取效率<br><img src="https://img-blog.csdnimg.cn/20200119164926806.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li><li><p>特点：</p><ul><li>每个库（表）的结构都不一样</li><li>每个库（表）的数据都（至少有一列）一样  </li><li>每个库（表）的并集是全量数据</li></ul></li></ul></li><li><p>水平拆分( 以电商ER图拆分)</p><ul><li><p>水平拆库：把<strong>单个数据库</strong>的数据拆分成<strong>多个相同结构数据库</strong>存储</p></li><li><p>水平拆表：把<strong>单表</strong>的数据量拆分成<strong>多个相同结构表</strong>存储</p></li></ul><p><img src="https://img-blog.csdnimg.cn/20200119164947411.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ennDrFQt-1579422434154)(C:\Users\20423\AppData\Roaming\Typora\typora-user-images\1579421448(1)\].jpg)"></p><ul><li><p>以上两者合并达到分库分表<br><img src="https://img-blog.csdnimg.cn/20200119165023617.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li><li><p>特点：</p><ul><li>每个库（表）的结构都不一样</li><li>每个库（表）的数据都（至少有一列）一样  </li><li>每个库（表）的并集是全量数据</li></ul></li></ul></li></ul><h2 id="三、优势和弊端"><a href="#三、优势和弊端" class="headerlink" title="三、优势和弊端"></a>三、优势和弊端</h2><ul><li>优点：<ul><li>减少数据库的访问压力和单个存储容量</li></ul></li><li>弊端：<ul><li>增加了我们维护成本，毕竟多个数据库和数据表维护</li><li>分布式事务（跨库事务），比如：处理一个业务需要执行多条插入语句，每条在不同机器的不同数据库中，出现问题，如何回滚</li><li>跨库join，因为在不同数据库中，就无法使用join命令获取信息</li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;分库分表理论篇——-以MySQL为例&quot;&gt;&lt;a href=&quot;#分库分表理论篇——-以MySQL为例&quot; class=&quot;headerlink&quot; title=&quot;分库分表理论篇—— 以MySQL为例&quot;&gt;&lt;/a&gt;分库分表理论篇—— 以MySQL为例&lt;/h1&gt;&lt;h2 id=&quot;一
-      
-    
-    </summary>
-    
-    
-      <category term="MySQL" scheme="http://deschen.com/categories/MySQL/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>分库分表理论篇——以MySQL为例</title>
     <link href="http://deschen.com/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/"/>
     <id>http://deschen.com/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/</id>
     <published>2019-07-17T02:34:14.000Z</published>
@@ -402,6 +378,30 @@
       
       
         &lt;h1 id=&quot;分库分表——-以MySQL为例&quot;&gt;&lt;a href=&quot;#分库分表——-以MySQL为例&quot; class=&quot;headerlink&quot; title=&quot;分库分表—— 以MySQL为例&quot;&gt;&lt;/a&gt;分库分表—— 以MySQL为例&lt;/h1&gt;&lt;h2 id=&quot;一、为什么要分库分表？&quot;&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://deschen.com/categories/MySQL/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>分库分表理论篇——以MySQL为例</title>
+    <link href="http://deschen.com/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/"/>
+    <id>http://deschen.com/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/</id>
+    <published>2019-07-17T02:34:14.000Z</published>
+    <updated>2019-07-17T02:36:35.243Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="分库分表理论篇——-以MySQL为例"><a href="#分库分表理论篇——-以MySQL为例" class="headerlink" title="分库分表理论篇—— 以MySQL为例"></a>分库分表理论篇—— 以MySQL为例</h1><h2 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h2><p>当今互联网大爆炸的时代，<strong>业务</strong>越来越多和大，<strong>单库单表</strong>数据超出数据库支持<strong>容量</strong>，数据库<strong>I/O操作</strong>次数会越来越多和慢，数据库的整体<strong>性能</strong>就会急剧下降。</p><h2 id="二、如何优化"><a href="#二、如何优化" class="headerlink" title="二、如何优化"></a>二、如何优化</h2><p>这里我想到几种优化的方法</p><ul><li>减少数据库访问压力<ul><li>使用<strong>缓存</strong>技术，对数据库的信息进行缓存，减少数据库访问压力</li><li>使用<strong>Nginx</strong>进行静态资源的获取，对一些高访问的<strong>网页</strong>，一次访问时可以先生成<strong>静态页面</strong>存到<strong>本地</strong>中，用户再次访问就会直接返回，这样减少与数据库的交互和渲染页面的操作，提高效率</li><li>读写分离<ul><li>互联网业务一般<strong>读多写少</strong>，<strong>读写</strong>比例基本是<strong>10:1</strong>。比如订单业务，顾客购买商品生成<strong>一次</strong>订单后，就会<strong>多次</strong>查看订单情况。这时可以采用<strong>主从架构</strong>，<strong>主库</strong>负责<strong>DML</strong>(增删改)操作，<strong>从库</strong>负责<strong>DQL</strong>(查看操作)，<strong>一</strong>个主库可以有<strong>多</strong>个从库，极大减轻读写压力</li></ul></li></ul></li><li>提升数据库性能<ul><li>可以从机器性能入手，内存不够加内存条，外存( 如硬盘 )不够加外存，这样即使数据量在大，也不会影响I/O读写速率，<strong>但是</strong>，数据量大会增加<strong>I/O的次数</strong>，数据库性能依旧会下降，不推荐，成本太高，没钱花，/(ㄒoㄒ)/~~</li><li>优化数据库<strong>索引</strong>，数据库<strong>语句</strong>，这个我将会写篇博客，具体介绍</li><li>分库分表<ul><li>分库分表要<strong>按业务进行拆分</strong>，具体后面会说。主要是打破<strong>单库单表</strong>的情况，数据存在<strong>多库多表</strong>中。打个比方，100W条数据存在10个库中，10个库有10张相同的表，那么一张表存的数据就会1W条左右，这样减低数据库的容量，提升I/O操作速率，提高数据库的性能</li></ul></li></ul></li></ul><h2 id="三、什么是分库分表"><a href="#三、什么是分库分表" class="headerlink" title="三、什么是分库分表"></a>三、什么是分库分表</h2><blockquote><p> 分库分表，顾名思义就是拆分数据库和拆分数据表。问题就来了，要怎么拆分数据库和数据表呢？</p></blockquote><p>这里用一张电商的数据库的ER图拆分<br><img src="https://img-blog.csdnimg.cn/20200119164837128.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><ul><li><p>垂直拆分( 以电商ER图拆分 )</p><ul><li><p>垂直拆库：按照业务拆分，<strong>业务耦合性低的数据表</strong>拆分到<strong>不同数据库</strong>中。比如电商数据库拆分成用户库、商品库、订单库…<strong>但是</strong>，不是什么表都可以分库的，例如：订单库有<strong>订单表和订单明细表</strong>，这两张表<strong>耦合性高</strong>，必须放在一起</p></li><li><p>垂直拆表：按照数据表的<strong>字段热点</strong>(就是使用<strong>频率高</strong>)和字段<strong>存储类型</strong>进行拆分。比如电商中商品不是有<strong>文字描述</strong>吗？可是我们一般看商品的<strong>标题，价格，图片</strong>，对于<strong>文字描述</strong>字段一般点进去才看(查看<strong>频率不如前者高</strong>)，那么我们可以把商品表除文字描述这些大字段拆分出另一张表使用，提高查询性能</p><p>PS：拆分大字段还有另一个原因，因为大字段读取时间长，数据量大的话，影响I/O的读取效率<br><img src="https://img-blog.csdnimg.cn/20200119164926806.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li><li><p>特点：</p><ul><li>每个库（表）的结构都不一样</li><li>每个库（表）的数据都（至少有一列）一样  </li><li>每个库（表）的并集是全量数据</li></ul></li></ul></li><li><p>水平拆分( 以电商ER图拆分)</p><ul><li><p>水平拆库：把<strong>单个数据库</strong>的数据拆分成<strong>多个相同结构数据库</strong>存储</p></li><li><p>水平拆表：把<strong>单表</strong>的数据量拆分成<strong>多个相同结构表</strong>存储</p></li></ul><p><img src="https://img-blog.csdnimg.cn/20200119164947411.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ennDrFQt-1579422434154)(C:\Users\20423\AppData\Roaming\Typora\typora-user-images\1579421448(1)\].jpg)"></p><ul><li><p>以上两者合并达到分库分表<br><img src="https://img-blog.csdnimg.cn/20200119165023617.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTE0Nzg4OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li><li><p>特点：</p><ul><li>每个库（表）的结构都不一样</li><li>每个库（表）的数据都（至少有一列）一样  </li><li>每个库（表）的并集是全量数据</li></ul></li></ul></li></ul><h2 id="三、优势和弊端"><a href="#三、优势和弊端" class="headerlink" title="三、优势和弊端"></a>三、优势和弊端</h2><ul><li>优点：<ul><li>减少数据库的访问压力和单个存储容量</li></ul></li><li>弊端：<ul><li>增加了我们维护成本，毕竟多个数据库和数据表维护</li><li>分布式事务（跨库事务），比如：处理一个业务需要执行多条插入语句，每条在不同机器的不同数据库中，出现问题，如何回滚</li><li>跨库join，因为在不同数据库中，就无法使用join命令获取信息</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;分库分表理论篇——-以MySQL为例&quot;&gt;&lt;a href=&quot;#分库分表理论篇——-以MySQL为例&quot; class=&quot;headerlink&quot; title=&quot;分库分表理论篇—— 以MySQL为例&quot;&gt;&lt;/a&gt;分库分表理论篇—— 以MySQL为例&lt;/h1&gt;&lt;h2 id=&quot;一
       
     
     </summary>

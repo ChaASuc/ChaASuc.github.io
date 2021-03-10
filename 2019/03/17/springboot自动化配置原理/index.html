@@ -127,8 +127,9 @@
 <meta property="og:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310222520340.png">
 <meta property="og:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310223126530.png">
 <meta property="og:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310221444482.png">
+<meta property="og:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210311000145789.png">
 <meta property="article:published_time" content="2019-03-17T02:07:04.000Z">
-<meta property="article:modified_time" content="2021-03-10T15:14:22.081Z">
+<meta property="article:modified_time" content="2021-03-10T16:01:58.189Z">
 <meta property="article:author" content="陈汉槟">
 <meta property="article:tag" content="SpringBoot">
 <meta name="twitter:card" content="summary">
@@ -427,7 +428,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-03-10 23:14:22" itemprop="dateModified" datetime="2021-03-10T23:14:22+08:00">2021-03-10</time>
+                <time title="修改时间：2021-03-11 00:01:58" itemprop="dateModified" datetime="2021-03-11T00:01:58+08:00">2021-03-11</time>
               
             
           </span>
@@ -485,7 +486,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">7 分钟</span>
               
             </div>
           
@@ -518,8 +519,18 @@
 <p>AutoConfigurationImportSelector调用selectImports()方法里面的<code>SpringFactoriesLoader.loadFactoryNames()</code>扫描所有jar包里面的META-IFA/spring.factories文件，将里面xxAutoConfiguration的类全限定名导入到容器中</p>
 <p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310223126530.png" alt="image-20210310223126530"></p>
 <p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310221444482.png" alt="image-20210310221444482"></p>
-<h2 id="二、自定义启动类"><a href="#二、自定义启动类" class="headerlink" title="二、自定义启动类"></a>二、自定义启动类</h2><p>在面试的时候，其实远远不需要回答的这么具体，你只需要这样回答：</p>
-<p>​     @SpringBootApplication之所以能够实现自动化装配，其底层是通过AutoConfigurationImportSelector.selectImports()方法实现的。而selectImports()方法调用SpringFactoriesLoader.loadFactoryNames所有的spring.factories文件中EnableAutoConfiguration指定的值，将这些值自动导入到容器中生效</p>
+<h2 id="二、自定义启动类"><a href="#二、自定义启动类" class="headerlink" title="二、自定义启动类"></a>二、自定义启动类</h2><ul>
+<li><p>首先创建一个META-INF/spring.factories,设置自定义的配置类全限定类名</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org<span class="selector-class">.springframework</span><span class="selector-class">.boot</span><span class="selector-class">.autoconfigure</span>.EnableAutoConfiguration=\</span><br><span class="line">cn<span class="selector-class">.deshen</span><span class="selector-class">.config</span>.FreemarkerAutoConfiguration</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>FreemarkerAutoConfiguration</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FreemarkerAutoConfiguration</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> SpringContextHolder <span class="title">springContextHolder</span><span class="params">(ApplicationContext applicationContext)</span> </span>&#123;</span><br><span class="line">        SpringContextHolder springContextHolder = <span class="keyword">new</span> SpringContextHolder();</span><br><span class="line">        springContextHolder.setApplicationContext(applicationContext);</span><br><span class="line">        <span class="keyword">return</span> springContextHolder;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意点：@Configuration里面有个@Component注解，如果在启动类的目录及子目录下，那么会自动加载进入。而配置类不同目录的话，就需要配置自定义配置类的设置</p>
+<p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210311000145789.png" alt="image-20210311000145789"></p>
+</li>
+</ul>
+<h2 id="三、在面试的时候，其实远远不需要回答的这么具体，你只需要这样回答："><a href="#三、在面试的时候，其实远远不需要回答的这么具体，你只需要这样回答：" class="headerlink" title="三、在面试的时候，其实远远不需要回答的这么具体，你只需要这样回答："></a>三、在面试的时候，其实远远不需要回答的这么具体，你只需要这样回答：</h2><p>​     @SpringBootApplication之所以能够实现自动化装配，其底层是通过AutoConfigurationImportSelector.selectImports()方法实现的。而selectImports()方法调用SpringFactoriesLoader.loadFactoryNames所有的spring.factories文件中EnableAutoConfiguration指定的值，将这些值自动导入到容器中生效</p>
 
       
     </div>
@@ -544,7 +555,7 @@
   <p><span>本文标题:</span>SpringBoot自动化配置原理</a></p>
   <p><span>文章作者:</span>陈汉槟</a></p>
   <p><span>发布时间:</span>2019年03月17日 - 10:07:04</p>
-  <p><span>最后更新:</span>2021年03月10日 - 23:14:22</p>
+  <p><span>最后更新:</span>2021年03月11日 - 00:01:58</p>
   <p><span>原始链接:</span><a href="/2019/03/17/springboot%E8%87%AA%E5%8A%A8%E5%8C%96%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86/" title="SpringBoot自动化配置原理">http://deschen.com/2019/03/17/springboot%E8%87%AA%E5%8A%A8%E5%8C%96%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://deschen.com/2019/03/17/springboot%E8%87%AA%E5%8A%A8%E5%8C%96%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86/"  aria-label="复制成功！"></i></span>
   </p>
@@ -870,7 +881,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot自动化配置原理"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot自动化配置原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、SpringBoot自动化配置原理"><span class="nav-number">1.1.</span> <span class="nav-text">一、SpringBoot自动化配置原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、自定义启动类"><span class="nav-number">1.2.</span> <span class="nav-text">二、自定义启动类</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot自动化配置原理"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot自动化配置原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、SpringBoot自动化配置原理"><span class="nav-number">1.1.</span> <span class="nav-text">一、SpringBoot自动化配置原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、自定义启动类"><span class="nav-number">1.2.</span> <span class="nav-text">二、自定义启动类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、在面试的时候，其实远远不需要回答的这么具体，你只需要这样回答："><span class="nav-number">1.3.</span> <span class="nav-text">三、在面试的时候，其实远远不需要回答的这么具体，你只需要这样回答：</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -918,7 +929,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">3:03</span>
+    <span title="站点阅读时长">3:04</span>
   
 </div>
 
