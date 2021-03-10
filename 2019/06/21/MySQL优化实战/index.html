@@ -117,28 +117,23 @@
 
 
 
-  <meta name="description" content="深入理解JVM–七种垃圾收集器一、垃圾收集器 七种垃圾收集器组合    区域划分  新生代收集器：Serial、ParNew、Parallel Scavenge； 老年代收集器：Serial Old、Parallel Old、CMS； 整堆收集器：G1；    二、并发垃圾收集和并行垃圾收集的区别 并行（Parallel）：指多条垃圾收集线程并行工作，但此时用户线程仍然处于等待状态；如：ParNe">
+  <meta name="description" content="MySQL优化实战[toc] 一、示例表1234567891011121314151617181920212223242526272829DROP TABLE IF EXISTS &#96;employees&#96;;CREATE TABLE &#96;employees&#96; (  &#96;id&#96; int(11) NOT NULL AUTO_INCREMENT,  &#96;name&#96; varchar(24) NOT NULL DEF">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解JVM--七种垃圾收集器">
-<meta property="og:url" content="http://deschen.com/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/index.html">
+<meta property="og:title" content="MySQL优化实战">
+<meta property="og:url" content="http://deschen.com/2019/06/21/MySQL%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98/index.html">
 <meta property="og:site_name" content="陈汉槟的博客">
-<meta property="og:description" content="深入理解JVM–七种垃圾收集器一、垃圾收集器 七种垃圾收集器组合    区域划分  新生代收集器：Serial、ParNew、Parallel Scavenge； 老年代收集器：Serial Old、Parallel Old、CMS； 整堆收集器：G1；    二、并发垃圾收集和并行垃圾收集的区别 并行（Parallel）：指多条垃圾收集线程并行工作，但此时用户线程仍然处于等待状态；如：ParNe">
+<meta property="og:description" content="MySQL优化实战[toc] 一、示例表1234567891011121314151617181920212223242526272829DROP TABLE IF EXISTS &#96;employees&#96;;CREATE TABLE &#96;employees&#96; (  &#96;id&#96; int(11) NOT NULL AUTO_INCREMENT,  &#96;name&#96; varchar(24) NOT NULL DEF">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://img.blog.csdn.net/20170102225015393">
-<meta property="og:image" content="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1584521520253.png">
-<meta property="og:image" content="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1584521563004.png">
-<meta property="og:image" content="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1584521574511.png">
-<meta property="og:image" content="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1584521588277.png">
-<meta property="og:image" content="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/01/clip_image002.gif">
-<meta property="og:image" content="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/01/clip_image004.gif">
-<meta property="og:image" content="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/01/clip_image006.gif">
-<meta property="article:published_time" content="2019-10-11T08:18:05.000Z">
-<meta property="article:modified_time" content="2021-03-04T09:57:45.894Z">
+<meta property="og:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310114551289.png">
+<meta property="og:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310115603682.png">
+<meta property="og:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310154329480.png">
+<meta property="article:published_time" content="2019-06-21T11:20:45.000Z">
+<meta property="article:modified_time" content="2021-03-10T07:57:55.806Z">
 <meta property="article:author" content="陈汉槟">
 <meta property="article:tag" content="Java开发">
 <meta property="article:tag" content="个人博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20170102225015393">
+<meta name="twitter:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310114551289.png">
 
 
 
@@ -147,7 +142,7 @@
 
 
 
-  <link rel="canonical" href="http://deschen.com/2019/10/11/深入理解JVM-七种垃圾收集器/"/>
+  <link rel="canonical" href="http://deschen.com/2019/06/21/MySQL优化实战/"/>
 
 
 
@@ -157,7 +152,7 @@
   };
 </script>
 
-  <title>深入理解JVM--七种垃圾收集器 | 陈汉槟的博客</title>
+  <title>MySQL优化实战 | 陈汉槟的博客</title>
   
 
 
@@ -374,7 +369,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://deschen.com/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/">
+    <link itemprop="mainEntityOfPage" href="http://deschen.com/2019/06/21/MySQL%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈汉槟">
@@ -391,7 +386,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">深入理解JVM--七种垃圾收集器
+          <h1 class="post-title" itemprop="name headline">MySQL优化实战
               
             
           </h1>
@@ -416,7 +411,7 @@
                 
               
 
-              <time title="创建时间：2019-10-11 16:18:05" itemprop="dateCreated datePublished" datetime="2019-10-11T16:18:05+08:00">2019-10-11</time>
+              <time title="创建时间：2019-06-21 19:20:45" itemprop="dateCreated datePublished" datetime="2019-06-21T19:20:45+08:00">2019-06-21</time>
             
 
             
@@ -433,7 +428,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-03-04 17:57:45" itemprop="dateModified" datetime="2021-03-04T17:57:45+08:00">2021-03-04</time>
+                <time title="修改时间：2021-03-10 15:57:55" itemprop="dateModified" datetime="2021-03-10T15:57:55+08:00">2021-03-10</time>
               
             
           </span>
@@ -450,7 +445,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a></span>
 
                 
                 
@@ -491,7 +486,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">10 分钟</span>
+                <span title="阅读时长">18 分钟</span>
               
             </div>
           
@@ -511,62 +506,49 @@
       
 
       
-        <h1 id="深入理解JVM–七种垃圾收集器"><a href="#深入理解JVM–七种垃圾收集器" class="headerlink" title="深入理解JVM–七种垃圾收集器"></a>深入理解JVM–七种垃圾收集器</h1><h2 id="一、垃圾收集器"><a href="#一、垃圾收集器" class="headerlink" title="一、垃圾收集器"></a>一、垃圾收集器</h2><ul>
-<li><p>七种垃圾收集器组合</p>
-<p> <img src="http://img.blog.csdn.net/20170102225015393" alt="img"></p>
+        <h1 id="MySQL优化实战"><a href="#MySQL优化实战" class="headerlink" title="MySQL优化实战"></a>MySQL优化实战</h1><p>[toc]</p>
+<h2 id="一、示例表"><a href="#一、示例表" class="headerlink" title="一、示例表"></a>一、示例表</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> <span class="string">`employees`</span>;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`employees`</span> (</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="string">`name`</span> <span class="built_in">varchar</span>(<span class="number">24</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span> <span class="keyword">COMMENT</span> <span class="string">'姓名'</span>,</span><br><span class="line">  <span class="string">`age`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'0'</span> <span class="keyword">COMMENT</span> <span class="string">'年龄'</span>,</span><br><span class="line">  <span class="string">`position`</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span> <span class="keyword">COMMENT</span> <span class="string">'职位'</span>,</span><br><span class="line">  <span class="string">`hire_time`</span> <span class="built_in">timestamp</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span> <span class="keyword">COMMENT</span> <span class="string">'入职时间'</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>),</span><br><span class="line">  <span class="keyword">KEY</span> <span class="string">`idx_name_age_position`</span> (<span class="string">`name`</span>,<span class="string">`age`</span>,<span class="string">`position`</span>) <span class="keyword">USING</span> BTREE</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> AUTO_INCREMENT=<span class="number">4</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8 <span class="keyword">COMMENT</span>=<span class="string">'员工记录表'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> employees(<span class="keyword">name</span>,age,<span class="keyword">position</span>,hire_time) <span class="keyword">VALUES</span>(<span class="string">'LiLei'</span>,<span class="number">22</span>,<span class="string">'manager'</span>,<span class="keyword">NOW</span>());</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> employees(<span class="keyword">name</span>,age,<span class="keyword">position</span>,hire_time) <span class="keyword">VALUES</span>(<span class="string">'HanMeimei'</span>, <span class="number">23</span>,<span class="string">'dev'</span>,<span class="keyword">NOW</span>());</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> employees(<span class="keyword">name</span>,age,<span class="keyword">position</span>,hire_time) <span class="keyword">VALUES</span>(<span class="string">'Lucy'</span>,<span class="number">23</span>,<span class="string">'dev'</span>,<span class="keyword">NOW</span>());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> <span class="string">`employees_info`</span>;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`employees_info`</span> (</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="string">`id_card`</span> <span class="built_in">varchar</span>(<span class="number">24</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span> <span class="keyword">COMMENT</span> <span class="string">'身份证'</span>,</span><br><span class="line">  <span class="string">`address`</span> <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span> <span class="keyword">COMMENT</span> <span class="string">'地址'</span>,</span><br><span class="line">  <span class="string">`employee_id`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'员工id'</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>),</span><br><span class="line">  <span class="keyword">KEY</span> <span class="string">`employee_id`</span> (<span class="string">`employee_id`</span>) <span class="keyword">USING</span> BTREE</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> AUTO_INCREMENT=<span class="number">4</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8 <span class="keyword">COMMENT</span>=<span class="string">'员工信息详情'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> employees_info(id_card,address,employee_id) <span class="keyword">VALUES</span>(<span class="string">'xxx'</span>,<span class="string">'广州'</span>,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> employees_info(id_card,address,employee_id) <span class="keyword">VALUES</span>(<span class="string">'yyy'</span>,<span class="string">'深圳'</span>,<span class="number">2</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> employees_info(id_card,address,employee_id) <span class="keyword">VALUES</span>(<span class="string">'zzz'</span>,<span class="string">'广州'</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、选择合适索引"><a href="#二、选择合适索引" class="headerlink" title="二、选择合适索引"></a>二、选择合适索引</h2><ul>
+<li><p>覆盖索引优化</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">EXPLAIN</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees <span class="keyword">where</span> <span class="keyword">name</span> &gt; <span class="string">'a'</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310114551289.png" alt="image-20210310114551289"></p>
+<ul>
+<li><p>明明name字段也设置了联合索引，并且是索引的第一列，为什么还是全表扫描？</p>
+<ul>
+<li>因为MySQL内部会根据情况自动优化语句，他觉得全表扫描的成本更低<ul>
+<li>为什么全表扫描成本更低呢？<ul>
+<li>因为MySQL根据name查询的索引树是联合索引树，联合索引树的叶子节点只有主键索引列+联合索引列。因此查询后还要根据主键索引列在主键索引树查询出最终数据，成本比全表扫描更高。所以MySQL使用全表扫描查询数据。</li>
+</ul>
 </li>
-<li><p>区域划分</p>
-<ul>
-<li>新生代收集器：Serial、ParNew、Parallel Scavenge；</li>
-<li>老年代收集器：Serial Old、Parallel Old、CMS；</li>
-<li>整堆收集器：G1；</li>
 </ul>
 </li>
 </ul>
-<h2 id="二、并发垃圾收集和并行垃圾收集的区别"><a href="#二、并发垃圾收集和并行垃圾收集的区别" class="headerlink" title="二、并发垃圾收集和并行垃圾收集的区别"></a>二、并发垃圾收集和并行垃圾收集的区别</h2><ul>
-<li>并行（Parallel）：指多条垃圾收集线程并行工作，但此时用户线程仍然处于等待状态；如：ParNew、Parallel Scavenge、Parallel Old；</li>
-<li>并发（Concurrent）：指用户线程与垃圾收集线程同时执行（但不一定是并行的，可能会交替执行）；用户程序在继续运行，而垃圾收集程序线程运行于另一个CPU上；如：CMS、G1（也有并行）；</li>
-</ul>
-<h2 id="三、收集器详解"><a href="#三、收集器详解" class="headerlink" title="三、收集器详解"></a>三、收集器详解</h2><h3 id="1、Serial收集器"><a href="#1、Serial收集器" class="headerlink" title="1、Serial收集器"></a>1、Serial收集器</h3><p>Serial（串行）收集器收集器是<strong>最基本、历史最悠久</strong>的垃圾收集器了。大家看名字就知道这个收集器是一个<strong>单线程收集器</strong>了。它的单线程的意义不仅仅意味着它<strong>只会使用一条垃圾收集线程去完成垃圾收集</strong>工作，更重要的是<strong>它在进行垃圾收集工作的时候必须暂停其他所有的工作线程</strong>（ <strong>“Stop The World”</strong> ），直到它收集结束。</p>
-<p><strong>新生代采用复制算法，老年代采用标记-整理算法。</strong></p>
-<p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1584521520253.png" alt="1584521520253"></p>
-<h3 id="2、ParNew收集器"><a href="#2、ParNew收集器" class="headerlink" title="2、ParNew收集器"></a>2、ParNew收集器</h3><p>ParNew收集器其实就是<strong>Serial收集器的多线程版本</strong>，除了<strong>使用多线程进行垃圾收集外</strong>，<strong>其余行为</strong>（控制参数、收集算法、回收策略等等）和Serial收集器<strong>完全一样</strong>。</p>
-<p><strong>新生代采用复制算法，老年代采用标记-整理算法。</strong></p>
-<p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1584521563004.png" alt="1584521563004"></p>
-<h3 id="3、Parallel-Scavenge收集器"><a href="#3、Parallel-Scavenge收集器" class="headerlink" title="3、Parallel Scavenge收集器"></a>3、Parallel Scavenge收集器</h3><p>Parallel Scavenge 收集器<strong>类似于ParNew 收集器，是Server 模式</strong>（内存大于2G，2个cpu）下的<strong>默认收集器</strong>，那么它有什么特别之处呢？</p>
-<p>Parallel Scavenge收集器<strong>关注点是吞吐量（高效率的利用CPU）</strong>。所谓吞吐量就是<strong>CPU中用于运行用户代码的时间与CPU总消耗时间的比值</strong>。 </p>
-<p><strong>新生代采用复制算法，老年代采用标记-整理算法。</strong></p>
-<p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1584521574511.png" alt="1584521574511"></p>
-<h3 id="4、Serial-Old收集器"><a href="#4、Serial-Old收集器" class="headerlink" title="4、Serial Old收集器"></a>4、Serial Old收集器</h3><p><strong>Serial</strong>收集器的<strong>老年代版本</strong>，它同样是一个<strong>单线程</strong>收集器。它主要有两大用途：一种用途是在<strong>JDK1.5以及以前的版本中与Parallel Scavenge收集器搭配使用</strong>，另一种用途是作<strong>为CMS收集器的后备方案</strong>。  </p>
-<h3 id="5、Parallel-Old收集器"><a href="#5、Parallel-Old收集器" class="headerlink" title="5、Parallel Old收集器"></a>5、Parallel Old收集器</h3><p> <strong>Parallel Scavenge</strong>收集器的<strong>老年代</strong>版本。使用多线程和“标记-整理”算法。在注重吞吐量以及CPU资源的场合，都可以优先考虑 Parallel Scavenge收集器和Parallel Old收集器。</p>
-<h3 id="6、CMS收集器"><a href="#6、CMS收集器" class="headerlink" title="6、CMS收集器"></a>6、CMS收集器</h3><p>CMS（Concurrent Mark Sweep）收集器是一种以<strong>获取最短回收停顿时间为目标的收集器</strong>。它而非常符合在注重用户体验的应用上使用，它是HotSpot虚拟机第一款真正意义上的并发收集器，它第一次实现了让<strong>垃圾收集线程与用户线程（基本上）同时工作。</strong></p>
-<p>从名字中的<strong>Mark Sweep</strong>这两个词可以看出，CMS收集器是一种 <strong>“标记-清除”算法</strong>实现的，它的运作过程相比于前面几种垃圾收集器来说更加复杂一些。整个过程分为四个步骤：</p>
+</li>
+<li><p>如何优化索引，使其执行经过索引，提高效率？</p>
 <ul>
-<li><strong>初始标记：</strong> 暂停所有的其他线程(<strong>STW</strong>)，并记录下<strong>直接与root相连的对象，速度很快</strong> ；</li>
-<li><strong>并发标记：</strong> <strong>同时开启GC和用户线程</strong>，用一个<strong>闭包结构</strong>去<strong>记录可达对象</strong>。但在这个阶段结束，这个闭包结构<strong>并不能保证包含当前所有的可达对象</strong>。因为<strong>用户线程</strong>可能会<strong>不断的更新引用域</strong>，所以GC线程无法保证可达性分析的<strong>实时性</strong>。所以这个算法里会<strong>跟踪记录这些发生引用更新的地方</strong>。</li>
-<li><strong>重新标记：</strong> 重新标记阶段就是为了<strong>修正</strong>并发标记期间因为用户程序继续运行而导致<strong>标记产生变动的那一部分对象的标记记录</strong>，这个阶段的停顿时间一般<strong>会比初始标记阶段的时间稍长，远远比并发标记阶段时间短</strong></li>
-<li><strong>并发清除：</strong> 开启用户线程，同时<strong>GC线程开始对未标记的区域做清扫</strong>。</li>
+<li><p>因为MySQL要经过两次索引树导致成本高。那么我们只要把查询的数据在联合索引树找到就可以了。所以我们ssql语句的*****改为联合索引的列就可以了。这种就是覆盖索引。</p>
+</li>
+<li><p>PS：这也是为什么很多公司要求sql不要带*的原因。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">EXPLAIN</span> <span class="keyword">SELECT</span> <span class="keyword">name</span>,age,<span class="keyword">position</span> <span class="keyword">FROM</span> employees <span class="keyword">where</span> <span class="keyword">name</span> &gt; <span class="string">'a'</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310115603682.png" alt="image-20210310115603682"></p>
+</li>
 </ul>
-<p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1584521588277.png" alt="1584521588277"></p>
-<p>从它的名字就可以看出它是一款优秀的垃圾收集器，主要优点：<strong>并发收集、低停顿</strong>。但是它有下面三个明显的缺点：</p>
+</li>
+<li><p>遵循最左前缀法则</p>
 <ul>
-<li>对<strong>CPU资源敏感</strong>（会和服务抢资源）；</li>
-<li><strong>无法处理浮动垃圾(</strong>在java业务程序线程与垃圾收集线程并发执行过程中又产生的垃圾，这种浮动垃圾只能等到下一次gc再清理了)；</li>
-<li>它使用的回收算法<strong>-“标记-清除”</strong>算法会导致收集结束时会有大量空间碎片产生<strong>。</strong></li>
+<li><p>order by 与 group by优化</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">EXPLAIN</span> <span class="keyword">SELECT</span> <span class="keyword">name</span>, age, <span class="keyword">position</span> <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> <span class="keyword">name</span> = <span class="string">'a'</span> <span class="keyword">AND</span> age &gt; <span class="number">23</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">position</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310154329480.png" alt="image-20210310154329480"></p>
+</li>
 </ul>
-<h3 id="7、G1收集器-XX-UseG1GC"><a href="#7、G1收集器-XX-UseG1GC" class="headerlink" title="7、G1收集器(-XX:+UseG1GC)"></a>7、G1收集器(-XX:+UseG1GC)</h3><p><strong>G1</strong> (Garbage-First)是一款<strong>面向服务器的垃圾收集器</strong>,主要针对配备<strong>多颗处理器及大容量内存的机器</strong>. 以极<strong>高概率满足GC停顿时间要求的同时,还具备高吞吐量性能特征</strong>.</p>
-<p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/01/clip_image002.gif" alt="截图.png"></p>
-<p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/01/clip_image004.gif" alt="截图.png"></p>
-<p>G1将<strong>Java堆划分为多个大小相等的独立区域</strong>（<strong>Region</strong>），虽保留新生代和老年代的<strong>概念</strong>，但不再是<strong>物理隔阂</strong>了，它们都是（可以不连续）<strong>Region</strong>的集合。</p>
-<p><strong>分配大对象</strong>（直接进<strong>Humongous区</strong>，专门<strong>存放短期巨型对象</strong>， <strong>当分配的对象大于等于Region大小的一半</strong>的时候就会被认为是巨型对象 ）不会因为无法找到连续空间而提前触发下一次GC。</p>
-<p>G1收集器的运作大致分为以下几个步骤：</p>
-<ul>
-<li><strong>初始标记</strong>（initial mark，STW）：在此阶段，标记 GC Roots能直接关联到的对象。 需要停顿线程，但耗时很短 </li>
-<li><strong>并发标记</strong>（Concurrent Marking）： GC Root开始对堆中对象进行<strong>可达性分析，找出存活的对象，</strong>这阶段耗时较长，但可与用户程序并发执行 </li>
-<li><strong>最终标记</strong>（Remark，STW）： 修正在并发标记期间因<strong>用户程序继续运作而导致标记产生变动的那一部分标记记录</strong> </li>
-<li><strong>筛选回收</strong>（Cleanup，STW）：筛选回收阶段首先对各个Region的回收价值和成本进行排序，<strong>根据用户所期望的GC停顿时间来制定回收计划</strong>.</li>
+</li>
 </ul>
-<p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/01/clip_image006.gif" alt="clipboard.png"></p>
+</li>
+</ul>
 
       
     </div>
@@ -588,12 +570,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>深入理解JVM--七种垃圾收集器</a></p>
+  <p><span>本文标题:</span>MySQL优化实战</a></p>
   <p><span>文章作者:</span>陈汉槟</a></p>
-  <p><span>发布时间:</span>2019年10月11日 - 16:18:05</p>
-  <p><span>最后更新:</span>2021年03月04日 - 17:57:45</p>
-  <p><span>原始链接:</span><a href="/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/" title="深入理解JVM--七种垃圾收集器">http://deschen.com/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://deschen.com/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年06月21日 - 19:20:45</p>
+  <p><span>最后更新:</span>2021年03月10日 - 15:57:55</p>
+  <p><span>原始链接:</span><a href="/2019/06/21/MySQL%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98/" title="MySQL优化实战">http://deschen.com/2019/06/21/MySQL%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://deschen.com/2019/06/21/MySQL%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -671,8 +653,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E5%9B%9B%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95/" rel="next" title="深入理解JVM--四种垃圾收集算法">
-                <i class="fa fa-chevron-left"></i> 深入理解JVM--四种垃圾收集算法
+              <a href="/2019/06/20/MySQL%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="next" title="MySQL性能优化">
+                <i class="fa fa-chevron-left"></i> MySQL性能优化
               </a>
             
           </div>
@@ -681,8 +663,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/12/20/%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%AD%E5%8F%B0%EF%BC%9F/" rel="prev" title="什么是中台？">
-                什么是中台？ <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/" rel="prev" title="深入理解Redis--解决Redis缓存穿透、雪崩、击穿问题">
+                深入理解Redis--解决Redis缓存穿透、雪崩、击穿问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -911,7 +893,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深入理解JVM–七种垃圾收集器"><span class="nav-number">1.</span> <span class="nav-text">深入理解JVM–七种垃圾收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、垃圾收集器"><span class="nav-number">1.1.</span> <span class="nav-text">一、垃圾收集器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、并发垃圾收集和并行垃圾收集的区别"><span class="nav-number">1.2.</span> <span class="nav-text">二、并发垃圾收集和并行垃圾收集的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、收集器详解"><span class="nav-number">1.3.</span> <span class="nav-text">三、收集器详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、Serial收集器"><span class="nav-number">1.3.1.</span> <span class="nav-text">1、Serial收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、ParNew收集器"><span class="nav-number">1.3.2.</span> <span class="nav-text">2、ParNew收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、Parallel-Scavenge收集器"><span class="nav-number">1.3.3.</span> <span class="nav-text">3、Parallel Scavenge收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、Serial-Old收集器"><span class="nav-number">1.3.4.</span> <span class="nav-text">4、Serial Old收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、Parallel-Old收集器"><span class="nav-number">1.3.5.</span> <span class="nav-text">5、Parallel Old收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、CMS收集器"><span class="nav-number">1.3.6.</span> <span class="nav-text">6、CMS收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、G1收集器-XX-UseG1GC"><span class="nav-number">1.3.7.</span> <span class="nav-text">7、G1收集器(-XX:+UseG1GC)</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL优化实战"><span class="nav-number">1.</span> <span class="nav-text">MySQL优化实战</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、示例表"><span class="nav-number">1.1.</span> <span class="nav-text">一、示例表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、选择合适索引"><span class="nav-number">1.2.</span> <span class="nav-text">二、选择合适索引</span></a></li></ol></li></ol></div>
             
 
           </div>

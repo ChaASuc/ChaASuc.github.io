@@ -117,21 +117,22 @@
 
 
 
-  <meta name="description" content="SpringBoot自动化配置原理 初识Spring Boot时我们就知道，Spring Boot有一个全局配置文件：application.properties或application.yml。 我们的各种属性都可以在这个文件中进行配置，最常配置的比如：server.port、logging.level.* 等等，然而我们实际用到的往往只是很少的一部分，那么这些属性是否有据可依呢？答案当然是肯定">
+  <meta name="description" content="SpringBoot自动化配置原理[toc]  初识Spring Boot时我们就知道，Spring Boot有一个全局配置文件：application.properties或application.yml。 我们的各种属性都可以在这个文件中进行配置，最常配置的比如：server.port、logging.level.* 等等，然而我们实际用到的往往只是很少的一部分，那么这些属性是否有据可依呢？答">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot自动化配置原理">
 <meta property="og:url" content="http://deschen.com/2019/03/17/springboot%E8%87%AA%E5%8A%A8%E5%8C%96%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86/index.html">
 <meta property="og:site_name" content="陈汉槟的博客">
-<meta property="og:description" content="SpringBoot自动化配置原理 初识Spring Boot时我们就知道，Spring Boot有一个全局配置文件：application.properties或application.yml。 我们的各种属性都可以在这个文件中进行配置，最常配置的比如：server.port、logging.level.* 等等，然而我们实际用到的往往只是很少的一部分，那么这些属性是否有据可依呢？答案当然是肯定">
+<meta property="og:description" content="SpringBoot自动化配置原理[toc]  初识Spring Boot时我们就知道，Spring Boot有一个全局配置文件：application.properties或application.yml。 我们的各种属性都可以在这个文件中进行配置，最常配置的比如：server.port、logging.level.* 等等，然而我们实际用到的往往只是很少的一部分，那么这些属性是否有据可依呢？答">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/typora-user-images/1581905687023.png">
-<meta property="og:image" content="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/typora-user-images/1581905809350.png">
+<meta property="og:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310222520340.png">
+<meta property="og:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310223126530.png">
+<meta property="og:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310221444482.png">
 <meta property="article:published_time" content="2019-03-17T02:07:04.000Z">
-<meta property="article:modified_time" content="2021-03-03T09:55:37.305Z">
+<meta property="article:modified_time" content="2021-03-10T15:14:22.081Z">
 <meta property="article:author" content="陈汉槟">
 <meta property="article:tag" content="SpringBoot">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/typora-user-images/1581905687023.png">
+<meta name="twitter:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310222520340.png">
 
 
 
@@ -274,7 +275,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">39</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">40</span></a>
   </li>
 
       
@@ -426,7 +427,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-03-03 17:55:37" itemprop="dateModified" datetime="2021-03-03T17:55:37+08:00">2021-03-03</time>
+                <time title="修改时间：2021-03-10 23:14:22" itemprop="dateModified" datetime="2021-03-10T23:14:22+08:00">2021-03-10</time>
               
             
           </span>
@@ -504,20 +505,21 @@
       
 
       
-        <h1 id="SpringBoot自动化配置原理"><a href="#SpringBoot自动化配置原理" class="headerlink" title="SpringBoot自动化配置原理"></a>SpringBoot自动化配置原理</h1><blockquote>
+        <h1 id="SpringBoot自动化配置原理"><a href="#SpringBoot自动化配置原理" class="headerlink" title="SpringBoot自动化配置原理"></a>SpringBoot自动化配置原理</h1><p>[toc]</p>
+<blockquote>
 <p>初识Spring Boot时我们就知道，Spring Boot有一个全局配置文件：application.properties或application.yml。</p>
 <p>我们的各种属性都可以在这个文件中进行配置，最常配置的比如：server.port、logging.level.* 等等，然而我们实际用到的往往只是很少的一部分，那么这些属性是否有据可依呢？答案当然是肯定的，这些属性都可以在官方文档中查找到：</p>
 <p><a href="https://docs.spring.io/spring-boot/docs/2.1.0.RELEASE/reference/htmlsingle/#common-application-properties" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/2.1.0.RELEASE/reference/htmlsingle/#common-application-properties</a></p>
 <p>那么问题来了：这些配置是如何在Spring Boot项目中生效的呢？那么接下来，就需要聚焦本篇博客的主题：自动配置工作原理或者叫实现方式。</p>
 </blockquote>
-<p> @SpringBootApplication是一个复合注解或派生注解，在@SpringBootApplication中有一个注解@EnableAutoConfiguration，翻译成人话就是开启自动配置，其定义如下：</p>
-<p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/typora-user-images/1581905687023.png" alt="1581905687023"></p>
-<p> 而这个注解也是一个派生注解，其中的关键功能由@Import提供，其导入的AutoConfigurationImportSelector的selectImports()方法通过SpringFactoriesLoader.loadFactoryNames()扫描所有具有META-INF/spring.factories的jar包。spring-boot-autoconfigure-x.x.x.x.jar里就有一个这样的spring.factories文件。</p>
-<p>这个spring.factories文件也是一组一组的key=value的形式，其中一个key是EnableAutoConfiguration类的全类名，而它的value是一个xxxxAutoConfiguration的类名的列表，这些类名以逗号分隔，如下图所示：</p>
-<p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/typora-user-images/1581905809350.png" alt="1581905809350"></p>
-<p>这个@EnableAutoConfiguration注解通过@SpringBootApplication被间接的标记在了Spring Boot的启动类上。在SpringApplication.run(…)的内部就会执行selectImports()方法，找到所有JavaConfig自动配置类的全限定名对应的class，然后将所有自动配置类加载到Spring容器中。</p>
-<p>在面试的时候，其实远远不需要回答的这么具体，你只需要这样回答：</p>
-<p>​       Spring Boot启动的时候会通过@EnableAutoConfiguration注解找到META-INF/spring.factories配置文件中的所有自动配置类，并对其进行加载，而这些自动配置类都是以AutoConfiguration结尾来命名的，它实际上就是一个JavaConfig形式的Spring容器配置类，它能通过以Properties结尾命名的类中取得在全局配置文件中配置的属性如：server.port，而XxxxProperties类是通过@ConfigurationProperties注解与全局配置文件中对应的属性进行绑定的。</p>
+<h2 id="一、SpringBoot自动化配置原理"><a href="#一、SpringBoot自动化配置原理" class="headerlink" title="一、SpringBoot自动化配置原理"></a>一、SpringBoot自动化配置原理</h2><p>@SpringBootApplication是一个复合注解或派生注解，在@SpringBootApplication中有一个注解@EnableAutoConfiguration，就是开启自动配置的意思，其定义如下：</p>
+<p> 这个注解也是一个派生注解，其中的关键功能由@Import提供，其导入的AutoConfigurationImportSelector</p>
+<p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310222520340.png" alt="image-20210310222520340"></p>
+<p>AutoConfigurationImportSelector调用selectImports()方法里面的<code>SpringFactoriesLoader.loadFactoryNames()</code>扫描所有jar包里面的META-IFA/spring.factories文件，将里面xxAutoConfiguration的类全限定名导入到容器中</p>
+<p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310223126530.png" alt="image-20210310223126530"></p>
+<p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210310221444482.png" alt="image-20210310221444482"></p>
+<h2 id="二、自定义启动类"><a href="#二、自定义启动类" class="headerlink" title="二、自定义启动类"></a>二、自定义启动类</h2><p>在面试的时候，其实远远不需要回答的这么具体，你只需要这样回答：</p>
+<p>​     @SpringBootApplication之所以能够实现自动化装配，其底层是通过AutoConfigurationImportSelector.selectImports()方法实现的。而selectImports()方法调用SpringFactoriesLoader.loadFactoryNames所有的spring.factories文件中EnableAutoConfiguration指定的值，将这些值自动导入到容器中生效</p>
 
       
     </div>
@@ -542,7 +544,7 @@
   <p><span>本文标题:</span>SpringBoot自动化配置原理</a></p>
   <p><span>文章作者:</span>陈汉槟</a></p>
   <p><span>发布时间:</span>2019年03月17日 - 10:07:04</p>
-  <p><span>最后更新:</span>2021年03月03日 - 17:55:37</p>
+  <p><span>最后更新:</span>2021年03月10日 - 23:14:22</p>
   <p><span>原始链接:</span><a href="/2019/03/17/springboot%E8%87%AA%E5%8A%A8%E5%8C%96%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86/" title="SpringBoot自动化配置原理">http://deschen.com/2019/03/17/springboot%E8%87%AA%E5%8A%A8%E5%8C%96%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://deschen.com/2019/03/17/springboot%E8%87%AA%E5%8A%A8%E5%8C%96%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86/"  aria-label="复制成功！"></i></span>
   </p>
@@ -717,14 +719,14 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>-->
                 <!--临时方法-->
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/index.html">
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -868,7 +870,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot自动化配置原理"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot自动化配置原理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot自动化配置原理"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot自动化配置原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、SpringBoot自动化配置原理"><span class="nav-number">1.1.</span> <span class="nav-text">一、SpringBoot自动化配置原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、自定义启动类"><span class="nav-number">1.2.</span> <span class="nav-text">二、自定义启动类</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -916,7 +918,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">3:01</span>
+    <span title="站点阅读时长">3:03</span>
   
 </div>
 
@@ -925,7 +927,7 @@
 
 
 
-
+<a href="https://deschen.gitee.io/" target="_blank" rel="noopener">粤ICP备19118852号</a> 
 
 
 
