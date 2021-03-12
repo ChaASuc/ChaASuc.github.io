@@ -120,7 +120,7 @@
   <meta name="description" content="jvm内存模型 Jvm内存模型图    线程私有  程序计数器：记录虚拟机字节码的指令地址 虚拟机栈：每个方法执行时，都会创建一个栈帧，存储局部变量、操作数、动态链接、方法返回地址。方法从调用到执行完毕，对应栈帧在虚拟机栈入栈和出栈 本地方法栈：跟虚拟机栈类似，执行native方法   线程共享  堆：内存最大的区域，存储java对象 方法区：存储已被虚拟机加载的类信息、常量、静态变量等   Ja">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入了解JVM--内存模型">
-<meta property="og:url" content="http://deschen.com/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:url" content="https://deschen.gitee.io/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="陈汉槟的博客">
 <meta property="og:description" content="jvm内存模型 Jvm内存模型图    线程私有  程序计数器：记录虚拟机字节码的指令地址 虚拟机栈：每个方法执行时，都会创建一个栈帧，存储局部变量、操作数、动态链接、方法返回地址。方法从调用到执行完毕，对应栈帧在虚拟机栈入栈和出栈 本地方法栈：跟虚拟机栈类似，执行native方法   线程共享  堆：内存最大的区域，存储java对象 方法区：存储已被虚拟机加载的类信息、常量、静态变量等   Ja">
 <meta property="og:locale" content="zh_CN">
@@ -139,7 +139,7 @@
 
 
 
-  <link rel="canonical" href="http://deschen.com/2019/06/28/深入了解JVM-内存模型/"/>
+  <link rel="canonical" href="https://deschen.gitee.io/2019/06/28/深入了解JVM-内存模型/"/>
 
 
 
@@ -366,7 +366,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://deschen.com/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/">
+    <link itemprop="mainEntityOfPage" href="https://deschen.gitee.io/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈汉槟">
@@ -562,8 +562,8 @@
   <p><span>文章作者:</span>陈汉槟</a></p>
   <p><span>发布时间:</span>2019年06月28日 - 17:00:33</p>
   <p><span>最后更新:</span>2021年03月04日 - 22:57:31</p>
-  <p><span>原始链接:</span><a href="/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" title="深入了解JVM--内存模型">http://deschen.com/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://deschen.com/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"  aria-label="复制成功！"></i></span>
+  <p><span>原始链接:</span><a href="/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" title="深入了解JVM--内存模型">https://deschen.gitee.io/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://deschen.gitee.io/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -944,7 +944,7 @@
 
 
 
-<a href="https://deschen.gitee.io/" target="_blank" rel="noopener">粤ICP备19118852号</a> 
+<a href="https://deschen.gitee.io/">粤ICP备19118852号</a> 
 
 
 

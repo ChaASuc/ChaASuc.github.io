@@ -5,9 +5,9 @@
   <subtitle>以Java开发为主的个人博客，记录自己在学习、工作和成长的笔记和心得</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://deschen.com/"/>
+  <link href="https://deschen.gitee.io/"/>
   <updated>2021-03-09T13:16:20.462Z</updated>
-  <id>http://deschen.com/</id>
+  <id>https://deschen.gitee.io/</id>
   
   <author>
     <name>陈汉槟</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Nginx工作原理详解</title>
-    <link href="http://deschen.com/2021/03/09/Nginx%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://deschen.com/2021/03/09/Nginx%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/</id>
+    <link href="https://deschen.gitee.io/2021/03/09/Nginx%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://deschen.gitee.io/2021/03/09/Nginx%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/</id>
     <published>2021-03-09T12:54:34.158Z</published>
     <updated>2021-03-09T13:16:20.462Z</updated>
     
@@ -41,8 +41,8 @@
   
   <entry>
     <title>Freemarker学习</title>
-    <link href="http://deschen.com/2021/03/05/Freemarker%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://deschen.com/2021/03/05/Freemarker%E5%AD%A6%E4%B9%A0/</id>
+    <link href="https://deschen.gitee.io/2021/03/05/Freemarker%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://deschen.gitee.io/2021/03/05/Freemarker%E5%AD%A6%E4%B9%A0/</id>
     <published>2021-03-05T10:42:58.000Z</published>
     <updated>2021-03-09T01:27:31.858Z</updated>
     
@@ -60,17 +60,17 @@
     </summary>
     
     
-      <category term="模板引擎" scheme="http://deschen.com/categories/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
+      <category term="模板引擎" scheme="https://deschen.gitee.io/categories/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/"/>
     
     
-      <category term="Freemarker" scheme="http://deschen.com/tags/Freemarker/"/>
+      <category term="Freemarker" scheme="https://deschen.gitee.io/tags/Freemarker/"/>
     
   </entry>
   
   <entry>
     <title>ELK部署——CentOS7.X</title>
-    <link href="http://deschen.com/2021/02/03/ELK%E9%83%A8%E7%BD%B2%E2%80%94%E2%80%94CentOS7.X/"/>
-    <id>http://deschen.com/2021/02/03/ELK%E9%83%A8%E7%BD%B2%E2%80%94%E2%80%94CentOS7.X/</id>
+    <link href="https://deschen.gitee.io/2021/02/03/ELK%E9%83%A8%E7%BD%B2%E2%80%94%E2%80%94CentOS7.X/"/>
+    <id>https://deschen.gitee.io/2021/02/03/ELK%E9%83%A8%E7%BD%B2%E2%80%94%E2%80%94CentOS7.X/</id>
     <published>2021-02-03T10:42:58.000Z</published>
     <updated>2021-03-01T10:24:53.024Z</updated>
     
@@ -86,17 +86,17 @@
     </summary>
     
     
-      <category term="ELK" scheme="http://deschen.com/categories/ELK/"/>
+      <category term="ELK" scheme="https://deschen.gitee.io/categories/ELK/"/>
     
     
-      <category term="ELK" scheme="http://deschen.com/tags/ELK/"/>
+      <category term="ELK" scheme="https://deschen.gitee.io/tags/ELK/"/>
     
   </entry>
   
   <entry>
     <title>VMware——CentOS7.X部署</title>
-    <link href="http://deschen.com/2021/01/28/VMware%E2%80%94%E2%80%94CentOS7-X%E9%83%A8%E7%BD%B2/"/>
-    <id>http://deschen.com/2021/01/28/VMware%E2%80%94%E2%80%94CentOS7-X%E9%83%A8%E7%BD%B2/</id>
+    <link href="https://deschen.gitee.io/2021/01/28/VMware%E2%80%94%E2%80%94CentOS7-X%E9%83%A8%E7%BD%B2/"/>
+    <id>https://deschen.gitee.io/2021/01/28/VMware%E2%80%94%E2%80%94CentOS7-X%E9%83%A8%E7%BD%B2/</id>
     <published>2021-01-28T02:26:20.000Z</published>
     <updated>2021-01-29T01:37:27.469Z</updated>
     
@@ -117,8 +117,8 @@
   
   <entry>
     <title>面试</title>
-    <link href="http://deschen.com/2020/06/10/%E9%9A%BE%E9%A2%98/"/>
-    <id>http://deschen.com/2020/06/10/%E9%9A%BE%E9%A2%98/</id>
+    <link href="https://deschen.gitee.io/2020/06/10/%E9%9A%BE%E9%A2%98/"/>
+    <id>https://deschen.gitee.io/2020/06/10/%E9%9A%BE%E9%A2%98/</id>
     <published>2020-06-10T13:48:47.000Z</published>
     <updated>2021-03-10T12:20:14.620Z</updated>
     
@@ -137,15 +137,15 @@
     </summary>
     
     
-      <category term="学习" scheme="http://deschen.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="学习" scheme="https://deschen.gitee.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
   </entry>
   
   <entry>
     <title>HashMap与ConcurrentHashMap原理</title>
-    <link href="http://deschen.com/2020/03/05/HashMap%E4%B8%8EConcurrentHashMap%E5%8E%9F%E7%90%86/"/>
-    <id>http://deschen.com/2020/03/05/HashMap%E4%B8%8EConcurrentHashMap%E5%8E%9F%E7%90%86/</id>
+    <link href="https://deschen.gitee.io/2020/03/05/HashMap%E4%B8%8EConcurrentHashMap%E5%8E%9F%E7%90%86/"/>
+    <id>https://deschen.gitee.io/2020/03/05/HashMap%E4%B8%8EConcurrentHashMap%E5%8E%9F%E7%90%86/</id>
     <published>2020-03-05T08:02:06.000Z</published>
     <updated>2021-02-03T11:56:47.262Z</updated>
     
@@ -161,15 +161,15 @@
     </summary>
     
     
-      <category term="Java" scheme="http://deschen.com/categories/Java/"/>
+      <category term="Java" scheme="https://deschen.gitee.io/categories/Java/"/>
     
     
   </entry>
   
   <entry>
     <title>深入理解JVM--类加载器</title>
-    <link href="http://deschen.com/2020/02/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/"/>
-    <id>http://deschen.com/2020/02/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/</id>
+    <link href="https://deschen.gitee.io/2020/02/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/"/>
+    <id>https://deschen.gitee.io/2020/02/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/</id>
     <published>2020-02-29T09:37:09.000Z</published>
     <updated>2020-03-20T11:15:34.858Z</updated>
     
@@ -185,15 +185,15 @@
     </summary>
     
     
-      <category term="JVM" scheme="http://deschen.com/categories/JVM/"/>
+      <category term="JVM" scheme="https://deschen.gitee.io/categories/JVM/"/>
     
     
   </entry>
   
   <entry>
     <title>什么是中台？</title>
-    <link href="http://deschen.com/2019/12/20/%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%AD%E5%8F%B0%EF%BC%9F/"/>
-    <id>http://deschen.com/2019/12/20/%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%AD%E5%8F%B0%EF%BC%9F/</id>
+    <link href="https://deschen.gitee.io/2019/12/20/%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%AD%E5%8F%B0%EF%BC%9F/"/>
+    <id>https://deschen.gitee.io/2019/12/20/%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%AD%E5%8F%B0%EF%BC%9F/</id>
     <published>2019-12-20T12:53:20.000Z</published>
     <updated>2019-12-20T13:06:52.090Z</updated>
     
@@ -209,15 +209,15 @@
     </summary>
     
     
-      <category term="中台" scheme="http://deschen.com/categories/%E4%B8%AD%E5%8F%B0/"/>
+      <category term="中台" scheme="https://deschen.gitee.io/categories/%E4%B8%AD%E5%8F%B0/"/>
     
     
   </entry>
   
   <entry>
     <title>深入理解JVM--七种垃圾收集器</title>
-    <link href="http://deschen.com/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/"/>
-    <id>http://deschen.com/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/</id>
+    <link href="https://deschen.gitee.io/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/"/>
+    <id>https://deschen.gitee.io/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/</id>
     <published>2019-10-11T08:18:05.000Z</published>
     <updated>2021-03-04T09:57:45.894Z</updated>
     
@@ -233,15 +233,15 @@
     </summary>
     
     
-      <category term="JVM" scheme="http://deschen.com/categories/JVM/"/>
+      <category term="JVM" scheme="https://deschen.gitee.io/categories/JVM/"/>
     
     
   </entry>
   
   <entry>
     <title>深入理解JVM--四种垃圾收集算法</title>
-    <link href="http://deschen.com/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E5%9B%9B%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95/"/>
-    <id>http://deschen.com/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E5%9B%9B%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95/</id>
+    <link href="https://deschen.gitee.io/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E5%9B%9B%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95/"/>
+    <id>https://deschen.gitee.io/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E5%9B%9B%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95/</id>
     <published>2019-10-11T07:56:36.000Z</published>
     <updated>2020-03-18T11:37:07.311Z</updated>
     
@@ -257,15 +257,15 @@
     </summary>
     
     
-      <category term="JVM" scheme="http://deschen.com/categories/JVM/"/>
+      <category term="JVM" scheme="https://deschen.gitee.io/categories/JVM/"/>
     
     
   </entry>
   
   <entry>
     <title>深入理解JVM--对象存活分析算法</title>
-    <link href="http://deschen.com/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%A4%E7%A7%8D%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95/"/>
-    <id>http://deschen.com/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%A4%E7%A7%8D%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95/</id>
+    <link href="https://deschen.gitee.io/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%A4%E7%A7%8D%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95/"/>
+    <id>https://deschen.gitee.io/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%A4%E7%A7%8D%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95/</id>
     <published>2019-10-11T06:24:15.000Z</published>
     <updated>2021-02-12T11:14:04.409Z</updated>
     
@@ -282,15 +282,15 @@
     </summary>
     
     
-      <category term="JVM" scheme="http://deschen.com/categories/JVM/"/>
+      <category term="JVM" scheme="https://deschen.gitee.io/categories/JVM/"/>
     
     
   </entry>
   
   <entry>
     <title>深入理解JVM--类加载过程详解</title>
-    <link href="http://deschen.com/2019/10/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://deschen.com/2019/10/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B%E8%AF%A6%E8%A7%A3/</id>
+    <link href="https://deschen.gitee.io/2019/10/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://deschen.gitee.io/2019/10/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B%E8%AF%A6%E8%A7%A3/</id>
     <published>2019-10-01T07:00:21.000Z</published>
     <updated>2020-03-18T13:39:14.382Z</updated>
     
@@ -307,15 +307,15 @@
     </summary>
     
     
-      <category term="JVM" scheme="http://deschen.com/categories/JVM/"/>
+      <category term="JVM" scheme="https://deschen.gitee.io/categories/JVM/"/>
     
     
   </entry>
   
   <entry>
     <title>深入理解Redis--集群部署</title>
-    <link href="http://deschen.com/2019/08/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/"/>
-    <id>http://deschen.com/2019/08/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/</id>
+    <link href="https://deschen.gitee.io/2019/08/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/"/>
+    <id>https://deschen.gitee.io/2019/08/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/</id>
     <published>2019-08-01T02:25:06.000Z</published>
     <updated>2021-02-24T09:32:24.233Z</updated>
     
@@ -331,17 +331,17 @@
     </summary>
     
     
-      <category term="中间件" scheme="http://deschen.com/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+      <category term="中间件" scheme="https://deschen.gitee.io/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
     
     
-      <category term="redis" scheme="http://deschen.com/tags/redis/"/>
+      <category term="redis" scheme="https://deschen.gitee.io/tags/redis/"/>
     
   </entry>
   
   <entry>
     <title>深入理解Redis--集群讲解</title>
-    <link href="http://deschen.com/2019/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E8%AE%B2%E8%A7%A3/"/>
-    <id>http://deschen.com/2019/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E8%AE%B2%E8%A7%A3/</id>
+    <link href="https://deschen.gitee.io/2019/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E8%AE%B2%E8%A7%A3/"/>
+    <id>https://deschen.gitee.io/2019/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E8%AE%B2%E8%A7%A3/</id>
     <published>2019-07-20T00:41:38.000Z</published>
     <updated>2021-02-24T09:32:15.560Z</updated>
     
@@ -357,17 +357,17 @@
     </summary>
     
     
-      <category term="中间件" scheme="http://deschen.com/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+      <category term="中间件" scheme="https://deschen.gitee.io/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
     
     
-      <category term="redis" scheme="http://deschen.com/tags/redis/"/>
+      <category term="redis" scheme="https://deschen.gitee.io/tags/redis/"/>
     
   </entry>
   
   <entry>
     <title>分库分表理论篇——以MySQL为例</title>
-    <link href="http://deschen.com/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/"/>
-    <id>http://deschen.com/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/</id>
+    <link href="https://deschen.gitee.io/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/"/>
+    <id>https://deschen.gitee.io/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/</id>
     <published>2019-07-17T02:34:14.000Z</published>
     <updated>2020-11-11T03:50:57.263Z</updated>
     
@@ -383,15 +383,15 @@
     </summary>
     
     
-      <category term="MySQL" scheme="http://deschen.com/categories/MySQL/"/>
+      <category term="MySQL" scheme="https://deschen.gitee.io/categories/MySQL/"/>
     
     
   </entry>
   
   <entry>
     <title>分库分表理论篇——以MySQL为例</title>
-    <link href="http://deschen.com/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/"/>
-    <id>http://deschen.com/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/</id>
+    <link href="https://deschen.gitee.io/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/"/>
+    <id>https://deschen.gitee.io/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/</id>
     <published>2019-07-17T02:34:14.000Z</published>
     <updated>2019-07-17T02:36:35.243Z</updated>
     
@@ -407,15 +407,15 @@
     </summary>
     
     
-      <category term="MySQL" scheme="http://deschen.com/categories/MySQL/"/>
+      <category term="MySQL" scheme="https://deschen.gitee.io/categories/MySQL/"/>
     
     
   </entry>
   
   <entry>
     <title>MySQL索引深入理解</title>
-    <link href="http://deschen.com/2019/07/13/MySQL%E7%B4%A2%E5%BC%95%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3/"/>
-    <id>http://deschen.com/2019/07/13/MySQL%E7%B4%A2%E5%BC%95%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3/</id>
+    <link href="https://deschen.gitee.io/2019/07/13/MySQL%E7%B4%A2%E5%BC%95%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3/"/>
+    <id>https://deschen.gitee.io/2019/07/13/MySQL%E7%B4%A2%E5%BC%95%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3/</id>
     <published>2019-07-13T10:21:45.000Z</published>
     <updated>2021-03-03T14:53:45.654Z</updated>
     
@@ -432,15 +432,15 @@
     </summary>
     
     
-      <category term="MySQL" scheme="http://deschen.com/categories/MySQL/"/>
+      <category term="MySQL" scheme="https://deschen.gitee.io/categories/MySQL/"/>
     
     
   </entry>
   
   <entry>
     <title>详解五种单例模式</title>
-    <link href="http://deschen.com/2019/07/04/%E8%AF%A6%E8%A7%A3%E4%BA%94%E7%A7%8D%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://deschen.com/2019/07/04/%E8%AF%A6%E8%A7%A3%E4%BA%94%E7%A7%8D%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</id>
+    <link href="https://deschen.gitee.io/2019/07/04/%E8%AF%A6%E8%A7%A3%E4%BA%94%E7%A7%8D%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://deschen.gitee.io/2019/07/04/%E8%AF%A6%E8%A7%A3%E4%BA%94%E7%A7%8D%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</id>
     <published>2019-07-04T00:33:57.000Z</published>
     <updated>2019-07-08T00:18:45.000Z</updated>
     
@@ -456,17 +456,17 @@
     </summary>
     
     
-      <category term="设计模式" scheme="http://deschen.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://deschen.gitee.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="单例模式" scheme="http://deschen.com/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+      <category term="单例模式" scheme="https://deschen.gitee.io/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>深入了解JVM--内存模型</title>
-    <link href="http://deschen.com/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
-    <id>http://deschen.com/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</id>
+    <link href="https://deschen.gitee.io/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
+    <id>https://deschen.gitee.io/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</id>
     <published>2019-06-28T09:00:33.000Z</published>
     <updated>2021-03-04T14:57:31.641Z</updated>
     
@@ -485,17 +485,17 @@
     </summary>
     
     
-      <category term="Java" scheme="http://deschen.com/categories/Java/"/>
+      <category term="Java" scheme="https://deschen.gitee.io/categories/Java/"/>
     
     
-      <category term="JVM" scheme="http://deschen.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://deschen.gitee.io/tags/JVM/"/>
     
   </entry>
   
   <entry>
     <title>深入理解Redis--解决Redis缓存穿透、雪崩、击穿问题</title>
-    <link href="http://deschen.com/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/"/>
-    <id>http://deschen.com/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/</id>
+    <link href="https://deschen.gitee.io/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/"/>
+    <id>https://deschen.gitee.io/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/</id>
     <published>2019-06-28T06:25:33.000Z</published>
     <updated>2020-02-12T07:05:18.701Z</updated>
     
@@ -511,10 +511,10 @@
     </summary>
     
     
-      <category term="Java" scheme="http://deschen.com/categories/Java/"/>
+      <category term="Java" scheme="https://deschen.gitee.io/categories/Java/"/>
     
     
-      <category term="JVM" scheme="http://deschen.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://deschen.gitee.io/tags/JVM/"/>
     
   </entry>
   
