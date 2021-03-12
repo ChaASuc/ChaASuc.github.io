@@ -1,0 +1,5 @@
+http://deschen.com/2021/03/09/Nginx%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/
+http://deschen.com/2021/03/05/Freemarker%E5%AD%A6%E4%B9%A0/
+http://deschen.com/2021/02/03/ELK%E9%83%A8%E7%BD%B2%E2%80%94%E2%80%94CentOS7.X/
+http://deschen.com/2021/01/28/VMware%E2%80%94%E2%80%94CentOS7-X%E9%83%A8%E7%BD%B2/
+http://deschen.com/2020/06/10/%E9%9A%BE%E9%A2%98/
