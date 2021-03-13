@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://deschen.gitee.io/2019/04/01/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</loc>
+    <lastmod>2021-03-13</lastmod>
+  </url>
+  <url>
     <loc>https://deschen.gitee.io/2019/07/05/Java8%20Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8%E3%80%81%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3/</loc>
     <lastmod>2021-03-13</lastmod>
   </url>
@@ -46,10 +50,6 @@
   </url>
   <url>
     <loc>https://deschen.gitee.io/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</loc>
-    <lastmod>2021-03-04</lastmod>
-  </url>
-  <url>
-    <loc>https://deschen.gitee.io/2019/04/01/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</loc>
     <lastmod>2021-03-04</lastmod>
   </url>
   <url>
