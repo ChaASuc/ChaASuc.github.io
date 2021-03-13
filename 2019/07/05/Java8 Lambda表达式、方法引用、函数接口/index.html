@@ -117,21 +117,22 @@
 
 
 
-  <meta name="description" content="MySQL语法基础   思维导图  链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1whN2oiWZrklR8MCCFUCMSg提取码：6666   MySQL知识图谱Sql语言基础创建表CREATE TABLE mytable ( id INT NOT NULL AUTO_INCREMENT, col1 INT NOT NULL DEFAULT 1, col2 VARCHAR(45) N">
+  <meta name="description" content="Java8 Lambda语法、函数接口、方法引用[toc] 一、Lambda语法 Lambda 表达式的基础语法：Java8中引入了一个新的操作符 “-&gt;” 该操作符称为箭头操作符或 Lambda 操作符  箭头操作符将 Lambda 表达式拆分成两部分： 左侧：Lambda 表达式的参数列表 右侧：Lambda 表达式中所需执行的功能， 即 Lambda 体   主要的功能就是代替了JAV">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL语法基础">
-<meta property="og:url" content="https://deschen.gitee.io/2019/06/13/MySQL%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="Java8 Lambda语法、函数接口、方法引用">
+<meta property="og:url" content="https://deschen.gitee.io/2019/07/05/Java8%20Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8%E3%80%81%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3/index.html">
 <meta property="og:site_name" content="陈汉槟的博客">
-<meta property="og:description" content="MySQL语法基础   思维导图  链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1whN2oiWZrklR8MCCFUCMSg提取码：6666   MySQL知识图谱Sql语言基础创建表CREATE TABLE mytable ( id INT NOT NULL AUTO_INCREMENT, col1 INT NOT NULL DEFAULT 1, col2 VARCHAR(45) N">
+<meta property="og:description" content="Java8 Lambda语法、函数接口、方法引用[toc] 一、Lambda语法 Lambda 表达式的基础语法：Java8中引入了一个新的操作符 “-&gt;” 该操作符称为箭头操作符或 Lambda 操作符  箭头操作符将 Lambda 表达式拆分成两部分： 左侧：Lambda 表达式的参数列表 右侧：Lambda 表达式中所需执行的功能， 即 Lambda 体   主要的功能就是代替了JAV">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/Sql%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80.png">
-<meta property="article:published_time" content="2019-06-13T10:21:45.000Z">
-<meta property="article:modified_time" content="2021-03-03T06:38:57.344Z">
+<meta property="og:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210313210454997.png">
+<meta property="og:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210313210542064.png">
+<meta property="article:published_time" content="2019-07-05T08:02:06.000Z">
+<meta property="article:modified_time" content="2021-03-13T13:29:15.478Z">
 <meta property="article:author" content="陈汉槟">
 <meta property="article:tag" content="Java开发">
 <meta property="article:tag" content="个人博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/Sql%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80.png">
+<meta name="twitter:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210313210454997.png">
 
 
 
@@ -140,7 +141,7 @@
 
 
 
-  <link rel="canonical" href="https://deschen.gitee.io/2019/06/13/MySQL语法基础/"/>
+  <link rel="canonical" href="https://deschen.gitee.io/2019/07/05/Java8 Lambda表达式、方法引用、函数接口/"/>
 
 
 
@@ -150,7 +151,7 @@
   };
 </script>
 
-  <title>MySQL语法基础 | 陈汉槟的博客</title>
+  <title>Java8 Lambda语法、函数接口、方法引用 | 陈汉槟的博客</title>
   
 
 
@@ -367,7 +368,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://deschen.gitee.io/2019/06/13/MySQL%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="https://deschen.gitee.io/2019/07/05/Java8%20Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8%E3%80%81%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈汉槟">
@@ -384,7 +385,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL语法基础
+          <h1 class="post-title" itemprop="name headline">Java8 Lambda语法、函数接口、方法引用
               
             
           </h1>
@@ -409,7 +410,7 @@
                 
               
 
-              <time title="创建时间：2019-06-13 18:21:45" itemprop="dateCreated datePublished" datetime="2019-06-13T18:21:45+08:00">2019-06-13</time>
+              <time title="创建时间：2019-07-05 16:02:06" itemprop="dateCreated datePublished" datetime="2019-07-05T16:02:06+08:00">2019-07-05</time>
             
 
             
@@ -426,7 +427,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-03-03 14:38:57" itemprop="dateModified" datetime="2021-03-03T14:38:57+08:00">2021-03-03</time>
+                <time title="修改时间：2021-03-13 21:29:15" itemprop="dateModified" datetime="2021-03-13T21:29:15+08:00">2021-03-13</time>
               
             
           </span>
@@ -443,7 +444,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
 
                 
                 
@@ -484,7 +485,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">12 分钟</span>
+                <span title="阅读时长">43 分钟</span>
               
             </div>
           
@@ -504,154 +505,37 @@
       
 
       
-        <h1 id="MySQL语法基础"><a href="#MySQL语法基础" class="headerlink" title="MySQL语法基础"></a>MySQL语法基础</h1><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/Sql%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80.png" alt="Sql语言基础" style="zoom: 25%;" />
+        <h1 id="Java8-Lambda语法、函数接口、方法引用"><a href="#Java8-Lambda语法、函数接口、方法引用" class="headerlink" title="Java8 Lambda语法、函数接口、方法引用"></a>Java8 Lambda语法、函数接口、方法引用</h1><p>[toc]</p>
+<h2 id="一、Lambda语法"><a href="#一、Lambda语法" class="headerlink" title="一、Lambda语法"></a>一、Lambda语法</h2><ul>
+<li><p>Lambda 表达式的基础语法：Java8中引入了一个新的操作符 “-&gt;” 该操作符称为箭头操作符或 Lambda 操作符</p>
+<ul>
+<li>箭头操作符将 Lambda 表达式拆分成两部分：<ul>
+<li>左侧：Lambda 表达式的参数列表</li>
+<li>右侧：Lambda 表达式中所需执行的功能， 即 Lambda 体</li>
+</ul>
+</li>
+<li>主要的功能就是代替了JAVA7之前对于函数式接口需要内部类进行实现的问题</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LambdaCase</span> &#123;</span></span><br><span class="line"></span><br><span class="line"> 	<span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 语法格式</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    @Test</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">grammer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 语法格式</span></span><br><span class="line">        <span class="comment">// 1、(parameters, ...) -&gt; expression  expression 只能是一条语句。如果是返回值的语句，那么不需用写return xxx 而是 xxx</span></span><br><span class="line">        IDemo demo = (param) -&gt; param + <span class="string">"123"</span>;</span><br><span class="line">        System.out.<span class="built_in">println</span>(demo.output(<span class="string">"张三"</span>));</span><br><span class="line">        <span class="comment">// 2、(parameters, ...) -&gt;&#123; expressions; &#125;   expressions 可以是一条或者多条语句。如果是返回值语句，那么需要写入return</span></span><br><span class="line">        IDemo demo1 = (param) -&gt; &#123;</span><br><span class="line">            param = param + <span class="string">"123"</span>;</span><br><span class="line">            <span class="keyword">return</span> param;</span><br><span class="line">        &#125;;</span><br><span class="line">        System.out.<span class="built_in">println</span>(demo1.output(<span class="string">"李四"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 变量作用域</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    @Test</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">variableScope</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 变量作用域</span></span><br><span class="line">        <span class="comment">// lamdba 只能引用标记的 外层局部变量 ，也就是说 不能修改 定义在外层的局部变量</span></span><br><span class="line">        <span class="comment">// 全局变量不受影响</span></span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">String</span> VARIABLE = <span class="string">"Hello! "</span>;</span><br><span class="line">        <span class="keyword">String</span> variable = <span class="string">"Hi! "</span>;</span><br><span class="line">        IDemo demo = param -&gt; &#123;</span><br><span class="line">            <span class="comment">// VARIABLE = VARIABLE + param;</span></span><br><span class="line">            <span class="comment">// variable = variable + param;</span></span><br><span class="line">            <span class="comment">// return VARIABLE + param;</span></span><br><span class="line">            <span class="keyword">return</span> variable + param;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface IDemo &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">String</span> <span class="title">output</span><span class="params">(<span class="keyword">String</span> param)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>思维导图 </p>
-<p>链接：<a href="https://pan.baidu.com/s/1whN2oiWZrklR8MCCFUCMSg" target="_blank" rel="noopener">https://pan.baidu.com/s/1whN2oiWZrklR8MCCFUCMSg</a><br>提取码：6666 </p>
-</blockquote>
-<h1 id="MySQL知识图谱"><a href="#MySQL知识图谱" class="headerlink" title="MySQL知识图谱"></a>MySQL知识图谱</h1><h2 id="Sql语言基础"><a href="#Sql语言基础" class="headerlink" title="Sql语言基础"></a>Sql语言基础</h2><h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><p>CREATE TABLE mytable (<br> id INT NOT NULL AUTO_INCREMENT,<br> col1 INT NOT NULL DEFAULT 1,<br> col2 VARCHAR(45) NULL,<br> col3 DATE NULL,<br> PRIMARY KEY (<code>id</code>));</p>
-<h3 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h3><ul>
-<li><p>添加列</p>
-<p>ALTER TABLE mytable<br>ADD col CHAR(20);</p>
-</li>
-<li><p>删除列</p>
-<p>ALTER TABLE mytable<br>DROP COLUMN col;</p>
-</li>
-<li><p>删除表</p>
-<p>DROP TABLE mytable;</p>
 </li>
 </ul>
-<h3 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h3><ul>
-<li><p>普通插入</p>
-<p>INSERT INTO mytable(col1, col2)<br>VALUES(val1, val2);</p>
+<h2 id="二、函数式接口"><a href="#二、函数式接口" class="headerlink" title="二、函数式接口"></a>二、函数式接口</h2><ul>
+<li><p>接口中的方法必须是唯一的（在相同参数的前提下，如果有一个参数和两个参数的抽象方法还是可以的，因为可以通过参数个数来识别Lembda表达式到底是在实现哪个方法）！叫做<strong>函数式接口</strong>，用 <strong>@FunctionalInterface 注解</strong>可以标明此接口为函数式接口，这样在编译的时候如果在写接口的时候不符合函数式接口的条件，就会发生编译错误了。</p>
 </li>
-<li><p>查询内容插入</p>
-<p>INSERT INTO mytable1(col1, col2)<br>SELECT col1, col2<br>FROM mytable2;</p>
+<li><p>通常并不自己去写一个函数式接口供自己使用，java已经提供了内置的<strong>四大核心函数式接口</strong></p>
+<p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210313210454997.png" alt="image-20210313210454997"></p>
 </li>
-<li><p>表内容插入</p>
-<p>CREATE TABLE newtable AS<br>SELECT * FROM mytable;</p>
-</li>
-</ul>
-<h3 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h3><p>UPDATE mytable<br>SET col = val<br>WHERE id = 1;</p>
-<h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3><ul>
-<li><p>DELETE</p>
-<p>DELETE FROM mytable<br>WHERE id = 1;</p>
-</li>
-<li><p>TRUNCATE</p>
-<p>TRUNCATE TABLE mytable;</p>
-</li>
-<li><p>DELETE与TRUNCATE区别</p>
-<p>表和索引所占空间。当表被truncate 后，这个表和索引所占用的空间会恢复到初始bai大小，delete操作不会减少表或索引所占用的空间。<br>delete要通过事务提交生效，而truncate立即生效，不会回滚，在没有备份情况下，谨慎用truncate<br>delete 语句每次删除一行，并在事务日志中为所删除的每行记录一项。truncate table 通过释放存储表数据所用的数据页来删除数据，并且只在事务日志中记录页的释放。</p>
+<li><p>四大内置函数式接口还有许多子接口，如下图</p>
+<p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210313210542064.png" alt="image-20210313210542064"></p>
 </li>
 </ul>
-<h3 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h3><ul>
-<li><p>DISTINCT</p>
-<p>标识所选列的唯一性<br>SELECT DISTINCT col1, col2<br>FROM mytable;</p>
-</li>
-<li><p>LIMIT</p>
-<p>限制返回的行数，有两个参数，第一个参数表示起始行，可选填，默认从0开始；第二个表示返回的总行数<br>SELECT *<br>FROM mytable<br>LIMIT 5;<br>等同于<br>SELECT *<br>FROM mytable<br>LIMIT 0, 5;</p>
-</li>
-<li><p>ASC / DESC</p>
-<p>ASC : 升序(默认)<br>DESC : 降序<br>可选择多个列排序，且不同排序方式<br>SELECT *<br>FROM mytable<br>ORDER BY col1 DESC, col2 ASC;</p>
-</li>
-<li><p>通配符</p>
-<p>用于过滤语句中，只能用于文本字段<br>% 匹配 &gt;=0 个任意字符<br>_ 匹配 ==1 个任意字符；<br>SELECT *<br>FROM mytable<br>WHERE col1 = “col1%”;<br>注意点：通用符尽量用在后面。因为写在前面，就会全表扫描，影响查询效率</p>
-</li>
-<li><p>计算字段</p>
-<ul>
-<li><p>简单计算</p>
-<p>在数据库服务器上完成数据的转换和格式化的工作往往比客户端上快得多，并且转换和格式化后的数据量更少的话可以减少网络通信量<br>计算字段通常需要使用 AS 来取别名，否则输出的时候字段名为计算表达式。</p>
-<pre><code>SELECT col1 * col2 AS alias
-FROM mytable;</code></pre><p>CONCAT() 用于连接两个字段，许多数据库会使用空格把一个值填充为列宽，因此连接的结果会出现一些不必要的空格，使用 TRIM() 可以去除首尾空格。</p>
-<pre><code>SELECT CONCAT(TRIM(col1), &apos;(&apos;, TRIM(col2), &apos;)&apos;) AS         concat_col
-FROM mytable;</code></pre></li>
-<li><p>函数</p>
-<ul>
-<li><p>汇总</p>
-<p>函数说明：<br>AVG() 返回某列的平均值<br>COUNT() 返回某列的行数<br>MAX() 返回某列的最大值<br>MIN() 返回某列的最小值<br>SUM() 返回某列值之和<br>注意点：<br>AVG() 会忽略 NULL 行。<br>使用DISTINCT，先根据DISTINCT的列找到对应数据，在计算平均值</p>
-<pre><code>SELECT AVG(DISTINCT col1) AS avg_col
-FROM mytable;</code></pre></li>
-<li><p>日期和时间处理</p>
-<p>日期格式: YYYY-MM-DD<br>时间格式: HH:MM:SS<br>函 数 说 明<br>AddDate() 增加一个日期(天、周等)<br>AddTime() 增加一个时间(时、分等)<br>CurDate() 返回当前日期<br>CurTime() 返回当前时间<br>Date() 返回日期时间的日期部分<br>DateDiff() 计算两个日期之差<br>Date_Add() 高度灵活的日期运算函数<br>Date_Format() 返回一个格式化的日期或时间串<br>Day() 返回一个日期的天数部分<br>DayOfWeek() 对于一个日期，返回对应的星期几<br>Hour() 返回一个时间的小时部分<br>Minute() 返回一个时间的分钟部分<br>Month() 返回一个日期的月份部分<br>Now() 返回当前日期和时间<br>Second() 返回一个时间的秒部分<br>Time() 返回一个日期时间的时间部分<br>Year() 返回一个日期的年份部分</p>
-<pre><code>SELECT NOW();</code></pre></li>
-<li><p>文本处理</p>
-<p>函数说明：<br>SIN()  正弦<br>COS()  余弦<br>TAN()  正切<br>ABS()  绝对值<br>SQRT()  平方根<br>MOD()  余数<br>EXP()  指数<br>PI()  圆周率<br>’RAND()  随机数</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>WHERE</p>
-<p>条件查询<br>操作符说明：<br>= 等于<br>&lt; 小于</p>
-<p>大于<br>!= 不等于<br>&lt;= 小于等于<br>= 大于等于<br>BETWEEN在两个值之间<br>IS NULL为 NULL 值<br>注意点：<br>AND 和 OR 用于连接多个过滤条件。优先处理 AND，当一个过滤表达式涉及到多个 AND 和 OR 时，可以使用 () 来决定优先级，使得优先级关系更清晰。<br>IN 操作符用于匹配一组值，其后也可以接一个 SELECT 子句，从而匹配子查询得到的一组值。<br>NOT 操作符用于否定一个条件</p>
-<pre><code>SELECT *
-FROM mytable
-WHERE col1 = &quot;col1&quot;;</code></pre></li>
-<li><p>分组</p>
-<p>具有相同数据值的行划为一组<br>常与汇总函数处理使用，如求分组数据的平均值等</p>
-<pre><code>SELECT col, COUNT(*) AS num
-FROM mytable
-GROUP BY col;</code></pre><p>结合ORDER BY排序</p>
-<pre><code>SELECT col, COUNT(*) AS num
-FROM mytable
-GROUP BY col
-ORDER BY num;</code></pre><p>WHERE 过滤行，HAVING 过滤分组，行过滤应当先于分组过滤。</p>
-<pre><code> SELECT col, COUNT(*) AS num
-FROM mytable
-WHERE col &gt; 2
-GROUP BY col
-HAVING num &gt;= 2;</code></pre><p>注意点：<br>GROUP BY 子句出现在 WHERE 子句之后，ORDER BY 子句之前；<br>除了汇总字段外，SELECT 语句中的每一字段都必须在 GROUP BY 子句中给出；<br>NULL 的行会单独分为一组；</p>
-</li>
-<li><p>子查询</p>
-<p>子查询中只能返回一个字段的数据。<br>可以将子查询的结果作为 WHRER 语句的过滤条件:</p>
-<pre><code>SELECT *
-FROM mytable1
-WHERE col1 IN (SELECT col2
-    FROM mytable2);</code></pre><p>下面的语句可以检索出客户的订单数量，子查询语句会对第一个查询检索出的每个客户执行一次:</p>
-<pre><code>SELECT cust_name, (SELECT COUNT(*)
-     FROM Orders
-      WHERE Orders.cust_id = Customers.cust_id)
-      AS orders_num
-FROM Customers
-ORDER BY cust_name;</code></pre></li>
-<li><p>JOIN</p>
-<ul>
-<li>左链接</li>
-<li>内链接</li>
-<li>右链接</li>
-<li>左独有</li>
-<li>全连接</li>
-<li>右独有</li>
-<li>并集去交集</li>
-</ul>
-</li>
-<li><p>UNION</p>
-<p>使用 UNION 来组合两个查询，每个查询必须包含相同的列、表达式和聚集函数<br>默认会去除相同行，如果需要保留相同行，使用 UNION ALL。<br>只能包含一个 ORDER BY 子句，并且必须位于语句的最后</p>
-<pre><code>SELECT col
-FROM mytable
-WHERE col = 1
-UNION
-SELECT col
-FROM mytable
-WHERE col =2
-ORDER BY col;</code></pre></li>
-<li><p>视图</p>
-<p>视图（view）是一种虚拟存在的表，是一个逻辑表，本身并不包含数据。作为一个select语句保存在数据字典中的</p>
-<pre><code>CREATE VIEW myview AS
-SELECT Concat(col1, col2) AS concat_col, col3*col4 AS compute_col
-FROM mytable
-WHERE col5 = val;</code></pre></li>
-<li><p>存储过程</p>
-<p>存储过程可以看成是对一系列 SQL 操作的批处理。<br>使用存储过程的好处:<br>代码封装，保证了一定的安全性；<br>代码复用；<br>由于是预先编译，因此具有很高的性能。</p>
-</li>
-<li><p>事务管理</p>
-<p>事务(transaction)指一组 SQL 语句；<br>回退(rollback)指撤销指定 SQL 语句的过程；<br>提交(commit)指将未存储的 SQL 语句结果写入数据库表；<br>MySQL 的事务提交默认是隐式提交，每执行一条语句就把这条语句当成一个事务然后进行提交。当出现 START TRANSACTION 语句时，会关闭隐式提交；当 COMMIT 或 ROLLBACK 语句执行后，事务会自动关闭，重新恢复隐式提交。<br>START TRANSACTION<br>// …<br>SAVEPOINT delete1<br>// …<br>ROLLBACK TO delete1<br>// …<br>COMMIT</p>
-</li>
-<li><p>事务管理</p>
-<p>事务(transaction)指一组 SQL 语句；<br>回退(rollback)指撤销指定 SQL 语句的过程；<br>提交(commit)指将未存储的 SQL 语句结果写入数据库表；<br>MySQL 的事务提交默认是隐式提交，每执行一条语句就把这条语句当成一个事务然后进行提交。当出现 START TRANSACTION 语句时，会关闭隐式提交；当 COMMIT 或 ROLLBACK 语句执行后，事务会自动关闭，重新恢复隐式提交。<br>START TRANSACTION<br>// …<br>SAVEPOINT delete1<br>// …<br>ROLLBACK TO delete1<br>// …<br>COMMIT</p>
-</li>
-</ul>
+<h2 id="三、方法引用"><a href="#三、方法引用" class="headerlink" title="三、方法引用"></a>三、方法引用</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @Author hanbin_chen</span></span><br><span class="line"><span class="comment"> * @Description 方法引用</span></span><br><span class="line"><span class="comment"> * 当要传递给Lambda体的操作，已经有实现的方法了，可以使用方法引用！</span></span><br><span class="line"><span class="comment"> * 1、方法引用所引用的方法的参数列表与返回值类型，需要与函数式接口中抽象方法的参数列表和返回值类型保持一致！</span></span><br><span class="line"><span class="comment"> * 2、若Lambda 的参数列表的第一个参数，是实例方法的调用者，第二个参数(或无参)是实例方法的参数，表达式是实例方法时，格式： ClassName::MethodName</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 类::静态方法 与 对象::实例方法形式一样：参数：方法参数，表达式：非参数列表调用方法</span></span><br><span class="line"><span class="comment"> * 类::实例方法：参数：对象实例，方法参数；表达式：参数列表对象调用方法</span></span><br><span class="line"><span class="comment"> * @DateTime 2021/3/12 15:32</span></span><br><span class="line"><span class="comment"> * @Version V1.0.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">public</span> <span class="keyword">class</span> MethodRefCase &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 类::实例方法</span></span><br><span class="line"><span class="comment">     * 若Lambda 的参数列表的第一个参数，是实例方法的调用者，</span></span><br><span class="line"><span class="comment">     * 第二个参数(或无参)是实例方法的参数，表达式是 调用者调用实例方法 时，格式： ClassName::MethodName</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    @Test</span><br><span class="line">    <span class="built_in">public</span> <span class="type">void</span> classInstanceMethod() &#123;</span><br><span class="line">        Person person = <span class="built_in">new</span> Person("张三", <span class="number">123</span>);</span><br><span class="line">        <span class="keyword">Function</span>&lt;Person, String&gt; <span class="keyword">function</span> = e -&gt; e.getName();</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println(<span class="keyword">function</span>.apply(person));</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println("============================");</span><br><span class="line">        <span class="keyword">Function</span>&lt;Person, String&gt; function1 = Person::getName;</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println(function1.apply(person));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 类::静态方法</span></span><br><span class="line"><span class="comment">     * 若Lambda 的参数列表的参数时类的静态方法参数，表达式是静态方法执行，格式：ClassName::MethodName</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    @Test</span><br><span class="line">    <span class="built_in">public</span> <span class="type">void</span> classStaticMethod() &#123;</span><br><span class="line">        <span class="keyword">Function</span>&lt;String, <span class="type">Integer</span>&gt; <span class="keyword">function</span> = (str) -&gt; <span class="type">Integer</span>.valueOf(str);</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println(<span class="keyword">function</span>.apply("1"));</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println("==================================");</span><br><span class="line">        <span class="keyword">Function</span>&lt;String, <span class="type">Integer</span>&gt; function1 = <span class="type">Integer</span>::valueOf;</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println(function1.apply("2"));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 对象::实例方法</span></span><br><span class="line"><span class="comment">     * 对象参数不是实例对象(可以无参)，表达式是实例对象调用实例方法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    @Test</span><br><span class="line">    <span class="built_in">public</span> <span class="type">void</span> instanceMethod() &#123;</span><br><span class="line">        Person person = <span class="built_in">new</span> Person("张三", <span class="number">123</span>);</span><br><span class="line">        <span class="keyword">Function</span>&lt;String, Person&gt; <span class="keyword">function</span> = (x) -&gt; person.setName(x);</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println(<span class="keyword">function</span>.apply("李四").toString());</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println("====================");</span><br><span class="line">        <span class="keyword">Function</span>&lt;String, Person&gt; function1 = person::setName;</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println(function1.apply("王五"));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Person &#123;</span><br><span class="line"></span><br><span class="line">    private String <span class="type">name</span>;</span><br><span class="line"></span><br><span class="line">    private <span class="type">Integer</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">public</span> Person() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">public</span> Person(String <span class="type">name</span>, <span class="type">Integer</span> age) &#123;</span><br><span class="line">        this.name = <span class="type">name</span>;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">public</span> String getName() &#123;</span><br><span class="line">        <span class="keyword">return</span> this.name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">public</span> Person setName(String <span class="type">name</span>) &#123;</span><br><span class="line">        this.name = <span class="type">name</span>;</span><br><span class="line">        <span class="keyword">return</span> this;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">public</span> Person setAge(<span class="type">Integer</span> age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">        <span class="keyword">return</span> this;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">public</span> <span class="type">Integer</span> getAge() &#123;</span><br><span class="line">        <span class="keyword">return</span> this.age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    <span class="built_in">public</span> String toString() &#123;</span><br><span class="line">        <span class="keyword">return</span> "Person&#123;" +</span><br><span class="line">                "name='" + <span class="type">name</span> + <span class="string">'\'' +</span></span><br><span class="line"><span class="string">                ", age=" + age +</span></span><br><span class="line"><span class="string">                '</span>&#125;<span class="string">';</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="四、构造器引用"><a href="#四、构造器引用" class="headerlink" title="四、构造器引用"></a>四、构造器引用</h2><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConstructorRef</span> &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 类名::new</span></span><br><span class="line"><span class="comment">     * 与函数式接口相结合，自动与函数式接口中方法兼容。 </span></span><br><span class="line"><span class="comment">     * 可以把构造器引用赋值给定义的方法，与构造器参数 列表要与接口中抽象方法的参数列表一致！</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * 语句：参数列表：构造方法参数，表达式：构造方法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    @Test</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">classNew</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        BiFunction&lt;<span class="keyword">String</span>, Integer, Man&gt; function = (name, age) -&gt; <span class="keyword">new</span> Man(name, age);</span><br><span class="line">        System.out.<span class="built_in">println</span>(function.apply(<span class="string">"张三"</span>, <span class="number">23</span>).toString());</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"================================="</span>);</span><br><span class="line">        BiFunction&lt;<span class="keyword">String</span>, Integer, Man&gt; function1 = Man::<span class="keyword">new</span>;</span><br><span class="line">        System.out.<span class="built_in">println</span>(function1.apply(<span class="string">"张三"</span>, <span class="number">23</span>).toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Man</span> &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">String</span> name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Man</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Man</span><span class="params">(<span class="keyword">String</span> name, Integer age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">String</span> <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Person&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", age="</span> + age +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、数组引用"><a href="#五、数组引用" class="headerlink" title="五、数组引用"></a>五、数组引用</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">public</span> <span class="keyword">class</span> ArrayRef &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 数据引用</span></span><br><span class="line"><span class="comment">     * 类型[]::new</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    @Test</span><br><span class="line">    <span class="built_in">public</span> <span class="type">void</span> arrayRef() &#123;</span><br><span class="line">        <span class="keyword">Function</span>&lt;<span class="type">Integer</span>, String[]&gt; <span class="keyword">function</span> = (args) -&gt; <span class="built_in">new</span> String[args];</span><br><span class="line">        String[] strs = <span class="keyword">function</span>.apply(<span class="number">10</span>);</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println(strs.length);</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println("=============================");</span><br><span class="line">        <span class="keyword">Function</span>&lt;<span class="type">Integer</span>, String[]&gt; function1 = String[]::<span class="built_in">new</span>;</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println(function1.apply(<span class="number">20</span>).length);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -673,12 +557,12 @@ WHERE col5 = val;</code></pre></li>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>MySQL语法基础</a></p>
+  <p><span>本文标题:</span>Java8 Lambda语法、函数接口、方法引用</a></p>
   <p><span>文章作者:</span>陈汉槟</a></p>
-  <p><span>发布时间:</span>2019年06月13日 - 18:21:45</p>
-  <p><span>最后更新:</span>2021年03月03日 - 14:38:57</p>
-  <p><span>原始链接:</span><a href="/2019/06/13/MySQL%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/" title="MySQL语法基础">https://deschen.gitee.io/2019/06/13/MySQL%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://deschen.gitee.io/2019/06/13/MySQL%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年07月05日 - 16:02:06</p>
+  <p><span>最后更新:</span>2021年03月13日 - 21:29:15</p>
+  <p><span>原始链接:</span><a href="/2019/07/05/Java8%20Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8%E3%80%81%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3/" title="Java8 Lambda语法、函数接口、方法引用">https://deschen.gitee.io/2019/07/05/Java8%20Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8%E3%80%81%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://deschen.gitee.io/2019/07/05/Java8%20Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8%E3%80%81%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -756,8 +640,8 @@ WHERE col5 = val;</code></pre></li>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/12/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3Redis-Redis%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86/" rel="next" title="深入了解Redis--Redis核心原理">
-                <i class="fa fa-chevron-left"></i> 深入了解Redis--Redis核心原理
+              <a href="/2019/07/04/%E8%AF%A6%E8%A7%A3%E4%BA%94%E7%A7%8D%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" rel="next" title="详解五种单例模式">
+                <i class="fa fa-chevron-left"></i> 详解五种单例模式
               </a>
             
           </div>
@@ -766,8 +650,8 @@ WHERE col5 = val;</code></pre></li>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/20/MySQL%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="prev" title="MySQL性能优化">
-                MySQL性能优化 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/13/MySQL%E7%B4%A2%E5%BC%95%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3/" rel="prev" title="MySQL索引深入理解">
+                MySQL索引深入理解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -996,7 +880,7 @@ WHERE col5 = val;</code></pre></li>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL语法基础"><span class="nav-number">1.</span> <span class="nav-text">MySQL语法基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL知识图谱"><span class="nav-number">2.</span> <span class="nav-text">MySQL知识图谱</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sql语言基础"><span class="nav-number">2.1.</span> <span class="nav-text">Sql语言基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建表"><span class="nav-number">2.1.1.</span> <span class="nav-text">创建表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改表"><span class="nav-number">2.1.2.</span> <span class="nav-text">修改表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入数据"><span class="nav-number">2.1.3.</span> <span class="nav-text">插入数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新数据"><span class="nav-number">2.1.4.</span> <span class="nav-text">更新数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除数据"><span class="nav-number">2.1.5.</span> <span class="nav-text">删除数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询数据"><span class="nav-number">2.1.6.</span> <span class="nav-text">查询数据</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java8-Lambda语法、函数接口、方法引用"><span class="nav-number">1.</span> <span class="nav-text">Java8 Lambda语法、函数接口、方法引用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Lambda语法"><span class="nav-number">1.1.</span> <span class="nav-text">一、Lambda语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、函数式接口"><span class="nav-number">1.2.</span> <span class="nav-text">二、函数式接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、方法引用"><span class="nav-number">1.3.</span> <span class="nav-text">三、方法引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、构造器引用"><span class="nav-number">1.4.</span> <span class="nav-text">四、构造器引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、数组引用"><span class="nav-number">1.5.</span> <span class="nav-text">五、数组引用</span></a></li></ol></li></ol></div>
             
 
           </div>
