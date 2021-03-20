@@ -347,13 +347,6 @@
 
   
   <url>
-    <loc>https://deschen.gitee.io/tags/Freemarker/</loc>
-    <lastmod>2021-03-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://deschen.gitee.io/tags/ELK/</loc>
     <lastmod>2021-03-20</lastmod>
     <changefreq>daily</changefreq>
@@ -361,7 +354,7 @@
   </url>
   
   <url>
-    <loc>https://deschen.gitee.io/tags/security/</loc>
+    <loc>https://deschen.gitee.io/tags/Freemarker/</loc>
     <lastmod>2021-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -375,7 +368,7 @@
   </url>
   
   <url>
-    <loc>https://deschen.gitee.io/tags/SpringBoot/</loc>
+    <loc>https://deschen.gitee.io/tags/security/</loc>
     <lastmod>2021-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -383,6 +376,13 @@
   
   <url>
     <loc>https://deschen.gitee.io/tags/%E4%BA%8B%E5%8A%A1/</loc>
+    <lastmod>2021-03-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://deschen.gitee.io/tags/SpringBoot/</loc>
     <lastmod>2021-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -433,21 +433,7 @@
   </url>
   
   <url>
-    <loc>https://deschen.gitee.io/categories/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</loc>
-    <lastmod>2021-03-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://deschen.gitee.io/categories/ELK/</loc>
-    <lastmod>2021-03-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://deschen.gitee.io/categories/JVM/</loc>
     <lastmod>2021-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -461,7 +447,14 @@
   </url>
   
   <url>
-    <loc>https://deschen.gitee.io/categories/MyS-QL/</loc>
+    <loc>https://deschen.gitee.io/categories/JVM/</loc>
+    <lastmod>2021-03-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://deschen.gitee.io/categories/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</loc>
     <lastmod>2021-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -476,6 +469,13 @@
   
   <url>
     <loc>https://deschen.gitee.io/categories/MySQL/</loc>
+    <lastmod>2021-03-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://deschen.gitee.io/categories/MyS-QL/</loc>
     <lastmod>2021-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
