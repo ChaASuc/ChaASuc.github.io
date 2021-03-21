@@ -375,7 +375,7 @@
   </url>
   
   <url>
-    <loc>https://deschen.gitee.io/tags/%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1/</loc>
+    <loc>https://deschen.gitee.io/tags/SpringBoot/</loc>
     <lastmod>2021-03-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -396,7 +396,7 @@
   </url>
   
   <url>
-    <loc>https://deschen.gitee.io/tags/SpringBoot/</loc>
+    <loc>https://deschen.gitee.io/tags/%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2021-03-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -417,14 +417,14 @@
   </url>
   
   <url>
-    <loc>https://deschen.gitee.io/tags/redis/</loc>
+    <loc>https://deschen.gitee.io/tags/JVM/</loc>
     <lastmod>2021-03-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://deschen.gitee.io/tags/JVM/</loc>
+    <loc>https://deschen.gitee.io/tags/redis/</loc>
     <lastmod>2021-03-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -438,13 +438,6 @@
   </url>
   
 
-  
-  <url>
-    <loc>https://deschen.gitee.io/categories/Linux/</loc>
-    <lastmod>2021-03-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
   
   <url>
     <loc>https://deschen.gitee.io/categories/Java/</loc>
@@ -475,6 +468,20 @@
   </url>
   
   <url>
+    <loc>https://deschen.gitee.io/categories/Linux/</loc>
+    <lastmod>2021-03-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://deschen.gitee.io/categories/Maven/</loc>
+    <lastmod>2021-03-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://deschen.gitee.io/categories/MySQL/</loc>
     <lastmod>2021-03-21</lastmod>
     <changefreq>daily</changefreq>
@@ -483,13 +490,6 @@
   
   <url>
     <loc>https://deschen.gitee.io/categories/MyS-QL/</loc>
-    <lastmod>2021-03-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://deschen.gitee.io/categories/Maven/</loc>
     <lastmod>2021-03-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -517,14 +517,14 @@
   </url>
   
   <url>
-    <loc>https://deschen.gitee.io/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    <loc>https://deschen.gitee.io/categories/%E4%B8%AD%E5%8F%B0/</loc>
     <lastmod>2021-03-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://deschen.gitee.io/categories/%E4%B8%AD%E5%8F%B0/</loc>
+    <loc>https://deschen.gitee.io/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
     <lastmod>2021-03-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
