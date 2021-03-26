@@ -1,5 +1,5 @@
+https://deschen.gitee.io/2021/03/25/MySQL%E9%94%81/
 https://deschen.gitee.io/2021/03/23/docker%E5%91%BD%E4%BB%A4%E9%9B%86/
 https://deschen.gitee.io/2021/03/23/docker-compose%20+%20jenkins%E6%90%AD%E5%BB%BA%E9%83%A8%E7%BD%B2/
 https://deschen.gitee.io/2021/03/21/Java%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/
 https://deschen.gitee.io/2021/03/13/Java%E5%8F%8D%E5%B0%84/
-https://deschen.gitee.io/2021/03/09/Nginx%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/
