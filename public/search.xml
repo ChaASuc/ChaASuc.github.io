@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Yapi的部署和使用</title>
+      <link href="/2021/05/10/Yapi%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8/"/>
+      <url>/2021/05/10/Yapi%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Yapi-的部署和使用"><a href="#Yapi-的部署和使用" class="headerlink" title="Yapi 的部署和使用"></a>Yapi 的部署和使用</h1><h2 id="一、基于-docker-compose-部署-Yapi"><a href="#一、基于-docker-compose-部署-Yapi" class="headerlink" title="一、基于 docker-compose 部署 Yapi"></a>一、基于 docker-compose 部署 Yapi</h2>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MySQL锁</title>
       <link href="/2021/03/25/MySQL%E9%94%81/"/>
       <url>/2021/03/25/MySQL%E9%94%81/</url>
@@ -21,7 +34,7 @@
       <link href="/2021/03/23/docker%E5%91%BD%E4%BB%A4%E9%9B%86/"/>
       <url>/2021/03/23/docker%E5%91%BD%E4%BB%A4%E9%9B%86/</url>
       
-        <content type="html"><![CDATA[<h1 id="docker命令集"><a href="#docker命令集" class="headerlink" title="docker命令集"></a>docker命令集</h1><p>[toc]</p><h2 id="一、docker-基本命令"><a href="#一、docker-基本命令" class="headerlink" title="一、docker 基本命令"></a>一、docker 基本命令</h2><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># docker 远程访问</span></span><br><span class="line">- 打开docker.<span class="symbol">service:</span> vim /usr/<span class="class"><span class="keyword">lib</span>/<span class="title">systemd</span>/<span class="title">system</span>/<span class="title">docker</span>.<span class="title">service</span></span></span><br><span class="line">- ExecStart修改参数：</span><br><span class="line">- 如果是centos7，修改为：ExecStart=<span class="regexp">/usr/bin</span><span class="regexp">/dockerd -H tcp:/</span><span class="regexp">/0.0.0.0:2375 -H unix:/</span><span class="regexp">/var/run</span><span class="regexp">/docker.sock</span></span><br><span class="line"><span class="regexp">- 如果是centos7以下，修改为：ExecStart=/usr</span><span class="regexp">/bin/dockerd</span> -H <span class="symbol">fd:</span>/<span class="regexp">/ -H tcp:/</span><span class="regexp">/0.0.0.0:2375</span></span><br><span class="line"><span class="regexp">- 输入网址，出现json参数则远程访问成功：http:/</span><span class="regexp">/ip:2375/info</span></span><br></pre></td></tr></table></figure><h2 id="二、docker镜像命令"><a href="#二、docker镜像命令" class="headerlink" title="二、docker镜像命令"></a>二、docker镜像命令</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 搜索镜像</span></span><br><span class="line">docker search [option] keyword</span><br><span class="line"><span class="bullet">- </span>option子命令</span><br><span class="line"><span class="bullet">- </span>-f, --filter 过滤输出的内容，而过滤的条件名是标题名</span><br><span class="line"><span class="bullet">- </span>--limit int 指定搜索内容个数</span><br><span class="line"><span class="bullet">- </span>--no-trunc 不截断输出内容</span><br><span class="line"><span class="bullet">- </span>例子</span><br><span class="line"><span class="bullet">- </span>docker search --filter "is-official=true" mysql</span><br><span class="line"><span class="bullet">- </span>docker search --filter "stars=500" mysql</span><br><span class="line"><span class="section"># 查看镜像文件</span></span><br><span class="line">docker images</span><br><span class="line"><span class="section"># 下拉镜像文件</span></span><br><span class="line">docker pull [OPTIONS] NAME[:TAG]</span><br><span class="line"><span class="bullet">- </span>OPTIONS</span><br><span class="line"><span class="bullet">- </span>-a :拉取所有 tagged 镜像</span><br><span class="line"><span class="bullet">- </span>--disable-content-trust :忽略镜像的校验,默认开启</span><br><span class="line"><span class="bullet">- </span>TAG：版本号，可以在官方网找具体版本 https://hub.docker.com/r/library/</span><br><span class="line"><span class="section"># 删除镜像(前提是要删除对应容器，否则使用docker rmi -f命令强制删除)</span></span><br><span class="line">docker rmi REPOSITORY:TAG 或者 docker rmi IMAGE_ID</span><br></pre></td></tr></table></figure><h2 id="三、docker-容器命令"><a href="#三、docker-容器命令" class="headerlink" title="三、docker 容器命令"></a>三、docker 容器命令</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看容器</span></span><br><span class="line">docker ps [<span class="keyword">option</span>]</span><br><span class="line">- <span class="keyword">option</span>子命令</span><br><span class="line">- -a 查找所有容器，包括未运行的容器；没填则默认显示启动的容器</span><br><span class="line"><span class="comment"># 启动容器</span></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="docker命令集"><a href="#docker命令集" class="headerlink" title="docker命令集"></a>docker命令集</h1><p>[toc]</p><h2 id="一、docker-基本命令"><a href="#一、docker-基本命令" class="headerlink" title="一、docker 基本命令"></a>一、docker 基本命令</h2><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># docker 远程访问</span></span><br><span class="line">- 打开docker.<span class="symbol">service:</span> vim /usr/<span class="class"><span class="keyword">lib</span>/<span class="title">systemd</span>/<span class="title">system</span>/<span class="title">docker</span>.<span class="title">service</span></span></span><br><span class="line">- ExecStart修改参数：</span><br><span class="line">- 如果是centos7，修改为：ExecStart=<span class="regexp">/usr/bin</span><span class="regexp">/dockerd -H tcp:/</span><span class="regexp">/0.0.0.0:2375 -H unix:/</span><span class="regexp">/var/run</span><span class="regexp">/docker.sock</span></span><br><span class="line"><span class="regexp">- 如果是centos7以下，修改为：ExecStart=/usr</span><span class="regexp">/bin/dockerd</span> -H <span class="symbol">fd:</span>/<span class="regexp">/ -H tcp:/</span><span class="regexp">/0.0.0.0:2375</span></span><br><span class="line"><span class="regexp">- 输入网址，出现json参数则远程访问成功：http:/</span><span class="regexp">/ip:2375/info</span></span><br></pre></td></tr></table></figure><h2 id="二、docker镜像命令"><a href="#二、docker镜像命令" class="headerlink" title="二、docker镜像命令"></a>二、docker镜像命令</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 搜索镜像</span></span><br><span class="line">docker search [option] keyword</span><br><span class="line"><span class="bullet">- </span>option子命令</span><br><span class="line"><span class="bullet">- </span>-f, --filter 过滤输出的内容，而过滤的条件名是标题名</span><br><span class="line"><span class="bullet">- </span>--limit int 指定搜索内容个数</span><br><span class="line"><span class="bullet">- </span>--no-trunc 不截断输出内容</span><br><span class="line"><span class="bullet">- </span>例子</span><br><span class="line"><span class="bullet">- </span>docker search --filter "is-official=true" mysql</span><br><span class="line"><span class="bullet">- </span>docker search --filter "stars=500" mysql</span><br><span class="line"><span class="section"># 查看镜像文件</span></span><br><span class="line">docker images</span><br><span class="line"><span class="section"># 下拉镜像文件</span></span><br><span class="line">docker pull [OPTIONS] NAME[:TAG]</span><br><span class="line"><span class="bullet">- </span>OPTIONS</span><br><span class="line"><span class="bullet">- </span>-a :拉取所有 tagged 镜像</span><br><span class="line"><span class="bullet">- </span>--disable-content-trust :忽略镜像的校验,默认开启</span><br><span class="line"><span class="bullet">- </span>TAG：版本号，可以在官方网找具体版本 https://hub.docker.com/r/library/</span><br><span class="line"><span class="section"># 删除镜像(前提是要删除对应容器，否则使用docker rmi -f命令强制删除)</span></span><br><span class="line">docker rmi REPOSITORY:TAG 或者 docker rmi IMAGE_ID</span><br></pre></td></tr></table></figure><h2 id="三、docker-容器命令"><a href="#三、docker-容器命令" class="headerlink" title="三、docker 容器命令"></a>三、docker 容器命令</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看容器</span></span><br><span class="line">docker ps [<span class="keyword">option</span>]</span><br><span class="line">- <span class="keyword">option</span>子命令</span><br><span class="line">- -a 查找所有容器，包括未运行的容器；没填则默认显示启动的容器</span><br><span class="line"><span class="comment"># 启动容器</span></span><br><span class="line">docker run [<span class="keyword">option</span>] [-d] [image]</span><br><span class="line">- <span class="keyword">option</span> 子命令</span><br><span class="line">-  --privileged=<span class="keyword">true</span> 使用该参数，container内的root拥有真正的root权限。否则，container内的root只是外部的一个普通用户权限。例如：普通用户不允许docker内启动docker</span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -687,25 +700,6 @@
     
     
     <entry>
-      <title>MySQL group by详解</title>
-      <link href="/2019/05/28/MySQL%20group%20by%E8%AF%A6%E8%A7%A3/"/>
-      <url>/2019/05/28/MySQL%20group%20by%E8%AF%A6%E8%A7%A3/</url>
-      
-        <content type="html"><![CDATA[<h1 id="MySQL-group-by详解"><a href="#MySQL-group-by详解" class="headerlink" title="MySQL group by详解"></a>MySQL group by详解</h1><h2 id="一、功能"><a href="#一、功能" class="headerlink" title="一、功能"></a>一、功能</h2><p>group by col… 根据by后面的字段对数据分组</p><h2 id="二、语法"><a href="#二、语法" class="headerlink" title="二、语法"></a>二、语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 字段...   </span><br><span class="line"><span class="keyword">FROM</span> 表名</span><br><span class="line"><span class="keyword">WHERE</span> 条件语句</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> 字段..</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> 字段...   </span><br><span class="line"><span class="keyword">FROM</span> 表名</span><br><span class="line"><span class="keyword">WHERE</span> 条件语句</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> 字段..</span><br><span class="line"><span class="keyword">HAVING</span> 过滤条件</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> MySQL </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Linux常见命令</title>
       <link href="/2019/05/28/Linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/"/>
       <url>/2019/05/28/Linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/</url>
@@ -716,6 +710,25 @@
       <categories>
           
           <category> Linux </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MySQL group by详解</title>
+      <link href="/2019/05/28/MySQL%20group%20by%E8%AF%A6%E8%A7%A3/"/>
+      <url>/2019/05/28/MySQL%20group%20by%E8%AF%A6%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<h1 id="MySQL-group-by详解"><a href="#MySQL-group-by详解" class="headerlink" title="MySQL group by详解"></a>MySQL group by详解</h1><h2 id="一、功能"><a href="#一、功能" class="headerlink" title="一、功能"></a>一、功能</h2><p>group by col… 根据by后面的字段对数据分组</p><h2 id="二、语法"><a href="#二、语法" class="headerlink" title="二、语法"></a>二、语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 字段...   </span><br><span class="line"><span class="keyword">FROM</span> 表名</span><br><span class="line"><span class="keyword">WHERE</span> 条件语句</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> 字段..</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> 字段...   </span><br><span class="line"><span class="keyword">FROM</span> 表名</span><br><span class="line"><span class="keyword">WHERE</span> 条件语句</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> 字段..</span><br><span class="line"><span class="keyword">HAVING</span> 过滤条件</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL </category>
           
       </categories>
       
