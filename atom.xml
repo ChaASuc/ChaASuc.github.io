@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://deschen.gitee.io/"/>
-  <updated>2021-11-02T06:30:32.523Z</updated>
+  <updated>2021-05-12T05:44:40.805Z</updated>
   <id>https://deschen.gitee.io/</id>
   
   <author>
@@ -15,58 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>多级缓存（Nginx + Redis + Lua）</title>
-    <link href="https://deschen.gitee.io/2021/11/02/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98%EF%BC%88Nginx%20+%20Redis%20+%20Lua%EF%BC%89/"/>
-    <id>https://deschen.gitee.io/2021/11/02/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98%EF%BC%88Nginx%20+%20Redis%20+%20Lua%EF%BC%89/</id>
-    <published>2021-11-02T06:30:32.522Z</published>
-    <updated>2021-11-02T06:30:32.523Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="多级缓存（Nginx-Redis-Lua）"><a href="#多级缓存（Nginx-Redis-Lua）" class="headerlink" title="多级缓存（Nginx + Redis + Lua）"></a>多级缓存（Nginx + Redis + Lua）</h1>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;多级缓存（Nginx-Redis-Lua）&quot;&gt;&lt;a href=&quot;#多级缓存（Nginx-Redis-Lua）&quot; class=&quot;headerlink&quot; title=&quot;多级缓存（Nginx + Redis + Lua）&quot;&gt;&lt;/a&gt;多级缓存（Nginx + Redis 
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Untitled 1</title>
-    <link href="https://deschen.gitee.io/2021/09/12/Untitled%201/"/>
-    <id>https://deschen.gitee.io/2021/09/12/Untitled%201/</id>
-    <published>2021-09-12T11:57:30.149Z</published>
-    <updated>2021-09-12T11:57:30.149Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Untitled</title>
-    <link href="https://deschen.gitee.io/2021/08/27/Untitled/"/>
-    <id>https://deschen.gitee.io/2021/08/27/Untitled/</id>
-    <published>2021-08-27T07:50:14.822Z</published>
-    <updated>2021-08-27T07:50:14.822Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
   
   <entry>
     <title>Yapi的部署和使用</title>
@@ -476,6 +424,79 @@
     
     
       <category term="中台" scheme="https://deschen.gitee.io/categories/%E4%B8%AD%E5%8F%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解JVM--七种垃圾收集器</title>
+    <link href="https://deschen.gitee.io/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/"/>
+    <id>https://deschen.gitee.io/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/</id>
+    <published>2019-10-11T08:18:05.000Z</published>
+    <updated>2021-03-04T09:57:45.894Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="深入理解JVM–七种垃圾收集器"><a href="#深入理解JVM–七种垃圾收集器" class="headerlink" title="深入理解JVM–七种垃圾收集器"></a>深入理解JVM–七种垃圾收集器</h1><h2 id="一、垃圾收集器"><a href="#一、垃圾收集器" class="headerlink" title="一、垃圾收集器"></a>一、垃圾收集器</h2><ul><li><p>七种垃圾收集器组合</p><p> <img src="http://img.blog.csdn.net/20170102225015393" alt="img"></p></li><li><p>区域划分</p><ul><li>新生代收集器：Serial、ParNew、Parallel Scavenge；</li><li>老年代收集器：Serial Old、Parallel Old、CMS；</li><li>整堆收集器：G1；</li></ul></li></ul><h2 id="二、并发垃圾收集和并行垃圾收集的区别"><a href="#二、并发垃圾收集和并行垃圾收集的区别" class="headerlink" title="二、并发垃圾收集和并行垃圾收集的区别"></a>二、并发垃圾收集和并行垃圾收集的区别</h2><ul><li>并行（Parallel）：指多条垃圾收集线程并行工作，但此时用户线程仍然处于等待状态；如：ParNew、Parallel Scavenge、Parallel Old；</li><li>并发（Concurrent）：指用户线程与垃圾收集线程同时执行（但不一定是并行的，可能会交替执行）；用户程序在继续运行，而垃圾收集程序线程运行于另一个CPU上；如：CMS、G1（也有并行）；</li></ul><h2 id="三、收集器详解"><a href="#三、收集器详解" class="headerlink" title="三、收集器详解"></a>三、收集器详解</h2><h3 id="1、Serial收集器"><a href="#1、Serial收集器" class="headerlink" title="1、Serial收集器"></a>1、Serial收集器</h3><p>Serial（串行）收集器收集器是<strong>最基本、历史最悠久</strong>的垃圾收集器了。大家看名字就知道这个收集器是一个<strong>单线程收集器</strong>了。它的单线程的意义不仅仅意味着它<strong>只会使用一条垃圾收集线程去完成垃圾收集</strong>工作，更重要的是<strong>它在进行垃圾收集工作的时候必须暂停其他所有的工作线程</strong>（ <strong>“Stop The World”</strong> ），直到它收集结束。</p><p><strong>新生代采用复制算法，老年代采用标记-整理算法。</strong></p><p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1584521520253.png" alt="1584521520253"></p><h3 id="2、ParNew收集器"><a href="#2、ParNew收集器" class="headerlink" title="2、ParNew收集器"></a>2、ParNew收集器</h3><p>ParNew收集器其实就是<strong>Serial收集器的多线程版本</strong>，除了<strong>使用多线程进行垃圾收集外</strong>，<strong>其余行为</strong>（控制参数、收集算法、回收策略等等）和Serial收集器<strong>完全一样</strong>。</p><p><strong>新生代采用复制算法，老年代采用标记-整理算法。</strong></p><p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1584521563004.png" alt="1584521563004"></p><h3 id="3、Parallel-Scavenge收集器"><a href="#3、Parallel-Scavenge收集器" class="headerlink" title="3、Parallel Scavenge收集器"></a>3、Parallel Scavenge收集器</h3><p>Parallel Scavenge 收集器<strong>类似于ParNew 收集器，是Server 模式</strong>（内存大于2G，2个cpu）下的<strong>默认收集器</strong>，那么它有什么特别之处呢？</p><p>Parallel Scavenge收集器<strong>关注点是吞吐量（高效率的利用CPU）</strong>。所谓吞吐量就是<strong>CPU中用于运行用户代码的时间与CPU总消耗时间的比值</strong>。 </p><p><strong>新生代采用复制算法，老年代采用标记-整理算法。</strong></p><p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1584521574511.png" alt="1584521574511"></p><h3 id="4、Serial-Old收集器"><a href="#4、Serial-Old收集器" class="headerlink" title="4、Serial Old收集器"></a>4、Serial Old收集器</h3><p><strong>Serial</strong>收集器的<strong>老年代版本</strong>，它同样是一个<strong>单线程</strong>收集器。它主要有两大用途：一种用途是在<strong>JDK1.5以及以前的版本中与Parallel Scavenge收集器搭配使用</strong>，另一种用途是作<strong>为CMS收集器的后备方案</strong>。  </p><h3 id="5、Parallel-Old收集器"><a href="#5、Parallel-Old收集器" class="headerlink" title="5、Parallel Old收集器"></a>5、Parallel Old收集器</h3><p> <strong>Parallel Scavenge</strong>收集器的<strong>老年代</strong>版本。使用多线程和“标记-整理”算法。在注重吞吐量以及CPU资源的场合，都可以优先考虑 Parallel Scavenge收集器和Parallel Old收集器。</p><h3 id="6、CMS收集器"><a href="#6、CMS收集器" class="headerlink" title="6、CMS收集器"></a>6、CMS收集器</h3><p>CMS（Concurrent Mark Sweep）收集器是一种以<strong>获取最短回收停顿时间为目标的收集器</strong>。它而非常符合在注重用户体验的应用上使用，它是HotSpot虚拟机第一款真正意义上的并发收集器，它第一次实现了让<strong>垃圾收集线程与用户线程（基本上）同时工作。</strong></p><p>从名字中的<strong>Mark Sweep</strong>这两个词可以看出，CMS收集器是一种 <strong>“标记-清除”算法</strong>实现的，它的运作过程相比于前面几种垃圾收集器来说更加复杂一些。整个过程分为四个步骤：</p><ul><li><strong>初始标记：</strong> 暂停所有的其他线程(<strong>STW</strong>)，并记录下<strong>直接与root相连的对象，速度很快</strong> ；</li><li><strong>并发标记：</strong> <strong>同时开启GC和用户线程</strong>，用一个<strong>闭包结构</strong>去<strong>记录可达对象</strong>。但在这个阶段结束，这个闭包结构<strong>并不能保证包含当前所有的可达对象</strong>。因为<strong>用户线程</strong>可能会<strong>不断的更新引用域</strong>，所以GC线程无法保证可达性分析的<strong>实时性</strong>。所以这个算法里会<strong>跟踪记录这些发生引用更新的地方</strong>。</li><li><strong>重新标记：</strong> 重新标记阶段就是为了<strong>修正</strong>并发标记期间因为用户程序继续运行而导致<strong>标记产生变动的那一部分对象的标记记录</strong>，这个阶段的停顿时间一般<strong>会比初始标记阶段的时间稍长，远远比并发标记阶段时间短</strong></li><li><strong>并发清除：</strong> 开启用户线程，同时<strong>GC线程开始对未标记的区域做清扫</strong>。</li></ul><p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1584521588277.png" alt="1584521588277"></p><p>从它的名字就可以看出它是一款优秀的垃圾收集器，主要优点：<strong>并发收集、低停顿</strong>。但是它有下面三个明显的缺点：</p><ul><li>对<strong>CPU资源敏感</strong>（会和服务抢资源）；</li><li><strong>无法处理浮动垃圾(</strong>在java业务程序线程与垃圾收集线程并发执行过程中又产生的垃圾，这种浮动垃圾只能等到下一次gc再清理了)；</li><li>它使用的回收算法<strong>-“标记-清除”</strong>算法会导致收集结束时会有大量空间碎片产生<strong>。</strong></li></ul><h3 id="7、G1收集器-XX-UseG1GC"><a href="#7、G1收集器-XX-UseG1GC" class="headerlink" title="7、G1收集器(-XX:+UseG1GC)"></a>7、G1收集器(-XX:+UseG1GC)</h3><p><strong>G1</strong> (Garbage-First)是一款<strong>面向服务器的垃圾收集器</strong>,主要针对配备<strong>多颗处理器及大容量内存的机器</strong>. 以极<strong>高概率满足GC停顿时间要求的同时,还具备高吞吐量性能特征</strong>.</p><p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/01/clip_image002.gif" alt="截图.png"></p><p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/01/clip_image004.gif" alt="截图.png"></p><p>G1将<strong>Java堆划分为多个大小相等的独立区域</strong>（<strong>Region</strong>），虽保留新生代和老年代的<strong>概念</strong>，但不再是<strong>物理隔阂</strong>了，它们都是（可以不连续）<strong>Region</strong>的集合。</p><p><strong>分配大对象</strong>（直接进<strong>Humongous区</strong>，专门<strong>存放短期巨型对象</strong>， <strong>当分配的对象大于等于Region大小的一半</strong>的时候就会被认为是巨型对象 ）不会因为无法找到连续空间而提前触发下一次GC。</p><p>G1收集器的运作大致分为以下几个步骤：</p><ul><li><strong>初始标记</strong>（initial mark，STW）：在此阶段，标记 GC Roots能直接关联到的对象。 需要停顿线程，但耗时很短 </li><li><strong>并发标记</strong>（Concurrent Marking）： GC Root开始对堆中对象进行<strong>可达性分析，找出存活的对象，</strong>这阶段耗时较长，但可与用户程序并发执行 </li><li><strong>最终标记</strong>（Remark，STW）： 修正在并发标记期间因<strong>用户程序继续运作而导致标记产生变动的那一部分标记记录</strong> </li><li><strong>筛选回收</strong>（Cleanup，STW）：筛选回收阶段首先对各个Region的回收价值和成本进行排序，<strong>根据用户所期望的GC停顿时间来制定回收计划</strong>.</li></ul><p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/01/clip_image006.gif" alt="clipboard.png"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;深入理解JVM–七种垃圾收集器&quot;&gt;&lt;a href=&quot;#深入理解JVM–七种垃圾收集器&quot; class=&quot;headerlink&quot; title=&quot;深入理解JVM–七种垃圾收集器&quot;&gt;&lt;/a&gt;深入理解JVM–七种垃圾收集器&lt;/h1&gt;&lt;h2 id=&quot;一、垃圾收集器&quot;&gt;&lt;a h
+      
+    
+    </summary>
+    
+    
+      <category term="JVM" scheme="https://deschen.gitee.io/categories/JVM/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解JVM--四种垃圾收集算法</title>
+    <link href="https://deschen.gitee.io/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E5%9B%9B%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95/"/>
+    <id>https://deschen.gitee.io/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E5%9B%9B%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95/</id>
+    <published>2019-10-11T07:56:36.000Z</published>
+    <updated>2020-03-18T11:37:07.311Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="深入理解JVM–四种垃圾收集算法"><a href="#深入理解JVM–四种垃圾收集算法" class="headerlink" title="深入理解JVM–四种垃圾收集算法"></a>深入理解JVM–四种垃圾收集算法</h1><h2 id="一、标记-清除算法"><a href="#一、标记-清除算法" class="headerlink" title="一、标记-清除算法"></a>一、标记-清除算法</h2><p>算法分为“标记”和“清除”阶段：首先<strong>标记所有存活</strong>的对象，在标记完成后<strong>统一回收所有未标记</strong>的对象。它是最基础的收集算法，效率也很高。</p><p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1584530746245.png" alt="1584530746245"></p><p>优点：执行效率高</p><p>缺点：1、标记清除后会产生大量不连续的碎片；2、分配速度慢，因为存在大量不连续碎片，每次分配都需要遍历空闲链表，找到足够大的内存空间存放对象</p><h2 id="二、复制算法"><a href="#二、复制算法" class="headerlink" title="二、复制算法"></a>二、复制算法</h2><p>为了解决标记-清除算法问题，“复制”收集算法出现了。它可以将<strong>内存分为大小相同的两块</strong>，<strong>每次使用其中的一块</strong>。当这一块的内存<strong>使用完后</strong>，就将<strong>还存活的对象有序复制到另一块</strong>去，然后再<strong>把使用的空间一次清理</strong>掉。这样就使每次的内存回收都是对内存区间的一半进行回收。</p><p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1584530755486.png" alt="1584530755486"></p><p>优点：不存在大量不连续的内存碎片</p><p>缺点：使用效率低下，因为每次只使用其中一块内存空间</p><h2 id="三、标记-整理算法"><a href="#三、标记-整理算法" class="headerlink" title="三、标记-整理算法"></a>三、标记-整理算法</h2><p>根据老年代的特点特出的一种标记算法，<strong>标记</strong>过程仍然与<strong>“标记-清除”算法一样</strong>，清除的过程不同，让<strong>所有存活的对象向一端移动</strong>，然后<strong>直接清理掉端边界以外的内存</strong>。</p><p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1584530762589.png" alt="1584530762589"></p><p>优点：不存在大量不连续的内存碎片</p><p>缺点： 整理会花一定的时间 </p><h2 id="四、分代收集算法"><a href="#四、分代收集算法" class="headerlink" title="四、分代收集算法"></a>四、分代收集算法</h2><p>当前<strong>虚拟机的垃圾收集都采用分代收集算法</strong>，这种算法没有什么新的思想，只是<strong>根据对象存活周期的不同将内存分为几块</strong>。一般将java堆分为新生代和老年代，这样我们就可以根据<strong>各个年代的特点选择合适的垃圾收集算法</strong>。</p><p>比如在<strong>新生代</strong>中，每次收集都会有<strong>大量对象死去</strong>，所以可以选择<strong>复制算法</strong>，只需要付出少量对象的复制成本就可以完成每次垃圾收集。而<strong>老年代</strong>的对象存活几率是比较高的，而且没<strong>有额外的空间对它进行分配担保</strong>，所以我们必须选择<strong>“标记-清除”或“标记-整理”</strong>算法进行垃圾收集。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;深入理解JVM–四种垃圾收集算法&quot;&gt;&lt;a href=&quot;#深入理解JVM–四种垃圾收集算法&quot; class=&quot;headerlink&quot; title=&quot;深入理解JVM–四种垃圾收集算法&quot;&gt;&lt;/a&gt;深入理解JVM–四种垃圾收集算法&lt;/h1&gt;&lt;h2 id=&quot;一、标记-清除算法
+      
+    
+    </summary>
+    
+    
+      <category term="JVM" scheme="https://deschen.gitee.io/categories/JVM/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解JVM--对象存活分析算法</title>
+    <link href="https://deschen.gitee.io/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%A4%E7%A7%8D%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95/"/>
+    <id>https://deschen.gitee.io/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%A4%E7%A7%8D%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95/</id>
+    <published>2019-10-11T06:24:15.000Z</published>
+    <updated>2021-02-12T11:14:04.409Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="深入理解JVM–对象存活分析算法"><a href="#深入理解JVM–对象存活分析算法" class="headerlink" title="深入理解JVM–对象存活分析算法"></a>深入理解JVM–对象存活分析算法</h1><blockquote><p> 堆中几乎放着所有的对象实例，对堆垃圾回收前的第一步就是要判断那些对象已经死亡（即不能再被任何途径使用的对象）。</p></blockquote><h2 id="一、引用计数法"><a href="#一、引用计数法" class="headerlink" title="一、引用计数法"></a>一、引用计数法</h2><ul><li><p>概念：给对象中添加一个<strong>引用计数器</strong>，每当有一个地方<strong>引用</strong>它，计数器就<strong>加1</strong>；当<strong>引用失效</strong>，计数器就减1；任何时候计数器<strong>为0</strong>的对象就是<strong>不可能再被使用</strong>的。</p></li><li><p>分析：这个方法实现<strong>简单，效率高</strong>，但是目前<strong>主流的虚拟机</strong>中并<strong>没有选择这个算法</strong>来管理内存，其最主要的<strong>原因是</strong>它很难解决<strong>对象之间相互循环引用</strong>的问题。 所谓对象之间的相互引用问题，如下面代码所示：除了对象<strong>testA</strong> 和 <strong>testB</strong> <strong>相互引用</strong>着对方之外，这两个对象之间再无任何引用。但是他们因为互相引用对方，导致它们的<strong>引用计数器都不为0</strong>，于是引用计数算法无法通知 GC 回收器回收他们。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Object obj;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setObj</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.obj = obj;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Test testA = <span class="keyword">new</span> Test();</span><br><span class="line">        Test testA = <span class="keyword">new</span> Test();</span><br><span class="line">        testA.setObj(testB);</span><br><span class="line">        testB.setObj(testA);</span><br><span class="line">        testA = <span class="keyword">null</span>;</span><br><span class="line">        testB = <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h2 id="二、可达性分析算法"><a href="#二、可达性分析算法" class="headerlink" title="二、可达性分析算法"></a>二、可达性分析算法</h2><ul><li>概念：这个算法的基本思想就是通过一系列的称为 <strong>“GC Roots”</strong> 的对象作为起点，从这些节点开始向下搜索，节点所走过的路径称为引用链，当一个对象到 GC Roots 没有任何引用链相连的话，则证明此对象是不可用的。</li><li><strong>GC Roots</strong>根节点：<strong>类加载器</strong>、<strong>Thread</strong>、虚拟机栈的本地变量表、<strong>static成员</strong>、<strong>常量引用</strong>、本地方法栈的变量等等</li></ul><p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210212191352321.png" alt="image-20210212191352321"></p><ul><li><strong>finalize()</strong>方法最终判定对象<strong>是否存活</strong><ul><li>即使在可达性分析算法中<strong>不可达的对象</strong>，也<strong>并非是一定会被回收</strong>的。要真正宣告一个对象死亡，至少要经历<strong>再次标记</strong>过程。</li><li>标记的前提是对象在进行可达性分析后发现没有与GC Roots相连接的引用链。</li><li>标记过程：<ul><li>第一次标记。筛选的条件是此对象是否<strong>有必要执行finalize()</strong>方法。当对象<strong>没有覆盖finalize方法</strong>，或者<strong>finalize方法已经被虚拟机调用过</strong>，虚拟机将这两种情况都视为“没有必要执行”，对象被回收。</li><li>第二次标记。如果这个对象被判定为有必要执行finalize()方法，那么这个对象将会被<strong>放置在一个名为：F-Queue的队列</strong>之中，并在稍后由一条<strong>虚拟机自动建立的、低优先级的Finalizer线程</strong>去执行。这里所谓的“执行”是指虚拟机会<strong>触发这个方法，但并不承诺会等待它运行结束</strong>。这样做的原因是，如果一个对象f<strong>inalize()方法中执行缓慢，或者发生死循环（更极端的情况）</strong>，将很可能会导致F-Queue<strong>队列中的其他对象永久处于等待状态，甚至导致整个内存回收系统崩溃</strong>。</li><li>finalize()–只要<strong>重新与引用链上的任何的一个对象建立关联</strong>即可，譬如把自己赋值给某个类变量或对象的成员变量，那在第二次标记时它将移除出“即将回收”的集合。如果对象这时候还没逃脱，那基本上它就真的被回收了。</li></ul></li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;深入理解JVM–对象存活分析算法&quot;&gt;&lt;a href=&quot;#深入理解JVM–对象存活分析算法&quot; class=&quot;headerlink&quot; title=&quot;深入理解JVM–对象存活分析算法&quot;&gt;&lt;/a&gt;深入理解JVM–对象存活分析算法&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt; 
+      
+    
+    </summary>
+    
+    
+      <category term="JVM" scheme="https://deschen.gitee.io/categories/JVM/"/>
     
     
   </entry>
