@@ -12,5 +12,5 @@ Disallow: /vendors/
 Disallow: /fancybox/
 Disallow: /categories/
 
-Sitemap: https://deschen.gitee.io/sitemap.xml
-Sitemap: https://deschen.gitee.io/baidusitemap.xml
+Sitemap: https://blog.deschen.cn/sitemap.xml
+Sitemap: https://blog.deschen.cn/baidusitemap.xml
