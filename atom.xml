@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.deschen.cn/"/>
-  <updated>2021-12-21T09:00:52.423Z</updated>
+  <updated>2021-12-29T02:40:29.188Z</updated>
   <id>https://blog.deschen.cn/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo-百度收录</title>
+    <link href="https://blog.deschen.cn/2021/12/29/Hexo-%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/"/>
+    <id>https://blog.deschen.cn/2021/12/29/Hexo-%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/</id>
+    <published>2021-12-29T02:40:29.188Z</published>
+    <updated>2021-12-29T02:40:29.188Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Netty学习之路-NioEventLoop</title>
@@ -452,30 +467,6 @@
     
     
       <category term="编程工具" scheme="https://blog.deschen.cn/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>什么是中台？</title>
-    <link href="https://blog.deschen.cn/2019/12/20/%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%AD%E5%8F%B0%EF%BC%9F/"/>
-    <id>https://blog.deschen.cn/2019/12/20/%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%AD%E5%8F%B0%EF%BC%9F/</id>
-    <published>2019-12-20T12:53:20.000Z</published>
-    <updated>2019-12-20T13:06:52.090Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="什么是中台？"><a href="#什么是中台？" class="headerlink" title="什么是中台？"></a>什么是中台？</h1><h2 id="一、中台的介绍"><a href="#一、中台的介绍" class="headerlink" title="一、中台的介绍"></a>一、中台的介绍</h2><p>中台就是把企业各个业务线共用的、复用性高的功能独立开来，整合分析，变成为企业内部服务的功能</p><h2 id="二、举个栗子"><a href="#二、举个栗子" class="headerlink" title="二、举个栗子"></a>二、举个栗子</h2><p>我们都知道阿里上有淘宝、饿了么等各个不同体系的系统，对用户的分析就需要结合数据。如果没有中台概念，那么每个系统都回查询自己的用户中心，还要考虑同步数据的问题（即注册了淘宝账号，就要同步到其他系统的用户中心），这样开发成本高，维护难。</p><p>而中台就是把各个系统公共的功能独立开来，例如：把用户中心、订单中心、商品中心等独立开来，这些功能与各个系统对接，这样成本低，效率高。程序员可以更加专注业务方面</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;什么是中台？&quot;&gt;&lt;a href=&quot;#什么是中台？&quot; class=&quot;headerlink&quot; title=&quot;什么是中台？&quot;&gt;&lt;/a&gt;什么是中台？&lt;/h1&gt;&lt;h2 id=&quot;一、中台的介绍&quot;&gt;&lt;a href=&quot;#一、中台的介绍&quot; class=&quot;headerlink&quot; ti
-      
-    
-    </summary>
-    
-    
-      <category term="中台" scheme="https://blog.deschen.cn/categories/%E4%B8%AD%E5%8F%B0/"/>
     
     
   </entry>
