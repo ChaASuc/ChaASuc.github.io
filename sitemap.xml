@@ -424,14 +424,14 @@
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/tags/%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1/</loc>
+    <loc>https://blog.deschen.cn/tags/%E4%BA%8B%E5%8A%A1/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/tags/%E4%BA%8B%E5%8A%A1/</loc>
+    <loc>https://blog.deschen.cn/tags/%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -452,14 +452,14 @@
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/tags/RabbitMq/</loc>
+    <loc>https://blog.deschen.cn/tags/ThreadPoolExecutor/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/tags/ThreadPoolExecutor/</loc>
+    <loc>https://blog.deschen.cn/tags/RabbitMq/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -496,14 +496,14 @@
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/categories/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</loc>
+    <loc>https://blog.deschen.cn/categories/Java/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/categories/Java/</loc>
+    <loc>https://blog.deschen.cn/categories/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -531,14 +531,14 @@
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/categories/Maven/</loc>
+    <loc>https://blog.deschen.cn/categories/MyS-QL/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/categories/MyS-QL/</loc>
+    <loc>https://blog.deschen.cn/categories/Maven/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -566,14 +566,7 @@
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/categories/docker/</loc>
-    <lastmod>2022-01-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.deschen.cn/categories/RabbitMq/</loc>
+    <loc>https://blog.deschen.cn/categories/%E4%B8%AD%E5%8F%B0/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -587,7 +580,14 @@
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/categories/%E4%B8%AD%E5%8F%B0/</loc>
+    <loc>https://blog.deschen.cn/categories/docker/</loc>
+    <lastmod>2022-01-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.deschen.cn/categories/RabbitMq/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
