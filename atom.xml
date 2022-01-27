@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.deschen.cn/"/>
-  <updated>2021-12-29T13:46:03.201Z</updated>
+  <updated>2022-01-26T07:28:20.043Z</updated>
   <id>https://blog.deschen.cn/</id>
   
   <author>
@@ -15,6 +15,45 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>问题</title>
+    <link href="https://blog.deschen.cn/2022/01/26/%E9%97%AE%E9%A2%98/"/>
+    <id>https://blog.deschen.cn/2022/01/26/%E9%97%AE%E9%A2%98/</id>
+    <published>2022-01-26T07:28:20.043Z</published>
+    <updated>2022-01-26T07:28:20.043Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>git常见命令及问题</title>
+    <link href="https://blog.deschen.cn/2022/01/21/git%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%8F%8A%E9%97%AE%E9%A2%98/"/>
+    <id>https://blog.deschen.cn/2022/01/21/git%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%8F%8A%E9%97%AE%E9%A2%98/</id>
+    <published>2022-01-21T02:12:00.782Z</published>
+    <updated>2022-01-21T09:00:41.232Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="git常见命令及问题"><a href="#git常见命令及问题" class="headerlink" title="git常见命令及问题"></a>git常见命令及问题</h1><ul><li>git 查看当前分支<br>+ </li><li>git 创建分支<br>+ </li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;git常见命令及问题&quot;&gt;&lt;a href=&quot;#git常见命令及问题&quot; class=&quot;headerlink&quot; title=&quot;git常见命令及问题&quot;&gt;&lt;/a&gt;git常见命令及问题&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;git 查看当前分支&lt;br&gt;+ &lt;/li&gt;
+&lt;li&gt;git 创建
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hexo-百度收录</title>
@@ -30,58 +69,6 @@
       
       
         &lt;h1 id=&quot;Hexo-百度收录&quot;&gt;&lt;a href=&quot;#Hexo-百度收录&quot; class=&quot;headerlink&quot; title=&quot;Hexo-百度收录&quot;&gt;&lt;/a&gt;Hexo-百度收录&lt;/h1&gt;&lt;h2 id=&quot;一、安装Hexo插件&quot;&gt;&lt;a href=&quot;#一、安装Hexo插件&quot; cla
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Netty学习之路-NioEventLoop</title>
-    <link href="https://blog.deschen.cn/2021/12/21/Netty%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-NioEventLoop/"/>
-    <id>https://blog.deschen.cn/2021/12/21/Netty%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-NioEventLoop/</id>
-    <published>2021-12-21T08:21:18.970Z</published>
-    <updated>2021-12-21T09:00:52.423Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Untitled</title>
-    <link href="https://blog.deschen.cn/2021/12/16/Untitled/"/>
-    <id>https://blog.deschen.cn/2021/12/16/Untitled/</id>
-    <published>2021-12-16T01:35:18.090Z</published>
-    <updated>2021-12-16T01:35:18.090Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Netty学习之路一</title>
-    <link href="https://blog.deschen.cn/2021/12/15/Netty%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/"/>
-    <id>https://blog.deschen.cn/2021/12/15/Netty%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/</id>
-    <published>2021-12-15T07:12:45.946Z</published>
-    <updated>2021-12-20T09:01:06.400Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Netty-学习之路一"><a href="#Netty-学习之路一" class="headerlink" title="Netty 学习之路一"></a>Netty 学习之路一</h1><h2 id="一、socket通信抽象"><a href="#一、socket通信抽象" class="headerlink" title="一、socket通信抽象"></a>一、socket通信抽象</h2><h2 id="二、Netty服务端"><a href="#二、Netty服务端" class="headerlink" title="二、Netty服务端"></a>二、Netty服务端</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.netty.ch3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.imooc.netty.ch6.AuthHandler;</span><br><span class="line"><span class="keyword">import</span> io.netty.bootstrap.ServerBootstrap;</span><br><span class="line"><span class="keyword">import</span> io.netty.channel.*;</span><br><span class="line"><span class="keyword">import</span> io.netty.channel.nio.NioEventLoopGroup;</span><br><span class="line"><span class="keyword">import</span> io.netty.channel.socket.SocketChannel;</span><br><span class="line"><span class="keyword">import</span> io.netty.channel.socket.nio.NioServerSocketChannel;</span><br><span class="line"><span class="keyword">import</span> io.netty.util.AttributeKey;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Server</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        EventLoopGroup bossGroup = <span class="keyword">new</span> NioEventLoopGroup(<span class="number">1</span>);</span><br><span class="line">        EventLoopGroup workerGroup = <span class="keyword">new</span> NioEventLoopGroup();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            ServerBootstrap b = <span class="keyword">new</span> ServerBootstrap();</span><br><span class="line">            b.group(bossGroup, workerGroup)</span><br><span class="line">                    .channel(NioServerSocketChannel<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">                    .<span class="title">childOption</span>(<span class="title">ChannelOption</span>.<span class="title">TCP_NODELAY</span>, <span class="title">true</span>)</span></span><br><span class="line">                    .childAttr(AttributeKey.newInstance("childAttr"), "childAttrValue")</span><br><span class="line">                    .handler(<span class="keyword">new</span> ServerHandler())</span><br><span class="line">                    .childHandler(<span class="keyword">new</span> ChannelInitializer&lt;SocketChannel&gt;() &#123;</span><br><span class="line">                        <span class="meta">@Override</span></span><br><span class="line">                        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initChannel</span><span class="params">(SocketChannel ch)</span> </span>&#123;</span><br><span class="line">                            ch.pipeline().addLast(<span class="keyword">new</span> AuthHandler());</span><br><span class="line">                            <span class="comment">//..</span></span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line"></span><br><span class="line">            ChannelFuture f = b.bind(<span class="number">8888</span>).sync();</span><br><span class="line"></span><br><span class="line">            f.channel().closeFuture().sync();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            bossGroup.shutdownGracefully();</span><br><span class="line">            workerGroup.shutdownGracefully();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="三、Channel"><a href="#三、Channel" class="headerlink" title="三、Channel"></a>三、Channel</h2><h3 id="Channel创建、初始化、绑定"><a href="#Channel创建、初始化、绑定" class="headerlink" title="Channel创建、初始化、绑定"></a>Channel创建、初始化、绑定</h3><ul><li><p>io.netty.bootstrap.AbstractBootstrap#bind(int) <strong>channel创建及绑定</strong></p><ul><li><p>io.netty.bootstrap.AbstractBootstrap#initAndRegister <strong>channel创建</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">channel = channelFactory.newChannel();</span><br></pre></td></tr></table></figure><ul><li><p>io.netty.bootstrap.AbstractBootstrap#channel <strong>channelFactory创建</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">channelFactory(<span class="keyword">new</span> ReflectiveChannelFactory&lt;C&gt;(channelClass))</span><br></pre></td></tr></table></figure></li><li><p>io.netty.channel.ReflectiveChannelFactory#newChannel <strong>channel创建（实则是channelClass的反射,这里是NioServerSocketChannel.class）</strong></p><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clazz.<span class="keyword">new</span><span class="type">Instance</span>();</span><br></pre></td></tr></table></figure><ul><li>io.netty.channel.socket.nio.NioServerSocketChannel#NioServerSocketChannel()<ul><li>io.netty.channel.socket.nio.NioServerSocketChannel#newSocket  <strong>生成jdk底层的ServerSocketChannel</strong> </li><li>io.netty.channel.socket.nio.NioServerSocketChannel#NioServerSocketChannel(java.nio.channels.ServerSocketChannel)<ul><li>io.netty.channel.nio.AbstractNioChannel#AbstractNioChannel  <strong>父类</strong><ul><li>io.netty.channel.AbstractChannel#AbstractChannel(io.netty.channel.Channel) <strong>设置channel的id、unsafe、pipeline等</strong></li><li>java.nio.channels.SelectableChannel#configureBlocking 设置为非阻塞</li></ul></li><li>io.netty.channel.socket.nio.NioServerSocketChannel.NioServerSocketChannelConfig <strong>tcp参数配置类</strong></li></ul></li></ul></li></ul></li><li><p>io.netty.bootstrap.AbstractBootstrap#init <strong>初始化channe</strong>l</p><ul><li><p>io.netty.bootstrap.ServerBootstrap#init</p><ul><li>这里为空</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">配置option</span><br><span class="line">Map&lt;ChannelOption&lt;?&gt;, Object&gt; options = options0(); </span><br><span class="line"><span class="keyword">final</span> Map&lt;ChannelOption&lt;?&gt;, Object&gt; options = options0();</span><br><span class="line"><span class="keyword">synchronized</span> (options) &#123;</span><br><span class="line">channel.config().setOptions(options);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>这里为空</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">配置属性，这里为空</span><br><span class="line"><span class="keyword">final</span> Map&lt;AttributeKey&lt;?&gt;, Object&gt; attrs = attrs0();</span><br><span class="line"><span class="keyword">synchronized</span> (attrs) &#123;</span><br><span class="line">    <span class="keyword">for</span> (Entry&lt;AttributeKey&lt;?&gt;, Object&gt; e: attrs.entrySet()) &#123;</span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">    AttributeKey&lt;Object&gt; key = (AttributeKey&lt;Object&gt;) e.getKey();</span><br><span class="line">    channel.attr(key).set(e.getValue());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li><p>io.netty.bootstrap.AbstractBootstrap#handler(io.netty.channel.ChannelHandler)  <strong>handler来源</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">管道配置handler</span><br><span class="line"><span class="keyword">final</span> ChannelPipeline pipeline = ch.pipeline();</span><br><span class="line">ChannelHandler handler = config.handler();</span><br><span class="line"><span class="keyword">if</span> (handler != <span class="keyword">null</span>) &#123;</span><br><span class="line">    pipeline.addLast(handler);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>io.netty.bootstrap.ServerBootstrap#group(io.netty.channel.EventLoopGroup, io.netty.channel.EventLoopGroup) <strong>currentChildGroup来源</strong></p></li><li><p>io.netty.bootstrap.ServerBootstrap#childHandler(io.netty.channel.ChannelHandler) <strong>currentChildHandler来源</strong></p></li><li><p>io.netty.bootstrap.ServerBootstrap#childOption  <strong>currentChildOptions来源</strong></p></li><li><p>io.netty.bootstrap.ServerBootstrap#childAttr <strong>currentChildAttrs来源</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">配置连接器ServerBootstrapAcceptor</span><br><span class="line">ch.eventLoop().execute(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         pipeline.addLast(<span class="keyword">new</span> ServerBootstrapAcceptor(</span><br><span class="line">             currentChildGroup, currentChildHandler, currentChildOptions, currentChildAttrs));</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure></li></ul></li></ul></li><li><p>io.netty.channel.MultithreadEventLoopGroup#register(io.netty.channel.Channel) <strong>channel注册</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config().group().register(channel)</span><br></pre></td></tr></table></figure><ul><li><p>io.netty.bootstrap.ServerBootstrap#config  <strong>config() 来源</strong></p></li><li><p>io.netty.bootstrap.AbstractBootstrap#group(io.netty.channel.EventLoopGroup) <strong>group的来源</strong></p></li><li><p>io.netty.channel.MultithreadEventLoopGroup#register(io.netty.channel.Channel)  <strong>channel注册</strong></p><ul><li><p>io.netty.channel.AbstractChannel.AbstractUnsafe#register0 实际注册</p><ul><li><p>io.netty.channel.nio.AbstractNioChannel#doRegister <strong>用给定的选择器注册这个通道</strong></p></li><li><p>io.netty.channel.DefaultChannelPipeline#invokeHandlerAddedIfNeeded  <strong>触发handler的事件handlerAdded方法</strong></p></li><li><p>io.netty.channel.DefaultChannelPipeline#fireChannelRegistered <strong>触发handler的事件channelRegistered方法</strong></p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">io.netty.bootstrap.AbstractBootstrap#handler(io.netty.channel.ChannelHandler) handder来源</span><br></pre></td></tr></table></figure></li></ul></li></ul></li></ul></li></ul></li></ul><h2 id="四、端口绑定"><a href="#四、端口绑定" class="headerlink" title="四、端口绑定"></a>四、端口绑定</h2></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Netty-学习之路一&quot;&gt;&lt;a href=&quot;#Netty-学习之路一&quot; class=&quot;headerlink&quot; title=&quot;Netty 学习之路一&quot;&gt;&lt;/a&gt;Netty 学习之路一&lt;/h1&gt;&lt;h2 id=&quot;一、socket通信抽象&quot;&gt;&lt;a href=&quot;#一、soc
       
     
     </summary>
@@ -474,6 +461,30 @@
     
     
       <category term="编程工具" scheme="https://blog.deschen.cn/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>什么是中台？</title>
+    <link href="https://blog.deschen.cn/2019/12/20/%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%AD%E5%8F%B0%EF%BC%9F/"/>
+    <id>https://blog.deschen.cn/2019/12/20/%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%AD%E5%8F%B0%EF%BC%9F/</id>
+    <published>2019-12-20T12:53:20.000Z</published>
+    <updated>2019-12-20T13:06:52.090Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="什么是中台？"><a href="#什么是中台？" class="headerlink" title="什么是中台？"></a>什么是中台？</h1><h2 id="一、中台的介绍"><a href="#一、中台的介绍" class="headerlink" title="一、中台的介绍"></a>一、中台的介绍</h2><p>中台就是把企业各个业务线共用的、复用性高的功能独立开来，整合分析，变成为企业内部服务的功能</p><h2 id="二、举个栗子"><a href="#二、举个栗子" class="headerlink" title="二、举个栗子"></a>二、举个栗子</h2><p>我们都知道阿里上有淘宝、饿了么等各个不同体系的系统，对用户的分析就需要结合数据。如果没有中台概念，那么每个系统都回查询自己的用户中心，还要考虑同步数据的问题（即注册了淘宝账号，就要同步到其他系统的用户中心），这样开发成本高，维护难。</p><p>而中台就是把各个系统公共的功能独立开来，例如：把用户中心、订单中心、商品中心等独立开来，这些功能与各个系统对接，这样成本低，效率高。程序员可以更加专注业务方面</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;什么是中台？&quot;&gt;&lt;a href=&quot;#什么是中台？&quot; class=&quot;headerlink&quot; title=&quot;什么是中台？&quot;&gt;&lt;/a&gt;什么是中台？&lt;/h1&gt;&lt;h2 id=&quot;一、中台的介绍&quot;&gt;&lt;a href=&quot;#一、中台的介绍&quot; class=&quot;headerlink&quot; ti
+      
+    
+    </summary>
+    
+    
+      <category term="中台" scheme="https://blog.deschen.cn/categories/%E4%B8%AD%E5%8F%B0/"/>
     
     
   </entry>
