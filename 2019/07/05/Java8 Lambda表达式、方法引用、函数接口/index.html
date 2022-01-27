@@ -462,6 +462,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/05/Java8%20Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8%E3%80%81%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/05/Java8%20Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8%E3%80%81%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -685,6 +695,9 @@
           </div>
           
 
+  
+    <div class="comments" id="comments">
+    </div>
   
 
 
@@ -1082,6 +1095,31 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Mp2s5frRL9LeA34JlbEX0xjM-gzGzoHsz# your leancloud application appid',
+        appKey: 'LWStoRbOHozU1t22WnOdbI17',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
 
 
 

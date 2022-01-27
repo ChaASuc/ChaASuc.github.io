@@ -470,6 +470,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/13/MySQL%E7%B4%A2%E5%BC%95%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/13/MySQL%E7%B4%A2%E5%BC%95%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -792,7 +802,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/" rel="prev" title="分库分表理论篇——以MySQL为例">
+              <a href="/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/" rel="prev" title="分库分表理论篇——以MySQL为例">
                 分库分表理论篇——以MySQL为例 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -816,6 +826,9 @@
           </div>
           
 
+  
+    <div class="comments" id="comments">
+    </div>
   
 
 
@@ -1213,6 +1226,31 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Mp2s5frRL9LeA34JlbEX0xjM-gzGzoHsz# your leancloud application appid',
+        appKey: 'LWStoRbOHozU1t22WnOdbI17',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
 
 
 
