@@ -469,6 +469,17 @@
 
           
           
+             <span id="/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/" class="leancloud_visitors" data-flag-title="分库分表理论篇——以MySQL为例">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
             <span class="post-meta-divider">|</span>
@@ -760,8 +771,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/" rel="next" title="分库分表理论篇——以MySQL为例">
-                <i class="fa fa-chevron-left"></i> 分库分表理论篇——以MySQL为例
+              <a href="/2019/07/13/MySQL%E7%B4%A2%E5%BC%95%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3/" rel="next" title="MySQL索引深入理解">
+                <i class="fa fa-chevron-left"></i> MySQL索引深入理解
               </a>
             
           </div>
@@ -770,8 +781,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E8%AE%B2%E8%A7%A3/" rel="prev" title="深入理解Redis--集群讲解">
-                深入理解Redis--集群讲解 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/" rel="prev" title="分库分表理论篇——以MySQL为例">
+                分库分表理论篇——以MySQL为例 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1539,6 +1550,67 @@
 
 
   
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "Mp2s5frRL9LeA34JlbEX0xjM-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "Mp2s5frRL9LeA34JlbEX0xjM-gzGzoHsz",
+                'X-LC-Key': "LWStoRbOHozU1t22WnOdbI17",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
 
   
 
