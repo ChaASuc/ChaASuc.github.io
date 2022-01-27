@@ -1,35 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>deschen blog</title>
+  <title>Deschen Blog</title>
   
   <subtitle>以Java开发为主的个人博客，记录自己在学习、工作和成长的笔记和心得</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.deschen.cn/"/>
-  <updated>2022-01-27T05:45:03.401Z</updated>
+  <updated>2021-12-29T13:46:03.201Z</updated>
   <id>https://blog.deschen.cn/</id>
   
   <author>
-    <name>deschen</name>
+    <name>Deschen</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Hexo-阅读与评论功能</title>
-    <link href="https://blog.deschen.cn/2022/01/27/Hexo-%E9%98%85%E8%AF%BB%E4%B8%8E%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/"/>
-    <id>https://blog.deschen.cn/2022/01/27/Hexo-%E9%98%85%E8%AF%BB%E4%B8%8E%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</id>
-    <published>2022-01-27T05:45:03.401Z</published>
-    <updated>2022-01-27T05:45:03.401Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
   
   <entry>
     <title>Hexo-百度收录</title>
@@ -479,6 +464,30 @@
       
       
         &lt;h1 id=&quot;深入理解JVM–七种垃圾收集器&quot;&gt;&lt;a href=&quot;#深入理解JVM–七种垃圾收集器&quot; class=&quot;headerlink&quot; title=&quot;深入理解JVM–七种垃圾收集器&quot;&gt;&lt;/a&gt;深入理解JVM–七种垃圾收集器&lt;/h1&gt;&lt;h2 id=&quot;一、垃圾收集器&quot;&gt;&lt;a h
+      
+    
+    </summary>
+    
+    
+      <category term="JVM" scheme="https://blog.deschen.cn/categories/JVM/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解JVM--四种垃圾收集算法</title>
+    <link href="https://blog.deschen.cn/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E5%9B%9B%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95/"/>
+    <id>https://blog.deschen.cn/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E5%9B%9B%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95/</id>
+    <published>2019-10-11T07:56:36.000Z</published>
+    <updated>2020-03-18T11:37:07.311Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="深入理解JVM–四种垃圾收集算法"><a href="#深入理解JVM–四种垃圾收集算法" class="headerlink" title="深入理解JVM–四种垃圾收集算法"></a>深入理解JVM–四种垃圾收集算法</h1><h2 id="一、标记-清除算法"><a href="#一、标记-清除算法" class="headerlink" title="一、标记-清除算法"></a>一、标记-清除算法</h2><p>算法分为“标记”和“清除”阶段：首先<strong>标记所有存活</strong>的对象，在标记完成后<strong>统一回收所有未标记</strong>的对象。它是最基础的收集算法，效率也很高。</p><p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1584530746245.png" alt="1584530746245"></p><p>优点：执行效率高</p><p>缺点：1、标记清除后会产生大量不连续的碎片；2、分配速度慢，因为存在大量不连续碎片，每次分配都需要遍历空闲链表，找到足够大的内存空间存放对象</p><h2 id="二、复制算法"><a href="#二、复制算法" class="headerlink" title="二、复制算法"></a>二、复制算法</h2><p>为了解决标记-清除算法问题，“复制”收集算法出现了。它可以将<strong>内存分为大小相同的两块</strong>，<strong>每次使用其中的一块</strong>。当这一块的内存<strong>使用完后</strong>，就将<strong>还存活的对象有序复制到另一块</strong>去，然后再<strong>把使用的空间一次清理</strong>掉。这样就使每次的内存回收都是对内存区间的一半进行回收。</p><p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1584530755486.png" alt="1584530755486"></p><p>优点：不存在大量不连续的内存碎片</p><p>缺点：使用效率低下，因为每次只使用其中一块内存空间</p><h2 id="三、标记-整理算法"><a href="#三、标记-整理算法" class="headerlink" title="三、标记-整理算法"></a>三、标记-整理算法</h2><p>根据老年代的特点特出的一种标记算法，<strong>标记</strong>过程仍然与<strong>“标记-清除”算法一样</strong>，清除的过程不同，让<strong>所有存活的对象向一端移动</strong>，然后<strong>直接清理掉端边界以外的内存</strong>。</p><p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1584530762589.png" alt="1584530762589"></p><p>优点：不存在大量不连续的内存碎片</p><p>缺点： 整理会花一定的时间 </p><h2 id="四、分代收集算法"><a href="#四、分代收集算法" class="headerlink" title="四、分代收集算法"></a>四、分代收集算法</h2><p>当前<strong>虚拟机的垃圾收集都采用分代收集算法</strong>，这种算法没有什么新的思想，只是<strong>根据对象存活周期的不同将内存分为几块</strong>。一般将java堆分为新生代和老年代，这样我们就可以根据<strong>各个年代的特点选择合适的垃圾收集算法</strong>。</p><p>比如在<strong>新生代</strong>中，每次收集都会有<strong>大量对象死去</strong>，所以可以选择<strong>复制算法</strong>，只需要付出少量对象的复制成本就可以完成每次垃圾收集。而<strong>老年代</strong>的对象存活几率是比较高的，而且没<strong>有额外的空间对它进行分配担保</strong>，所以我们必须选择<strong>“标记-清除”或“标记-整理”</strong>算法进行垃圾收集。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;深入理解JVM–四种垃圾收集算法&quot;&gt;&lt;a href=&quot;#深入理解JVM–四种垃圾收集算法&quot; class=&quot;headerlink&quot; title=&quot;深入理解JVM–四种垃圾收集算法&quot;&gt;&lt;/a&gt;深入理解JVM–四种垃圾收集算法&lt;/h1&gt;&lt;h2 id=&quot;一、标记-清除算法
       
     
     </summary>
