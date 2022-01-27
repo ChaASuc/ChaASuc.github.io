@@ -424,13 +424,6 @@
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/tags/SpringBoot/</loc>
-    <lastmod>2022-01-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.deschen.cn/tags/%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>daily</changefreq>
@@ -445,14 +438,14 @@
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/tags/%E4%BA%8B%E5%8A%A1/</loc>
+    <loc>https://blog.deschen.cn/tags/SpringBoot/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/tags/ThreadPoolExecutor/</loc>
+    <loc>https://blog.deschen.cn/tags/%E4%BA%8B%E5%8A%A1/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -467,6 +460,13 @@
   
   <url>
     <loc>https://blog.deschen.cn/tags/JVM/</loc>
+    <lastmod>2022-01-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.deschen.cn/tags/ThreadPoolExecutor/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -538,14 +538,14 @@
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/categories/MyS-QL/</loc>
+    <loc>https://blog.deschen.cn/categories/Maven/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/categories/Maven/</loc>
+    <loc>https://blog.deschen.cn/categories/MyS-QL/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -573,6 +573,13 @@
   </url>
   
   <url>
+    <loc>https://blog.deschen.cn/categories/RabbitMq/</loc>
+    <lastmod>2022-01-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.deschen.cn/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>daily</changefreq>
@@ -581,13 +588,6 @@
   
   <url>
     <loc>https://blog.deschen.cn/categories/%E4%B8%AD%E5%8F%B0/</loc>
-    <lastmod>2022-01-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.deschen.cn/categories/RabbitMq/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
