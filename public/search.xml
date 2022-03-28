@@ -4,6 +4,175 @@
   
     
     <entry>
+      <title>网络</title>
+      <link href="/2022/03/20/%E7%BD%91%E7%BB%9C/"/>
+      <url>/2022/03/20/%E7%BD%91%E7%BB%9C/</url>
+      
+        <content type="html"><![CDATA[<h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><p>程序变慢457</p><p>osi七层模型 </p><p>物理层：比特流 将二进制的数据转换为电流强弱传输（数模转换），到另一个机器转换成二进制数据 （模数转换）</p><p>链路层：在传输 比特流的过程中，会导致错传，数据传输不完整的可能</p><h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><p>+ </p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>获取用户信息+菜单列表（用于权限校验）com</title>
+      <link href="/2022/03/17/%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF+%E8%8F%9C%E5%8D%95%E5%88%97%E8%A1%A8%EF%BC%88%E7%94%A8%E4%BA%8E%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C%EF%BC%89com/"/>
+      <url>/2022/03/17/%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF+%E8%8F%9C%E5%8D%95%E5%88%97%E8%A1%A8%EF%BC%88%E7%94%A8%E4%BA%8E%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C%EF%BC%89com/</url>
+      
+        <content type="html"><![CDATA[<p>获取用户信息+菜单列表（用于权限校验）com.grgbanking.app.service.impl.CmAdminServiceImpl#loadUserByUsername</p><p>获取用户对应的菜单唯一性标识   com.grgbanking.app.domain.GbUserDetails#getAuthorities</p><p>获取对应路径与对应的菜单唯一标识的映射 com.grgbanking.app.service.impl.DynamicSecurityServiceImpl#loadDataSource</p><p>判断用户是否有这个路径的权限   com.grgbanking.auth.filter.DynamicAccessDecisionManager#decide</p><p>修改配置文件，只添加不通过权限校验的接口  application.yml  gb.security.browser.ignoreUrls</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Thread 的 start() 与 run()区别</title>
+      <link href="/2022/03/12/Thread%20%E7%9A%84%20start()%20%E4%B8%8E%20run()%E5%8C%BA%E5%88%AB/"/>
+      <url>/2022/03/12/Thread%20%E7%9A%84%20start()%20%E4%B8%8E%20run()%E5%8C%BA%E5%88%AB/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Thread-的-start-与-run-区别"><a href="#Thread-的-start-与-run-区别" class="headerlink" title="Thread 的 start() 与 run()区别"></a>Thread 的 start() 与 run()区别</h1><ul><li><p>start() 创建线程，调用run()执行  </p></li><li><p>run()原有线程执行</p></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>进程和线程</title>
+      <link href="/2022/03/01/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/"/>
+      <url>/2022/03/01/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>T#</title>
+      <link href="/2022/03/01/T#/"/>
+      <url>/2022/03/01/T#/</url>
+      
+        <content type="html"><![CDATA[<p>T# </p><ul><li>synchronized 方法 和 synchronized(this)区别</li><li></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>并发使用ThreadLocal</title>
+      <link href="/2022/03/01/%E5%B9%B6%E5%8F%91%E4%BD%BF%E7%94%A8ThreadLocal/"/>
+      <url>/2022/03/01/%E5%B9%B6%E5%8F%91%E4%BD%BF%E7%94%A8ThreadLocal/</url>
+      
+        <content type="html"><![CDATA[<h1 id="并发使用ThreadLocal"><a href="#并发使用ThreadLocal" class="headerlink" title="并发使用ThreadLocal"></a>并发使用ThreadLocal</h1><h2 id="一、什么是ThreadLocal"><a href="#一、什么是ThreadLocal" class="headerlink" title="一、什么是ThreadLocal"></a>一、什么是ThreadLocal</h2><p>​        ThreadLocal：是JDK包提供的，它提供<strong>线程本地变量</strong>，如果在ThreadLocal存放一个变量，那么访问这个变量的每个线程都会有这个变量的一个副本，在实际多线程操作的时候，操作的是自己<strong>本地内存中的变量</strong>，从而规避了线程安全问题。</p><p>​        线程安全问题：多线程访问同一个共享变量的时候容易出现数据不一致问题</p><h2 id="二、ThreadLocal的应用场景"><a href="#二、ThreadLocal的应用场景" class="headerlink" title="二、ThreadLocal的应用场景"></a>二、ThreadLocal的应用场景</h2><p>​        </p><h2 id="三、ThreadLocal注意事项"><a href="#三、ThreadLocal注意事项" class="headerlink" title="三、ThreadLocal注意事项"></a>三、ThreadLocal注意事项</h2>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java笔记</title>
+      <link href="/2022/02/26/Java%E7%AC%94%E8%AE%B0/"/>
+      <url>/2022/02/26/Java%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JVM笔记-堆和栈的区别</title>
+      <link href="/2022/02/26/JVM%E7%AC%94%E8%AE%B0-%E5%A0%86%E5%92%8C%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+      <url>/2022/02/26/JVM%E7%AC%94%E8%AE%B0-%E5%A0%86%E5%92%8C%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      
+        <content type="html"><![CDATA[<h1 id="JVM笔记-堆和栈的区别"><a href="#JVM笔记-堆和栈的区别" class="headerlink" title="JVM笔记-堆和栈的区别"></a>JVM笔记-堆和栈的区别</h1><ul><li>栈<ul><li>配合函数调用用的</li><li>配合线 </li></ul></li><li>堆：存储数据的结构体</li></ul><h2 id="JVM内存布局"><a href="#JVM内存布局" class="headerlink" title="JVM内存布局"></a>JVM内存布局</h2><h3 id="一、JVM内存布局"><a href="#一、JVM内存布局" class="headerlink" title="### 一、JVM内存布局"></a>### 一、JVM内存布局</h3>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>List注意事项</title>
+      <link href="/2022/02/21/List%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
+      <url>/2022/02/21/List%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
+      
+        <content type="html"><![CDATA[<h1 id="List-有哪些坑"><a href="#List-有哪些坑" class="headerlink" title="List 有哪些坑"></a>List 有哪些坑</h1><blockquote></blockquote>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>压测出现的问题及解决</title>
+      <link href="/2022/02/15/%E5%8E%8B%E6%B5%8B%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3/"/>
+      <url>/2022/02/15/%E5%8E%8B%E6%B5%8B%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>拆箱和装箱</title>
+      <link href="/2022/02/13/%E6%8B%86%E7%AE%B1%E5%92%8C%E8%A3%85%E7%AE%B1/"/>
+      <url>/2022/02/13/%E6%8B%86%E7%AE%B1%E5%92%8C%E8%A3%85%E7%AE%B1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="拆箱和装箱"><a href="#拆箱和装箱" class="headerlink" title="拆箱和装箱"></a>拆箱和装箱</h1><p>[toc]</p><h2 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、</h2>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java重写与重载区分</title>
+      <link href="/2022/02/13/Java%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E5%8C%BA%E5%88%86/"/>
+      <url>/2022/02/13/Java%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E5%8C%BA%E5%88%86/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Java重写与重载区分"><a href="#Java重写与重载区分" class="headerlink" title="Java重写与重载区分"></a>Java重写与重载区分</h1><p>[toc]</p><h2 id="一、什么是重写和重载"><a href="#一、什么是重写和重载" class="headerlink" title="一、什么是重写和重载"></a>一、什么是重写和重载</h2><ul><li><p>重写：子类继承父类方法，<strong>不改变原有的参数类型、参数数量及参数排列顺序和方法响应类型</strong>，覆盖父类的方法</p></li><li><p>重载：同一个类中，方法名相同，<strong>根据参数类型、参数数量及参数排序位置的不同</strong>，做出不同的处理</p></li><li><p>区别</p><table><thead><tr><th>区分点</th><th>重写</th><th>重载</th></tr></thead><tbody><tr><td>发生阶段</td><td>运行期</td><td>编译期</td></tr><tr><td>发生范围</td><td>子类</td><td>同一个类</td></tr><tr><td>参数列表</td><td>跟原有的一样</td><td>可修改原来的参数类型、个数及排列顺序</td></tr><tr><td>返回类型</td><td><strong>继承或等于</strong>父类（引用类型）<br /><strong>必须相等</strong>（基本类型和void）</td><td>无限制</td></tr><tr><td>异常范围</td><td><strong>继承或等于</strong>父类</td><td>无限制</td></tr><tr><td>访问修饰符范围</td><td>大于或等于父类</td><td>无限制</td></tr></tbody></table></li></ul><h2 id="二、要点说明"><a href="#二、要点说明" class="headerlink" title="二、要点说明"></a>二、要点说明</h2><ul><li>被private / static / final 修饰的方法，子类不能重写该方法，理由如下：<ul><li>private：子类覆盖父类的允许访问的方法，而private只能本类操作</li><li>static / final：重写的阶段是运行期，而被static / final 修饰的方法在编译期就已经绑定了 </li></ul></li><li>Java允许重载任何方法，而不只是构遗方法。因此，要完整地描述一个方法，需要指出方法名以及参数类型。这叫做方法的签名( signature)。返回类型不是方法签名的一部分。也就是说，不能有两个名字相同、参数类型也相同却返回不同类型值的方法</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>阿里ACP笔记</title>
+      <link href="/2022/02/10/%E9%98%BF%E9%87%8CACP%E7%AC%94%E8%AE%B0/"/>
+      <url>/2022/02/10/%E9%98%BF%E9%87%8CACP%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="阿里ACP笔记"><a href="#阿里ACP笔记" class="headerlink" title="阿里ACP笔记"></a>阿里ACP笔记</h1>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo-百度收录</title>
       <link href="/2021/12/29/Hexo-%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/"/>
       <url>/2021/12/29/Hexo-%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/</url>
@@ -497,7 +666,7 @@
       <link href="/2019/07/13/MySQL%E7%B4%A2%E5%BC%95%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3/"/>
       <url>/2019/07/13/MySQL%E7%B4%A2%E5%BC%95%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3/</url>
       
-        <content type="html"><![CDATA[<h1 id="MySQL索引"><a href="#MySQL索引" class="headerlink" title="MySQL索引"></a>MySQL索引</h1><p>[toc]</p><h2 id="一、什么是索引？"><a href="#一、什么是索引？" class="headerlink" title="一、什么是索引？"></a>一、什么是索引？</h2><p>索引是帮助MySQL高效获取数据的<strong>排好序</strong>的<strong>数据结构</strong></p><h2 id="二、底层知识铺垫-–-计算机组成原理"><a href="#二、底层知识铺垫-–-计算机组成原理" class="headerlink" title="二、底层知识铺垫 – 计算机组成原理"></a>二、底层知识铺垫 – 计算机组成原理</h2><blockquote><p>有没想过1、索引的数据结构为什么不是二叉排序树、红黑树、Hash、B树？而是B+树？2、为什么索引能是排好序的？</p><p>这些需要计算机组成原理的知识才能解决！希望大伙认真看，踊跃发言，互相学习</p></blockquote><h3 id="1、磁盘的读取原理"><a href="#1、磁盘的读取原理" class="headerlink" title="1、磁盘的读取原理"></a>1、磁盘的读取原理</h3><ul><li><p>索引存储在文件中，也就是说，查询索引就需要磁盘I/O操作，而磁盘I/O存在机械运动耗费，因此磁盘I/O的时间消耗是巨大的。 </p></li><li><p>磁盘的机械运动是怎么样子的？时间消耗多大？</p><ul><li><p>磁盘结构图：</p><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWctbXkuY3Nkbi5uZXQvdXBsb2Fkcy8yMDEyMTAvMTgvMTM1MDU0NjY2N184NjI4LmpwZw?x-oss-process=image/format,png" alt="img"> <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWctbXkuY3Nkbi5uZXQvdXBsb2Fkcy8yMDEyMTAvMTgvMTM1MDU0NjY3MF84ODI5LmpwZw?x-oss-process=image/format,png" alt="img"></p></li><li><p>概念：</p><ul><li><strong>磁道</strong>：以盘片中心为圆心，用不同的半径，划分出不同的很窄的圆环形区域，称为磁道</li><li><strong>扇区</strong>：磁盘上的每个磁道被等分为若干个弧段，这些弧段便是磁盘的扇区.扇区是磁盘最小的物理存储单元</li><li><strong>柱面</strong>：上下一串盘片中，相同半径的磁道所组成的一个圆柱型的环壁，就称为柱面</li></ul></li><li><p>磁盘读取时间计算：</p><ul><li><strong>寻道时间</strong>：磁头从开始移动到数据所在磁道所需要的时间，寻道时间越短，I/O操作越快。主流磁盘一般在5ms以下；</li><li><strong>旋转延迟</strong>：盘片旋转将请求数据所在扇区移至读写磁头下方所需要的时间，旋转延迟取决于磁盘转速。比如： 一个 7200（转 / 每分钟）的硬盘，平均旋转延迟时间为 1 ÷ ( 7200 ÷ 60 ) ÷ 2＝4.17ms（最多旋转１圈，最少不用旋转，平均情况下，需要旋转半圈）。 </li><li><strong>数据传输时间</strong>：完成传输所请求的数据所需要的时间。一般在零点几毫秒，相对于前两个时间可以忽略不计。</li><li>可见，磁盘I/O时间取决于寻道时间和旋转延迟</li></ul></li></ul></li></ul><h3 id="2、内存的读取原理"><a href="#2、内存的读取原理" class="headerlink" title="2、内存的读取原理"></a>2、内存的读取原理</h3><ul><li><p>内存的地址：计算机使用的主存基本都是随机读写存储器（RAM），内存可以抽象概括为一系列的存储单元组成的矩阵，每个存储单元存储固定大小的数据。每个存储单元由行和列构成唯一的地址。 </p></li><li><p>内存读取原理：当系统需要读取主存时，则将地址信号放到地址总线上传给主存，主存读到地址信号后，解析信号并定位到指定存储单元，然后将此存储单元数据放到数据总线上，供其它部件读取。由图可见，内存的读取时间仅与读取的次数呈线性关系，无机械操作，查询时间短、效率高</p><p><img src="http://blog.codinglabs.org/uploads/pictures/theory-of-mysql-index/5.png" alt="img"> </p></li></ul><h3 id="3、-从内存读取到磁盘预读"><a href="#3、-从内存读取到磁盘预读" class="headerlink" title="3、 从内存读取到磁盘预读"></a>3、 <strong>从内存读取到磁盘预读</strong></h3><ul><li>由于存储介质的特性，磁盘本身存取就比主存慢很多，再加上机械运动耗费，磁盘的存取速度往往是主存的几百分分之一，因此为了提高效率，要尽量减少磁盘I/O。为了达到这个目的，磁盘往往不是严格按需读取，而是每次都会预读，即使只需要一个字节，磁盘也会从这个位置开始，顺序向后读取一定长度的数据放入内存。这样做的理论依据是计算机科学中著名的局部性原理：  *<em>当一个数据被用到时，其附近的数据也通常会马上被使用。程序运行期间所需要的数据通常比较集中。 *</em>  </li><li>另一个原因： 由于磁盘顺序读取的效率很高（<strong>不需要寻道时间</strong>，只需很少的旋转时间），因此对于具有局部性的程序来说，预读可以提高I/O效率。 </li><li>预读的长度一般为<strong>页（page）的整倍数</strong>。页是计算机管理存储器的逻辑块，硬件及操作系统往往将主存和磁盘存储区分割为连续的大小相等的块，每个存储块称为一页（在许多操作系统中，页得大小通常为4k），<strong>主存和磁盘以页为单位交换数据</strong>。当程序要读取的数据不在主存中时，会触发一个缺页异常，此时系统会向磁盘发出读盘信号，磁盘会找到数据的起始位置并向后连续读取一页或几页载入内存中，然后异常返回，程序继续运行。</li></ul><h2 id="三、索引的数据结构"><a href="#三、索引的数据结构" class="headerlink" title="三、索引的数据结构"></a>三、索引的数据结构</h2><blockquote><p>第二部分主要用于B+树上,页的概念和预读十分重要,方便下面理解</p></blockquote><h3 id="1、不用二叉排序树、Hash、B树的分析"><a href="#1、不用二叉排序树、Hash、B树的分析" class="headerlink" title="1、不用二叉排序树、Hash、B树的分析"></a>1、不用二叉排序树、Hash、B树的分析</h3><ul><li><p>二叉排序树</p><ul><li>劣势：二叉排序树在极端情况下会有斜树，造成O(n)的时间复杂度</li></ul></li><li><p>Hash</p><ul><li>劣势：Hash是把索引数据进行Hash算法对应一个地址，我们会发现这个好像性能很好啊，直接找到，但是我们想想，它能满足我们日常开发大部分情况吗？比如通过大于或者小于去筛选数据，所以说也不合适，当然mysql还是提供了Hash索引，毕竟有些场合还是用起来也不错</li></ul></li><li><p>B树( 多路查找树 )</p><ul><li><p>概念:</p><ul><li>度(Degree)-节点的数据存储个数</li><li>叶节点具有相同的深度</li><li>叶节点的指针为空</li><li>节点中的数据key从左到右递增排列</li></ul></li><li><p>优势：二叉树存储的数据(海量数据可能来自文件，来自数据库)，不仅<strong>高度很高</strong>，而且每次查询，<strong>一个节点只有一个元素</strong>加载进内存，这样需要<strong>多次I/O</strong>操作，效率低下；而B树可以一次查询就有一个节点(数据库的话有一<strong>页</strong>节点)加载进内存，高度极大缩小，内存处理效率高又能减少I/O操作，查询效率高（为什么内存处理效率高？为什么要减少I/O操作？为什么是一页的数据？第二部分有讲解）</p><p>PS：一棵B 树的阶为1001 (即1 个结点包含1 000 个关键字) ，高度为2 ，它可以储存超过10 亿个关键字，我们只要让根结点持久地保留在内存中，那么在这棵树上，寻找某一个关键字至多需要两次I/O操作即可</p></li><li><p>不足：为什么不使用B树？因为一次I/O存入内存的<strong>节点数据</strong>会影响<strong>节点里面元素个数</strong>（存的容量有限，一页大小），而B+树解决这一问题</p></li><li><p>图解：</p><p> <img src="https://img2018.cnblogs.com/blog/1422817/201906/1422817-20190618113351277-845341592.png" alt="img"> </p></li><li><p>为什么不一开始节点是全部数据</p><p>因为内存与硬盘数据交互的单位是页，而一页是4K或8K，如果全部数据超过一页单位，就会有多次I/O操作，减低性能</p></li></ul></li></ul><h3 id="2、使用B-树的原因"><a href="#2、使用B-树的原因" class="headerlink" title="2、使用B+树的原因"></a>2、使用B+树的原因</h3><ul><li><p>概念：是B树的变形树</p><ul><li>非叶子节点不存储data，只存储key(索引值)，可以增大度</li><li>各个叶子节点的头和尾有指针连接，可以顺序访问，提高区间访问的性能</li></ul></li><li><p>优势：B+树非叶子节点存储的是索引值，这样一页的数据存储的个数比B树多，这样降低高度，从而查询次数也会减低、I/O操作次数减少，效率更高</p></li><li><p>图解：</p><p> <img src="https://img2018.cnblogs.com/blog/1422817/201906/1422817-20190618113402246-1099834253.png" alt="img"></p></li><li><p>B+Tree索引的性能分析</p><ul><li>一般使用磁盘I/O次数评价索引结构的优劣</li><li>预读：磁盘一般会顺序向后读取一定长度的数据(页的整数倍)放入内存</li><li>局部性原理：当一个数据被用到时，其附近的数据也通常会马上被使用</li><li>B+Tree节点的大小设为等于一个页，每次新建节点直接申请一个页的空间，这样就保证一个节点物理上也存储在一个页里，就实现了一个节点的载入只需一次I/O</li><li>B+Tree的度d一般会超过100，因此h非常小(一般为3到5之间)</li></ul><h3 id="四、聚簇索引和非聚簇索引"><a href="#四、聚簇索引和非聚簇索引" class="headerlink" title="四、聚簇索引和非聚簇索引"></a>四、聚簇索引和非聚簇索引</h3></li></ul><ul><li><p>聚簇索引：将数据存储与索引放到了一块，找到索引也就找到了数据</p></li><li><p>非聚簇索引：将数据存储与索引分开放置，找到索引就能找到数据的存储地址</p></li><li><p>MyISAM:</p><ul><li>主键索引数据结构</li></ul><p><img src="C:%5CUsers%5C20423%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1581586662878.png" alt="1581586662878"></p><ul><li><p>铺助索引数据结构</p><p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210303225244849.png" alt="image-20210303225244849"></p></li></ul></li><li><p>InnoDB</p><ul><li><p>主键索引数据结构</p><p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210303225319743.png" alt="image-20210303225319743"></p></li></ul><ul><li><p>铺助索引数据结构</p><p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210303225327950.png" alt="image-20210303225327950"></p></li><li><p>问题？</p><ul><li><p>为什么非主键索引结构叶子节点存储的是主键值？</p><p>如果辅助索引叶子节点存数据的话，就会造成插入、修改、删除数据时，主键和辅助索引要维护两份数据，会造成<strong>数据一致性</strong>问题，同时也<strong>增大存储空间</strong></p></li><li><p>为什么InnoDB表必须有主键？</p><p>InnoDB的数据文件本身就是按B+Tree组织的一个索引结构文件。（没有创建主键，数据表也会找其中一列做数据，数据不重复，如果没有不重复，后台会默认创建主键，而且时整形的。）</p></li><li><p>为什么不用UUID而用自增的整形id？</p><ul><li>UUID比较使用ASCII比较字符，一个一个比较肯定比整数比较慢</li><li>UUID存储的空间比整形存储空间大</li><li>整形自增id，数据会插入到最后面的叶子节点的后面，而UUID数据插入的话，无法保证插入的位置，可能在数据的中间，因为节点度满了，节点就会分裂，可能会造成上面很多的节点分裂</li></ul></li><li><p>联合索引的底层存储结构长什么样？</p><p>联合索引和单个索引差不多，索引有多个字段。在查找时，先比较第一个字段，比不了就比较下一个，一次类推。这样就是最左前缀原理由来。</p><p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210303225341671.png" alt="image-20210303225341671"></p></li></ul></li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="MySQL索引"><a href="#MySQL索引" class="headerlink" title="MySQL索引"></a>MySQL索引</h1><p>[toc]</p><h2 id="一、什么是索引？"><a href="#一、什么是索引？" class="headerlink" title="一、什么是索引？"></a>一、什么是索引？</h2><p>索引是帮助MySQL高效获取数据的<strong>排好序</strong>的<strong>数据结构</strong></p><h2 id="二、底层知识铺垫-–-计算机组成原理"><a href="#二、底层知识铺垫-–-计算机组成原理" class="headerlink" title="二、底层知识铺垫 – 计算机组成原理"></a>二、底层知识铺垫 – 计算机组成原理</h2><blockquote><p>有没想过1、索引的数据结构为什么不是二叉排序树、红黑树、Hash、B树？而是B+树？2、为什么索引能是排好序的？</p><p>这些需要计算机组成原理的知识才能解决！希望大伙认真看，踊跃发言，互相学习</p></blockquote><h3 id="1、磁盘的读取原理"><a href="#1、磁盘的读取原理" class="headerlink" title="1、磁盘的读取原理"></a>1、磁盘的读取原理</h3><ul><li><p>索引存储在文件中，也就是说，查询索引就需要磁盘I/O操作，而磁盘I/O存在机械运动耗费，因此磁盘I/O的时间消耗是巨大的。 </p></li><li><p>磁盘的机械运动是怎么样子的？时间消耗多大？</p><ul><li><p>磁盘结构图：</p><p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20220328154338796.png" alt="image-20220328154338796" style="zoom:80%;" /> <img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20220328154400203.png" alt="image-20220328154400203" style="zoom:80%;" /></p></li><li><p>概念：</p><ul><li><strong>磁道</strong>：以盘片中心为圆心，用不同的半径，划分出不同的很窄的圆环形区域，称为磁道</li><li><strong>扇区</strong>：磁盘上的每个磁道被等分为若干个弧段，这些弧段便是磁盘的扇区.扇区是磁盘最小的物理存储单元</li><li><strong>柱面</strong>：上下一串盘片中，相同半径的磁道所组成的一个圆柱型的环壁，就称为柱面</li></ul></li><li><p>磁盘读取时间计算：</p><ul><li><strong>寻道时间</strong>：磁头从开始移动到数据所在磁道所需要的时间，寻道时间越短，I/O操作越快。主流磁盘一般在5ms以下；</li><li><strong>旋转延迟</strong>：盘片旋转将请求数据所在扇区移至读写磁头下方所需要的时间，旋转延迟取决于磁盘转速。比如： 一个 7200（转 / 每分钟）的硬盘，平均旋转延迟时间为 1 ÷ ( 7200 ÷ 60 ) ÷ 2＝4.17ms（最多旋转１圈，最少不用旋转，平均情况下，需要旋转半圈）。 </li><li><strong>数据传输时间</strong>：完成传输所请求的数据所需要的时间。一般在零点几毫秒，相对于前两个时间可以忽略不计。</li><li>可见，磁盘I/O时间取决于寻道时间和旋转延迟</li></ul></li></ul></li></ul><h3 id="2、内存的读取原理"><a href="#2、内存的读取原理" class="headerlink" title="2、内存的读取原理"></a>2、内存的读取原理</h3><ul><li><p>内存的地址：计算机使用的主存基本都是随机读写存储器（RAM），内存可以抽象概括为一系列的存储单元组成的矩阵，每个存储单元存储固定大小的数据。每个存储单元由行和列构成唯一的地址。 </p></li><li><p>内存读取原理：当系统需要读取主存时，则将地址信号放到地址总线上传给主存，主存读到地址信号后，解析信号并定位到指定存储单元，然后将此存储单元数据放到数据总线上，供其它部件读取。由图可见，内存的读取时间仅与读取的次数呈线性关系，无机械操作，查询时间短、效率高</p><p><img src="http://blog.codinglabs.org/uploads/pictures/theory-of-mysql-index/5.png" alt="img"> </p></li></ul><h3 id="3、-从内存读取到磁盘预读"><a href="#3、-从内存读取到磁盘预读" class="headerlink" title="3、 从内存读取到磁盘预读"></a>3、 <strong>从内存读取到磁盘预读</strong></h3><ul><li>由于存储介质的特性，磁盘本身存取就比主存慢很多，再加上机械运动耗费，磁盘的存取速度往往是主存的几百分分之一，因此为了提高效率，要尽量减少磁盘I/O。为了达到这个目的，磁盘往往不是严格按需读取，而是每次都会预读，即使只需要一个字节，磁盘也会从这个位置开始，顺序向后读取一定长度的数据放入内存。这样做的理论依据是计算机科学中著名的局部性原理：  *<em>当一个数据被用到时，其附近的数据也通常会马上被使用。程序运行期间所需要的数据通常比较集中。 *</em>  </li><li>另一个原因： 由于磁盘顺序读取的效率很高（<strong>不需要寻道时间</strong>，只需很少的旋转时间），因此对于具有局部性的程序来说，预读可以提高I/O效率。 </li><li>预读的长度一般为<strong>页（page）的整倍数</strong>。页是计算机管理存储器的逻辑块，硬件及操作系统往往将主存和磁盘存储区分割为连续的大小相等的块，每个存储块称为一页（在许多操作系统中，页得大小通常为4k），<strong>主存和磁盘以页为单位交换数据</strong>。当程序要读取的数据不在主存中时，会触发一个缺页异常，此时系统会向磁盘发出读盘信号，磁盘会找到数据的起始位置并向后连续读取一页或几页载入内存中，然后异常返回，程序继续运行。</li></ul><h2 id="三、索引的数据结构"><a href="#三、索引的数据结构" class="headerlink" title="三、索引的数据结构"></a>三、索引的数据结构</h2><blockquote><p>第二部分主要用于B+树上,页的概念和预读十分重要,方便下面理解</p></blockquote><h3 id="1、不用二叉排序树、Hash、B树的分析"><a href="#1、不用二叉排序树、Hash、B树的分析" class="headerlink" title="1、不用二叉排序树、Hash、B树的分析"></a>1、不用二叉排序树、Hash、B树的分析</h3><ul><li><p>二叉排序树</p><ul><li>劣势：二叉排序树在极端情况下会有斜树，造成O(n)的时间复杂度</li></ul></li><li><p>Hash</p><ul><li>劣势：Hash是把索引数据进行Hash算法对应一个地址，我们会发现这个好像性能很好啊，直接找到，但是我们想想，它能满足我们日常开发大部分情况吗？比如通过大于或者小于去筛选数据，所以说也不合适，当然mysql还是提供了Hash索引，毕竟有些场合还是用起来也不错</li></ul></li><li><p>B树( 多路查找树 )</p><ul><li><p>概念:</p><ul><li>度(Degree)-节点的数据存储个数</li><li>叶节点具有相同的深度</li><li>叶节点的指针为空</li><li>节点中的数据key从左到右递增排列</li></ul></li><li><p>优势：二叉树存储的数据(海量数据可能来自文件，来自数据库)，不仅<strong>高度很高</strong>，而且每次查询，<strong>一个节点只有一个元素</strong>加载进内存，这样需要<strong>多次I/O</strong>操作，效率低下；而B树可以一次查询就有一个节点(数据库的话有一<strong>页</strong>节点)加载进内存，高度极大缩小，内存处理效率高又能减少I/O操作，查询效率高（为什么内存处理效率高？为什么要减少I/O操作？为什么是一页的数据？第二部分有讲解）</p><p>PS：一棵B 树的阶为1001 (即1 个结点包含1 000 个关键字) ，高度为2 ，它可以储存超过10 亿个关键字，我们只要让根结点持久地保留在内存中，那么在这棵树上，寻找某一个关键字至多需要两次I/O操作即可</p></li><li><p>不足：为什么不使用B树？因为一次I/O存入内存的<strong>节点数据</strong>会影响<strong>节点里面元素个数</strong>（存的容量有限，一页大小），而B+树解决这一问题</p></li><li><p>图解：</p><p> <img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20220328152657703.png" alt="image-20220328152657703"> </p></li><li><p>为什么不一开始节点是全部数据</p><p>因为内存与硬盘数据交互的单位是页，而一页是4K或8K，如果全部数据超过一页单位，就会有多次I/O操作，减低性能</p></li></ul></li></ul><h3 id="2、使用B-树的原因"><a href="#2、使用B-树的原因" class="headerlink" title="2、使用B+树的原因"></a>2、使用B+树的原因</h3><ul><li><p>概念：是B树的变形树</p><ul><li>非叶子节点不存储data，只存储key(索引值)，可以增大度</li><li>各个叶子节点的头和尾有指针连接，可以顺序访问，提高区间访问的性能</li></ul></li><li><p>优势：B+树非叶子节点存储的是索引值，这样一页的数据存储的个数比B树多，这样降低高度，从而查询次数也会减低、I/O操作次数减少，效率更高</p></li><li><p>图解：</p><p> <img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20220328152827971.png" alt="image-20220328152827971"></p></li><li><p>B+Tree索引的性能分析</p><ul><li>一般使用磁盘I/O次数评价索引结构的优劣</li><li>预读：磁盘一般会顺序向后读取一定长度的数据(页的整数倍)放入内存</li><li>局部性原理：当一个数据被用到时，其附近的数据也通常会马上被使用</li><li>B+Tree节点的大小设为等于一个页，每次新建节点直接申请一个页的空间，这样就保证一个节点物理上也存储在一个页里，就实现了一个节点的载入只需一次I/O</li><li>B+Tree的度d一般会超过100，因此h非常小(一般为3到5之间)</li></ul><h3 id="四、聚簇索引和非聚簇索引"><a href="#四、聚簇索引和非聚簇索引" class="headerlink" title="四、聚簇索引和非聚簇索引"></a>四、聚簇索引和非聚簇索引</h3></li></ul><ul><li><p>聚簇索引：将数据存储与索引放到了一块，找到索引也就找到了数据</p></li><li><p>非聚簇索引：将数据存储与索引分开放置，找到索引就能找到数据的存储地址</p></li><li><p>MyISAM:</p><ul><li>主键索引数据结构</li></ul><p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20220328153307233.png" alt="image-20220328153307233"></p><ul><li><p>铺助索引数据结构</p><p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210303225244849.png" alt="image-20210303225244849"></p></li></ul></li><li><p>InnoDB</p><ul><li><p>主键索引数据结构</p><p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210303225319743.png" alt="image-20210303225319743"></p></li></ul><ul><li><p>铺助索引数据结构</p><p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210303225327950.png" alt="image-20210303225327950"></p></li><li><p>问题？</p><ul><li><p>为什么非主键索引结构叶子节点存储的是主键值？</p><p>如果辅助索引叶子节点存数据的话，就会造成插入、修改、删除数据时，主键和辅助索引要维护两份数据，会造成<strong>数据一致性</strong>问题，同时也<strong>增大存储空间</strong></p></li><li><p>为什么InnoDB表必须有主键？</p><p>InnoDB的数据文件本身就是按B+Tree组织的一个索引结构文件。（没有创建主键，数据表也会找其中一列做数据，数据不重复，如果没有不重复，后台会默认创建主键，而且是整形的。）</p></li><li><p>为什么不用UUID而用自增的整形id？</p><ul><li>UUID比较使用ASCII比较字符，一个一个比较肯定比整数比较慢</li><li>UUID存储的空间比整形存储空间大</li><li>整形自增id，数据会插入到最后面的叶子节点的后面，而UUID数据插入的话，无法保证插入的位置，可能在数据的中间，因为节点度满了，节点就会分裂，可能会造成上面很多的节点分裂</li></ul></li><li><p>联合索引的底层存储结构长什么样？</p><p>联合索引和单个索引差不多，索引有多个字段。在查找时，先比较第一个字段，比不了就比较下一个，一次类推。这样就是最左前缀原理由来。</p><p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210303225341671.png" alt="image-20210303225341671"></p></li></ul></li></ul></li></ul>]]></content>
       
       
       <categories>
@@ -868,7 +1037,7 @@
       <link href="/2019/03/28/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
       <url>/2019/03/28/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</url>
       
-        <content type="html"><![CDATA[<h1 id="Maven生命周期"><a href="#Maven生命周期" class="headerlink" title="Maven生命周期"></a>Maven生命周期</h1><p>[toc]</p><h2 id="一、Maven生命周期的定义"><a href="#一、Maven生命周期的定义" class="headerlink" title="一、Maven生命周期的定义"></a>一、Maven生命周期的定义</h2><p>Maven的生命周期就是为了对所有的构建过程进行抽象和统一。包括项目的<strong>清理，初始化，编译，测试，打包，集成测试，验证，部署和生成站点</strong>等构建步骤。</p><h2 id="二、Maven三套独立的生命周期"><a href="#二、Maven三套独立的生命周期" class="headerlink" title="二、Maven三套独立的生命周期"></a>二、Maven三套独立的生命周期</h2><ul><li>Maven提供了三套独立的生命周期：<strong>clean</strong>, <strong>default</strong> 和 site </li><li>clean生命周期：清理项目，删除前一次构建在target文件夹下生成的各个Jar包等，<ul><li>三个步骤<ul><li>pre-clean：执行一些清理前需要完成的工作</li><li>clean：清理上一次构建生成的文件</li><li>post-clean：执行一些清理后需要完成的工作</li></ul></li><li>举例：<ul><li><strong>mvn clean</strong> 就是在调用clean生命周期的clean阶段，实际执行了<strong>pre-clean</strong>和<strong>clean</strong>阶段</li></ul></li></ul></li><li>default生命周期：定义了真正构建项目中需要执行的所有步骤<ul><li>八个步骤<ul><li>validate：验证工程是否正确，所有需要的资源是否可用。</li><li>compile：编译项目的源代码。  </li><li>test：使用合适的单元测试框架来测试已编译的源代码。这些测试不需要已打包和布署。</li><li>Package：把已编译的代码打包成可发布的格式，比如jar。</li><li>integration-test：如有需要，将包处理和发布到一个能够进行集成测试的环境。</li><li>verify：运行所有检查，验证包是否有效且达到质量标准。</li><li>install：把包安装到maven本地仓库，可以被其他工程作为依赖来使用。</li><li>Deploy：在集成或者发布环境下执行，将最终版本的包拷贝到远程的repository，使得其他的开发者或者工程可以共享。</li></ul></li><li>举例：<ul><li>mvn test 就是在调用default生命周期的test阶段，实际执行了validate到test阶段之间的所有阶段</li><li>mvn clean package 就是在调用clean生命周期的clean阶段和default生命周期的package阶段，实际执行clean生命周期pre-clean和clean阶段和default生命周期validate到package阶段之间的所有阶段</li></ul></li></ul></li><li>site生命周期：是建立和发布项目站点，Maven可以给予pom所包含的信息，生成一个站点，方便团队交流和发布项目信息<ul><li>四个步骤<ul><li>pre- site </li><li>site：生成项目站点文档</li><li>post-site</li><li>site-deploy：将生成的项目站点发布到服务器上</li></ul></li><li>mvn clean deploy site-deploy 就是在调用clean生命周期的clean阶段、default生命周期的package阶段和site生命周期的site-deploy，实际执行了clean生命周期pre-clean到clean阶段、default生命周期validate到package阶段、site生命周期pre-site到site-deploy阶段</li></ul></li></ul><h2 id="三、Maven的插件"><a href="#三、Maven的插件" class="headerlink" title="三、Maven的插件"></a>三、Maven的插件</h2><blockquote><p> 生命周期的各个阶段都是抽象的概念，真正干活的是一个个的插件，插件是以独立的构件形式存在，我们将maven的生命周期的各个阶段与maven的插件进行绑定，当我们执行mvn命令其实就是在指挥着一个个的插件在干活</p></blockquote><ul><li><p>Maven生命周期与插件绑定</p><p><img src="https://img-blog.csdnimg.cn/20181107212356793.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI1ODI3ODQ1,size_16,color_FFFFFF,t_70" alt="img"></p><p><img src="https://img-blog.csdnimg.cn/20181107212422710.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI1ODI3ODQ1,size_16,color_FFFFFF,t_70" alt="img"></p></li><li><p>举例：</p><ul><li><p>mvn clean package为例，执行clean生命周期pre-clean和clean阶段和default生命周期validate到package阶段之间的所有阶段。对应的插件执行过程（红框标识）</p><p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210309163835172.png" alt="image-20210309163835172"></p></li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="Maven生命周期"><a href="#Maven生命周期" class="headerlink" title="Maven生命周期"></a>Maven生命周期</h1><p>[toc]</p><h2 id="一、Maven生命周期的定义"><a href="#一、Maven生命周期的定义" class="headerlink" title="一、Maven生命周期的定义"></a>一、Maven生命周期的定义</h2><p>Maven的生命周期就是为了对所有的构建过程进行抽象和统一。包括项目的<strong>清理，初始化，编译，测试，打包，集成测试，验证，部署和生成站点</strong>等构建步骤。</p><h2 id="二、Maven三套独立的生命周期"><a href="#二、Maven三套独立的生命周期" class="headerlink" title="二、Maven三套独立的生命周期"></a>二、Maven三套独立的生命周期</h2><ul><li>Maven提供了三套独立的生命周期：<strong>clean</strong>, <strong>default</strong> 和 <strong>site</strong> </li><li>clean生命周期：清理项目，删除前一次构建在target文件夹下生成的各个Jar包等，<ul><li>三个步骤<ul><li>pre-clean：执行一些清理前需要完成的工作</li><li>clean：清理上一次构建生成的文件</li><li>post-clean：执行一些清理后需要完成的工作</li></ul></li><li>举例：<ul><li><strong>mvn clean</strong> 就是在调用clean生命周期的clean阶段，实际执行了<strong>pre-clean</strong>和<strong>clean</strong>阶段</li></ul></li></ul></li><li>default生命周期：定义了真正构建项目中需要执行的所有步骤<ul><li>八个步骤<ul><li>validate：验证工程是否正确，所有需要的资源是否可用。</li><li>compile：编译项目的源代码。  </li><li>test：使用合适的单元测试框架来测试已编译的源代码。这些测试不需要已打包和布署。</li><li>Package：把已编译的代码打包成可发布的格式，比如jar。</li><li>integration-test：如有需要，将包处理和发布到一个能够进行集成测试的环境。</li><li>verify：运行所有检查，验证包是否有效且达到质量标准。</li><li>install：把包安装到maven本地仓库，可以被其他工程作为依赖来使用。</li><li>Deploy：在集成或者发布环境下执行，将最终版本的包拷贝到远程的repository，使得其他的开发者或者工程可以共享。</li></ul></li><li>举例：<ul><li>mvn test 就是在调用default生命周期的test阶段，实际执行了validate到test阶段之间的所有阶段</li><li>mvn clean package 就是在调用clean生命周期的clean阶段和default生命周期的package阶段，实际执行clean生命周期pre-clean和clean阶段和default生命周期validate到package阶段之间的所有阶段</li></ul></li></ul></li><li>site生命周期：是建立和发布项目站点，Maven可以给予pom所包含的信息，生成一个站点，方便团队交流和发布项目信息<ul><li>四个步骤<ul><li>pre- site </li><li>site：生成项目站点文档</li><li>post-site</li><li>site-deploy：将生成的项目站点发布到服务器上</li></ul></li><li>mvn clean deploy site-deploy 就是在调用clean生命周期的clean阶段、default生命周期的package阶段和site生命周期的site-deploy，实际执行了clean生命周期pre-clean到clean阶段、default生命周期validate到package阶段、site生命周期pre-site到site-deploy阶段</li></ul></li></ul><h2 id="三、Maven的插件"><a href="#三、Maven的插件" class="headerlink" title="三、Maven的插件"></a>三、Maven的插件</h2><blockquote><p> 生命周期的各个阶段都是抽象的概念，真正干活的是一个个的插件，插件是以独立的构件形式存在，我们将maven的生命周期的各个阶段与maven的插件进行绑定，当我们执行mvn命令其实就是在指挥着一个个的插件在干活</p></blockquote><ul><li><p>Maven生命周期与插件绑定</p><p><img src="https://img-blog.csdnimg.cn/20181107212356793.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI1ODI3ODQ1,size_16,color_FFFFFF,t_70" alt="img"></p><p><img src="https://img-blog.csdnimg.cn/20181107212422710.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI1ODI3ODQ1,size_16,color_FFFFFF,t_70" alt="img"></p></li><li><p>举例：</p><ul><li><p>mvn clean package为例，执行clean生命周期pre-clean和clean阶段和default生命周期validate到package阶段之间的所有阶段。对应的插件执行过程（红框标识）</p><p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210309163835172.png" alt="image-20210309163835172"></p></li></ul></li></ul>]]></content>
       
       
       <categories>
