@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.deschen.cn/2022/03/29/Hexo+Coding%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2022-03-29</lastmod>
+  </url>
+  <url>
     <loc>https://blog.deschen.cn/2019/05/13/MySQL%E4%BA%8B%E5%8A%A1/</loc>
     <lastmod>2022-03-29</lastmod>
   </url>
   <url>
     <loc>https://blog.deschen.cn/2019/07/13/MySQL%E7%B4%A2%E5%BC%95%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3/</loc>
     <lastmod>2022-03-28</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.deschen.cn/2020/06/10/%E9%9A%BE%E9%A2%98/</loc>
+    <lastmod>2022-03-01</lastmod>
   </url>
   <url>
     <loc>https://blog.deschen.cn/2019/03/28/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
