@@ -10,7 +10,7 @@ https://blog.deschen.cn/2021/03/05/Freemarker%E5%AD%A6%E4%B9%A0/
 https://blog.deschen.cn/2021/02/03/ELK%E9%83%A8%E7%BD%B2%E2%80%94%E2%80%94CentOS7.X/
 https://blog.deschen.cn/2021/01/28/VMware%E2%80%94%E2%80%94CentOS7-X%E9%83%A8%E7%BD%B2/
 https://blog.deschen.cn/2020/08/05/IDEA%20Debug%E8%B0%83%E8%AF%95/
-https://blog.deschen.cn/2020/06/10/%E9%9A%BE%E9%A2%98/
+https://blog.deschen.cn/2020/06/10/%E9%9D%A2%E8%AF%95/
 https://blog.deschen.cn/2020/05/13/docker%E9%83%A8%E7%BD%B2svn/
 https://blog.deschen.cn/2020/03/28/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8ThreadPoolExecutor%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B%E6%B1%A0/
 https://blog.deschen.cn/2020/03/05/HashMap%E4%B8%8EConcurrentHashMap%E5%8E%9F%E7%90%86/
@@ -24,8 +24,8 @@ https://blog.deschen.cn/2019/10/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E7%B
 https://blog.deschen.cn/2019/08/14/Hexo-%E9%98%85%E8%AF%BB%E4%B8%8E%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/
 https://blog.deschen.cn/2019/08/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/
 https://blog.deschen.cn/2019/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E8%AE%B2%E8%A7%A3/
-https://blog.deschen.cn/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/
 https://blog.deschen.cn/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%90%86%E8%AE%BA%E7%AF%87%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/
+https://blog.deschen.cn/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/
 https://blog.deschen.cn/2019/07/13/MySQL%E7%B4%A2%E5%BC%95%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3/
 https://blog.deschen.cn/2019/07/05/Java8%20Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8%E3%80%81%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3/
 https://blog.deschen.cn/2019/07/04/%E8%AF%A6%E8%A7%A3%E4%BA%94%E7%A7%8D%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/
