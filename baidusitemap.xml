@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.deschen.cn/2020/06/10/%E9%9D%A2%E8%AF%95/</loc>
+    <lastmod>2022-04-16</lastmod>
+  </url>
+  <url>
     <loc>https://blog.deschen.cn/2019/01/14/Exception%E4%B8%8EError%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
     <lastmod>2022-04-16</lastmod>
   </url>
@@ -19,10 +23,6 @@
   <url>
     <loc>https://blog.deschen.cn/2019/07/13/MySQL%E7%B4%A2%E5%BC%95%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3/</loc>
     <lastmod>2022-03-28</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.deschen.cn/2020/06/10/%E9%9D%A2%E8%AF%95/</loc>
-    <lastmod>2022-03-01</lastmod>
   </url>
   <url>
     <loc>https://blog.deschen.cn/2019/03/28/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
