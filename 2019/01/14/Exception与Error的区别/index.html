@@ -126,7 +126,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20220415151418580.png">
 <meta property="article:published_time" content="2019-01-14T05:55:18.000Z">
-<meta property="article:modified_time" content="2022-04-15T07:55:34.601Z">
+<meta property="article:modified_time" content="2022-04-16T08:06:05.427Z">
 <meta property="article:author" content="Deschen">
 <meta property="article:tag" content="异常处理">
 <meta name="twitter:card" content="summary">
@@ -433,7 +433,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2022-04-15 15:55:34" itemprop="dateModified" datetime="2022-04-15T15:55:34+08:00">2022-04-15</time>
+                <time title="修改时间：2022-04-16 16:06:05" itemprop="dateModified" datetime="2022-04-16T16:06:05+08:00">2022-04-16</time>
               
             
           </span>
@@ -504,7 +504,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">11 分钟</span>
+                <span title="阅读时长">12 分钟</span>
               
             </div>
           
@@ -563,6 +563,17 @@
 <li>不要生吞异常。这是异常处理中要特别注意的事情，因为很可能会导致非常难以诊断的诡异情况</li>
 <li>建议仅捕获有必要的代码段，尽量不要一个大的try包住整段的代码。因为每次throw一个Exception实例，都会对当时的栈进行快照，这是一个相对比较重的操作，会产生额外的开销</li>
 </ul>
+<h2 id="四、NoClassDefFoundError-和ClassNotFoundException的区别"><a href="#四、NoClassDefFoundError-和ClassNotFoundException的区别" class="headerlink" title="四、NoClassDefFoundError 和ClassNotFoundException的区别"></a>四、NoClassDefFoundError 和ClassNotFoundException的区别</h2><ul>
+<li>前者是个 <strong>Error</strong> 错误，而后者是个 <strong>Exception</strong> 异常，至于错误和异常的区别，请看前面标题</li>
+<li><strong>NoClassDefFoundError</strong> 是一个错误，是指jvm加载类时候，某个类没有找到导致的错误<ul>
+<li>场景：一般是ClassLoader尝试加载类（例如<strong>引用</strong>或者<strong>new对象</strong>时），找不到这个类的定义，此时会报这个错误。如：打成jar包时，丢失某个类</li>
+</ul>
+</li>
+<li><strong>ClassNotFoundException</strong> 是一个异常。编译不会发现问题，但是在项目运行时候或者调用方法发现某个类不存在，发生了异常。<ul>
+<li>场景： <strong>Class.forName()</strong>尝试用<strong>全限量名</strong>去加载某个类时，如果找你不到它的定义。如：项目使用Mysql做为数据库启动时，缺少 JDBC驱动包，报异常</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -587,7 +598,7 @@
   <p><span>本文标题:</span>Exception与Error的区别</a></p>
   <p><span>文章作者:</span>Deschen</a></p>
   <p><span>发布时间:</span>2019年01月14日 - 13:55:18</p>
-  <p><span>最后更新:</span>2022年04月15日 - 15:55:34</p>
+  <p><span>最后更新:</span>2022年04月16日 - 16:06:05</p>
   <p><span>原始链接:</span><a href="/2019/01/14/Exception%E4%B8%8EError%E7%9A%84%E5%8C%BA%E5%88%AB/" title="Exception与Error的区别">https://blog.deschen.cn/2019/01/14/Exception%E4%B8%8EError%E7%9A%84%E5%8C%BA%E5%88%AB/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.deschen.cn/2019/01/14/Exception%E4%B8%8EError%E7%9A%84%E5%8C%BA%E5%88%AB/"  aria-label="复制成功！"></i></span>
   </p>
@@ -922,7 +933,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Java-异常的基本组成"><span class="nav-number">1.</span> <span class="nav-text">一、Java 异常的基本组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Java-异常处理"><span class="nav-number">2.</span> <span class="nav-text">二、Java 异常处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、如何正确的使用异常及处理"><span class="nav-number">3.</span> <span class="nav-text">三、如何正确的使用异常及处理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Java-异常的基本组成"><span class="nav-number">1.</span> <span class="nav-text">一、Java 异常的基本组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Java-异常处理"><span class="nav-number">2.</span> <span class="nav-text">二、Java 异常处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、如何正确的使用异常及处理"><span class="nav-number">3.</span> <span class="nav-text">三、如何正确的使用异常及处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、NoClassDefFoundError-和ClassNotFoundException的区别"><span class="nav-number">4.</span> <span class="nav-text">四、NoClassDefFoundError 和ClassNotFoundException的区别</span></a></li></ol></div>
             
 
           </div>
@@ -970,7 +981,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">3:20</span>
+    <span title="站点阅读时长">3:21</span>
   
 </div>
 
