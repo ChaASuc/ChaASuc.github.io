@@ -843,6 +843,31 @@
     
     
     <entry>
+      <title>final关键字详解</title>
+      <link href="/2019/01/14/final%E5%85%B3%E9%94%AE%E5%AD%97%E8%AF%A6%E8%A7%A3/"/>
+      <url>/2019/01/14/final%E5%85%B3%E9%94%AE%E5%AD%97%E8%AF%A6%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、final基本概念"><a href="#一、final基本概念" class="headerlink" title="一、final基本概念"></a>一、final基本概念</h2><ul><li><p>被 final 修饰的<strong>类不可以被继承</strong>（因此 final 不能修饰抽象类）</p></li><li><p>被 final修饰的<strong>方法不可以被重写</strong></p></li><li><p>被 final 修饰的变量不可以被改变，这里有两种情况</p><ul><li>如果被修饰的变量是<strong>基本类型</strong>，则<strong>值是不能做更改</strong>的</li><li>如果被修饰变量是<strong>引用类型</strong>，则不能更改<strong>引用地址</strong>，但是可用更改<strong>被引用的内部内容</strong></li></ul></li></ul><h2 id="二、final的作用"><a href="#二、final的作用" class="headerlink" title="二、final的作用"></a>二、final的作用</h2><ul><li>使用 final 修饰的类或变量，可以清楚的避免因为<strong>意外赋值导致编程错误</strong></li><li>使用 final 修饰的<strong>只读数据</strong>，可以在并发情况下，减少额外的<strong>同步开销</strong>，以及一些防御性的<strong>拷贝</strong>必要</li></ul><h2 id="三、题外话"><a href="#三、题外话" class="headerlink" title="三、题外话"></a>三、题外话</h2><ul><li>如何使得对象不可变？我们知道 final 修饰的对象只是引用地址不可变，而引用的内容不是固定的。那么如何使对象不可变<ol><li>将 class 自身声明为 fnal ，这样别人就不能扩展来绕过限制了</li><li>将所有成员变量定义为 private 和 fnal ，并且不要实现 setter 方法</li><li>通常构造对象时，成员变量使用深度拷贝来初始化，而不是直接赋值，这是一种防御措施，因为你无法确定输入对象不被其他人修改</li><li>如果确实需要实现 getter 方法，或者其他可能会返回内部状态的方法，使用 copy-on-write 原则，创建私有的对象，避免别人操作对象改变原有的属性</li></ol></li><li>final 在什么情况下赋值操作<ul><li>类加载过程中，在准备阶段，final 修饰的类的静态属性直接赋值操作，而不是默认值（基本类型 0 、引用类型为 null ）</li><li>类实例化过程中，final 变量初始化程序定义的值</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> final关键字 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何使用hexo写文章</title>
       <link href="/2019/01/13/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8hexo%E5%86%99%E6%96%87%E7%AB%A0/"/>
       <url>/2019/01/13/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8hexo%E5%86%99%E6%96%87%E7%AB%A0/</url>
