@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>阿里云OSS操作</title>
+      <link href="/2022/07/21/%E9%98%BF%E9%87%8C%E4%BA%91OSS%E6%93%8D%E4%BD%9C/"/>
+      <url>/2022/07/21/%E9%98%BF%E9%87%8C%E4%BA%91OSS%E6%93%8D%E4%BD%9C/</url>
+      
+        <content type="html"><![CDATA[<h1 id="阿里云OSS操作-Linux"><a href="#阿里云OSS操作-Linux" class="headerlink" title="阿里云OSS操作(Linux)"></a>阿里云OSS操作(Linux)</h1><ul><li><p>下载和安装</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:<span class="regexp">//g</span>osspublic.alicdn.com<span class="regexp">/ossutil/</span><span class="number">1.7</span>.<span class="number">13</span><span class="regexp">/ossutil64</span></span><br></pre></td></tr></table></figure></li></ul><ul><li><p>操作命令</p><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./ossutil64 config</span><br><span class="line">chmod <span class="number">755</span> ossutil64</span><br><span class="line">.<span class="regexp">/ossutil64 cp oss:/</span><span class="regexp">/denali-dev/</span>文件夹<span class="regexp">/ denali-dev/</span> -r</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Yapi的部署和使用</title>
       <link href="/2021/05/10/Yapi%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8/"/>
       <url>/2021/05/10/Yapi%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8/</url>
