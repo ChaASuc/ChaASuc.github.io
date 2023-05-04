@@ -410,13 +410,6 @@
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/tags/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2023-05-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.deschen.cn/tags/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
@@ -425,6 +418,13 @@
   
   <url>
     <loc>https://blog.deschen.cn/tags/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2023-05-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.deschen.cn/tags/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -452,13 +452,6 @@
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/tags/SpringBoot/</loc>
-    <lastmod>2023-05-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.deschen.cn/tags/security/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
@@ -466,14 +459,14 @@
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/tags/RabbitMq/</loc>
+    <loc>https://blog.deschen.cn/tags/SpringBoot/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/tags/redis/</loc>
+    <loc>https://blog.deschen.cn/tags/RabbitMq/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -488,6 +481,13 @@
   
   <url>
     <loc>https://blog.deschen.cn/tags/JVM/</loc>
+    <lastmod>2023-05-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.deschen.cn/tags/redis/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -510,14 +510,14 @@
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/categories/MySQL/</loc>
+    <loc>https://blog.deschen.cn/categories/Linux/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/categories/Linux/</loc>
+    <loc>https://blog.deschen.cn/categories/MySQL/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -587,13 +587,6 @@
   </url>
   
   <url>
-    <loc>https://blog.deschen.cn/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/</loc>
-    <lastmod>2023-05-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.deschen.cn/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
@@ -602,6 +595,13 @@
   
   <url>
     <loc>https://blog.deschen.cn/categories/Hexo/</loc>
+    <lastmod>2023-05-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.deschen.cn/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
