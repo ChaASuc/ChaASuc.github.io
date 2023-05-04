@@ -120,7 +120,7 @@
   <meta name="description" content="深入理解JVM–七种垃圾收集器一、垃圾收集器 七种垃圾收集器组合    区域划分  新生代收集器：Serial、ParNew、Parallel Scavenge； 老年代收集器：Serial Old、Parallel Old、CMS； 整堆收集器：G1；    二、并发垃圾收集和并行垃圾收集的区别 并行（Parallel）：指多条垃圾收集线程并行工作，但此时用户线程仍然处于等待状态；如：ParNe">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解JVM--七种垃圾收集器">
-<meta property="og:url" content="https://blog.deschen.cn/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/index.html">
+<meta property="og:url" content="https://deschen.cn/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/index.html">
 <meta property="og:site_name" content="Deschen Blog">
 <meta property="og:description" content="深入理解JVM–七种垃圾收集器一、垃圾收集器 七种垃圾收集器组合    区域划分  新生代收集器：Serial、ParNew、Parallel Scavenge； 老年代收集器：Serial Old、Parallel Old、CMS； 整堆收集器：G1；    二、并发垃圾收集和并行垃圾收集的区别 并行（Parallel）：指多条垃圾收集线程并行工作，但此时用户线程仍然处于等待状态；如：ParNe">
 <meta property="og:locale" content="zh_CN">
@@ -147,7 +147,7 @@
 
 
 
-  <link rel="canonical" href="https://blog.deschen.cn/2019/10/11/深入理解JVM-七种垃圾收集器/"/>
+  <link rel="canonical" href="https://deschen.cn/2019/10/11/深入理解JVM-七种垃圾收集器/"/>
 
 
 
@@ -382,7 +382,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.deschen.cn/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/">
+    <link itemprop="mainEntityOfPage" href="https://deschen.cn/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Deschen">
@@ -613,8 +613,8 @@
   <p><span>文章作者:</span>Deschen</a></p>
   <p><span>发布时间:</span>2019年10月11日 - 16:18:05</p>
   <p><span>最后更新:</span>2021年03月04日 - 17:57:45</p>
-  <p><span>原始链接:</span><a href="/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/" title="深入理解JVM--七种垃圾收集器">https://blog.deschen.cn/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.deschen.cn/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/"  aria-label="复制成功！"></i></span>
+  <p><span>原始链接:</span><a href="/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/" title="深入理解JVM--七种垃圾收集器">https://deschen.cn/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://deschen.cn/2019/10/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM-%E4%B8%83%E7%A7%8D%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
