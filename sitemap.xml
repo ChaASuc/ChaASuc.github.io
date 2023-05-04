@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://deschen.cn/baidu_verify_codeva-asFFGNpWxS.html</loc>
-    
-    <lastmod>2023-05-04</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://deschen.cn/2022/01/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2023-05-04</lastmod>
@@ -410,13 +403,6 @@
   </url>
   
   <url>
-    <loc>https://deschen.cn/tags/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2023-05-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://deschen.cn/tags/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
@@ -424,14 +410,7 @@
   </url>
   
   <url>
-    <loc>https://deschen.cn/tags/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2023-05-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://deschen.cn/tags/Freemarker/</loc>
+    <loc>https://deschen.cn/tags/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -445,7 +424,21 @@
   </url>
   
   <url>
+    <loc>https://deschen.cn/tags/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2023-05-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://deschen.cn/tags/ELK/</loc>
+    <lastmod>2023-05-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://deschen.cn/tags/Freemarker/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -459,14 +452,14 @@
   </url>
   
   <url>
-    <loc>https://deschen.cn/tags/security/</loc>
+    <loc>https://deschen.cn/tags/SpringBoot/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://deschen.cn/tags/SpringBoot/</loc>
+    <loc>https://deschen.cn/tags/security/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -517,14 +510,14 @@
   </url>
   
   <url>
-    <loc>https://deschen.cn/categories/MySQL/</loc>
+    <loc>https://deschen.cn/categories/Linux/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://deschen.cn/categories/Linux/</loc>
+    <loc>https://deschen.cn/categories/MySQL/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -552,14 +545,14 @@
   </url>
   
   <url>
-    <loc>https://deschen.cn/categories/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</loc>
+    <loc>https://deschen.cn/categories/ELK/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://deschen.cn/categories/ELK/</loc>
+    <loc>https://deschen.cn/categories/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -594,14 +587,14 @@
   </url>
   
   <url>
-    <loc>https://deschen.cn/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    <loc>https://deschen.cn/categories/Hexo/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://deschen.cn/categories/Hexo/</loc>
+    <loc>https://deschen.cn/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
