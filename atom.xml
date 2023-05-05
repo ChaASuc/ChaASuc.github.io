@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.deschen.cn/"/>
-  <updated>2023-05-05T01:32:31.402Z</updated>
+  <updated>2023-05-05T02:42:29.329Z</updated>
   <id>https://www.deschen.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式-桥接模式</title>
+    <link href="https://www.deschen.cn/2022/02/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://www.deschen.cn/2022/02/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</id>
+    <published>2022-02-01T12:23:43.000Z</published>
+    <updated>2023-05-05T02:42:29.329Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="设计模式-桥接模式"><a href="#设计模式-桥接模式" class="headerlink" title="设计模式-桥接模式"></a>设计模式-桥接模式</h1><h2 id="一、详解"><a href="#一、详解" class="headerlink" title="一、详解"></a>一、详解</h2><ul><li>概念：<strong>抽象</strong>与<strong>实现</strong>分离，以便独立变化使用</li><li>主要用途<ul><li>抽象与实现之间存在多重维度的变化。比如：车辆根据不同的类型，有不同的维修策略</li><li>需要将一个类的抽象部分和实现部分分离出来，从而可以独立地改变它们</li></ul></li><li>代码：抽象类、实现类</li></ul><h2 id="二、代码"><a href="#二、代码" class="headerlink" title="二、代码"></a>二、代码</h2><ul><li><p>以文件管理为例</p></li><li><p>抽象类</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">FileManager</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建文件</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> filePath 文件路径</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> fileName 文件名称</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">createFile</span><span class="params">(String filePath, String fileName)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>实现类</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileManagerImpl</span> <span class="keyword">implements</span> <span class="title">FileManager</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">createFile</span><span class="params">(String filePath, String fileName)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"文件创建成功，文件名： "</span> + fileName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>用例</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        FileManager fileManager = <span class="keyword">new</span> FileManagerImpl();</span><br><span class="line">        fileManager.createFile(<span class="string">"/resources"</span>, <span class="string">"resource.txt"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出结果</span></span><br><span class="line">文件创建成功，文件名： resource.txt</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;设计模式-桥接模式&quot;&gt;&lt;a href=&quot;#设计模式-桥接模式&quot; class=&quot;headerlink&quot; title=&quot;设计模式-桥接模式&quot;&gt;&lt;/a&gt;设计模式-桥接模式&lt;/h1&gt;&lt;h2 id=&quot;一、详解&quot;&gt;&lt;a href=&quot;#一、详解&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+    
+      <category term="设计模式" scheme="https://www.deschen.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="桥接模式" scheme="https://www.deschen.cn/tags/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式-适配器模式</title>
@@ -488,31 +514,6 @@
     
     
       <category term="JVM" scheme="https://www.deschen.cn/categories/JVM/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>IDEA 配置Gradle</title>
-    <link href="https://www.deschen.cn/2020/01/05/IDEA%20%E9%85%8D%E7%BD%AEGradle/"/>
-    <id>https://www.deschen.cn/2020/01/05/IDEA%20%E9%85%8D%E7%BD%AEGradle/</id>
-    <published>2020-01-05T08:02:06.000Z</published>
-    <updated>2021-03-22T09:24:54.926Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="IDEA-配置Gradle"><a href="#IDEA-配置Gradle" class="headerlink" title="IDEA 配置Gradle"></a>IDEA 配置Gradle</h1><p>[toc]</p><h2 id="一、下载安装包"><a href="#一、下载安装包" class="headerlink" title="一、下载安装包"></a>一、下载安装包</h2><ul><li><a href="https://gradle.org/releases/" target="_blank" rel="noopener">下载网址</a></li><li>解压到磁盘（如：D:\Gradle6.5.1）</li></ul><h2 id="二、配置win10环境变量"><a href="#二、配置win10环境变量" class="headerlink" title="二、配置win10环境变量"></a>二、配置win10环境变量</h2><ul><li><p>我的电脑 》右键》属性》高级系统设置 》高级》环境变量 》系统变量 》Path添加gradle的bin路径</p><p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210322161606954.png" alt="image-20210322161606954"></p></li></ul><h2 id="三、IDEA配置Gradle"><a href="#三、IDEA配置Gradle" class="headerlink" title="三、IDEA配置Gradle"></a>三、IDEA配置Gradle</h2><ul><li><p>IDEA 》 setting 》Build，Execution… 》Build Tools 》 Gradle</p><ul><li>设置Gradle user home，用于存储 jar 包的仓库（可在全局setting设置）</li><li>点击项目，在Build and run using 和 Run tests using 设置为 IntelliJ IDEA，不然build很慢的</li><li>设置Use Gradle from 为 Specified location ，右边是gradle的安装目录</li><li>PS：全局setting只有Gradle user home，其他步骤只有在项目设置才会显示</li></ul><p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210322172320885.png" alt="image-20210322172320885"></p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;IDEA-配置Gradle&quot;&gt;&lt;a href=&quot;#IDEA-配置Gradle&quot; class=&quot;headerlink&quot; title=&quot;IDEA 配置Gradle&quot;&gt;&lt;/a&gt;IDEA 配置Gradle&lt;/h1&gt;&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h2 id=&quot;一、下载安装包&quot;
-      
-    
-    </summary>
-    
-    
-      <category term="编程工具" scheme="https://www.deschen.cn/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/"/>
     
     
   </entry>
