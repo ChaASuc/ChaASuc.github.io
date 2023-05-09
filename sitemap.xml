@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.deschen.cn/2022/02/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/</loc>
+    
+    <lastmod>2023-05-09</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.deschen.cn/2022/02/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2023-05-06</lastmod>
@@ -432,6 +439,13 @@
   
   <url>
     <loc>https://www.deschen.cn/tags/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2023-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.deschen.cn/tags/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2023-05-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

@@ -117,17 +117,17 @@
 
 
 
-  <meta name="description" content="深入理解Redis–Redis基本介绍一、Redis简介redis 简介 Redis是一个基于内存的高性能key-value数据库，所以读写速度非常快，因此 redis 被广泛应用于缓存方向。另外，redis 也经常用来做分布式锁。redis 提供了多种数据类型来支持不同的业务场景。除此之外，redis 支持事务 、持久化、LUA脚本、LRU驱动事件、多种集群方案。 二、Redis与Mecache">
+  <meta name="description" content="设计模式-组合模式 研究了很久，我发现组合模式，跟装饰者模式有异曲同工之处。就是在原来的功能基础上，装饰了保存子节点的集合  一、详解 概念：抽象类组件与一个包含子组件的子组件类，构建树形结构 主要用途： 在不改变现有对象结构的情况下，动态地给一个对象增加新的功能 需要添加一些附加的功能，但是使用继承会导致类的数量增加，且继承层次复杂，而装饰者可以聚合新功能的类，添加新功能   代码：原有的类&#x2F;接">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解Redis--Redis基本介绍">
-<meta property="og:url" content="https://www.deschen.cn/2019/06/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redi--Redis%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/index.html">
+<meta property="og:title" content="设计模式-组合模式">
+<meta property="og:url" content="https://www.deschen.cn/2022/02/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Deschen Blog">
-<meta property="og:description" content="深入理解Redis–Redis基本介绍一、Redis简介redis 简介 Redis是一个基于内存的高性能key-value数据库，所以读写速度非常快，因此 redis 被广泛应用于缓存方向。另外，redis 也经常用来做分布式锁。redis 提供了多种数据类型来支持不同的业务场景。除此之外，redis 支持事务 、持久化、LUA脚本、LRU驱动事件、多种集群方案。 二、Redis与Mecache">
+<meta property="og:description" content="设计模式-组合模式 研究了很久，我发现组合模式，跟装饰者模式有异曲同工之处。就是在原来的功能基础上，装饰了保存子节点的集合  一、详解 概念：抽象类组件与一个包含子组件的子组件类，构建树形结构 主要用途： 在不改变现有对象结构的情况下，动态地给一个对象增加新的功能 需要添加一些附加的功能，但是使用继承会导致类的数量增加，且继承层次复杂，而装饰者可以聚合新功能的类，添加新功能   代码：原有的类&#x2F;接">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-06-10T13:48:47.000Z">
-<meta property="article:modified_time" content="2021-02-24T09:32:01.378Z">
+<meta property="article:published_time" content="2022-02-03T14:11:21.000Z">
+<meta property="article:modified_time" content="2023-05-09T02:39:41.528Z">
 <meta property="article:author" content="Deschen">
-<meta property="article:tag" content="redis">
+<meta property="article:tag" content="组合模式">
 <meta name="twitter:card" content="summary">
 
 
@@ -137,7 +137,7 @@
 
 
 
-  <link rel="canonical" href="https://www.deschen.cn/2019/06/10/深入理解Redi--Redis基本介绍/"/>
+  <link rel="canonical" href="https://www.deschen.cn/2022/02/03/设计模式-组合模式/"/>
 
 
 
@@ -147,7 +147,7 @@
   };
 </script>
 
-  <title>深入理解Redis--Redis基本介绍 | Deschen Blog</title>
+  <title>设计模式-组合模式 | Deschen Blog</title>
   
 
 
@@ -372,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.deschen.cn/2019/06/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redi--Redis%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/">
+    <link itemprop="mainEntityOfPage" href="https://www.deschen.cn/2022/02/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Deschen">
@@ -389,7 +389,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">深入理解Redis--Redis基本介绍
+          <h1 class="post-title" itemprop="name headline">设计模式-组合模式
               
             
           </h1>
@@ -414,7 +414,7 @@
                 
               
 
-              <time title="创建时间：2019-06-10 21:48:47" itemprop="dateCreated datePublished" datetime="2019-06-10T21:48:47+08:00">2019-06-10</time>
+              <time title="创建时间：2022-02-03 22:11:21" itemprop="dateCreated datePublished" datetime="2022-02-03T22:11:21+08:00">2022-02-03</time>
             
 
             
@@ -431,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-02-24 17:32:01" itemprop="dateModified" datetime="2021-02-24T17:32:01+08:00">2021-02-24</time>
+                <time title="修改时间：2023-05-09 10:39:41" itemprop="dateModified" datetime="2023-05-09T10:39:41+08:00">2023-05-09</time>
               
             
           </span>
@@ -448,7 +448,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">中间件</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
 
                 
                 
@@ -463,8 +463,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redi--Redis%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/06/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redi--Redis%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" itemprop="commentCount"></span>
+                <a href="/2022/02/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2022/02/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -472,7 +472,7 @@
 
           
           
-             <span id="/2019/06/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redi--Redis%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="leancloud_visitors" data-flag-title="深入理解Redis--Redis基本介绍">
+             <span id="/2022/02/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式-组合模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -502,7 +502,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">5 分钟</span>
+                <span title="阅读时长">53 分钟</span>
               
             </div>
           
@@ -522,51 +522,38 @@
       
 
       
-        <h1 id="深入理解Redis–Redis基本介绍"><a href="#深入理解Redis–Redis基本介绍" class="headerlink" title="深入理解Redis–Redis基本介绍"></a>深入理解Redis–Redis基本介绍</h1><h2 id="一、Redis简介"><a href="#一、Redis简介" class="headerlink" title="一、Redis简介"></a>一、Redis简介</h2><p>redis 简介<br> <strong>Redis</strong>是一个基于<strong>内存</strong>的高性能<strong>key-value</strong>数据库，所以读写速度非常快，因此 redis 被广泛应用于缓存方向。另外，redis 也经常用来做分布式锁。redis 提供了多种数据类型来支持不同的业务场景。除此之外，redis 支持事务 、持久化、LUA脚本、LRU驱动事件、多种集群方案。</p>
-<h2 id="二、Redis与Mecache区别"><a href="#二、Redis与Mecache区别" class="headerlink" title="二、Redis与Mecache区别"></a>二、Redis与Mecache区别</h2><ol>
-<li>持久性<ul>
-<li>Redis可以将内存中的数据保持在<strong>磁盘</strong>中，<strong>重启</strong>的时候可以<strong>再次加载</strong>进行使用，保证数据的持久性</li>
-<li>Memecache把数据全部存在<strong>内存</strong>之中，<strong>断电后会挂掉</strong>，数据不能超过内存大小。</li>
+        <h1 id="设计模式-组合模式"><a href="#设计模式-组合模式" class="headerlink" title="设计模式-组合模式"></a>设计模式-组合模式</h1><blockquote>
+<p>研究了很久，我发现组合模式，跟装饰者模式有异曲同工之处。就是在原来的功能基础上，<strong>装饰</strong>了保存子节点的集合</p>
+</blockquote>
+<h2 id="一、详解"><a href="#一、详解" class="headerlink" title="一、详解"></a>一、详解</h2><ul>
+<li>概念：<strong>抽象类组件</strong>与一个<strong>包含子组件</strong>的<strong>子组件类</strong>，构建<strong>树形</strong>结构</li>
+<li>主要用途：<ul>
+<li>在不改变现有对象结构的情况下，动态地给一个对象增加新的功能</li>
+<li>需要添加一些附加的功能，但是使用继承会导致类的数量增加，且继承层次复杂，而装饰者可以聚合新功能的类，添加新功能</li>
 </ul>
 </li>
-<li>数据类型<ul>
-<li>Redis支持的数据类型要丰富得多,Redis不仅仅支持简单的<strong>k/v</strong>类型的数据，同时还提供<strong>String，List,Set,Hash,Sorted Set</strong>数据结构的存储。</li>
-<li>memcache支持<strong>简单数据类型</strong>，需要客户端自己处理复杂对象 </li>
+<li>代码：原有的类/接口（抽象类组件）、包含子组件的子组件类（装饰了保存子节点功能）</li>
+<li>PS: 为什么我不直接把子组件类抽象出来？是因为组合模式本来就是<strong>用于组合树结构</strong>，没有其他意思，就不要抽象出来</li>
 </ul>
+<h2 id="二、代码"><a href="#二、代码" class="headerlink" title="二、代码"></a>二、代码</h2><ul>
+<li><p>以部门树为例</p>
 </li>
-<li>存储键值大小<ul>
-<li>Redis单个value的最大限制是<strong>1GB</strong></li>
-<li>memcached只能保存<strong>1MB</strong>的数据 </li>
+<li><p>部门类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dept</span> <span class="keyword">implements</span> <span class="title">IDept</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Integer level;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Long parentId;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dept</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dept</span><span class="params">(Long id, String name, Integer level, Long parentId)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.level = level;</span><br><span class="line">        <span class="keyword">this</span>.parentId = parentId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Long <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getLevel</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> level;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Long <span class="title">getParentId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> parentId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Boolean <span class="title">isRoot</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> parentId == -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Long id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLevel</span><span class="params">(Integer level)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.level = level;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setParentId</span><span class="params">(Long parentId)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.parentId = parentId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Dept&#123;"</span> +</span><br><span class="line">                <span class="string">"id="</span> + id +</span><br><span class="line">                <span class="string">", name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", level='"</span> + level + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", parentId="</span> + parentId +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>部门的抽象类 - 提取部门需要展示的属性，同时方便以后部门类整改不受影响，保证可维护性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IDept</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">Long <span class="title">getId</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">String <span class="title">getName</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">Integer <span class="title">getLevel</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">Long <span class="title">getParentId</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">Boolean <span class="title">isRoot</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>包含部门的部门树</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeptNode</span> <span class="keyword">implements</span> <span class="title">IDept</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> IDept dept;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> List&lt;DeptNode&gt; children;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DeptNode</span><span class="params">(IDept dept)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.dept = dept;</span><br><span class="line">        <span class="keyword">this</span>.children = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Long <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> dept.getId();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> dept.getName();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getLevel</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> dept.getLevel();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Long <span class="title">getParentId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> dept.getParentId();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Boolean <span class="title">isRoot</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> dept.isRoot();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;DeptNode&gt; <span class="title">getChildren</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> children;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setChildren</span><span class="params">(List&lt;DeptNode&gt; children)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.children = children;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addNode</span><span class="params">(DeptNode node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.children.add(node);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">deptInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Dept&#123;"</span> +</span><br><span class="line">                <span class="string">"id="</span> + getId() +</span><br><span class="line">                <span class="string">", name='"</span> + getName() + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", level='"</span> + getLevel() + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", parentId="</span> + getParentId() +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试用例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ObjectMapper objectMapper = <span class="keyword">new</span> ObjectMapper();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> JsonProcessingException </span>&#123;</span><br><span class="line">        List&lt;Dept&gt; depts = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        Dept root = <span class="keyword">new</span> Dept(<span class="number">0L</span>, <span class="string">"0"</span>, <span class="number">0</span>, -<span class="number">1L</span>);</span><br><span class="line">        depts.add(root);</span><br><span class="line">        Long id = <span class="number">0L</span>;</span><br><span class="line">        <span class="keyword">for</span> (Long i = <span class="number">0L</span>; i &lt;= <span class="number">3L</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (Long j = <span class="number">0L</span>; j &lt; <span class="number">3L</span>; j++) &#123;</span><br><span class="line">                id++;</span><br><span class="line">                Dept child = <span class="keyword">new</span> Dept(id, id.toString(), j.intValue(), i);</span><br><span class="line">                depts.add(child);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        DeptNodeBuilder builder = <span class="keyword">new</span> DeptNodeBuilder();</span><br><span class="line">        DeptNode rootNode = builder.buildByIncrMem(depts);</span><br><span class="line"></span><br><span class="line">        System.out.println(objectMapper.writeValueAsString(rootNode));</span><br><span class="line"></span><br><span class="line">        DeptNode rootNode1 = builder.buildByIncrStack(depts);</span><br><span class="line">        System.out.println(objectMapper.writeValueAsString(rootNode1));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出结果</span></span><br><span class="line">&#123;<span class="string">"children"</span>:[&#123;<span class="string">"children"</span>:[&#123;<span class="string">"children"</span>:[],<span class="string">"name"</span>:<span class="string">"4"</span>,<span class="string">"id"</span>:<span class="number">4</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">0</span>,<span class="string">"parentId"</span>:<span class="number">1</span>&#125;,&#123;<span class="string">"children"</span>:[],<span class="string">"name"</span>:<span class="string">"5"</span>,<span class="string">"id"</span>:<span class="number">5</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">1</span>,<span class="string">"parentId"</span>:<span class="number">1</span>&#125;,&#123;<span class="string">"children"</span>:[],<span class="string">"name"</span>:<span class="string">"6"</span>,<span class="string">"id"</span>:<span class="number">6</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">2</span>,<span class="string">"parentId"</span>:<span class="number">1</span>&#125;],<span class="string">"name"</span>:<span class="string">"1"</span>,<span class="string">"id"</span>:<span class="number">1</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">0</span>,<span class="string">"parentId"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"children"</span>:[&#123;<span class="string">"children"</span>:[],<span class="string">"name"</span>:<span class="string">"7"</span>,<span class="string">"id"</span>:<span class="number">7</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">0</span>,<span class="string">"parentId"</span>:<span class="number">2</span>&#125;,&#123;<span class="string">"children"</span>:[],<span class="string">"name"</span>:<span class="string">"8"</span>,<span class="string">"id"</span>:<span class="number">8</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">1</span>,<span class="string">"parentId"</span>:<span class="number">2</span>&#125;,&#123;<span class="string">"children"</span>:[],<span class="string">"name"</span>:<span class="string">"9"</span>,<span class="string">"id"</span>:<span class="number">9</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">2</span>,<span class="string">"parentId"</span>:<span class="number">2</span>&#125;],<span class="string">"name"</span>:<span class="string">"2"</span>,<span class="string">"id"</span>:<span class="number">2</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">1</span>,<span class="string">"parentId"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"children"</span>:[&#123;<span class="string">"children"</span>:[],<span class="string">"name"</span>:<span class="string">"10"</span>,<span class="string">"id"</span>:<span class="number">10</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">0</span>,<span class="string">"parentId"</span>:<span class="number">3</span>&#125;,&#123;<span class="string">"children"</span>:[],<span class="string">"name"</span>:<span class="string">"11"</span>,<span class="string">"id"</span>:<span class="number">11</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">1</span>,<span class="string">"parentId"</span>:<span class="number">3</span>&#125;,&#123;<span class="string">"children"</span>:[],<span class="string">"name"</span>:<span class="string">"12"</span>,<span class="string">"id"</span>:<span class="number">12</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">2</span>,<span class="string">"parentId"</span>:<span class="number">3</span>&#125;],<span class="string">"name"</span>:<span class="string">"3"</span>,<span class="string">"id"</span>:<span class="number">3</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">2</span>,<span class="string">"parentId"</span>:<span class="number">0</span>&#125;],<span class="string">"name"</span>:<span class="string">"0"</span>,<span class="string">"id"</span>:<span class="number">0</span>,<span class="string">"root"</span>:<span class="keyword">true</span>,<span class="string">"level"</span>:<span class="number">0</span>,<span class="string">"parentId"</span>:-<span class="number">1</span>&#125;</span><br><span class="line">&#123;<span class="string">"children"</span>:[&#123;<span class="string">"children"</span>:[&#123;<span class="string">"children"</span>:[],<span class="string">"name"</span>:<span class="string">"4"</span>,<span class="string">"id"</span>:<span class="number">4</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">0</span>,<span class="string">"parentId"</span>:<span class="number">1</span>&#125;,&#123;<span class="string">"children"</span>:[],<span class="string">"name"</span>:<span class="string">"5"</span>,<span class="string">"id"</span>:<span class="number">5</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">1</span>,<span class="string">"parentId"</span>:<span class="number">1</span>&#125;,&#123;<span class="string">"children"</span>:[],<span class="string">"name"</span>:<span class="string">"6"</span>,<span class="string">"id"</span>:<span class="number">6</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">2</span>,<span class="string">"parentId"</span>:<span class="number">1</span>&#125;],<span class="string">"name"</span>:<span class="string">"1"</span>,<span class="string">"id"</span>:<span class="number">1</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">0</span>,<span class="string">"parentId"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"children"</span>:[&#123;<span class="string">"children"</span>:[],<span class="string">"name"</span>:<span class="string">"7"</span>,<span class="string">"id"</span>:<span class="number">7</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">0</span>,<span class="string">"parentId"</span>:<span class="number">2</span>&#125;,&#123;<span class="string">"children"</span>:[],<span class="string">"name"</span>:<span class="string">"8"</span>,<span class="string">"id"</span>:<span class="number">8</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">1</span>,<span class="string">"parentId"</span>:<span class="number">2</span>&#125;,&#123;<span class="string">"children"</span>:[],<span class="string">"name"</span>:<span class="string">"9"</span>,<span class="string">"id"</span>:<span class="number">9</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">2</span>,<span class="string">"parentId"</span>:<span class="number">2</span>&#125;],<span class="string">"name"</span>:<span class="string">"2"</span>,<span class="string">"id"</span>:<span class="number">2</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">1</span>,<span class="string">"parentId"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"children"</span>:[&#123;<span class="string">"children"</span>:[],<span class="string">"name"</span>:<span class="string">"10"</span>,<span class="string">"id"</span>:<span class="number">10</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">0</span>,<span class="string">"parentId"</span>:<span class="number">3</span>&#125;,&#123;<span class="string">"children"</span>:[],<span class="string">"name"</span>:<span class="string">"11"</span>,<span class="string">"id"</span>:<span class="number">11</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">1</span>,<span class="string">"parentId"</span>:<span class="number">3</span>&#125;,&#123;<span class="string">"children"</span>:[],<span class="string">"name"</span>:<span class="string">"12"</span>,<span class="string">"id"</span>:<span class="number">12</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">2</span>,<span class="string">"parentId"</span>:<span class="number">3</span>&#125;],<span class="string">"name"</span>:<span class="string">"3"</span>,<span class="string">"id"</span>:<span class="number">3</span>,<span class="string">"root"</span>:<span class="keyword">false</span>,<span class="string">"level"</span>:<span class="number">2</span>,<span class="string">"parentId"</span>:<span class="number">0</span>&#125;],<span class="string">"name"</span>:<span class="string">"0"</span>,<span class="string">"id"</span>:<span class="number">0</span>,<span class="string">"root"</span>:<span class="keyword">true</span>,<span class="string">"level"</span>:<span class="number">0</span>,<span class="string">"parentId"</span>:-<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
 </ul>
-</li>
-</ol>
-<h2 id="三、Redis基本数据类型"><a href="#三、Redis基本数据类型" class="headerlink" title="三、Redis基本数据类型"></a>三、Redis基本数据类型</h2><ol>
-<li><p>String</p>
-<p>字符串 string 是 Redis 最简单的数据结构。Redis 所有的数据结构都是以唯一的 key 字符串作为名称，然后通过这个唯一 key 值来获取相应的 value 数据。不同类型的数据结构的差异就在于 value 的结构不一样。字符串结构使用非常广泛，一个常见的用途就是<strong>缓存用户信息</strong>。我们将用户信息结构体使用 JSON 序列化成字符串，然后将序列化后的字符串塞进 Redis 来缓存。同样，取用户信息会经过一次反序列化的过程    </p>
-</li>
-<li><p>list</p>
-<p>Redis 的列表相当于 Java 语言里面的 LinkedList，注意它是链表而不是数组。这意味着 list 的插入和删除操作非常快，时间复杂度为 O(1)，但是索引定位很慢，时间复杂度为 O(n)，这点让人非常意外。 当列表弹出了最后一个元素之后，该数据结构自动被删除，内存被回收。</p>
-<p>Redis 的列表结构常用来做异步队列使用。将需要延后处理的任务结构体序列化成字符串塞进 Redis 的列表，另一个线程从这个列表中轮询数据进行处理。</p>
-</li>
-<li><p>hash</p>
-<p>Redis 的字典相当于 Java 语言里面的 HashMap，它是无序字典。内部实现结构上同 Java 的 HashMap 也是一致的，同样的<strong>数组 + 链表</strong>二维结构。第一维 hash 的数组位置碰撞时，就会将碰撞的元素使用链表串接起来。</p>
-<p>hash 结构也可以用来存储用户信息，不同于字符串一次性需要全部序列化整个对象，hash 可以对 用户结构中的每个字段单独存储。这样当我们需要获取用户信息时可以进行部分获取。而以整个字符串的形式去保存用户信息的话就只能一次性全部读取，这样就会比较浪费网络流量。 hash 也有缺点，hash 结构的存储消耗要高于单个字符串，到底该使用 hash 还是字符串，需要根据实际情况再三权衡。</p>
-</li>
-<li><p>set</p>
-<p>Redis 的集合相当于 Java 语言里面的 HashSet，它内部的键值对是无序的唯一的。它的内部实现相当于一个特殊的字典，字典中所有的 value 都是一个值NULL。 当集合中最后一个元素移除之后，数据结构自动删除，内存被回收。 </p>
-</li>
-<li><p>zset</p>
-<p>zset 似于 Java 的 SortedSet 和 HashMap 的结合体，一方面它是一个 set，保证了内部 value 的唯一性，另一方面它可以给每个 value 赋予一个 score，代表这个 value 的排序权重。</p>
-<p>zset 可以用来存粉丝列表，value 值是粉丝的用户 ID，score 是关注时间。我们可以对粉丝列表按关注时间进行排序。 </p>
-<p>zset 还可以用来存储学生的成绩，value 值是学生的 ID，score 是他的考试成绩。我们可以对成绩按分数进行排序就可以得到他的名次。</p>
-</li>
-</ol>
-<h2 id="四、Redis命令注意点"><a href="#四、Redis命令注意点" class="headerlink" title="四、Redis命令注意点"></a>四、Redis命令注意点</h2><p>尽量不要使用<strong>keys</strong>作为模糊查询redis中的键，而是使用<strong>scan</strong>。</p>
-<p>理由：</p>
-<ol>
-<li>因为Redis是单线程，如果Redis的key有1000W的话，使用keys模糊查询查询的时间<strong>很高</strong>，线程<strong>阻塞</strong>，其他线程命令就无法执行，降低性能。</li>
-<li>使用scan<strong>，通过<code>scan 0 match &lt;关键字&gt; count &lt;数量&gt;</code>，能够</strong>根据关键字<strong>获取</strong>规定数量<strong>的</strong>键值**。可以多次使用该命令迭代获取全部数据，每次命令执行时间短，不会过多的阻塞其他线程</li>
-</ol>
 
       
     </div>
@@ -588,12 +575,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>深入理解Redis--Redis基本介绍</a></p>
+  <p><span>本文标题:</span>设计模式-组合模式</a></p>
   <p><span>文章作者:</span>Deschen</a></p>
-  <p><span>发布时间:</span>2019年06月10日 - 21:48:47</p>
-  <p><span>最后更新:</span>2021年02月24日 - 17:32:01</p>
-  <p><span>原始链接:</span><a href="/2019/06/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redi--Redis%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" title="深入理解Redis--Redis基本介绍">https://www.deschen.cn/2019/06/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redi--Redis%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.deschen.cn/2019/06/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redi--Redis%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2022年02月03日 - 22:11:21</p>
+  <p><span>最后更新:</span>2023年05月09日 - 10:39:41</p>
+  <p><span>原始链接:</span><a href="/2022/02/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/" title="设计模式-组合模式">https://www.deschen.cn/2022/02/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.deschen.cn/2022/02/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -664,7 +651,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/redis/" rel="tag"># redis</a>
+            <a href="/tags/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/" rel="tag"># 组合模式</a>
           
         </div>
       
@@ -677,8 +664,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/23/Security%E7%AC%94%E8%AE%B0-%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%8F%8A%E8%AE%A4%E8%AF%81%E6%B5%81%E7%A8%8B/" rel="next" title="Security笔记---基本原理及认证流程">
-                <i class="fa fa-chevron-left"></i> Security笔记---基本原理及认证流程
+              <a href="/2022/02/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/" rel="next" title="设计模式-装饰者模式">
+                <i class="fa fa-chevron-left"></i> 设计模式-装饰者模式
               </a>
             
           </div>
@@ -686,10 +673,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/12/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3Redis-Redis%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86/" rel="prev" title="深入了解Redis--Redis核心原理">
-                深入了解Redis--Redis核心原理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -944,7 +927,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深入理解Redis–Redis基本介绍"><span class="nav-number">1.</span> <span class="nav-text">深入理解Redis–Redis基本介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Redis简介"><span class="nav-number">1.1.</span> <span class="nav-text">一、Redis简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Redis与Mecache区别"><span class="nav-number">1.2.</span> <span class="nav-text">二、Redis与Mecache区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Redis基本数据类型"><span class="nav-number">1.3.</span> <span class="nav-text">三、Redis基本数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、Redis命令注意点"><span class="nav-number">1.4.</span> <span class="nav-text">四、Redis命令注意点</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#设计模式-组合模式"><span class="nav-number">1.</span> <span class="nav-text">设计模式-组合模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、详解"><span class="nav-number">1.1.</span> <span class="nav-text">一、详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、代码"><span class="nav-number">1.2.</span> <span class="nav-text">二、代码</span></a></li></ol></li></ol></div>
             
 
           </div>
