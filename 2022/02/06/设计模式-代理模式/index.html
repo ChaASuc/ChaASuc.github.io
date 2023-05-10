@@ -117,23 +117,18 @@
 
 
 
-  <meta name="description" content="Maven生命周期[toc] 一、Maven生命周期的定义Maven的生命周期就是为了对所有的构建过程进行抽象和统一。包括项目的清理，初始化，编译，测试，打包，集成测试，验证，部署和生成站点等构建步骤。 二、Maven三套独立的生命周期 Maven提供了三套独立的生命周期：clean, default 和 site  clean生命周期：清理项目，删除前一次构建在target文件夹下生成的各个Ja">
+  <meta name="description" content="设计模式-代理模式一、详解 概念: 定义一个对象的代理类，通过代理类控制对象的访问 主要用途 远程代理：代理不同空间的对象，隐藏对象具体细节 虚拟代理：延迟加载对象，对象创建成本高，通过代理模式延迟创建   代码：代理类、被代理的对象 与装饰者模式的区别 相同点：结构上跟装饰者模式相似，都是通过包装对象来增强功能，不需要修改原有的对象结构 不同点： 代理模式：控制对象的访问，即在访问对象前和后，执">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Maven生命周期">
-<meta property="og:url" content="https://www.deschen.cn/2019/03/28/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/index.html">
+<meta property="og:title" content="设计模式-代理模式">
+<meta property="og:url" content="https://www.deschen.cn/2022/02/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Deschen Blog">
-<meta property="og:description" content="Maven生命周期[toc] 一、Maven生命周期的定义Maven的生命周期就是为了对所有的构建过程进行抽象和统一。包括项目的清理，初始化，编译，测试，打包，集成测试，验证，部署和生成站点等构建步骤。 二、Maven三套独立的生命周期 Maven提供了三套独立的生命周期：clean, default 和 site  clean生命周期：清理项目，删除前一次构建在target文件夹下生成的各个Ja">
+<meta property="og:description" content="设计模式-代理模式一、详解 概念: 定义一个对象的代理类，通过代理类控制对象的访问 主要用途 远程代理：代理不同空间的对象，隐藏对象具体细节 虚拟代理：延迟加载对象，对象创建成本高，通过代理模式延迟创建   代码：代理类、被代理的对象 与装饰者模式的区别 相同点：结构上跟装饰者模式相似，都是通过包装对象来增强功能，不需要修改原有的对象结构 不同点： 代理模式：控制对象的访问，即在访问对象前和后，执">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20181107212356793.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI1ODI3ODQ1,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20181107212422710.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI1ODI3ODQ1,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210309163835172.png">
-<meta property="article:published_time" content="2019-03-28T06:25:33.000Z">
-<meta property="article:modified_time" content="2022-02-12T14:52:31.605Z">
+<meta property="article:published_time" content="2022-02-06T14:40:20.000Z">
+<meta property="article:modified_time" content="2023-05-10T15:28:00.155Z">
 <meta property="article:author" content="Deschen">
-<meta property="article:tag" content="Java开发">
-<meta property="article:tag" content="个人博客">
+<meta property="article:tag" content="代理模式">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20181107212356793.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI1ODI3ODQ1,size_16,color_FFFFFF,t_70">
 
 
 
@@ -142,7 +137,7 @@
 
 
 
-  <link rel="canonical" href="https://www.deschen.cn/2019/03/28/Maven生命周期/"/>
+  <link rel="canonical" href="https://www.deschen.cn/2022/02/06/设计模式-代理模式/"/>
 
 
 
@@ -152,7 +147,7 @@
   };
 </script>
 
-  <title>Maven生命周期 | Deschen Blog</title>
+  <title>设计模式-代理模式 | Deschen Blog</title>
   
 
 
@@ -377,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.deschen.cn/2019/03/28/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
+    <link itemprop="mainEntityOfPage" href="https://www.deschen.cn/2022/02/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Deschen">
@@ -394,7 +389,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Maven生命周期
+          <h1 class="post-title" itemprop="name headline">设计模式-代理模式
               
             
           </h1>
@@ -419,7 +414,7 @@
                 
               
 
-              <time title="创建时间：2019-03-28 14:25:33" itemprop="dateCreated datePublished" datetime="2019-03-28T14:25:33+08:00">2019-03-28</time>
+              <time title="创建时间：2022-02-06 22:40:20" itemprop="dateCreated datePublished" datetime="2022-02-06T22:40:20+08:00">2022-02-06</time>
             
 
             
@@ -436,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2022-02-12 22:52:31" itemprop="dateModified" datetime="2022-02-12T22:52:31+08:00">2022-02-12</time>
+                <time title="修改时间：2023-05-10 23:28:00" itemprop="dateModified" datetime="2023-05-10T23:28:00+08:00">2023-05-10</time>
               
             
           </span>
@@ -453,7 +448,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Maven/" itemprop="url" rel="index"><span itemprop="name">Maven</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
 
                 
                 
@@ -468,8 +463,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/03/28/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/03/28/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" itemprop="commentCount"></span>
+                <a href="/2022/02/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2022/02/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -477,7 +472,7 @@
 
           
           
-             <span id="/2019/03/28/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="leancloud_visitors" data-flag-title="Maven生命周期">
+             <span id="/2022/02/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式-代理模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -507,7 +502,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">5 分钟</span>
+                <span title="阅读时长">35 分钟</span>
               
             </div>
           
@@ -527,68 +522,36 @@
       
 
       
-        <h1 id="Maven生命周期"><a href="#Maven生命周期" class="headerlink" title="Maven生命周期"></a>Maven生命周期</h1><p>[toc]</p>
-<h2 id="一、Maven生命周期的定义"><a href="#一、Maven生命周期的定义" class="headerlink" title="一、Maven生命周期的定义"></a>一、Maven生命周期的定义</h2><p>Maven的生命周期就是为了对所有的构建过程进行抽象和统一。包括项目的<strong>清理，初始化，编译，测试，打包，集成测试，验证，部署和生成站点</strong>等构建步骤。</p>
-<h2 id="二、Maven三套独立的生命周期"><a href="#二、Maven三套独立的生命周期" class="headerlink" title="二、Maven三套独立的生命周期"></a>二、Maven三套独立的生命周期</h2><ul>
-<li>Maven提供了三套独立的生命周期：<strong>clean</strong>, <strong>default</strong> 和 <strong>site</strong> </li>
-<li>clean生命周期：清理项目，删除前一次构建在target文件夹下生成的各个Jar包等，<ul>
-<li>三个步骤<ul>
-<li>pre-clean：执行一些清理前需要完成的工作</li>
-<li>clean：清理上一次构建生成的文件</li>
-<li>post-clean：执行一些清理后需要完成的工作</li>
+        <h1 id="设计模式-代理模式"><a href="#设计模式-代理模式" class="headerlink" title="设计模式-代理模式"></a>设计模式-代理模式</h1><h2 id="一、详解"><a href="#一、详解" class="headerlink" title="一、详解"></a>一、详解</h2><ul>
+<li>概念: 定义一个对象的<strong>代理类</strong>，通过<strong>代理类</strong>控制<strong>对象的访问</strong></li>
+<li>主要用途<ul>
+<li>远程代理：代理不同空间的对象，隐藏对象具体细节</li>
+<li>虚拟代理：延迟加载对象，对象创建成本高，通过代理模式延迟创建</li>
 </ul>
 </li>
-<li>举例：<ul>
-<li><strong>mvn clean</strong> 就是在调用clean生命周期的clean阶段，实际执行了<strong>pre-clean</strong>和<strong>clean</strong>阶段</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>default生命周期：定义了真正构建项目中需要执行的所有步骤<ul>
-<li>八个步骤<ul>
-<li>validate：验证工程是否正确，所有需要的资源是否可用。</li>
-<li>compile：编译项目的源代码。  </li>
-<li>test：使用合适的单元测试框架来测试已编译的源代码。这些测试不需要已打包和布署。</li>
-<li>Package：把已编译的代码打包成可发布的格式，比如jar。</li>
-<li>integration-test：如有需要，将包处理和发布到一个能够进行集成测试的环境。</li>
-<li>verify：运行所有检查，验证包是否有效且达到质量标准。</li>
-<li>install：把包安装到maven本地仓库，可以被其他工程作为依赖来使用。</li>
-<li>Deploy：在集成或者发布环境下执行，将最终版本的包拷贝到远程的repository，使得其他的开发者或者工程可以共享。</li>
-</ul>
-</li>
-<li>举例：<ul>
-<li>mvn test 就是在调用default生命周期的test阶段，实际执行了validate到test阶段之间的所有阶段</li>
-<li>mvn clean package 就是在调用clean生命周期的clean阶段和default生命周期的package阶段，实际执行clean生命周期pre-clean和clean阶段和default生命周期validate到package阶段之间的所有阶段</li>
+<li>代码：代理类、被代理的对象</li>
+<li>与装饰者模式的区别<ul>
+<li>相同点：<strong>结构</strong>上跟装饰者模式<strong>相似</strong>，都是通过<strong>包装对象</strong>来增强功能，不需要修改原有的对象结构</li>
+<li>不同点：<ul>
+<li>代理模式：控制对象的访问，即在访问对象前和后，执行额外操作</li>
+<li>装饰者模式：除了增加额外操作外，还能<strong>修改原有的行为</strong></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>site生命周期：是建立和发布项目站点，Maven可以给予pom所包含的信息，生成一个站点，方便团队交流和发布项目信息<ul>
-<li>四个步骤<ul>
-<li>pre- site </li>
-<li>site：生成项目站点文档</li>
-<li>post-site</li>
-<li>site-deploy：将生成的项目站点发布到服务器上</li>
 </ul>
+<h2 id="二、代码"><a href="#二、代码" class="headerlink" title="二、代码"></a>二、代码</h2><ul>
+<li><p>以装饰者模式的用户服务为例：记录日志、保存加密的用户信息、展示解密的用户信息</p>
 </li>
-<li>mvn clean deploy site-deploy 就是在调用clean生命周期的clean阶段、default生命周期的package阶段和site生命周期的site-deploy，实际执行了clean生命周期pre-clean到clean阶段、default生命周期validate到package阶段、site生命周期pre-site到site-deploy阶段</li>
-</ul>
+<li><p>原有的类/接口，被代理的对象<code>UserService</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用户类</span></span><br><span class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">      <span class="keyword">private</span> String account;</span><br><span class="line">      <span class="keyword">private</span> String password;</span><br><span class="line">      <span class="keyword">private</span> String mobile;</span><br><span class="line">  </span><br><span class="line">      <span class="function"><span class="keyword">private</span> <span class="title">User</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      &#125;</span><br><span class="line">  </span><br><span class="line">      <span class="comment">// getter 和 toString 方法</span></span><br><span class="line">      <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Builder</span> </span>&#123;</span><br><span class="line">          <span class="keyword">private</span> User user;</span><br><span class="line">  </span><br><span class="line">          <span class="function"><span class="keyword">public</span> <span class="title">Builder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">              user = <span class="keyword">new</span> User();</span><br><span class="line">          &#125;</span><br><span class="line">  </span><br><span class="line">          <span class="function"><span class="keyword">public</span> Builder <span class="title">setAccount</span><span class="params">(String account)</span> </span>&#123;</span><br><span class="line">              user.account = account;</span><br><span class="line">              <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">          &#125;</span><br><span class="line">  </span><br><span class="line">          <span class="function"><span class="keyword">public</span> Builder <span class="title">setPassword</span><span class="params">(String password)</span> </span>&#123;</span><br><span class="line">              user.password = password;</span><br><span class="line">              <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">          &#125;</span><br><span class="line">  </span><br><span class="line">          <span class="function"><span class="keyword">public</span> Builder <span class="title">setMobile</span><span class="params">(String mobile)</span> </span>&#123;</span><br><span class="line">              user.mobile = mobile;</span><br><span class="line">              <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">          &#125;</span><br><span class="line">  </span><br><span class="line">          <span class="function"><span class="keyword">public</span> User <span class="title">builder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">              <span class="keyword">return</span> user;</span><br><span class="line">          &#125;</span><br><span class="line">  </span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 用户服务接口</span></span><br><span class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">      <span class="comment">// 创建用户</span></span><br><span class="line">      <span class="function"><span class="keyword">void</span> <span class="title">createUser</span><span class="params">(String account, String password, String mobile)</span></span>;</span><br><span class="line">  </span><br><span class="line">      <span class="comment">// 展示用户信息</span></span><br><span class="line">      <span class="function">User <span class="title">showUserInfo</span><span class="params">(String account)</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 用户服务实现</span></span><br><span class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">      <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;String, User&gt; storage = <span class="keyword">new</span> ConcurrentHashMap&lt;&gt;(<span class="number">16</span>);</span><br><span class="line">      <span class="meta">@Override</span></span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">createUser</span><span class="params">(String account, String password, String mobile)</span> </span>&#123;</span><br><span class="line">          User.Builder builder = <span class="keyword">new</span> User.Builder();</span><br><span class="line">          User user = builder.setAccount(account)</span><br><span class="line">                  .setPassword(password)</span><br><span class="line">                  .setMobile(mobile).builder();</span><br><span class="line">          storage.put(account, user);</span><br><span class="line">          System.out.println(<span class="string">"用户创建成功 user: "</span> + user.toString());</span><br><span class="line">      &#125;</span><br><span class="line">  </span><br><span class="line">      <span class="meta">@Override</span></span><br><span class="line">      <span class="function"><span class="keyword">public</span> User <span class="title">showUserInfo</span><span class="params">(String account)</span> </span>&#123;</span><br><span class="line">          User user = storage.get(account);</span><br><span class="line">          <span class="keyword">return</span> user;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 原先用户服务用例</span></span><br><span class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">          UserService userService = <span class="keyword">new</span> UserServiceImpl();</span><br><span class="line">          userService.createUser(<span class="string">"admin"</span>, <span class="string">"admin123"</span>, <span class="string">"15113088283"</span>);</span><br><span class="line">          User admin = userService.showUserInfo(<span class="string">"admin"</span>);</span><br><span class="line">          System.out.println(<span class="string">"用户信息 admin: "</span> + admin.toString());</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">// 输出结果</span></span><br><span class="line">用户创建成功 user: User&#123;account=<span class="string">'admin'</span>, password=<span class="string">'admin123'</span>, mobile=<span class="string">'15113088283'</span>&#125;</span><br><span class="line">用户信息 admin: User&#123;account=<span class="string">'admin'</span>, password=<span class="string">'admin123'</span>, mobile=<span class="string">'15113088283'</span>&#125;</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<h2 id="三、Maven的插件"><a href="#三、Maven的插件" class="headerlink" title="三、Maven的插件"></a>三、Maven的插件</h2><blockquote>
-<p> 生命周期的各个阶段都是抽象的概念，真正干活的是一个个的插件，插件是以独立的构件形式存在，我们将maven的生命周期的各个阶段与maven的插件进行绑定，当我们执行mvn命令其实就是在指挥着一个个的插件在干活</p>
-</blockquote>
-<ul>
-<li><p>Maven生命周期与插件绑定</p>
-<p><img src="https://img-blog.csdnimg.cn/20181107212356793.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI1ODI3ODQ1,size_16,color_FFFFFF,t_70" alt="img"></p>
-<p><img src="https://img-blog.csdnimg.cn/20181107212422710.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI1ODI3ODQ1,size_16,color_FFFFFF,t_70" alt="img"></p>
+<li><p>代理类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 操作用户外，新增日志功能、保存加密用户信息和展示解密用户功能</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceProxy</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> UserService userService;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UserServiceProxy</span><span class="params">(UserService userService)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.userService = userService;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">encrypt</span><span class="params">(String data)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Base64Encryptor.encrypt(data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">decrypt</span><span class="params">(String data)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Base64Encryptor.decrypt(data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"日志记录 调用方法名"</span> + method.getName());</span><br><span class="line">        Object result;</span><br><span class="line">        <span class="keyword">switch</span> (method.getName()) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"createUser"</span>: &#123;</span><br><span class="line">                args[<span class="number">1</span>] = encrypt((String) args[<span class="number">1</span>]);</span><br><span class="line">                args[<span class="number">2</span>] = encrypt((String) args[<span class="number">2</span>]);</span><br><span class="line">                result = method.invoke(userService, args);</span><br><span class="line">            &#125;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"showUserInfo"</span>: &#123;</span><br><span class="line">                result = method.invoke(userService, args);</span><br><span class="line">                User user = (User) result;</span><br><span class="line">                String password = decrypt(user.getPassword());</span><br><span class="line">                String mobile = decrypt(user.getMobile());</span><br><span class="line">                <span class="comment">// 拷贝到新的对象，并返回</span></span><br><span class="line">                user = <span class="keyword">new</span> User.Builder()</span><br><span class="line">                        .setAccount(user.getAccount())</span><br><span class="line">                        .setPassword(password)</span><br><span class="line">                        .setMobile(mobile).builder();</span><br><span class="line">                System.out.println(<span class="string">"解密后的用户信息 user: "</span> + result.toString());</span><br><span class="line">                result = user;</span><br><span class="line">            &#125;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                result = method.invoke(userService, args);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"日志记录 运行结束 方法名"</span> + method.getName());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>举例：</p>
-<ul>
-<li><p>mvn clean package为例，执行clean生命周期pre-clean和clean阶段和default生命周期validate到package阶段之间的所有阶段。对应的插件执行过程（红框标识）</p>
-<p><img src="https://deschen-storage.oss-cn-guangzhou.aliyuncs.com/image-20210309163835172.png" alt="image-20210309163835172"></p>
-</li>
-</ul>
+<li><p>用例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        UserService userService = <span class="keyword">new</span> UserServiceImpl();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 添加用户加解密功能</span></span><br><span class="line">        UserServiceProxy proxy = <span class="keyword">new</span> UserServiceProxy(userService);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建动态代理</span></span><br><span class="line">        userService = (UserService) Proxy.newProxyInstance(userService.getClass().getClassLoader(),</span><br><span class="line">                userService.getClass().getInterfaces(), proxy);</span><br><span class="line">        userService.createUser(<span class="string">"admin"</span>, <span class="string">"admin123"</span>, <span class="string">"15113088283"</span>);</span><br><span class="line">        User admin = userService.showUserInfo(<span class="string">"admin"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出结果</span></span><br><span class="line">日志记录 调用方法名createUser</span><br><span class="line">用户创建成功 user: User&#123;account=<span class="string">'admin'</span>, password=<span class="string">'YWRtaW4xMjM='</span>, mobile=<span class="string">'MTUxMTMwODgyODM='</span>&#125;</span><br><span class="line">日志记录 运行结束 方法名createUser</span><br><span class="line">日志记录 调用方法名showUserInfo</span><br><span class="line">解密后的用户信息 user: User&#123;account=<span class="string">'admin'</span>, password=<span class="string">'YWRtaW4xMjM='</span>, mobile=<span class="string">'MTUxMTMwODgyODM='</span>&#125;</span><br><span class="line">日志记录 运行结束 方法名showUserInfo</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 
@@ -612,12 +575,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>Maven生命周期</a></p>
+  <p><span>本文标题:</span>设计模式-代理模式</a></p>
   <p><span>文章作者:</span>Deschen</a></p>
-  <p><span>发布时间:</span>2019年03月28日 - 14:25:33</p>
-  <p><span>最后更新:</span>2022年02月12日 - 22:52:31</p>
-  <p><span>原始链接:</span><a href="/2019/03/28/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="Maven生命周期">https://www.deschen.cn/2019/03/28/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.deschen.cn/2019/03/28/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2022年02月06日 - 22:40:20</p>
+  <p><span>最后更新:</span>2023年05月10日 - 23:28:00</p>
+  <p><span>原始链接:</span><a href="/2022/02/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" title="设计模式-代理模式">https://www.deschen.cn/2022/02/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.deschen.cn/2022/02/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -686,6 +649,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" rel="tag"># 代理模式</a>
+          
+        </div>
+      
 
       
       
@@ -695,8 +664,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/17/springboot%E8%87%AA%E5%8A%A8%E5%8C%96%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86/" rel="next" title="SpringBoot自动化配置原理">
-                <i class="fa fa-chevron-left"></i> SpringBoot自动化配置原理
+              <a href="/2022/02/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" rel="next" title="设计模式-享元模式">
+                <i class="fa fa-chevron-left"></i> 设计模式-享元模式
               </a>
             
           </div>
@@ -704,10 +673,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/12/Restful%E9%A3%8E%E6%A0%BC%E8%AE%BE%E8%AE%A1/" rel="prev" title="Restful风格设计">
-                Restful风格设计 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -968,7 +933,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Maven生命周期"><span class="nav-number">1.</span> <span class="nav-text">Maven生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Maven生命周期的定义"><span class="nav-number">1.1.</span> <span class="nav-text">一、Maven生命周期的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Maven三套独立的生命周期"><span class="nav-number">1.2.</span> <span class="nav-text">二、Maven三套独立的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Maven的插件"><span class="nav-number">1.3.</span> <span class="nav-text">三、Maven的插件</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#设计模式-代理模式"><span class="nav-number">1.</span> <span class="nav-text">设计模式-代理模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、详解"><span class="nav-number">1.1.</span> <span class="nav-text">一、详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、代码"><span class="nav-number">1.2.</span> <span class="nav-text">二、代码</span></a></li></ol></li></ol></div>
             
 
           </div>
