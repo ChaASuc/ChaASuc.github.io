@@ -117,17 +117,17 @@
 
 
 
-  <meta name="description" content="深入理解Redis–解决Redis缓存穿透、雪崩、击穿问题一、缓存穿透1、介绍缓存穿透就是访问一个不存在的数据时，缓存没有命中，而访问数据库，在高并发情况下，数据库又因为压力而宕机 2、解决方案布隆过滤器  简介：布隆过滤器实际上是一个很长的二进制向量和一系列随机映射函数。布隆过滤器可以用于检索一个元素是否在一个集合中。它的优点是空间效率和查询时间都远远超过一般的算法，缺点是有一定的误识别率和删除">
+  <meta name="description" content="设计模式-观察者模式一、详解 概念：定义一个主题和一组观察者，将观察者注入主题中，主题状态改变通知观察者对象 主要用途： 用于多个对象之间的消息传递场景 观察对象状态变化场景   代码：主题类、观察者接口、具体观察者 PS：在Web项目中，观察者模式主要被消息中间件替代，因为观察者模式无法物理上解耦  二、代码 文件服务：文件上传、下载时，索引服务要新增、删除索引，并通知相关人员  主题：文件服务">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解Redis--解决Redis缓存穿透、雪崩、击穿问题">
-<meta property="og:url" content="https://www.deschen.cn/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="设计模式-观察者模式">
+<meta property="og:url" content="https://www.deschen.cn/2022/02/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Deschen Blog">
-<meta property="og:description" content="深入理解Redis–解决Redis缓存穿透、雪崩、击穿问题一、缓存穿透1、介绍缓存穿透就是访问一个不存在的数据时，缓存没有命中，而访问数据库，在高并发情况下，数据库又因为压力而宕机 2、解决方案布隆过滤器  简介：布隆过滤器实际上是一个很长的二进制向量和一系列随机映射函数。布隆过滤器可以用于检索一个元素是否在一个集合中。它的优点是空间效率和查询时间都远远超过一般的算法，缺点是有一定的误识别率和删除">
+<meta property="og:description" content="设计模式-观察者模式一、详解 概念：定义一个主题和一组观察者，将观察者注入主题中，主题状态改变通知观察者对象 主要用途： 用于多个对象之间的消息传递场景 观察对象状态变化场景   代码：主题类、观察者接口、具体观察者 PS：在Web项目中，观察者模式主要被消息中间件替代，因为观察者模式无法物理上解耦  二、代码 文件服务：文件上传、下载时，索引服务要新增、删除索引，并通知相关人员  主题：文件服务">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-06-28T06:25:33.000Z">
-<meta property="article:modified_time" content="2020-02-12T07:05:18.701Z">
+<meta property="article:published_time" content="2022-02-09T13:11:12.000Z">
+<meta property="article:modified_time" content="2023-05-12T09:00:33.903Z">
 <meta property="article:author" content="Deschen">
-<meta property="article:tag" content="JVM">
+<meta property="article:tag" content="观察者模式">
 <meta name="twitter:card" content="summary">
 
 
@@ -137,7 +137,7 @@
 
 
 
-  <link rel="canonical" href="https://www.deschen.cn/2019/06/28/深入理解Redis-解决Redis缓存穿透、雪崩、击穿问题/"/>
+  <link rel="canonical" href="https://www.deschen.cn/2022/02/09/设计模式-观察者模式/"/>
 
 
 
@@ -147,7 +147,7 @@
   };
 </script>
 
-  <title>深入理解Redis--解决Redis缓存穿透、雪崩、击穿问题 | Deschen Blog</title>
+  <title>设计模式-观察者模式 | Deschen Blog</title>
   
 
 
@@ -372,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.deschen.cn/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="https://www.deschen.cn/2022/02/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Deschen">
@@ -389,7 +389,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">深入理解Redis--解决Redis缓存穿透、雪崩、击穿问题
+          <h1 class="post-title" itemprop="name headline">设计模式-观察者模式
               
             
           </h1>
@@ -414,7 +414,7 @@
                 
               
 
-              <time title="创建时间：2019-06-28 14:25:33" itemprop="dateCreated datePublished" datetime="2019-06-28T14:25:33+08:00">2019-06-28</time>
+              <time title="创建时间：2022-02-09 21:11:12" itemprop="dateCreated datePublished" datetime="2022-02-09T21:11:12+08:00">2022-02-09</time>
             
 
             
@@ -431,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-02-12 15:05:18" itemprop="dateModified" datetime="2020-02-12T15:05:18+08:00">2020-02-12</time>
+                <time title="修改时间：2023-05-12 17:00:33" itemprop="dateModified" datetime="2023-05-12T17:00:33+08:00">2023-05-12</time>
               
             
           </span>
@@ -448,7 +448,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
 
                 
                 
@@ -463,8 +463,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/" itemprop="commentCount"></span>
+                <a href="/2022/02/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2022/02/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -472,7 +472,7 @@
 
           
           
-             <span id="/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="深入理解Redis--解决Redis缓存穿透、雪崩、击穿问题">
+             <span id="/2022/02/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式-观察者模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -502,7 +502,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">7 分钟</span>
+                <span title="阅读时长">43 分钟</span>
               
             </div>
           
@@ -522,22 +522,32 @@
       
 
       
-        <h1 id="深入理解Redis–解决Redis缓存穿透、雪崩、击穿问题"><a href="#深入理解Redis–解决Redis缓存穿透、雪崩、击穿问题" class="headerlink" title="深入理解Redis–解决Redis缓存穿透、雪崩、击穿问题"></a>深入理解Redis–解决Redis缓存穿透、雪崩、击穿问题</h1><h2 id="一、缓存穿透"><a href="#一、缓存穿透" class="headerlink" title="一、缓存穿透"></a>一、缓存穿透</h2><h3 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h3><p>缓存穿透就是访问一个不存在的数据时，缓存没有命中，而访问数据库，在高并发情况下，数据库又因为压力而宕机</p>
-<h3 id="2、解决方案"><a href="#2、解决方案" class="headerlink" title="2、解决方案"></a>2、解决方案</h3><p>布隆过滤器</p>
-<ul>
-<li>简介：布隆过滤器实际上是一个很长的二进制向量和一系列随机映射函数。布隆过滤器可以用于检索一个元素是否在一个集合中。它的优点是空间效率和查询时间都远远超过一般的算法，缺点是有一定的误识别率和删除困难。</li>
-<li>原理：当一个元素被加入集合时，通过K个散列函数将这个元素映射成一个位数组中的K个点，把它们置为1。检索时，我们只要看看这些点是不是都是1就（大约）知道集合中有没有它了：如果这些点有任何一个0，则被检元素一定不在；如果都是1，则被检元素很可能在。</li>
-<li>优点：相比于其它的数据结构，布隆过滤器在空间和时间方面都有巨大的优势。布隆过滤器存储空间和插入/查询时间都是常数（O(k)）。而且它不存储元素本身，在某些对保密要求非常严格的场合有优势。</li>
-<li>缺点：一定的误识别率和删除困难。<br>结合以上几点及去重需求（容忍误判，会误判在，在则丢，无妨），决定使用BlomFilter。</li>
+        <h1 id="设计模式-观察者模式"><a href="#设计模式-观察者模式" class="headerlink" title="设计模式-观察者模式"></a>设计模式-观察者模式</h1><h2 id="一、详解"><a href="#一、详解" class="headerlink" title="一、详解"></a>一、详解</h2><ul>
+<li>概念：定义一个<strong>主题</strong>和<strong>一组观察者</strong>，将观察者注入主题中，主题状态改变<strong>通知</strong>观察者对象</li>
+<li>主要用途：<ul>
+<li>用于多个对象之间的消息传递场景</li>
+<li>观察对象状态变化场景</li>
 </ul>
-<h2 id="二、缓存雪崩"><a href="#二、缓存雪崩" class="headerlink" title="二、缓存雪崩"></a>二、缓存雪崩</h2><h3 id="1、介绍-1"><a href="#1、介绍-1" class="headerlink" title="1、介绍"></a>1、介绍</h3><p> 在缓存时设置相同的过期时间，导致缓存在某一时刻同时失效，请求全部转发到DB，数据库瞬时压力过重雪崩。 </p>
-<h3 id="2、解决方案-1"><a href="#2、解决方案-1" class="headerlink" title="2、解决方案"></a>2、解决方案</h3><p>缓存失效时间分散开，比如我们可以在原有的失效时间基础上增加一个随机值，比如1-5分钟随机，这样每一个缓存的过期时间的重复率就会降低，就很难引发集体失效的事件。</p>
-<h2 id="三、缓存击穿"><a href="#三、缓存击穿" class="headerlink" title="三、缓存击穿"></a>三、缓存击穿</h2><h3 id="1、介绍-2"><a href="#1、介绍-2" class="headerlink" title="1、介绍"></a>1、介绍</h3><p>某个数据设置过期时间，而该数据是被高并发访问的热点数据，一旦过期，可能就会造成缓存被击穿的可能</p>
-<h3 id="2、解决方案-2"><a href="#2、解决方案-2" class="headerlink" title="2、解决方案"></a>2、解决方案</h3><ul>
-<li><p>使用互斥锁解决</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">get</span><span class="params">(key)</span> </span>&#123;  </span><br><span class="line">      String value = redis.get(key);  </span><br><span class="line">      <span class="keyword">if</span> (value == <span class="keyword">null</span>) &#123; <span class="comment">//代表缓存值过期  </span></span><br><span class="line">          <span class="comment">//设置3min的超时，防止del操作失败的时候，下次缓存过期一直不能load db  </span></span><br><span class="line">          <span class="keyword">if</span> (redis.setnx(key_mutex, <span class="number">1</span>, <span class="number">3</span> * <span class="number">60</span>) == <span class="number">1</span>) &#123;  <span class="comment">//代表设置成功  </span></span><br><span class="line">               value = db.get(key);  </span><br><span class="line">               redis.set(key, value, expire_secs);  </span><br><span class="line">               redis.del(key_mutex);  </span><br><span class="line">              &#125; <span class="keyword">else</span> &#123;  <span class="comment">//这个时候代表同时候的其他线程已经load db并回设到缓存了，这时候重试获取缓存值即可  </span></span><br><span class="line">                      sleep(<span class="number">50</span>);  </span><br><span class="line">                      get(key);  <span class="comment">//重试  </span></span><br><span class="line">              &#125;  </span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">              <span class="keyword">return</span> value;        </span><br><span class="line">          &#125;  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>将该数据不设置过期时间，就不会造成缓存击穿问题</p>
+<li>代码：主题类、观察者接口、具体观察者</li>
+<li>PS：在Web项目中，观察者模式主要被<strong>消息中间件替代</strong>，因为观察者模式无法物理上解耦</li>
+</ul>
+<h2 id="二、代码"><a href="#二、代码" class="headerlink" title="二、代码"></a>二、代码</h2><ul>
+<li><p>文件服务：文件上传、下载时，索引服务要新增、删除索引，并通知相关人员</p>
+<ul>
+<li>主题：文件服务</li>
+<li>观察者：索引服务、通知服务</li>
+</ul>
+</li>
+<li><p>主题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">FileSubject</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 添加观察者</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> observer 观察者</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">attach</span><span class="params">(FileObserver observer)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 移除观察者</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> observer 观察者</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">detach</span><span class="params">(FileObserver observer)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 上传文件</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> filePath 文件路径</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> fileName 文件名称</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">uploadFile</span><span class="params">(String filePath, String fileName)</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 删除文件</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> filePath 文件路径</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> fileName 文件名</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">deleteFile</span><span class="params">(String filePath, String fileName)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileSubjectImpl</span> <span class="keyword">implements</span> <span class="title">FileSubject</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> List&lt;FileObserver&gt; observers = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attach</span><span class="params">(FileObserver observer)</span> </span>&#123;</span><br><span class="line">        observers.add(observer);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">detach</span><span class="params">(FileObserver observer)</span> </span>&#123;</span><br><span class="line">        observers.remove(observer);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">uploadFile</span><span class="params">(String filePath, String fileName)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"文件服务：上传文件 文件路径："</span> + filePath + <span class="string">" 文件名："</span> + fileName);</span><br><span class="line"></span><br><span class="line">        FileOperation operation = <span class="keyword">new</span> FileOperation();</span><br><span class="line">        operation.setAction(FileOperation.Action.UPLOAD);</span><br><span class="line">        operation.setFilePath(filePath);</span><br><span class="line">        operation.setFileName(fileName);</span><br><span class="line">        notifyObservers(operation);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteFile</span><span class="params">(String filePath, String fileName)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"文件服务：删除文件 文件路径："</span> + filePath + <span class="string">" 文件名："</span> + fileName);</span><br><span class="line"></span><br><span class="line">        FileOperation operation = <span class="keyword">new</span> FileOperation();</span><br><span class="line">        operation.setAction(FileOperation.Action.DELETE);</span><br><span class="line">        operation.setFilePath(filePath);</span><br><span class="line">        operation.setFileName(fileName);</span><br><span class="line">        notifyObservers(operation);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 通知观察者</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> operation</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">notifyObservers</span><span class="params">(FileOperation operation)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"通知各个文件观察者"</span>);</span><br><span class="line">        <span class="keyword">for</span> (FileObserver observer : observers) &#123;</span><br><span class="line">            observer.notify(operation);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>观察者</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 观察者接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">FileObserver</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 通知观察者</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> operation</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">notify</span><span class="params">(FileOperation operation)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileOperation</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Action action;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String filePath;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String fileName;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Action <span class="title">getAction</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> action;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAction</span><span class="params">(Action action)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.action = action;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getFilePath</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> filePath;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFilePath</span><span class="params">(String filePath)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.filePath = filePath;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getFileName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> fileName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFileName</span><span class="params">(String fileName)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.fileName = fileName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"FileOperation&#123;"</span> +</span><br><span class="line">                <span class="string">"action="</span> + action +</span><br><span class="line">                <span class="string">", filePath='"</span> + filePath + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", fileName='"</span> + fileName + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">enum</span> Action &#123;</span><br><span class="line"></span><br><span class="line">        UPLOAD,</span><br><span class="line"></span><br><span class="line">        DELETE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 索引观察者</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileSearchObserver</span> <span class="keyword">implements</span> <span class="title">FileObserver</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">notify</span><span class="params">(FileOperation operation)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (operation.getAction()) &#123;</span><br><span class="line">            <span class="keyword">case</span> UPLOAD:</span><br><span class="line">                addIndex(operation);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> DELETE:</span><br><span class="line">                removeIndex(operation);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addIndex</span><span class="params">(FileOperation operation)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"文件索引服务： 新增索引 operation: "</span> + operation.toString());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">removeIndex</span><span class="params">(FileOperation operation)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"文件索引服务： 删除索引 operation: "</span> + operation.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通知观察者</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileNotifyObserver</span> <span class="keyword">implements</span> <span class="title">FileObserver</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">notify</span><span class="params">(FileOperation operation)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (operation.getAction()) &#123;</span><br><span class="line">            <span class="keyword">case</span> UPLOAD:</span><br><span class="line">                System.out.println(<span class="string">"通知服务： 文件路径："</span> + operation.getFilePath() + <span class="string">"新增文件："</span> + operation.getFileName());</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> DELETE:</span><br><span class="line">                System.out.println(<span class="string">"通知服务： 文件路径："</span> + operation.getFilePath() + <span class="string">"删除文件："</span> + operation.getFileName());</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        FileObserver searchObserver = <span class="keyword">new</span> FileSearchObserver();</span><br><span class="line">        FileObserver notifyObserver = <span class="keyword">new</span> FileNotifyObserver();</span><br><span class="line"></span><br><span class="line">        FileSubjectImpl fileSubject = <span class="keyword">new</span> FileSubjectImpl();</span><br><span class="line">        fileSubject.attach(searchObserver);</span><br><span class="line">        fileSubject.attach(notifyObserver);</span><br><span class="line"></span><br><span class="line">        fileSubject.uploadFile(<span class="string">"/resource"</span>, <span class="string">"test.doc"</span>);</span><br><span class="line">        fileSubject.deleteFile(<span class="string">"/resource"</span>, <span class="string">"test01.doc"</span>);</span><br><span class="line"></span><br><span class="line">        fileSubject.detach(notifyObserver);</span><br><span class="line">        fileSubject.uploadFile(<span class="string">"/resource"</span>, <span class="string">"test02.doc"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出结果</span></span><br><span class="line">文件服务：上传文件 文件路径：/resource 文件名：test.doc</span><br><span class="line">通知各个文件观察者</span><br><span class="line">文件索引服务： 新增索引 operation: FileOperation&#123;action=UPLOAD, filePath=<span class="string">'/resource'</span>, fileName=<span class="string">'test.doc'</span>&#125;</span><br><span class="line">通知服务： 文件路径：/resource新增文件：test.doc</span><br><span class="line">文件服务：删除文件 文件路径：/resource 文件名：test01.doc</span><br><span class="line">通知各个文件观察者</span><br><span class="line">文件索引服务： 删除索引 operation: FileOperation&#123;action=DELETE, filePath=<span class="string">'/resource'</span>, fileName=<span class="string">'test01.doc'</span>&#125;</span><br><span class="line">通知服务： 文件路径：/resource删除文件：test01.doc</span><br><span class="line">文件服务：上传文件 文件路径：/resource 文件名：test02.doc</span><br><span class="line">通知各个文件观察者</span><br><span class="line">文件索引服务： 新增索引 operation: FileOperation&#123;action=UPLOAD, filePath=<span class="string">'/resource'</span>, fileName=<span class="string">'test02.doc'</span>&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 
@@ -561,12 +571,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>深入理解Redis--解决Redis缓存穿透、雪崩、击穿问题</a></p>
+  <p><span>本文标题:</span>设计模式-观察者模式</a></p>
   <p><span>文章作者:</span>Deschen</a></p>
-  <p><span>发布时间:</span>2019年06月28日 - 14:25:33</p>
-  <p><span>最后更新:</span>2020年02月12日 - 15:05:18</p>
-  <p><span>原始链接:</span><a href="/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/" title="深入理解Redis--解决Redis缓存穿透、雪崩、击穿问题">https://www.deschen.cn/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.deschen.cn/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2022年02月09日 - 21:11:12</p>
+  <p><span>最后更新:</span>2023年05月12日 - 17:00:33</p>
+  <p><span>原始链接:</span><a href="/2022/02/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" title="设计模式-观察者模式">https://www.deschen.cn/2022/02/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.deschen.cn/2022/02/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -637,7 +647,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JVM/" rel="tag"># JVM</a>
+            <a href="/tags/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" rel="tag"># 观察者模式</a>
           
         </div>
       
@@ -650,8 +660,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/13/MySQL%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/" rel="next" title="MySQL语法基础">
-                <i class="fa fa-chevron-left"></i> MySQL语法基础
+              <a href="/2022/02/08/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E6%9D%BF%E6%A8%A1%E5%BC%8F/" rel="next" title="设计模式-模板模式">
+                <i class="fa fa-chevron-left"></i> 设计模式-模板模式
               </a>
             
           </div>
@@ -659,10 +669,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" rel="prev" title="深入了解JVM--内存模型">
-                深入了解JVM--内存模型 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -929,7 +935,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深入理解Redis–解决Redis缓存穿透、雪崩、击穿问题"><span class="nav-number">1.</span> <span class="nav-text">深入理解Redis–解决Redis缓存穿透、雪崩、击穿问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、缓存穿透"><span class="nav-number">1.1.</span> <span class="nav-text">一、缓存穿透</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、介绍"><span class="nav-number">1.1.1.</span> <span class="nav-text">1、介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、解决方案"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、解决方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、缓存雪崩"><span class="nav-number">1.2.</span> <span class="nav-text">二、缓存雪崩</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、介绍-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、解决方案-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">2、解决方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、缓存击穿"><span class="nav-number">1.3.</span> <span class="nav-text">三、缓存击穿</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、介绍-2"><span class="nav-number">1.3.1.</span> <span class="nav-text">1、介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、解决方案-2"><span class="nav-number">1.3.2.</span> <span class="nav-text">2、解决方案</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#设计模式-观察者模式"><span class="nav-number">1.</span> <span class="nav-text">设计模式-观察者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、详解"><span class="nav-number">1.1.</span> <span class="nav-text">一、详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、代码"><span class="nav-number">1.2.</span> <span class="nav-text">二、代码</span></a></li></ol></li></ol></div>
             
 
           </div>
