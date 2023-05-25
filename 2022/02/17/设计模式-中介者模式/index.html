@@ -117,21 +117,18 @@
 
 
 
-  <meta name="description" content="Redis集群详解一、Redis有三种集群模式 主从模式 Sentinel模式( 哨兵模式 ) Cluster模式( 集群模式 )  PS ：集群查看命令： info replication  二、主从模式1、介绍主从模式是三种模式中最简单的，在主从复制中，数据库分为两类：主数据库(master)和从数据库(slave)。 2、工作机制：当slave启动后，主动向master发送SYNC命令。ma">
+  <meta name="description" content="设计模式-中介者模式一、详解 概念：定义一个中介者对象，封装一组对象，协调和管理对象之间的交互，减低对象间耦合度 主要用途 解耦对象之间的关系：如果交互关系发生变化，只需修改中介者对象，无需对对象进行处理 集中控制和管理对象交互，提高系统的可维护性和灵活性   代码：中介者、交互的对象  二、代码 以消息通信为例：文件上传时，通知文件存储、搜索引擎、日志模块处理上传的文件  中介者：消息中介者 1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解Redis--集群讲解">
-<meta property="og:url" content="https://www.deschen.cn/2019/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E8%AE%B2%E8%A7%A3/index.html">
+<meta property="og:title" content="设计模式-中介者模式">
+<meta property="og:url" content="https://www.deschen.cn/2022/02/17/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Deschen Blog">
-<meta property="og:description" content="Redis集群详解一、Redis有三种集群模式 主从模式 Sentinel模式( 哨兵模式 ) Cluster模式( 集群模式 )  PS ：集群查看命令： info replication  二、主从模式1、介绍主从模式是三种模式中最简单的，在主从复制中，数据库分为两类：主数据库(master)和从数据库(slave)。 2、工作机制：当slave启动后，主动向master发送SYNC命令。ma">
+<meta property="og:description" content="设计模式-中介者模式一、详解 概念：定义一个中介者对象，封装一组对象，协调和管理对象之间的交互，减低对象间耦合度 主要用途 解耦对象之间的关系：如果交互关系发生变化，只需修改中介者对象，无需对对象进行处理 集中控制和管理对象交互，提高系统的可维护性和灵活性   代码：中介者、交互的对象  二、代码 以消息通信为例：文件上传时，通知文件存储、搜索引擎、日志模块处理上传的文件  中介者：消息中介者 1">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1581473766762.png">
-<meta property="og:image" content="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1581474165999.png">
-<meta property="article:published_time" content="2019-07-20T00:41:38.000Z">
-<meta property="article:modified_time" content="2021-02-24T09:32:15.560Z">
+<meta property="article:published_time" content="2022-02-17T15:50:10.000Z">
+<meta property="article:modified_time" content="2023-05-25T01:35:10.826Z">
 <meta property="article:author" content="Deschen">
-<meta property="article:tag" content="redis">
+<meta property="article:tag" content="中介者模式">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1581473766762.png">
 
 
 
@@ -140,7 +137,7 @@
 
 
 
-  <link rel="canonical" href="https://www.deschen.cn/2019/07/20/深入理解Redis-集群讲解/"/>
+  <link rel="canonical" href="https://www.deschen.cn/2022/02/17/设计模式-中介者模式/"/>
 
 
 
@@ -150,7 +147,7 @@
   };
 </script>
 
-  <title>深入理解Redis--集群讲解 | Deschen Blog</title>
+  <title>设计模式-中介者模式 | Deschen Blog</title>
   
 
 
@@ -375,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.deschen.cn/2019/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E8%AE%B2%E8%A7%A3/">
+    <link itemprop="mainEntityOfPage" href="https://www.deschen.cn/2022/02/17/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Deschen">
@@ -392,7 +389,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">深入理解Redis--集群讲解
+          <h1 class="post-title" itemprop="name headline">设计模式-中介者模式
               
             
           </h1>
@@ -417,7 +414,7 @@
                 
               
 
-              <time title="创建时间：2019-07-20 08:41:38" itemprop="dateCreated datePublished" datetime="2019-07-20T08:41:38+08:00">2019-07-20</time>
+              <time title="创建时间：2022-02-17 23:50:10" itemprop="dateCreated datePublished" datetime="2022-02-17T23:50:10+08:00">2022-02-17</time>
             
 
             
@@ -434,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-02-24 17:32:15" itemprop="dateModified" datetime="2021-02-24T17:32:15+08:00">2021-02-24</time>
+                <time title="修改时间：2023-05-25 09:35:10" itemprop="dateModified" datetime="2023-05-25T09:35:10+08:00">2023-05-25</time>
               
             
           </span>
@@ -451,7 +448,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">中间件</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
 
                 
                 
@@ -466,8 +463,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E8%AE%B2%E8%A7%A3/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E8%AE%B2%E8%A7%A3/" itemprop="commentCount"></span>
+                <a href="/2022/02/17/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2022/02/17/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -475,7 +472,7 @@
 
           
           
-             <span id="/2019/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E8%AE%B2%E8%A7%A3/" class="leancloud_visitors" data-flag-title="深入理解Redis--集群讲解">
+             <span id="/2022/02/17/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式-中介者模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -505,7 +502,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">7 分钟</span>
+                <span title="阅读时长">28 分钟</span>
               
             </div>
           
@@ -525,57 +522,32 @@
       
 
       
-        <h1 id="Redis集群详解"><a href="#Redis集群详解" class="headerlink" title="Redis集群详解"></a>Redis集群详解</h1><h2 id="一、Redis有三种集群模式"><a href="#一、Redis有三种集群模式" class="headerlink" title="一、Redis有三种集群模式"></a>一、Redis有三种集群模式</h2><ul>
-<li>主从模式</li>
-<li>Sentinel模式( 哨兵模式 )</li>
-<li>Cluster模式( 集群模式 )</li>
-</ul>
-<p>PS ：集群查看命令： <code>info replication</code> </p>
-<h2 id="二、主从模式"><a href="#二、主从模式" class="headerlink" title="二、主从模式"></a>二、主从模式</h2><h3 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h3><p>主从模式是三种模式中最简单的，在主从复制中，数据库分为两类：主数据库(master)和从数据库(slave)。</p>
-<h3 id="2、工作机制："><a href="#2、工作机制：" class="headerlink" title="2、工作机制："></a>2、工作机制：</h3><p>当slave启动后，主动向master发送SYNC命令。master接收到SYNC命令后在后台保存快照（RDB持久化）和缓存保存快照这段时间的命令，然后将保存的快照文件和缓存的命令发送给slave。slave接收到快照文件和命令后加载快照文件和缓存的执行命令。复制初始化后，master每次接收到的写命令都会同步发送给slave，保证主从数据一致性。</p>
-<h3 id="3、优缺点"><a href="#3、优缺点" class="headerlink" title="3、优缺点"></a>3、优缺点</h3><ul>
-<li>优点：<ul>
-<li>1、高可靠性，主从实时备份，有效解决单节点数据丢失问题。</li>
-<li>2、可做读写分离，从库分担读操作，缓解主库压力</li>
+        <h1 id="设计模式-中介者模式"><a href="#设计模式-中介者模式" class="headerlink" title="设计模式-中介者模式"></a>设计模式-中介者模式</h1><h2 id="一、详解"><a href="#一、详解" class="headerlink" title="一、详解"></a>一、详解</h2><ul>
+<li>概念：定义一个<strong>中介者对象</strong>，<strong>封装一组对象</strong>，<strong>协调和管理</strong>对象之间的<strong>交互</strong>，减低对象间<strong>耦合度</strong></li>
+<li>主要用途<ul>
+<li>解耦对象之间的关系：如果交互关系发生变化，只需修改中介者对象，无需对对象进行处理</li>
+<li>集中控制和管理对象交互，提高系统的可维护性和灵活性</li>
 </ul>
 </li>
-<li>缺点：主库异常，需要手动主从切换</li>
+<li>代码：中介者、交互的对象</li>
 </ul>
-<h2 id="三、Sentinel模式"><a href="#三、Sentinel模式" class="headerlink" title="三、Sentinel模式"></a>三、Sentinel模式</h2><h3 id="1、介绍-1"><a href="#1、介绍-1" class="headerlink" title="1、介绍"></a>1、介绍</h3><p> 监控redis集群的运行状况 </p>
-<h3 id="2、工作机制：-1"><a href="#2、工作机制：-1" class="headerlink" title="2、工作机制："></a>2、工作机制：</h3><ul>
-<li><p>假设主节点宕机，第一个哨兵先检测到这个结果，第一个哨兵主标志为<strong>主观下线</strong>。</p>
+<h2 id="二、代码"><a href="#二、代码" class="headerlink" title="二、代码"></a>二、代码</h2><ul>
+<li><p>以消息通信为例：文件上传时，通知文件存储、搜索引擎、日志模块处理上传的文件</p>
 </li>
-<li><p>当后面的哨兵也检测到主节点为<strong>主观下线</strong>，并且数量达到一定值时，就会标志为<strong>客观下线</strong></p>
+<li><p>中介者：消息中介者</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MsgMediator</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 主题与消费者订阅关系</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Map&lt;Topic, List&lt;IConsumer&gt;&gt; subscribe;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MsgMediator</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        subscribe = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        subscribe.put(Topic.FILE_UPLOAD, <span class="keyword">new</span> ArrayList&lt;IConsumer&gt;() &#123;</span><br><span class="line">            &#123;</span><br><span class="line">                add(<span class="keyword">new</span> FileStorageConsumer());</span><br><span class="line">                add(<span class="keyword">new</span> FileSearchConsumer());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        subscribe.put(Topic.WRITE_LOG, <span class="keyword">new</span> ArrayList&lt;IConsumer&gt;()&#123;</span><br><span class="line">            &#123;</span><br><span class="line">                add(<span class="keyword">new</span> LogConsumer());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendMsg</span><span class="params">(Topic topic, String msg)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;Topic, List&lt;IConsumer&gt;&gt; entry : subscribe.entrySet()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (entry.getKey() == topic) &#123;</span><br><span class="line">                <span class="keyword">for</span> (IConsumer consumer : entry.getValue()) &#123;</span><br><span class="line">                    consumer.handle(topic, msg);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addSubscribe</span><span class="params">(Topic topic, IConsumer consumer)</span> </span>&#123;</span><br><span class="line">        List&lt;IConsumer&gt; consumers = subscribe.get(topic);</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> == consumers) &#123;</span><br><span class="line">            consumers = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        consumers.add(consumer);</span><br><span class="line">        subscribe.put(topic, consumers);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>在认为主节点<strong>客观下线</strong>的情况下,哨兵节点节点间会发起一次选举，如果超过半数以上的节点返回，则将该节点标记为leader的情况下，对<strong>故障的主节点</strong>所属的<strong>从节点中</strong>选取<strong>新的主节点</strong></p>
-<p>当使用sentinel模式的时候，客户端就不要直接连接Redis，而是连接sentinel的ip和port，由sentinel来提供具体的可提供服务的Redis实现，这样当master节点挂掉以后，sentinel就会感知并将新的master节点提供给使用者。 </p>
+<li><p>交互对象：消费者对象集合</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 消费者接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IConsumer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 消费消息</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> topic 主题</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> msg 消息</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">handle</span><span class="params">(Topic topic, String msg)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 文件搜索引擎消费者</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileSearchConsumer</span> <span class="keyword">implements</span> <span class="title">IConsumer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handle</span><span class="params">(Topic topic, String msg)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (topic) &#123;</span><br><span class="line">            <span class="keyword">case</span> FILE_UPLOAD:</span><br><span class="line">                handleUploadFile(msg);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">handleUploadFile</span><span class="params">(String msg)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"【FileSearchConsumer】将消息反序列化成对象"</span>);</span><br><span class="line">        System.out.println(<span class="string">"【FileSearchConsumer】根据对象参数，更新搜索引擎索引"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 文件存储消费者</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileStorageConsumer</span> <span class="keyword">implements</span> <span class="title">IConsumer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handle</span><span class="params">(Topic topic, String msg)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (topic) &#123;</span><br><span class="line">            <span class="keyword">case</span> FILE_UPLOAD:</span><br><span class="line">                handleUploadFile(msg);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">handleUploadFile</span><span class="params">(String msg)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"【FileStorageConsumer】将消息反序列化成对象"</span>);</span><br><span class="line">        System.out.println(<span class="string">"【FileStorageConsumer】根据对象参数，保存文件到存储引擎，同时存储文件管理系统与存储引擎的关系"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 日志消费者</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LogConsumer</span> <span class="keyword">implements</span> <span class="title">IConsumer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handle</span><span class="params">(Topic topic, String msg)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (topic) &#123;</span><br><span class="line">            <span class="keyword">case</span> WRITE_LOG:</span><br><span class="line">                writeLog(msg);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">writeLog</span><span class="params">(String msg)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"【LogConsumer】将消息反序列化成对象"</span>);</span><br><span class="line">        System.out.println(<span class="string">"【LogConsumer】根据对象参数，记录文件上传日志"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>消息主题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Topic &#123;</span><br><span class="line"></span><br><span class="line">    FILE_UPLOAD,</span><br><span class="line"></span><br><span class="line">    WRITE_LOG,</span><br><span class="line">    ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        MsgMediator mediator = <span class="keyword">new</span> MsgMediator();</span><br><span class="line">        mediator.sendMsg(Topic.FILE_UPLOAD, <span class="string">"&#123;\"fileId\": 1,\"fileName\": \"resource.txt\",\"filePath\": \"/resources\",\"uploader\": \"张三\",\"uploadTime\": \"2022-02-17\"&#125;"</span>);</span><br><span class="line">        mediator.sendMsg(Topic.WRITE_LOG, <span class="string">"&#123;\"fileId\": 1,\"fileName\": \"resource.txt\",\"filePath\": \"/resources\",\"uploader\": \"张三\",\"uploadTime\": \"2022-02-17\"&#125;"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出结果</span></span><br><span class="line">【FileStorageConsumer】将消息反序列化成对象</span><br><span class="line">【FileStorageConsumer】根据对象参数，保存文件到存储引擎，同时存储文件管理系统与存储引擎的关系</span><br><span class="line">【FileSearchConsumer】将消息反序列化成对象</span><br><span class="line">【FileSearchConsumer】根据对象参数，更新搜索引擎索引</span><br><span class="line">【LogConsumer】将消息反序列化成对象</span><br><span class="line">【LogConsumer】根据对象参数，记录文件上传日志</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
-<h3 id="3、优缺点-1"><a href="#3、优缺点-1" class="headerlink" title="3、优缺点"></a>3、优缺点</h3><ul>
-<li>优点：有效解决主从模式主库异常手动主从切换的问题</li>
-<li>缺点：运维复杂，哨兵选举期间，不能对外提供服务</li>
-</ul>
-<h2 id="四、Cluster模式"><a href="#四、Cluster模式" class="headerlink" title="四、Cluster模式"></a>四、Cluster模式</h2><h3 id="1、介绍-2"><a href="#1、介绍-2" class="headerlink" title="1、介绍"></a>1、介绍</h3><p> redis集群是一个由多个主从节点群组成的分布式服务器群，它具有复制、高可用和分片特性。Redis集群不需要sentinel哨兵也能完成节点移除和故障转移的功能。  </p>
-<p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1581473766762.png" alt="1581473766762"></p>
-<h3 id="3、槽位"><a href="#3、槽位" class="headerlink" title="3、槽位"></a>3、槽位</h3><p>Redis Cluster 将所有数据划分为 <strong>16384</strong> 的 slots( 槽位 ）</p>
-<p>当 Redis Cluster 的客户端来连接集群时，它也会得到一份集群的槽位配置信息并将其缓存在客户端本地。这样当客户端要查找某个 key 时，可以直接定位到目标节点。同时因为槽位的信息可能会存在客户端与服务器不一致的情况，还需要纠正机制来实现槽位信息的校验调整。</p>
-<h3 id="4、槽位定位算法"><a href="#4、槽位定位算法" class="headerlink" title="4、槽位定位算法"></a>4、槽位定位算法</h3><p>Cluster 默认会对 key 值使用 crc16 算法进行 hash 得到一个整数值，然后用这个整数值对 16384 进行取模来得到具体槽位。</p>
-<p>HASH_SLOT = CRC16(key) mod 16384</p>
-<h3 id="5、跳转重定位"><a href="#5、跳转重定位" class="headerlink" title="5、跳转重定位"></a>5、跳转重定位</h3><p>当客户端向一个错误的节点发出了指令，该节点会发现指令的 key 所在的槽位并不归自己管理，这时它会向客户端发送一个特殊的跳转指令携带目标操作的节点地址，告诉客户端去连这个节点去获取数据。客户端收到指令后除了跳转到正确的节点上去操作，还会同步更新纠正本地的槽位映射表缓存，后续所有 key 将使用新的槽位映射表。</p>
-<p><img src="https://root-1258715043.cos.ap-guangzhou.myqcloud.com/blog/1581474165999.png" alt="1581474165999"></p>
-<h3 id="6、网络抖动"><a href="#6、网络抖动" class="headerlink" title="6、网络抖动"></a>6、网络抖动</h3><p>真实世界的机房网络往往并不是风平浪静的，它们经常会发生各种各样的小问题。比如网络抖动就是非常常见的一种现象，突然之间部分连接变得不可访问，然后很快又恢复正常。</p>
-<p>为解决这种问题，Redis Cluster 提供了一种选项cluster-node-timeout，表示当某个节点持续 timeout 的时间失联时，才可以认定该节点出现故障，需要进行主从切换。如果没有这个选项，网络抖动会导致主从频繁切换 (数据的重新复制)。</p>
-<h3 id="7、选举原理分析"><a href="#7、选举原理分析" class="headerlink" title="7、选举原理分析"></a>7、选举原理分析</h3><p>当slave发现自己的master变为FAIL状态时，便尝试进行Failover，以期成为新的master。由于挂掉的master可能会有多个slave，从而存在多个slave竞争成为master节点的过程， 其过程如下：</p>
-<p>1.slave发现自己的master变为FAIL</p>
-<p>2.将自己记录的集群cluster_current_epoch(选举周期)加1( 查看命令：<code>cluster info</code>)，并广播FAILOVER_AUTH_REQUEST 信息</p>
-<p>3.其他节点收到该信息，只有master响应，判断请求者的合法性，并发送FAILOVER_AUTH_ACK，对每一个epoch只发送一次ack</p>
-<p>4.尝试failover的slave收集FAILOVER_AUTH_ACK</p>
-<p>5.超过半数后变成新Master</p>
-<p>6.广播通知其他集群节点。</p>
-<p>从节点并不是在主节点一进入 FAIL 状态就马上尝试发起选举，而是有一定延迟，一定的延迟确保我们等待FAIL状态在集群中传播，slave如果立即尝试选举，其它masters或许尚未意识到FAIL状态，可能会拒绝投票</p>
-<p>延迟计算公式：</p>
-<p> DELAY = 500ms + random(0 ~ 500ms) + SLAVE_RANK * 1000ms</p>
-<p>•SLAVE_RANK表示此slave已经从master复制数据的总量的rank。Rank越小代表已复制的数据越新。这种方式下，持有最新数据的slave将会首先发起选举（理论上）。</p>
 
       
     </div>
@@ -597,12 +569,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>深入理解Redis--集群讲解</a></p>
+  <p><span>本文标题:</span>设计模式-中介者模式</a></p>
   <p><span>文章作者:</span>Deschen</a></p>
-  <p><span>发布时间:</span>2019年07月20日 - 08:41:38</p>
-  <p><span>最后更新:</span>2021年02月24日 - 17:32:15</p>
-  <p><span>原始链接:</span><a href="/2019/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E8%AE%B2%E8%A7%A3/" title="深入理解Redis--集群讲解">https://www.deschen.cn/2019/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E8%AE%B2%E8%A7%A3/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.deschen.cn/2019/07/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E8%AE%B2%E8%A7%A3/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2022年02月17日 - 23:50:10</p>
+  <p><span>最后更新:</span>2023年05月25日 - 09:35:10</p>
+  <p><span>原始链接:</span><a href="/2022/02/17/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/" title="设计模式-中介者模式">https://www.deschen.cn/2022/02/17/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.deschen.cn/2022/02/17/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -673,7 +645,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/redis/" rel="tag"># redis</a>
+            <a href="/tags/%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/" rel="tag"># 中介者模式</a>
           
         </div>
       
@@ -686,8 +658,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/17/%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E2%80%94%E2%80%94%E4%BB%A5MySQL%E4%B8%BA%E4%BE%8B/" rel="next" title="分库分表理论篇——以MySQL为例">
-                <i class="fa fa-chevron-left"></i> 分库分表理论篇——以MySQL为例
+              <a href="/2022/02/16/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/" rel="next" title="设计模式-访问者模式">
+                <i class="fa fa-chevron-left"></i> 设计模式-访问者模式
               </a>
             
           </div>
@@ -695,10 +667,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/" rel="prev" title="深入理解Redis--集群部署">
-                深入理解Redis--集群部署 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -981,7 +949,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis集群详解"><span class="nav-number">1.</span> <span class="nav-text">Redis集群详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Redis有三种集群模式"><span class="nav-number">1.1.</span> <span class="nav-text">一、Redis有三种集群模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、主从模式"><span class="nav-number">1.2.</span> <span class="nav-text">二、主从模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、介绍"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、工作机制："><span class="nav-number">1.2.2.</span> <span class="nav-text">2、工作机制：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、优缺点"><span class="nav-number">1.2.3.</span> <span class="nav-text">3、优缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Sentinel模式"><span class="nav-number">1.3.</span> <span class="nav-text">三、Sentinel模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、介绍-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">1、介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、工作机制：-1"><span class="nav-number">1.3.2.</span> <span class="nav-text">2、工作机制：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、优缺点-1"><span class="nav-number">1.3.3.</span> <span class="nav-text">3、优缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、Cluster模式"><span class="nav-number">1.4.</span> <span class="nav-text">四、Cluster模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、介绍-2"><span class="nav-number">1.4.1.</span> <span class="nav-text">1、介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、槽位"><span class="nav-number">1.4.2.</span> <span class="nav-text">3、槽位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、槽位定位算法"><span class="nav-number">1.4.3.</span> <span class="nav-text">4、槽位定位算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、跳转重定位"><span class="nav-number">1.4.4.</span> <span class="nav-text">5、跳转重定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、网络抖动"><span class="nav-number">1.4.5.</span> <span class="nav-text">6、网络抖动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、选举原理分析"><span class="nav-number">1.4.6.</span> <span class="nav-text">7、选举原理分析</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#设计模式-中介者模式"><span class="nav-number">1.</span> <span class="nav-text">设计模式-中介者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、详解"><span class="nav-number">1.1.</span> <span class="nav-text">一、详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、代码"><span class="nav-number">1.2.</span> <span class="nav-text">二、代码</span></a></li></ol></li></ol></div>
             
 
           </div>
