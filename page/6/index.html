@@ -255,7 +255,7 @@
           
           <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">34</span></a>
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">35</span></a>
   </li>
         
         
@@ -263,7 +263,7 @@
           
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">17</span></a>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">18</span></a>
   </li>
         
         
@@ -271,7 +271,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">66</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">68</span></a>
   </li>
         
         
@@ -356,6 +356,469 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.deschen.cn/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Deschen">
+      <meta itemprop="description" content="机遇只会给有准备的人">
+      <meta itemprop="image" content="/images/wolf_128.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Deschen Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" itemprop="url">
+                  深入了解JVM--内存模型
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-28 17:00:33" itemprop="dateCreated datePublished" datetime="2019-06-28T17:00:33+08:00">2019-06-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-03-04 22:57:31" itemprop="dateModified" datetime="2021-03-04T22:57:31+08:00">2021-03-04</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" class="leancloud_visitors" data-flag-title="深入了解JVM--内存模型">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+
+
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">2 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          jvm内存模型
+Jvm内存模型图
+
+
+
+线程私有
+
+程序计数器：记录虚拟机字节码的指令地址
+虚拟机栈：每个方法执行时，都会创建一个栈帧，存储局部变量、操作数、动态链接、方法返回地址。方法从调用到执行完毕，对应栈帧在虚拟机栈入栈和出栈
+本地方法栈：跟虚拟机栈类似，执行native方法
+
+
+线程共享
+
+
+          ...
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/06/28/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+        
+    </div>
+
+    
+
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.deschen.cn/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Deschen">
+      <meta itemprop="description" content="机遇只会给有准备的人">
+      <meta itemprop="image" content="/images/wolf_128.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Deschen Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/" itemprop="url">
+                  深入理解Redis--解决Redis缓存穿透、雪崩、击穿问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-28 14:25:33" itemprop="dateCreated datePublished" datetime="2019-06-28T14:25:33+08:00">2019-06-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-02-12 15:05:18" itemprop="dateModified" datetime="2020-02-12T15:05:18+08:00">2020-02-12</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="深入理解Redis--解决Redis缓存穿透、雪崩、击穿问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+
+
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">7 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          深入理解Redis–解决Redis缓存穿透、雪崩、击穿问题一、缓存穿透1、介绍缓存穿透就是访问一个不存在的数据时，缓存没有命中，而访问数据库，在高并发情况下，数据库又因为压力而宕机
+2、解决方案布隆过滤器
+
+简介：布隆过滤器实际上是一个很长的二进制向量和一系列随机映射函数。布隆过滤器可以用于检索一个
+          ...
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/06/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Redis-%E8%A7%A3%E5%86%B3Redis%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E3%80%81%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+        
+    </div>
+
+    
+
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -2158,456 +2621,6 @@ Maven提供了三套独立的生命周期：clean, defaul
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.deschen.cn/2019/03/01/jdk1.8%E9%83%A8%E7%BD%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Deschen">
-      <meta itemprop="description" content="机遇只会给有准备的人">
-      <meta itemprop="image" content="/images/wolf_128.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Deschen Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/01/jdk1.8%E9%83%A8%E7%BD%B2/" itemprop="url">
-                  jdk1.8部署
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-01 17:57:34" itemprop="dateCreated datePublished" datetime="2019-03-01T17:57:34+08:00">2019-03-01</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2021-03-01 17:59:07" itemprop="dateModified" datetime="2021-03-01T17:59:07+08:00">2021-03-01</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/03/01/jdk1.8%E9%83%A8%E7%BD%B2/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/03/01/jdk1.8%E9%83%A8%E7%BD%B2/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/03/01/jdk1.8%E9%83%A8%E7%BD%B2/" class="leancloud_visitors" data-flag-title="jdk1.8部署">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-
-
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">4 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          JDK1.8部署-CentOS7.X一、下载和安装JDK1.8
-下载地址
-解压：tar -zxvf jdk-8u261-linux-x64.tar.gz -C /usr/local
-
-二、设置环境遍量1234567891011编辑：vim /etc/profile	export JAVA_HOME=
-          ...
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/01/jdk1.8%E9%83%A8%E7%BD%B2/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-        
-    </div>
-
-    
-
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.deschen.cn/2019/02/28/SpringBoot%E9%83%A8%E7%BD%B2-Centos7-X/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Deschen">
-      <meta itemprop="description" content="机遇只会给有准备的人">
-      <meta itemprop="image" content="/images/wolf_128.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Deschen Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/28/SpringBoot%E9%83%A8%E7%BD%B2-Centos7-X/" itemprop="url">
-                  SpringBoot部署-Centos7.X
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-28 20:22:26" itemprop="dateCreated datePublished" datetime="2019-02-28T20:22:26+08:00">2019-02-28</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2021-04-08 09:05:08" itemprop="dateModified" datetime="2021-04-08T09:05:08+08:00">2021-04-08</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/28/SpringBoot%E9%83%A8%E7%BD%B2-Centos7-X/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/28/SpringBoot%E9%83%A8%E7%BD%B2-Centos7-X/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/02/28/SpringBoot%E9%83%A8%E7%BD%B2-Centos7-X/" class="leancloud_visitors" data-flag-title="SpringBoot部署-Centos7.X">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-
-
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">9 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          SpringBoot部署-Centos7.X一、pom文件引入插件12345678&lt;build&gt;    &lt;plugins&gt;        &lt;plugin&gt;            &lt;groupId&gt;org.springframework.boot&lt;
-          ...
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/02/28/SpringBoot%E9%83%A8%E7%BD%B2-Centos7-X/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-        
-    </div>
-
-    
-
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2661,14 +2674,14 @@ Maven提供了三套独立的生命周期：clean, defaul
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">66</span>
+                    <span class="site-state-item-count">68</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>-->
                 <!--临时方法-->
                 <div class="site-state-item site-state-posts">
                   <a href="/archives/index.html">
-                    <span class="site-state-item-count">66</span>
+                    <span class="site-state-item-count">68</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2716,7 +2729,9 @@ Maven提供了三套独立的生命周期：clean, defaul
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2797,7 +2812,9 @@ Maven提供了三套独立的生命周期：clean, defaul
                     
                       
                     
-                    <span class="site-state-item-count">34</span>
+                      
+                    
+                    <span class="site-state-item-count">35</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2896,7 +2913,7 @@ Maven提供了三套独立的生命周期：clean, defaul
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">6:02</span>
+    <span title="站点阅读时长">6:08</span>
   
 </div>
 

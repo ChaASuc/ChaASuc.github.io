@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.deschen.cn/2023/02/10/%E9%9D%A2%E8%AF%95%E9%A2%98-MySQL/</loc>
+    <lastmod>2023-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://www.deschen.cn/2023/11/14/redis/</loc>
+    <lastmod>2023-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://www.deschen.cn/2020/06/10/%E9%9D%A2%E8%AF%95/</loc>
+    <lastmod>2023-11-12</lastmod>
+  </url>
+  <url>
     <loc>https://www.deschen.cn/2022/02/11/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%81%8C%E8%B4%A3%E9%93%BE%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2023-11-09</lastmod>
   </url>
@@ -103,10 +115,6 @@
   <url>
     <loc>https://www.deschen.cn/2019/01/14/final%E5%85%B3%E9%94%AE%E5%AD%97%E8%AF%A6%E8%A7%A3/</loc>
     <lastmod>2022-04-17</lastmod>
-  </url>
-  <url>
-    <loc>https://www.deschen.cn/2020/06/10/%E9%9D%A2%E8%AF%95/</loc>
-    <lastmod>2022-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.deschen.cn/2019/01/14/Exception%E4%B8%8EError%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
