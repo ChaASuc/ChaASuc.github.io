@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>redis</title>
-      <link href="/2023/11/14/redis/"/>
-      <url>/2023/11/14/redis/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><h3 id="什么是redis"><a href="#什么是redis" class="headerlink" title="什么是redis"></a>什么是redis</h3><p>Redis 是一种基于内存的数据库，<strong>读写速度非常快</strong>，用于缓存和分布式场景</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Yapi的部署和使用</title>
       <link href="/2023/08/08/Yapi%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8/"/>
       <url>/2023/08/08/Yapi%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8/</url>
