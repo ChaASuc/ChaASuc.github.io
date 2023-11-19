@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.deschen.cn/2021/08/10/%E9%9D%A2%E8%AF%95%E9%A2%98-MySQL/</loc>
+    <lastmod>2023-11-19</lastmod>
+  </url>
+  <url>
     <loc>https://www.deschen.cn/2021/02/28/Yapi%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2023-11-19</lastmod>
   </url>
@@ -19,10 +23,6 @@
   <url>
     <loc>https://www.deschen.cn/2022/02/03/docker-compose%20+%20jenkins%E6%90%AD%E5%BB%BA%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2023-11-19</lastmod>
-  </url>
-  <url>
-    <loc>https://www.deschen.cn/2023/02/10/%E9%9D%A2%E8%AF%95%E9%A2%98-MySQL/</loc>
-    <lastmod>2023-11-18</lastmod>
   </url>
   <url>
     <loc>https://www.deschen.cn/2020/06/10/%E9%9D%A2%E8%AF%95/</loc>
